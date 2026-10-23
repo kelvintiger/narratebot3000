@@ -261,6 +261,8 @@ body[data-mode='pumpkin'] .zoomwrap {
 .mode-label { position: absolute; top: calc(var(--safe-t) + 62px); left: calc(var(--safe-l) + 12px); padding: 6px 10px; border-radius: 6px; background: rgba(0, 0, 0, 0.5); font-size: clamp(11px, 1.3vw, 16px); }
 .lang-label:not(:empty) { position: absolute; top: calc(var(--safe-t) + 72px); right: calc(var(--safe-r) + 12px); padding: 8px 14px; border-radius: 8px; background: rgba(0, 0, 0, 0.7); color: #fff; font-weight: 700; font-size: calc(clamp(18px, 2.6vw, 30px) * var(--text-scale)); }
 body[data-mode='descriptive'] .readout, body[data-mode='pumpkin'] .readout { display: none; }
+/* Documentary/Funny show the field-log readout in the same corner: put the language label under it */
+body:is([data-mode='documentary'], [data-mode='funny']):not([data-view='clean']) .lang-label:not(:empty) { top: calc(var(--safe-t) + 140px); }
 @keyframes blink { 50% { opacity: 0.15; } }
 body[data-view='clean'] .live-badge { background: var(--bg); color: var(--fg); border: 2px solid var(--fg); font-size: 18px; }
 body[data-view='clean'] .live-badge .dot, body[data-view='clean'] .readout { display: none; }
@@ -355,6 +357,7 @@ body.running.idle[data-mode='funny'] .bottom { bottom: 12dvh; }
   .live-badge { top: calc(var(--safe-t) + 66px); font-size: 16px; padding: 4px 10px; }
   .mode-label { top: calc(var(--safe-t) + 138px); }
   .readout, .lang-label:not(:empty) { top: calc(var(--safe-t) + 102px); }
+  body:is([data-mode='documentary'], [data-mode='funny']):not([data-view='clean']) .lang-label:not(:empty) { top: calc(var(--safe-t) + 168px); }
   body[data-mode='pumpkin'] .zoomwrap { top: calc(var(--safe-t) + 140px); width: 64px; height: 64px; }
 }
 
