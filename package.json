@@ -1,0 +1,10 @@
+{
+  "name": "narratebot3000",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "@upstash/ratelimit": "^2.0.5",
+    "@upstash/redis": "^1.35.0"
+  }
+}
