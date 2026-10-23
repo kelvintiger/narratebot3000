@@ -76,7 +76,7 @@ export default async function handler(req, res) {
       contents: [{ parts: [{ inline_data: { mime_type: 'image/jpeg', data: b.image } }, { text: prompt }] }],
       generationConfig: {
         temperature: TEMPERATURE[mode],
-        maxOutputTokens: 400,
+        maxOutputTokens: 1024, // includes any thinking tokens; only tokens actually used are billed
         thinkingConfig: thinkingFor(model),
         ...(isJson && { responseMimeType: 'application/json' }),
       },
@@ -94,9 +94,12 @@ export default async function handler(req, res) {
           .map((p) => p.text)
           .join('')
           .trim();
+        const u = data.usageMetadata || {};
+        const usage = { finish: data.candidates?.[0]?.finishReason, thoughts: u.thoughtsTokenCount || 0, out: u.candidatesTokenCount || 0, ms: Date.now() - started };
+        console.log(`[narrate] ${mode} ${model} ${JSON.stringify(usage)}`);
         if (!text) return res.status(502).json({ error: 'Empty response' });
-        if (!isJson) return res.json({ text, model });
-        return res.json({ ...(parseJson(text) || { text }), model });
+        if (!isJson) return res.json({ text, model, usage });
+        return res.json({ ...(parseJson(text) || { text }), model, usage });
       }
       console.error(`[narrate] ${model} -> ${status}: ${data?.error?.message?.slice(0, 200)}`);
       if (![404, 429].includes(status) && !/quota|exhaust|not found/i.test(data?.error?.message || '')) break;
