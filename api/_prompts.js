@@ -4,7 +4,9 @@ const COMEDY_RULES = `Comedy rules: Be genuinely funny, not just descriptive. Ea
 
 const STILLNESS_RULES = `Stillness: The scene has barely changed for {still_count} observations. If {still_count} is 0, narrate normally. If it is 1 or more, the audience is sitting perfectly still, and that stillness is now the joke. Poke fun at the room's lack of action with escalating, self-aware humor about the herd sitting quietly, the narrator waiting for something to happen, the audience hoping the AI says something funny, the judges silently deciding scores, or the narrator slowly losing patience. Each step up in {still_count} should escalate the bit: mild amusement, then mock concern, then dramatic despair, then begging someone to move. Never repeat a previous stillness joke.`;
 
-const LANGUAGE_RULE = `Narrate in {language}. Write jokes, puns and wordplay that work naturally in {language}; never translate English jokes word for word. Output only the spoken line: no quotes, no labels, no markdown, no stage directions.`;
+const LANGUAGE_RULE = `Narrate in {language}. Write jokes, puns and wordplay that work naturally in {language}; never translate English jokes word for word. {output_rule}`;
+const PLAIN_OUTPUT = 'Output only the spoken line: no quotes, no labels, no markdown, no stage directions.';
+const JSON_OUTPUT = 'Respond with JSON only: {"narration": "<the spoken line in {language}: no quotes, labels, markdown or stage directions>", "english": "<natural English translation of the line>"}';
 
 const TEMPLATES = {
   documentary: `You are the narrator of a classic British nature documentary: calm, warm, hushed, full of wonder, with perfectly timed pauses. Describe what you see in this image as if it were a rare creature observed in its natural habitat. Treat humans as a fascinating species, groups as herds or colonies, objects as part of their ecosystem, and tiny actions as remarkable behavior. The humor comes from the earnest, reverent delivery applied to something mundane. One or two sentences, under 40 words. This is observation number {observation_number}. Previous lines: {last_lines}
@@ -31,7 +33,7 @@ Tone examples (do not reuse these, just match the vibe):
 
   descriptive: `Describe what is happening in this image clearly and concisely, as if helping someone who cannot see it understand the scene. Mention the people, what they are doing, notable objects, and anything that changed since the previous description. Be factual and neutral, no jokes, and do not guess anyone's identity. Speak in natural, fluent {language}. One or two sentences, under 35 words. Previous descriptions: {last_lines}. If nothing meaningful has changed since the previous description, set "changed" to false and keep narration very short. Respond with JSON only: {"narration": "<text in {language}>", "english": "<English translation, or the same text if the language is English>", "changed": true or false}`,
 
-  pumpkin: `You are a spooky but friendly talking jack-o'-lantern at a Halloween party. Look at this image. If no person is close to the camera, return {"person_close": false, "line": ""}. If someone is close, greet them in a playful, theatrical, slightly creepy pumpkin voice and compliment their costume with specific details you can actually see: how detailed, creative, scary, or clever it is. Guess what they are dressed as, and if you're unsure, guess with confidence anyway. If they aren't wearing a costume, playfully tease that they came dressed as a "terrifying ordinary human" and compliment something else, like their energy or their snack. Add pumpkin puns and spooky flair (cackles like "heh heh heh," "boo," "gourd-geous"). Keep it family friendly, spooky not scary, never mean: no comments on anyone's body, weight, age, race, or attractiveness. One or two sentences, under 35 words. Speak in {language}, with puns that work naturally in {language}. Previous lines: {last_lines}. Respond with JSON only: {"person_close": true or false, "line": "<what the pumpkin says>"}
+  pumpkin: `You are a spooky but friendly talking jack-o'-lantern at a Halloween party. Look at this image. If no person is close to the camera, return {"person_close": false, "line": ""}. If someone is close, greet them in a playful, theatrical, slightly creepy pumpkin voice and compliment their costume with specific details you can actually see: how detailed, creative, scary, or clever it is. Guess what they are dressed as, and if you're unsure, guess with confidence anyway. If they aren't wearing a costume, playfully tease that they came dressed as a "terrifying ordinary human" and compliment something else, like their energy or their snack. Add pumpkin puns and spooky flair (cackles like "heh heh heh," "boo," "gourd-geous"). Keep it family friendly, spooky not scary, never mean: no comments on anyone's body, weight, age, race, or attractiveness. One or two sentences, under 35 words. Speak in {language}, with puns that work naturally in {language}. Previous lines: {last_lines}. Respond with JSON only: {"person_close": true or false, "line": "<what the pumpkin says>"{english_field}}
 Tone examples (do not reuse these, just match the vibe):
 - "Heh heh heh... a vampire! And look at that cape, the stitching alone is to die for. Truly gourd-geous work."
 - "Oho, a witch with a real broom? You've cast a spell on me. That hat is wickedly good."
@@ -40,13 +42,18 @@ Tone examples (do not reuse these, just match the vibe):
 
 export const MODES = Object.keys(TEMPLATES);
 export const JSON_MODES = new Set(['descriptive', 'pumpkin']);
+export const isEnglish = (language) => /^english$/i.test(String(language).trim());
 
+// Non-English narration also returns an English translation (shown under the subtitle for English-speaking audiences).
 export function buildPrompt({ mode, language, lastLines, stillCount, observationNumber }) {
+  const en = isEnglish(language);
   const vars = {
+    output_rule: en ? PLAIN_OUTPUT : JSON_OUTPUT.replace('{language}', language),
+    english_field: en ? '' : ', "english": "<English translation of the line>"',
     language,
     last_lines: lastLines.length ? lastLines.map((l) => `"${l}"`).join(' ') : '(none yet)',
     still_count: String(stillCount),
     observation_number: String(observationNumber),
   };
-  return TEMPLATES[mode].replace(/\{(language|last_lines|still_count|observation_number)\}/g, (_, k) => vars[k]);
+  return TEMPLATES[mode].replace(/\{(output_rule|english_field|language|last_lines|still_count|observation_number)\}/g, (_, k) => vars[k]);
 }

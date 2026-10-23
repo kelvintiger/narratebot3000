@@ -325,6 +325,16 @@ body[data-view='clean'] .controls { background: var(--bg); border-top: 3px solid
 body[data-view='clean'] .controls button { background: var(--bg); color: var(--fg); border: 3px solid var(--fg); max-width: 150px; min-height: 60px; }
 body[data-view='clean'] .controls .lbl { font-size: calc(15px * var(--text-scale)); text-transform: none; letter-spacing: 0; }
 body[data-view='clean'] .controls [aria-pressed='true'] { background: var(--fg); color: var(--bg); }
+/* Narration language: a native select, so phones open their own picker */
+.lang-group { flex-direction: column; justify-content: center; gap: 2px; min-width: 0; }
+.lang-pick { color: #fff; text-align: center; }
+.controls select {
+  min-height: 48px; max-width: 100%; padding: 0 10px; font: inherit; font-size: 16px; font-weight: 700;
+  background: var(--navy); color: #fff; border: 2px solid #fff; border-radius: 10px;
+}
+[data-theme='light'] body[data-view='info'] .controls select { background: #fff; color: var(--navy); border-color: var(--navy); }
+body[data-view='clean'] .lang-pick { color: var(--fg); }
+body[data-view='clean'] .controls select { min-height: 60px; font-size: calc(18px * var(--text-scale)); background: var(--bg); color: var(--fg); border: 3px solid var(--fg); }
 
 body.running.idle .controls, body.running.idle .switchers { opacity: 0; pointer-events: none; }
 body.running.idle { cursor: none; }
@@ -337,6 +347,8 @@ body.running.idle[data-mode='funny'] .bottom { bottom: 12dvh; }
   .controls { gap: 8px; }
   body[data-view='clean'] .controls button { flex: 1 1 0; min-width: 0; }
   body[data-view='clean'] .ctl-group { flex: 1 1 100%; }
+  body[data-view='clean'] .controls select { width: 100%; }
+  .controls select { min-height: 52px; }
   .grain, .embers { display: none !important; }
   .readout > div, .mode-label { font-size: 10px; }
   /* switchers take the top row on phones: stack the HUD below them */

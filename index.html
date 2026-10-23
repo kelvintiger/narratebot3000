@@ -121,9 +121,12 @@
       <div class="ctl-group" role="group">
         <button type="button" data-action="narrate"><span aria-hidden="true">⚡</span><span class="lbl" data-i18n="btn.describe"></span></button>
         <button type="button" data-action="pause" id="pause-btn"><span aria-hidden="true" class="pause-icon">❚❚</span><span class="lbl pause-lbl"></span></button>
-        <button type="button" data-action="desc-lang" id="desc-lang-btn"><span aria-hidden="true">🌐</span><span class="lbl" id="desc-lang-lbl"></span></button>
         <button type="button" data-action="flip"><span aria-hidden="true">⟲</span><span class="lbl" data-i18n="btn.flip"></span></button>
         <button type="button" data-action="settings"><span aria-hidden="true">⚙</span><span class="lbl" data-i18n="btn.settings"></span></button>
+      </div>
+      <div class="ctl-group lang-group">
+        <label class="lang-pick" for="narr-lang"><span class="lbl"><span aria-hidden="true">🌐 </span><span data-i18n="btn.narrLang"></span></span></label>
+        <select id="narr-lang"></select>
       </div>
     </nav>
   </main>
@@ -156,6 +159,12 @@
         <label for="opt-still" class="row-label" data-i18n="set.stillness"></label>
         <input type="range" id="opt-still" min="2" max="30" step="1">
         <p class="debug"><span data-i18n="set.stillDebug"></span>: <output id="still-debug" class="lcd-small">0 / –</output></p>
+      </fieldset>
+
+      <fieldset>
+        <label for="opt-music" class="row-label" data-i18n="set.music"></label>
+        <input type="range" id="opt-music" min="0" max="100" step="5" aria-describedby="music-level">
+        <p class="debug"><output id="music-level" for="opt-music" class="lcd-small">100%</output></p>
       </fieldset>
 
       <fieldset>

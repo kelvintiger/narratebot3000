@@ -24,18 +24,21 @@ The webcam needs `localhost` or HTTPS. To test on a phone, use the deployed link
 | `VOICE_DOCUMENTARY`, `VOICE_TRAILER`, `VOICE_DESCRIPTIVE`, `VOICE_PUMPKIN` | Override the default voice IDs in `api/speak.js` |
 | `VOICE_SPANISH`, `VOICE_CHINESE` | Optional per-language voices |
 | `GEMINI_MODEL_FUNNY`, `GEMINI_MODEL_FAST`, `ELEVENLABS_MODEL` | Optional model overrides |
+| `ELEVENLABS_MODEL_TELUGU` | Optional; Telugu narration uses `eleven_v3` by default because `eleven_multilingual_v2` has no Telugu |
 | `DEMO_PASSCODE` | Optional; requires a passcode before narrating |
 | `DAILY_NARRATION_LIMIT` (900), `DAILY_TTS_CHAR_LIMIT` (20000) | Daily caps across all users |
 | `KV_REST_API_URL` + `KV_REST_API_TOKEN` (or `UPSTASH_REDIS_REST_URL` + `UPSTASH_REDIS_REST_TOKEN`) | Upstash Redis for shared rate limits |
 
 Voice settings (stability, style, and so on) live in the `VOICES` object at the top of `api/speak.js`. Prompts live in `api/_prompts.js`.
 
+Narration languages: English, Spanish, Chinese, Hindi, Telugu, French, Arabic, Korean, Japanese, Portuguese, plus a custom one from Settings. Non-English lines also come back with an English translation, shown under the subtitle when the site is in English. ElevenLabs audio streams to the page (`GET /api/speak`), so speech starts before the whole clip is generated; passcode-protected demos fall back to a POST download.
+
 ## Hotkeys
 
 | Key | Action |
 | --- | --- |
 | `1` `2` `3` `4` | Documentary, Funny, Descriptive, Pumpkin |
-| `L` | Cycle narration language (Descriptive) |
+| `L` | Cycle narration language (any mode; also the 🌐 picker in the control bar) |
 | `N` | Narrate now |
 | `S` | Force stillness jokes on/off |
 | `T` | Dark/light theme |

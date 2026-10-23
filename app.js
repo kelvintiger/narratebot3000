@@ -8,7 +8,7 @@ const CONFIG = {
   captureWidth: 1024,
   jpegQuality: 0.75,
   apiTimeoutMs: 8500,
-  music: { volume: 0.18, ducked: 0.05, fadeSec: 1 },
+  music: { volume: 0.08, ducked: 0.02, fadeSec: 1, trim: { documentary: 1, funny: 0.85, pumpkin: 0.6 } }, // tracks master near -12 dBFS RMS
   tracks: { documentary: 'documentary.mp3', funny: 'funny.mp3', pumpkin: 'spooky.mp3' },
 };
 const MODES = ['documentary', 'funny', 'descriptive', 'pumpkin'];
@@ -17,18 +17,19 @@ const SITE_LANGS = {
   es: { name: 'Spanish', code: 'es', bcp: 'es-ES', html: 'es' },
   zh: { name: 'Chinese (Simplified)', code: 'zh', bcp: 'zh-CN', html: 'zh-Hans' },
 };
-const DESC_LANGS = [
+const NARR_LANGS = [
   { name: 'English', code: 'en', bcp: 'en-US', label: 'English' },
   { name: 'Spanish', code: 'es', bcp: 'es-ES', label: 'Español' },
-  { name: 'Mandarin Chinese', code: 'zh', bcp: 'zh-CN', label: '中文' },
+  { name: 'Chinese (Simplified)', code: 'zh', bcp: 'zh-CN', label: '中文' },
   { name: 'Hindi', code: 'hi', bcp: 'hi-IN', label: 'हिन्दी' },
+  { name: 'Telugu', code: 'te', bcp: 'te-IN', label: 'తెలుగు' },
   { name: 'French', code: 'fr', bcp: 'fr-FR', label: 'Français' },
   { name: 'Arabic', code: 'ar', bcp: 'ar-SA', label: 'العربية' },
   { name: 'Korean', code: 'ko', bcp: 'ko-KR', label: '한국어' },
   { name: 'Japanese', code: 'ja', bcp: 'ja-JP', label: '日本語' },
   { name: 'Portuguese', code: 'pt', bcp: 'pt-BR', label: 'Português' },
 ];
-const NO_CHANGE = { en: 'No change.', es: 'Sin cambios.', zh: '没有变化。', hi: 'कोई बदलाव नहीं।', fr: 'Aucun changement.', ar: 'لا تغيير.', ko: '변화 없음.', ja: '変化はありません。', pt: 'Sem mudanças.' };
+const NO_CHANGE = { en: 'No change.', es: 'Sin cambios.', zh: '没有变化。', hi: 'कोई बदलाव नहीं।', te: 'మార్పు లేదు.', fr: 'Aucun changement.', ar: 'لا تغيير.', ko: '변화 없음.', ja: '変化はありません。', pt: 'Sem mudanças.' };
 
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -46,8 +47,8 @@ const S = {
   siteLang: store.get('lang', null) || ((navigator.language || '').match(/^(en|es|zh)/)?.[1] ?? 'en'),
   view: urlView === 'clean' || urlView === 'info' ? urlView : store.get('view', 'info'),
   theme: store.get('theme', null), // null = follow the system
-  settings: { useEleven: false, still: 8, textScale: 1, customLang: '', srMute: false, hideVideo: false, ...store.get('settings', {}) },
-  mode: 'documentary', descLangIdx: 0,
+  settings: { useEleven: false, still: 8, textScale: 1, customLang: '', srMute: false, hideVideo: false, music: 100, ...store.get('settings', {}) },
+  mode: 'documentary', narrLangCode: store.get('narrLang', null),
   started: false, paused: false, busy: false, speaking: false, gen: 0,
   lines: [], obs: 0, stillCount: 0, forcedStill: false, lastDiff: null, prevTiny: null,
   nextAt: 0, forceFull: true, saidNoChange: false,
@@ -75,10 +76,10 @@ function t(path, vars) {
   return s;
 }
 const modeName = (m) => t((S.view === 'clean' ? 'modeClean.' : 'mode.') + m);
-const descLangs = () => (S.settings.customLang.trim() ? [...DESC_LANGS, { name: S.settings.customLang.trim(), code: 'xx', label: S.settings.customLang.trim() }] : DESC_LANGS);
-const descLang = () => descLangs()[S.descLangIdx % descLangs().length];
-const siteLangIdx = () => DESC_LANGS.findIndex((l) => l.code === S.siteLang);
-const narrLang = () => (S.mode === 'descriptive' ? descLang() : SITE_LANGS[S.siteLang]);
+const narrLangs = () => (S.settings.customLang.trim() ? [...NARR_LANGS, { name: S.settings.customLang.trim(), code: 'xx', label: S.settings.customLang.trim() }] : NARR_LANGS);
+const narrLang = () => narrLangs().find((l) => l.code === (S.narrLangCode || S.siteLang)) || NARR_LANGS.find((l) => l.code === S.siteLang);
+const showLangLabel = () => S.mode === 'descriptive' || narrLang().code !== S.siteLang;
+const htmlLang = (code) => (code === 'zh' ? 'zh-Hans' : code === 'xx' ? '' : code);
 
 function render() {
   const html = document.documentElement;
@@ -104,8 +105,12 @@ function render() {
   $('.pause-lbl').textContent = S.paused ? t('btn.play') : t('btn.pause');
   $('.pause-icon').textContent = S.paused ? '▶' : '❚❚';
   $('#pause-btn').setAttribute('aria-pressed', S.paused);
-  $('#desc-lang-btn').hidden = S.mode !== 'descriptive';
-  $('#desc-lang-lbl').textContent = `${t('btn.narrLang')}: ${descLang().label}`;
+  const sel = $('#narr-lang'), sig = narrLangs().map((l) => l.code + l.label).join();
+  if (sel.dataset.sig !== sig) { // rebuild only when the list changes, so an open picker isn't reset
+    sel.replaceChildren(...narrLangs().map((l) => Object.assign(new Option(l.label, l.code), { lang: htmlLang(l.code) })));
+    sel.dataset.sig = sig;
+  }
+  sel.value = narrLang().code;
 
   const tick = t('ticker').join('     ★     ');
   $('.ticker-track').textContent = `${tick}     ★     ${tick}     ★     `;
@@ -115,6 +120,8 @@ function render() {
   $('#opt-srmute').checked = S.settings.srMute;
   $('#opt-hidevideo').checked = S.settings.hideVideo;
   $('#opt-still').value = S.settings.still;
+  $('#opt-music').value = S.settings.music;
+  $('#music-level').textContent = S.settings.music + '%';
   $('#opt-customlang').value = S.settings.customLang;
   $('#text-size').textContent = Math.round(S.settings.textScale * 100) + '%';
   renderStatus();
@@ -235,8 +242,8 @@ function setMusic() {
   if (!ctx) return;
   const want = S.mode === 'descriptive' ? null : S.mode;
   for (const [mode, m] of Object.entries(music)) {
-    const base = mode === 'pumpkin' ? 0.6 : 1;
-    const target = mode === want && m.ok ? base * (S.speaking ? CONFIG.music.ducked : CONFIG.music.volume) : 0;
+    const base = (CONFIG.music.trim[mode] ?? 1) * (S.settings.music / 100);
+    const target = mode === want && m.ok && base > 0 ? base * (S.speaking ? CONFIG.music.ducked : CONFIG.music.volume) : 0;
     m.want = target > 0;
     if (m.want && m.el.paused) m.el.play().catch(() => {});
     m.g.gain.cancelScheduledValues(ctx.currentTime);
@@ -269,7 +276,28 @@ function speakBrowser(text, lang) {
   });
 }
 
+// Resolves true when the clip played (or was interrupted), false on a load/playback error.
+function playVoice(src) {
+  return new Promise((resolve) => {
+    const done = (ok) => { voiceEl.onended = voiceEl.onerror = null; resolve(ok); };
+    S.stopVoice = () => done(true);
+    voiceEl.onended = () => done(true);
+    voiceEl.onerror = () => done(false);
+    voiceEl.src = src;
+    voiceEl.play().catch(() => done(false));
+  });
+}
+
 async function speakEleven(text, lang) {
+  if (!S.status?.passcodeRequired) {
+    // Stream: the <audio> element starts playing while ElevenLabs is still generating.
+    S.charsSession += text.length;
+    renderStatus();
+    const ok = await playVoice('/api/speak?' + new URLSearchParams({ text, mode: S.mode, lang: lang.code }));
+    if (!ok) refreshStatus().then((st) => { if (st && st.today.ttsChars >= st.limits.ttsChars) S.budgetHit = true; });
+    return ok;
+  }
+  // ponytail: an <audio> GET can't send the passcode header, so passcode demos keep the POST + blob download.
   try {
     const r = await api('/api/speak', { text, mode: S.mode, language: lang.code });
     const today = r.headers.get('x-tts-today');
@@ -282,12 +310,7 @@ async function speakEleven(text, lang) {
     const url = URL.createObjectURL(await r.blob());
     S.charsSession += text.length;
     renderStatus();
-    voiceEl.src = url;
-    await new Promise((resolve) => {
-      S.stopVoice = resolve;
-      voiceEl.onended = voiceEl.onerror = resolve;
-      voiceEl.play().catch(resolve);
-    });
+    await playVoice(url);
     URL.revokeObjectURL(url);
     return true;
   } catch (e) {
@@ -365,7 +388,7 @@ function grabJpeg() {
 // ---------- Narration ----------
 function fallbackLine(mode, lang) {
   const key = (mode === 'documentary' || mode === 'funny') && S.stillCount >= 1 ? mode + 'Still' : mode;
-  const pack = mode === 'descriptive' ? I18N[lang.code] || I18N.en : I18N[S.siteLang];
+  const pack = I18N[lang.code] || I18N[S.siteLang];
   const list = pack.fallback[key].filter((l) => l !== S.lastFallback);
   return (S.lastFallback = list[Math.floor(Math.random() * list.length)]);
 }
@@ -408,19 +431,19 @@ async function narrate({ force = false, skipDiff = false, arrival = false } = {}
   if (!result) {
     if (mode === 'pumpkin' && !arrival) return;
     text = fallbackLine(mode, lang);
-  } else if (mode === 'descriptive') {
-    text = result.narration ?? result.text;
+  } else {
+    if (mode === 'pumpkin' && result.person_close === false) return;
+    text = result.narration ?? result.line ?? result.text;
     english = result.english || '';
+  }
+  if (result && mode === 'descriptive') {
     if (result.changed === false && !full) {
       if (S.saidNoChange) return showUnchanged(true);
       S.saidNoChange = true;
       text = NO_CHANGE[lang.code] || NO_CHANGE.en;
       english = '';
     } else S.saidNoChange = false;
-  } else if (mode === 'pumpkin') {
-    if (result.person_close === false) return;
-    text = result.line ?? result.text;
-  } else text = result.text;
+  }
 
   text = tidy(text);
   if (!text) return;
@@ -428,7 +451,7 @@ async function narrate({ force = false, skipDiff = false, arrival = false } = {}
   showLine(text, tidy(english), lang);
   if (mode === 'funny' && S.stillCount >= 2) nowShowing(text);
   await speak(text, lang);
-  if (gen === S.gen) S.nextAt = Math.max(S.nextAt, Date.now() + 1500);
+  if (gen === S.gen) S.nextAt = Math.max(S.nextAt, Date.now()); // cadence stays ~7s from the previous capture start
 }
 
 function pumpkinTick() {
@@ -464,7 +487,7 @@ function words(text, lang) {
 
 function showLine(text, english, lang) {
   const main = $('#sub-main');
-  const code = lang.code === 'zh' ? 'zh-Hans' : lang.code === 'xx' ? '' : lang.code;
+  const code = htmlLang(lang.code);
   main.lang = code;
   main.dir = lang.code === 'ar' ? 'rtl' : 'auto';
   main.classList.remove('pop');
@@ -504,8 +527,8 @@ let cardTimers = [];
 function titleCard() {
   const card = $('#card');
   cardTimers.forEach(clearTimeout);
-  const extra = S.mode === 'descriptive' ? descLang().label : '';
-  $('#announce').textContent = modeName(S.mode) + (extra ? ` – ${descLang().name}` : '');
+  const extra = showLangLabel() ? narrLang().label : '';
+  $('#announce').textContent = modeName(S.mode) + (extra ? ` – ${narrLang().name}` : '');
   $('.card-sub').textContent = extra;
   if (calm()) {
     card.className = 'card plain';
@@ -544,7 +567,7 @@ function updateHud() {
   $('#fieldlog').textContent = `${t('specimen')} #${String(S.specimen).padStart(3, '0')} · ${t('observation')} ${p2(Math.floor(s / 3600))}:${p2(Math.floor(s / 60) % 60)}:${p2(s % 60)}`;
   $('#herd').hidden = !(S.mode === 'documentary' && S.stillCount >= 1);
   $('#mode-label').textContent = modeName(S.mode) + (S.paused ? ` · ${t('paused')}` : '');
-  $('#lang-label').textContent = S.mode === 'descriptive' ? descLang().label : '';
+  $('#lang-label').textContent = showLangLabel() ? narrLang().label : '';
   $('#still-debug').textContent = `${S.stillCount}${S.forcedStill ? ' (S)' : ''} / ${S.lastDiff === null ? '–' : S.lastDiff.toFixed(1)}`;
 }
 
@@ -590,11 +613,10 @@ function interrupt() {
 
 function setMode(m) {
   if (!MODES.includes(m)) return;
-  const entering = m !== S.mode;
-  if (entering && m === 'descriptive') S.descLangIdx = Math.max(0, siteLangIdx());
   S.mode = m;
   interrupt();
-  Object.assign(S, { lines: [], forceFull: true, saidNoChange: false, pumpkinChanged: true, nextAt: Date.now() + 1700 });
+  // nextAt = now: the first capture runs while the title card is still up.
+  Object.assign(S, { lines: [], forceFull: true, saidNoChange: false, pumpkinChanged: true, nextAt: Date.now() });
   if (isPhone && !S.userFlipped && S.started) {
     const want = m === 'descriptive' ? 'environment' : 'user';
     if (want !== S.facing) { S.facing = want; startCamera().catch((e) => console.error('[camera]', e)); }
@@ -609,7 +631,8 @@ function setSiteLang(l) {
   if (!SITE_LANGS[l]) return;
   S.siteLang = l;
   store.set('lang', l);
-  if (S.mode === 'descriptive') S.descLangIdx = siteLangIdx();
+  S.narrLangCode = l;
+  store.set('narrLang', l);
   if (S.started) {
     interrupt();
     Object.assign(S, { lines: [], forceFull: true, nextAt: Date.now() + 800 });
@@ -618,14 +641,21 @@ function setSiteLang(l) {
   render();
 }
 
-function cycleDescLang() {
-  if (S.mode !== 'descriptive' || !S.started) return;
-  S.descLangIdx = (S.descLangIdx + 1) % descLangs().length;
+function setNarrLang(code) {
+  if (!narrLangs().some((l) => l.code === code)) return;
+  S.narrLangCode = code;
+  store.set('narrLang', code);
   interrupt();
-  Object.assign(S, { lines: [], forceFull: true, saidNoChange: false, nextAt: Date.now() + 1700 });
+  Object.assign(S, { lines: [], forceFull: true, saidNoChange: false, pumpkinChanged: true, nextAt: Date.now() });
   clearSubs();
   render();
-  titleCard();
+  if (S.started) titleCard();
+}
+
+function cycleNarrLang() {
+  if (!S.started) return;
+  const list = narrLangs();
+  setNarrLang(list[(list.indexOf(narrLang()) + 1) % list.length].code);
 }
 
 function togglePause() {
@@ -698,7 +728,7 @@ async function start() {
   S.started = true;
   S.startTime = Date.now();
   S.forceFull = true;
-  S.nextAt = Date.now() + 1700;
+  S.nextAt = Date.now(); // first capture runs under the title card
   $('#start').hidden = true;
   $('#stage').hidden = false;
   document.body.classList.add('running');
@@ -723,7 +753,6 @@ document.addEventListener('click', (e) => {
     view: toggleView,
     narrate: narrateNow,
     pause: togglePause,
-    'desc-lang': cycleDescLang,
     flip: flipCamera,
     settings: toggleSettings,
     'text-smaller': () => { S.settings.textScale = Math.max(0.8, +(S.settings.textScale - 0.1).toFixed(1)); saveSettings(); render(); },
@@ -742,7 +771,7 @@ document.addEventListener('keydown', (e) => {
     e.preventDefault();
     return togglePause();
   }
-  const actions = { 1: () => setMode('documentary'), 2: () => setMode('funny'), 3: () => setMode('descriptive'), 4: () => setMode('pumpkin'), l: cycleDescLang, n: narrateNow, s: toggleStill, t: toggleTheme, a: toggleView };
+  const actions = { 1: () => setMode('documentary'), 2: () => setMode('funny'), 3: () => setMode('descriptive'), 4: () => setMode('pumpkin'), l: cycleNarrLang, n: narrateNow, s: toggleStill, t: toggleTheme, a: toggleView };
   if (actions[k] && (S.started || 'ta'.includes(k))) {
     e.preventDefault();
     actions[k]();
@@ -754,6 +783,8 @@ bind('#opt-eleven', 'change', (e) => { S.settings.useEleven = e.target.checked; 
 bind('#opt-srmute', 'change', (e) => { S.settings.srMute = e.target.checked; saveSettings(); });
 bind('#opt-hidevideo', 'change', (e) => { S.settings.hideVideo = e.target.checked; saveSettings(); render(); });
 bind('#opt-still', 'input', (e) => { S.settings.still = Number(e.target.value); saveSettings(); });
+bind('#opt-music', 'input', (e) => { S.settings.music = Number(e.target.value); $('#music-level').textContent = S.settings.music + '%'; saveSettings(); setMusic(); });
+bind('#narr-lang', 'change', (e) => setNarrLang(e.target.value));
 bind('#opt-customlang', 'change', (e) => { S.settings.customLang = e.target.value.slice(0, 40); saveSettings(); render(); });
 
 // Auto-hide the control bar after a few idle seconds (infomercial view only).

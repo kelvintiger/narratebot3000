@@ -3,7 +3,7 @@
 // Gemini config. Billing is on; paid limits: gemini-3.8-flash 1,000 RPM / 10,000 RPD,
 // gemini-3.1-flash-lite 4,000 RPM / 150,000 RPD. Money is the only real constraint:
 // DAILY_NARRATION_LIMIT protects a small prepaid balance shared with the Replit version.
-import { buildPrompt, MODES, JSON_MODES } from './_prompts.js';
+import { buildPrompt, MODES, JSON_MODES, isEnglish } from './_prompts.js';
 import { rejectBadRequest, checkNarrationLimits } from './_lib.js';
 
 const MODEL_FUNNY = process.env.GEMINI_MODEL_FUNNY || 'gemini-3.8-flash'; // documentary, funny, pumpkin
@@ -67,7 +67,7 @@ export default async function handler(req, res) {
     stillCount: clampInt(b.stillCount, 99),
     observationNumber: clampInt(b.observationNumber, 99999),
   });
-  const isJson = JSON_MODES.has(mode);
+  const isJson = JSON_MODES.has(mode) || !isEnglish(language); // non-English lines come with an English translation
   const started = Date.now();
 
   const models = modelsFor(mode);
@@ -105,7 +105,9 @@ export default async function handler(req, res) {
         console.log(`[narrate] ${mode} ${model} ${JSON.stringify(usage)}`);
         if (!text) return res.status(502).json({ error: 'Empty response' });
         if (!isJson) return res.json({ text, model, usage });
-        return res.json({ ...(parseJson(text) || { text }), model, usage });
+        const p = parseJson(text);
+        const o = p && typeof p === 'object' ? p : { text };
+        return res.json({ ...o, text: o.narration ?? o.line ?? o.text ?? '', english: o.english || '', model, usage });
       }
       console.error(`[narrate] ${model} -> ${status}: ${data?.error?.message?.slice(0, 200)}`);
       if (![404, 429].includes(status) && !/quota|exhaust|not found/i.test(data?.error?.message || '')) break;

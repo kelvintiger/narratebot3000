@@ -30,6 +30,7 @@ const upstash = redis && {
   ipMinute: new Ratelimit({ redis, prefix: 'nb:ipm', limiter: Ratelimit.slidingWindow(12, '1 m') }),
   ipDay: new Ratelimit({ redis, prefix: 'nb:ipd', limiter: Ratelimit.fixedWindow(150, '1 d') }),
   globalMinute: new Ratelimit({ redis, prefix: 'nb:gm', limiter: Ratelimit.slidingWindow(60, '1 m') }),
+  speakMinute: new Ratelimit({ redis, prefix: 'nb:spk', limiter: Ratelimit.slidingWindow(30, '1 m') }),
 };
 
 async function allowed(name, key, max, windowMs) {
@@ -70,6 +71,8 @@ export async function checkNarrationLimits(req) {
   return null;
 }
 
+export const checkSpeakLimit = (req) => allowed('speakMinute', clientIp(req), 30, 60_000);
+
 // ---- passcode + origin ----
 export function passcodeOk(req) {
   const want = env.DEMO_PASSCODE;
@@ -90,9 +93,9 @@ export function originOk(req) {
   return !o || ORIGINS.some((re) => re.test(o));
 }
 
-// Common guard for POST endpoints. Returns true if the response was already sent.
-export function rejectBadRequest(req, res) {
-  if (req.method !== 'POST') return res.status(405).json({ error: 'POST only' }), true;
+// Common guard for the API endpoints (POST unless told otherwise). Returns true if the response was already sent.
+export function rejectBadRequest(req, res, methods = ['POST']) {
+  if (!methods.includes(req.method)) return res.status(405).json({ error: `${methods.join('/')} only` }), true;
   if (!originOk(req)) return res.status(403).json({ error: 'Origin not allowed' }), true;
   if (!passcodeOk(req)) return res.status(401).json({ error: 'passcode' }), true;
   return false;
