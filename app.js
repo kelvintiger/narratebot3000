@@ -1,0 +1,779 @@
+'use strict';
+// NarrateBot 3000: webcam -> /api/narrate (Gemini) -> /api/speak (ElevenLabs) or browser speech.
+
+// ---------- Config (tweak here) ----------
+const CONFIG = {
+  intervalMs: 7000, // capture cadence while idle
+  pumpkinCooldownMs: 8000, // minimum gap between pumpkin lines
+  captureWidth: 1024,
+  jpegQuality: 0.75,
+  apiTimeoutMs: 8500,
+  music: { volume: 0.18, ducked: 0.05, fadeSec: 1 },
+  tracks: { documentary: 'documentary.mp3', funny: 'funny.mp3', pumpkin: 'spooky.mp3' },
+};
+const MODES = ['documentary', 'funny', 'descriptive', 'pumpkin'];
+const SITE_LANGS = {
+  en: { name: 'English', code: 'en', bcp: 'en-US', html: 'en' },
+  es: { name: 'Spanish', code: 'es', bcp: 'es-ES', html: 'es' },
+  zh: { name: 'Chinese (Simplified)', code: 'zh', bcp: 'zh-CN', html: 'zh-Hans' },
+};
+const DESC_LANGS = [
+  { name: 'English', code: 'en', bcp: 'en-US', label: 'English' },
+  { name: 'Spanish', code: 'es', bcp: 'es-ES', label: 'Español' },
+  { name: 'Mandarin Chinese', code: 'zh', bcp: 'zh-CN', label: '中文' },
+  { name: 'Hindi', code: 'hi', bcp: 'hi-IN', label: 'हिन्दी' },
+  { name: 'French', code: 'fr', bcp: 'fr-FR', label: 'Français' },
+  { name: 'Arabic', code: 'ar', bcp: 'ar-SA', label: 'العربية' },
+  { name: 'Korean', code: 'ko', bcp: 'ko-KR', label: '한국어' },
+  { name: 'Japanese', code: 'ja', bcp: 'ja-JP', label: '日本語' },
+  { name: 'Portuguese', code: 'pt', bcp: 'pt-BR', label: 'Português' },
+];
+const NO_CHANGE = { en: 'No change.', es: 'Sin cambios.', zh: '没有变化。', hi: 'कोई बदलाव नहीं।', fr: 'Aucun changement.', ar: 'لا تغيير.', ko: '변화 없음.', ja: '変化はありません。', pt: 'Sem mudanças.' };
+
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+const store = {
+  get(k, d) { try { const v = localStorage.getItem('nb3k:' + k); return v === null ? d : JSON.parse(v); } catch { return d; } },
+  set(k, v) { try { localStorage.setItem('nb3k:' + k, JSON.stringify(v)); } catch {} },
+};
+
+// ---------- State ----------
+const params = new URLSearchParams(location.search);
+const urlView = params.get('view');
+const S = {
+  siteLang: store.get('lang', null) || ((navigator.language || '').match(/^(en|es|zh)/)?.[1] ?? 'en'),
+  view: urlView === 'clean' || urlView === 'info' ? urlView : store.get('view', 'info'),
+  theme: store.get('theme', null), // null = follow the system
+  settings: { useEleven: false, still: 8, textScale: 1, customLang: '', srMute: false, hideVideo: false, ...store.get('settings', {}) },
+  mode: 'documentary', descLangIdx: 0,
+  started: false, paused: false, busy: false, speaking: false, gen: 0,
+  lines: [], obs: 0, stillCount: 0, forcedStill: false, lastDiff: null, prevTiny: null,
+  nextAt: 0, forceFull: true, saidNoChange: false,
+  facing: 'user', userFlipped: false, stream: null,
+  status: null, budgetHit: false, charsSession: 0, ttsToday: null,
+  startTime: 0, specimen: 1 + Math.floor(Math.random() * 999),
+  passcode: store.get('passcode', ''),
+  pumpkinStill: 0, pumpkinChanged: true, lastSpokeAt: 0, lastFallback: '',
+};
+if (urlView) store.set('view', S.view);
+S.mode = S.view === 'clean' ? 'descriptive' : 'documentary';
+
+const video = $('#cam');
+const voiceEl = $('#voice');
+const motionQuery = matchMedia('(prefers-reduced-motion: reduce)');
+const darkQuery = matchMedia('(prefers-color-scheme: dark)');
+const isPhone = matchMedia('(pointer: coarse)').matches && Math.min(screen.width, screen.height) < 600;
+const calm = () => S.view === 'clean' || motionQuery.matches;
+
+// ---------- i18n ----------
+const pick = (obj, path) => path.split('.').reduce((o, k) => o?.[k], obj);
+function t(path, vars) {
+  let s = pick(I18N[S.siteLang], path) ?? pick(I18N.en, path) ?? '';
+  if (vars && typeof s === 'string') s = s.replace(/\{(\w+)\}/g, (_, k) => vars[k]);
+  return s;
+}
+const modeName = (m) => t((S.view === 'clean' ? 'modeClean.' : 'mode.') + m);
+const descLangs = () => (S.settings.customLang.trim() ? [...DESC_LANGS, { name: S.settings.customLang.trim(), code: 'xx', label: S.settings.customLang.trim() }] : DESC_LANGS);
+const descLang = () => descLangs()[S.descLangIdx % descLangs().length];
+const siteLangIdx = () => DESC_LANGS.findIndex((l) => l.code === S.siteLang);
+const narrLang = () => (S.mode === 'descriptive' ? descLang() : SITE_LANGS[S.siteLang]);
+
+function render() {
+  const html = document.documentElement;
+  html.lang = SITE_LANGS[S.siteLang].html;
+  const dark = S.theme ? S.theme === 'dark' : darkQuery.matches;
+  html.dataset.theme = dark ? 'dark' : 'light';
+  document.body.dataset.view = S.view;
+  document.body.dataset.mode = S.mode;
+  document.body.toggleAttribute('data-calm', calm());
+  document.body.classList.toggle('no-video', S.settings.hideVideo);
+  document.body.classList.toggle('mirror', S.facing === 'user');
+  html.style.setProperty('--text-scale', S.settings.textScale);
+
+  $$('[data-i18n]').forEach((el) => (el.textContent = t(el.dataset.i18n)));
+  $$('[data-i18n-aria]').forEach((el) => el.setAttribute('aria-label', t(el.dataset.i18nAria)));
+  $$('[data-mode-label]').forEach((el) => (el.textContent = modeName(el.dataset.modeLabel)));
+  $$('[data-action=site-lang]').forEach((b) => b.setAttribute('aria-pressed', b.dataset.lang === S.siteLang));
+  $$('[data-action=mode]').forEach((b) => b.setAttribute('aria-pressed', b.dataset.mode === S.mode));
+
+  $('.theme-icon').textContent = dark ? '☀' : '☾';
+  $('.theme-label').textContent = dark ? t('btn.themeLight') : t('btn.themeDark');
+  $('#view-btn').textContent = S.view === 'clean' ? t('btn.infomercial') : t('btn.accessible');
+  $('.pause-lbl').textContent = S.paused ? t('btn.play') : t('btn.pause');
+  $('.pause-icon').textContent = S.paused ? '▶' : '❚❚';
+  $('#pause-btn').setAttribute('aria-pressed', S.paused);
+  $('#desc-lang-btn').hidden = S.mode !== 'descriptive';
+  $('#desc-lang-lbl').textContent = `${t('btn.narrLang')}: ${descLang().label}`;
+
+  const tick = t('ticker').join('     ★     ');
+  $('.ticker-track').textContent = `${tick}     ★     ${tick}     ★     `;
+  $('#hotkey-list').innerHTML = t('hotkeys').map(([k, d]) => `<dt><kbd>${k}</kbd></dt><dd>${d}</dd>`).join('');
+
+  $('#opt-eleven').checked = S.settings.useEleven;
+  $('#opt-srmute').checked = S.settings.srMute;
+  $('#opt-hidevideo').checked = S.settings.hideVideo;
+  $('#opt-still').value = S.settings.still;
+  $('#opt-customlang').value = S.settings.customLang;
+  $('#text-size').textContent = Math.round(S.settings.textScale * 100) + '%';
+  renderStatus();
+  updateHud();
+}
+
+function saveSettings() { store.set('settings', S.settings); }
+
+// ---------- LCD start-screen number ----------
+function buildLcd() {
+  $$('[data-lcd]').forEach((el) => {
+    const s = el.dataset.lcd;
+    el.innerHTML = `<span class="ghost" aria-hidden="true">${'~'.repeat(s.length)}</span><span class="lit">${[...s]
+      .map((c) => `<span style="animation-delay:${(Math.random() * 0.9).toFixed(2)}s">${c}</span>`)
+      .join('')}</span>`;
+  });
+}
+
+// ---------- Status, passcode, counters ----------
+async function refreshStatus() {
+  try {
+    const r = await fetch('/api/status', { headers: S.passcode ? { 'x-demo-passcode': S.passcode } : {}, signal: AbortSignal.timeout(5000) });
+    S.status = r.ok ? await r.json() : null;
+  } catch (e) {
+    console.warn('[status] unavailable', e.message);
+    S.status = null;
+  }
+  if (S.status?.passcodeRequired && !S.status.passcodeOk) askPasscode(Boolean(S.passcode));
+  renderStatus();
+  return S.status;
+}
+
+function renderStatus() {
+  const st = S.status;
+  $('#chars-session').textContent = S.charsSession;
+  $('#chars-today').textContent = st ? `${S.ttsToday ?? st.today.ttsChars} / ${st.limits.ttsChars}` : '–';
+  $('#narr-today').textContent = st ? `${st.today.narrations} / ${st.limits.narrations}` : '–';
+  $('#config-list').innerHTML = st
+    ? Object.entries(st.configured).map(([k, v]) => `<li class="${v ? 'ok' : 'missing'}"><code>${k}</code> <span>${v ? '✓ ' + t('set.yes') : '✗ ' + t('set.no')}</span></li>`).join('')
+    : '<li class="missing">/api/status ✗</li>';
+}
+
+function askPasscode(wrong) {
+  const d = $('#passcode');
+  $('#pass-error').hidden = !wrong;
+  if (!d.open) d.showModal();
+}
+$('#pass-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  S.passcode = $('#pass-input').value.trim();
+  store.set('passcode', S.passcode);
+  const st = await refreshStatus();
+  if (!st || st.passcodeOk) $('#passcode').close();
+});
+
+function api(path, body) {
+  return fetch(path, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json', ...(S.passcode && { 'x-demo-passcode': S.passcode }) },
+    body: JSON.stringify(body),
+    signal: AbortSignal.timeout(CONFIG.apiTimeoutMs),
+  }).then((r) => {
+    if (r.status === 401) askPasscode(true);
+    return r;
+  });
+}
+
+// ---------- Audio: music (Web Audio gain, so ducking works on iOS) + narration voice ----------
+let ctx = null, analyser = null;
+const music = {};
+let voices = [];
+const loadVoices = () => (voices = window.speechSynthesis?.getVoices() || []);
+if ('speechSynthesis' in window) { loadVoices(); speechSynthesis.addEventListener?.('voiceschanged', loadVoices); }
+
+function silentWavUrl() {
+  const n = 800, b = new ArrayBuffer(44 + n * 2), v = new DataView(b);
+  const w = (o, s) => [...s].forEach((c, i) => v.setUint8(o + i, c.charCodeAt(0)));
+  w(0, 'RIFF'); v.setUint32(4, 36 + n * 2, true); w(8, 'WAVE'); w(12, 'fmt ');
+  v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true); v.setUint32(24, 8000, true);
+  v.setUint32(28, 16000, true); v.setUint16(32, 2, true); v.setUint16(34, 16, true); w(36, 'data'); v.setUint32(40, n * 2, true);
+  return URL.createObjectURL(new Blob([b], { type: 'audio/wav' }));
+}
+
+// Must run inside the start tap (iOS): creates/resumes AudioContext and plays every media element once.
+function unlockAudio() {
+  if (!ctx) {
+    const AC = window.AudioContext || window.webkitAudioContext;
+    try {
+      ctx = new AC();
+      analyser = ctx.createAnalyser();
+      analyser.fftSize = 512;
+      ctx.createMediaElementSource(voiceEl).connect(analyser).connect(ctx.destination);
+      for (const [mode, file] of Object.entries(CONFIG.tracks)) {
+        const el = new Audio(file);
+        el.loop = true;
+        const g = ctx.createGain();
+        g.gain.value = 0;
+        ctx.createMediaElementSource(el).connect(g).connect(ctx.destination);
+        const m = (music[mode] = { el, g, ok: true, want: false });
+        el.addEventListener('error', () => (m.ok = false));
+        el.play().then(() => { if (!m.want) el.pause(); }).catch(() => {});
+      }
+    } catch (e) {
+      console.warn('[audio] Web Audio unavailable', e);
+    }
+  }
+  ctx?.resume();
+  voiceEl.src = silentWavUrl();
+  voiceEl.play().catch(() => {});
+  if ('speechSynthesis' in window) {
+    const u = new SpeechSynthesisUtterance(' ');
+    u.volume = 0;
+    speechSynthesis.speak(u);
+  }
+}
+
+function setMusic() {
+  if (!ctx) return;
+  const want = S.mode === 'descriptive' ? null : S.mode;
+  for (const [mode, m] of Object.entries(music)) {
+    const base = mode === 'pumpkin' ? 0.6 : 1;
+    const target = mode === want && m.ok ? base * (S.speaking ? CONFIG.music.ducked : CONFIG.music.volume) : 0;
+    m.want = target > 0;
+    if (m.want && m.el.paused) m.el.play().catch(() => {});
+    m.g.gain.cancelScheduledValues(ctx.currentTime);
+    m.g.gain.setTargetAtTime(target, ctx.currentTime, CONFIG.music.fadeSec / 3);
+    if (!m.want) setTimeout(() => !m.want && m.el.pause(), CONFIG.music.fadeSec * 1500);
+  }
+}
+
+function pickVoice(bcp) {
+  const norm = (l) => l.replace('_', '-').toLowerCase();
+  const want = norm(S.mode === 'documentary' && bcp.startsWith('en') ? 'en-GB' : bcp);
+  const prefix = want.split('-')[0];
+  return voices.find((v) => norm(v.lang) === want) || voices.find((v) => norm(v.lang).startsWith(prefix)) || null;
+}
+
+function speakBrowser(text, lang) {
+  return new Promise((resolve) => {
+    if (!('speechSynthesis' in window)) return setTimeout(resolve, 1500 + text.length * 60);
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = lang.bcp || 'en-US';
+    const v = pickVoice(u.lang);
+    if (v) u.voice = v;
+    Object.assign(u, { documentary: { rate: 0.88, pitch: 0.9 }, funny: { rate: 0.95, pitch: 0.7 }, pumpkin: { rate: 0.9, pitch: 1.3 } }[S.mode] || {});
+    let timer;
+    const done = () => { clearTimeout(timer); resolve(); };
+    timer = setTimeout(done, 4000 + text.length * 110); // Safari sometimes never fires onend
+    u.onend = u.onerror = done;
+    S.stopVoice = done;
+    speechSynthesis.speak(u);
+  });
+}
+
+async function speakEleven(text, lang) {
+  try {
+    const r = await api('/api/speak', { text, mode: S.mode, language: lang.code });
+    const today = r.headers.get('x-tts-today');
+    if (today) S.ttsToday = Number(today);
+    if (r.status === 429) {
+      if ((await r.json().catch(() => ({}))).budget) S.budgetHit = true;
+      return false;
+    }
+    if (!r.ok) return false;
+    const url = URL.createObjectURL(await r.blob());
+    S.charsSession += text.length;
+    renderStatus();
+    voiceEl.src = url;
+    await new Promise((resolve) => {
+      S.stopVoice = resolve;
+      voiceEl.onended = voiceEl.onerror = resolve;
+      voiceEl.play().catch(resolve);
+    });
+    URL.revokeObjectURL(url);
+    return true;
+  } catch (e) {
+    console.warn('[speak]', e.message);
+    return false;
+  }
+}
+
+async function speak(text, lang) {
+  S.speaking = true;
+  setMusic();
+  try {
+    if (S.settings.srMute) return await sleep(Math.max(2500, text.length * 60));
+    if (S.settings.useEleven && S.status?.elevenlabs && !S.budgetHit && (await speakEleven(text, lang))) return;
+    await speakBrowser(text, lang);
+  } finally {
+    S.speaking = false;
+    S.lastSpokeAt = Date.now();
+    setMusic();
+  }
+}
+
+function stopSpeech() {
+  voiceEl.pause();
+  window.speechSynthesis?.cancel();
+  S.stopVoice?.();
+}
+
+// ---------- Camera + frames ----------
+async function startCamera() {
+  S.stream?.getTracks().forEach((tr) => tr.stop());
+  S.stream = await navigator.mediaDevices.getUserMedia({
+    audio: false,
+    video: { facingMode: S.facing, width: { ideal: 1920 }, height: { ideal: 1080 } },
+  });
+  video.srcObject = S.stream;
+  await video.play().catch(() => {});
+  S.prevTiny = null;
+  render();
+}
+
+const capCanvas = document.createElement('canvas');
+const tiny = Object.assign(document.createElement('canvas'), { width: 32, height: 24 });
+const tctx = tiny.getContext('2d', { willReadFrequently: true });
+
+// Mean absolute grayscale difference (0-255) against the previous tiny frame.
+function frameDiff() {
+  if (!video.videoWidth) return null;
+  tctx.drawImage(video, 0, 0, 32, 24);
+  const d = tctx.getImageData(0, 0, 32, 24).data;
+  const g = new Uint8Array(768);
+  for (let i = 0; i < 768; i++) g[i] = (d[i * 4] * 299 + d[i * 4 + 1] * 587 + d[i * 4 + 2] * 114) / 1000;
+  const prev = S.prevTiny;
+  S.prevTiny = g;
+  if (!prev) return null;
+  let sum = 0;
+  for (let i = 0; i < 768; i++) sum += Math.abs(g[i] - prev[i]);
+  return sum / 768;
+}
+
+function updateStill(d) {
+  if (S.forcedStill) S.stillCount = Math.max(2, S.stillCount + 1);
+  else S.stillCount = d !== null && d < S.settings.still ? S.stillCount + 1 : 0;
+}
+
+function grabJpeg() {
+  const w = Math.min(CONFIG.captureWidth, video.videoWidth);
+  const h = Math.round((video.videoHeight * w) / video.videoWidth);
+  capCanvas.width = w;
+  capCanvas.height = h;
+  capCanvas.getContext('2d').drawImage(video, 0, 0, w, h);
+  return capCanvas.toDataURL('image/jpeg', CONFIG.jpegQuality).split(',')[1];
+}
+
+// ---------- Narration ----------
+function fallbackLine(mode, lang) {
+  const key = (mode === 'documentary' || mode === 'funny') && S.stillCount >= 1 ? mode + 'Still' : mode;
+  const pack = mode === 'descriptive' ? I18N[lang.code] || I18N.en : I18N[S.siteLang];
+  const list = pack.fallback[key].filter((l) => l !== S.lastFallback);
+  return (S.lastFallback = list[Math.floor(Math.random() * list.length)]);
+}
+
+const tidy = (s) => String(s || '').replace(/[*_#`]/g, '').replace(/\s+/g, ' ').replace(/^["“”]+|["“”]+$/g, '').trim().slice(0, 300);
+
+async function narrate({ force = false, skipDiff = false, arrival = false } = {}) {
+  if (S.busy || !video.videoWidth) return;
+  const gen = S.gen, mode = S.mode, lang = narrLang();
+  if (!skipDiff) {
+    S.lastDiff = frameDiff();
+    updateStill(S.lastDiff);
+  }
+  S.nextAt = Date.now() + CONFIG.intervalMs;
+  const full = force || S.forceFull;
+  S.forceFull = false;
+
+  if (mode === 'descriptive' && !full && S.stillCount >= 2) return showUnchanged(true);
+  showUnchanged(false);
+
+  S.busy = true;
+  S.obs++;
+  setStatus(t('waiting.' + mode));
+  let result = null;
+  try {
+    const r = await api('/api/narrate', {
+      image: grabJpeg(), mode, language: lang.name, lastLines: S.lines.slice(-4),
+      stillCount: mode === 'descriptive' ? 0 : S.stillCount, observationNumber: S.obs,
+    });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    result = await r.json();
+  } catch (e) {
+    console.warn('[narrate] using fallback:', e.message);
+  }
+  if (gen !== S.gen) return; // mode/language switched mid-request
+  S.busy = false;
+  setStatus('');
+
+  let text, english = '';
+  if (!result) {
+    if (mode === 'pumpkin' && !arrival) return;
+    text = fallbackLine(mode, lang);
+  } else if (mode === 'descriptive') {
+    text = result.narration ?? result.text;
+    english = result.english || '';
+    if (result.changed === false && !full) {
+      if (S.saidNoChange) return showUnchanged(true);
+      S.saidNoChange = true;
+      text = NO_CHANGE[lang.code] || NO_CHANGE.en;
+      english = '';
+    } else S.saidNoChange = false;
+  } else if (mode === 'pumpkin') {
+    if (result.person_close === false) return;
+    text = result.line ?? result.text;
+  } else text = result.text;
+
+  text = tidy(text);
+  if (!text) return;
+  S.lines = [...S.lines, text].slice(-8);
+  showLine(text, tidy(english), lang);
+  if (mode === 'funny' && S.stillCount >= 2) nowShowing(text);
+  await speak(text, lang);
+  if (gen === S.gen) S.nextAt = Math.max(S.nextAt, Date.now() + 1500);
+}
+
+function pumpkinTick() {
+  const d = frameDiff();
+  S.lastDiff = d;
+  if (d === null) return;
+  const still = d < S.settings.still;
+  const arrival = !still && S.pumpkinStill >= 3 && d > S.settings.still * 2; // still, then a big change: someone walked up
+  S.pumpkinStill = still ? S.pumpkinStill + 1 : 0;
+  if (!still) S.pumpkinChanged = true;
+  if (Date.now() - S.lastSpokeAt < CONFIG.pumpkinCooldownMs) return;
+  if (arrival || S.forceFull || (S.pumpkinChanged && Date.now() >= S.nextAt)) {
+    S.pumpkinChanged = false;
+    narrate({ skipDiff: true, arrival: arrival || S.forceFull });
+  }
+}
+
+setInterval(() => {
+  updateHud();
+  if (!S.started || S.paused || S.busy || S.speaking || !video.videoWidth) return;
+  if (S.mode === 'pumpkin') pumpkinTick();
+  else if (Date.now() >= S.nextAt) narrate();
+}, 1000);
+
+// ---------- On-screen output ----------
+function setStatus(s) { $('#status').textContent = s; }
+function showUnchanged(on) { $('#unchanged').hidden = !on; }
+
+function words(text, lang) {
+  if (window.Intl?.Segmenter) return [...new Intl.Segmenter(lang, { granularity: 'word' }).segment(text)].map((s) => s.segment);
+  return text.split(/(\s+)/);
+}
+
+function showLine(text, english, lang) {
+  const main = $('#sub-main');
+  const code = lang.code === 'zh' ? 'zh-Hans' : lang.code === 'xx' ? '' : lang.code;
+  main.lang = code;
+  main.dir = lang.code === 'ar' ? 'rtl' : 'auto';
+  main.classList.remove('pop');
+  if (S.mode === 'documentary' && !calm()) {
+    main.innerHTML = '';
+    words(text, code || 'en').forEach((w, i) => {
+      const s = document.createElement('span');
+      s.textContent = w;
+      s.style.animationDelay = i * 70 + 'ms';
+      main.append(s);
+    });
+  } else main.textContent = text;
+  if (S.mode === 'funny' && !calm()) {
+    void main.offsetWidth; // restart animation
+    main.classList.add('pop');
+    const z = $('.zoomwrap');
+    z.classList.remove('punch');
+    void z.offsetWidth;
+    z.classList.add('punch');
+  }
+  const showTrans = S.siteLang === 'en' && lang.code !== 'en' && english && english !== text;
+  $('#sub-trans').textContent = showTrans ? english : '';
+  $('#subs').classList.add('on');
+  const live = $('#live');
+  live.lang = code;
+  live.textContent = text;
+}
+
+function clearSubs() {
+  $('#sub-main').textContent = '';
+  $('#sub-trans').textContent = '';
+  $('#subs').classList.remove('on');
+  showUnchanged(false);
+}
+
+let cardTimers = [];
+function titleCard() {
+  const card = $('#card');
+  cardTimers.forEach(clearTimeout);
+  const extra = S.mode === 'descriptive' ? descLang().label : '';
+  $('#announce').textContent = modeName(S.mode) + (extra ? ` – ${descLang().name}` : '');
+  $('.card-sub').textContent = extra;
+  if (calm()) {
+    card.className = 'card plain';
+    $('.card-banner').textContent = '';
+    $('.card-title').textContent = modeName(S.mode);
+    card.hidden = false;
+    cardTimers = [setTimeout(() => (card.hidden = true), 1500)];
+    return;
+  }
+  card.className = 'card info';
+  $('.card-banner').textContent = t('butWait');
+  $('.card-title').textContent = t('nowWith', { mode: t('mode.' + S.mode) });
+  card.hidden = false;
+  cardTimers = [setTimeout(() => card.classList.add('phase2'), 800), setTimeout(() => (card.hidden = true), 1800)];
+}
+
+function nowShowing(text) {
+  if (calm()) return;
+  const zh = text.match(/《([^》]+)》/);
+  const caps = (text.match(/[A-ZÁÉÍÓÚÑÜ0-9][A-ZÁÉÍÓÚÑÜ0-9:'’&!-]*(?:\s+[A-ZÁÉÍÓÚÑÜ0-9][A-ZÁÉÍÓÚÑÜ0-9:'’&!-]*)*/g) || [])
+    .filter((c) => c.length >= 6 && /[A-ZÁÉÍÓÚÑÜ]{2}/.test(c))
+    .sort((a, b) => b.length - a.length)[0];
+  const title = zh?.[1] || caps;
+  if (!title) return;
+  const el = $('#nowshowing');
+  $('.ns-title').textContent = title.replace(/[.,!]+$/, '');
+  el.hidden = false;
+  clearTimeout(el._t);
+  el._t = setTimeout(() => (el.hidden = true), 2400);
+}
+
+function updateHud() {
+  if (!S.started) return;
+  const s = Math.floor((Date.now() - S.startTime) / 1000);
+  const p2 = (n) => String(n).padStart(2, '0');
+  $('#fieldlog').textContent = `${t('specimen')} #${String(S.specimen).padStart(3, '0')} · ${t('observation')} ${p2(Math.floor(s / 3600))}:${p2(Math.floor(s / 60) % 60)}:${p2(s % 60)}`;
+  $('#herd').hidden = !(S.mode === 'documentary' && S.stillCount >= 1);
+  $('#mode-label').textContent = modeName(S.mode) + (S.paused ? ` · ${t('paused')}` : '');
+  $('#lang-label').textContent = S.mode === 'descriptive' ? descLang().label : '';
+  $('#still-debug').textContent = `${S.stillCount}${S.forcedStill ? ' (S)' : ''} / ${S.lastDiff === null ? '–' : S.lastDiff.toFixed(1)}`;
+}
+
+// ---------- Pumpkin glow ----------
+const pk = $('#pumpkin');
+const pkData = new Uint8Array(512);
+let flick = 0.3, lastFlick = 0;
+function pumpkinFrame(now) {
+  if (S.started && S.mode === 'pumpkin') {
+    let glow, mouth = 1;
+    if (S.speaking && !voiceEl.paused && analyser) {
+      analyser.getByteTimeDomainData(pkData);
+      let sum = 0;
+      for (const v of pkData) sum += ((v - 128) / 128) ** 2;
+      const rms = Math.sqrt(sum / pkData.length);
+      glow = Math.min(1, 0.55 + rms * 3);
+      mouth = 1 + Math.min(0.12, rms * 0.6);
+    } else if (S.speaking) {
+      glow = 0.6 + Math.random() * 0.4; // browser speech can't be analysed: fake it
+      mouth = 1 + Math.random() * 0.06;
+    } else {
+      if (now - lastFlick > 90) {
+        flick = Math.min(0.42, Math.max(0.16, flick + (Math.random() - 0.5) * 0.09));
+        lastFlick = now;
+      }
+      glow = flick;
+    }
+    if (calm()) [glow, mouth] = [S.speaking ? 0.9 : 0.35, 1];
+    pk.style.setProperty('--glow', glow.toFixed(3));
+    pk.style.setProperty('--mouth', mouth.toFixed(3));
+  }
+  requestAnimationFrame(pumpkinFrame);
+}
+requestAnimationFrame(pumpkinFrame);
+
+// ---------- Actions ----------
+function interrupt() {
+  S.gen++;
+  S.busy = false;
+  stopSpeech();
+  setStatus('');
+}
+
+function setMode(m) {
+  if (!MODES.includes(m)) return;
+  const entering = m !== S.mode;
+  if (entering && m === 'descriptive') S.descLangIdx = Math.max(0, siteLangIdx());
+  S.mode = m;
+  interrupt();
+  Object.assign(S, { lines: [], forceFull: true, saidNoChange: false, pumpkinChanged: true, nextAt: Date.now() + 1700 });
+  if (isPhone && !S.userFlipped && S.started) {
+    const want = m === 'descriptive' ? 'environment' : 'user';
+    if (want !== S.facing) { S.facing = want; startCamera().catch((e) => console.error('[camera]', e)); }
+  }
+  render();
+  setMusic();
+  clearSubs();
+  if (S.started) titleCard();
+}
+
+function setSiteLang(l) {
+  if (!SITE_LANGS[l]) return;
+  S.siteLang = l;
+  store.set('lang', l);
+  if (S.mode === 'descriptive') S.descLangIdx = siteLangIdx();
+  if (S.started) {
+    interrupt();
+    Object.assign(S, { lines: [], forceFull: true, nextAt: Date.now() + 800 });
+    clearSubs();
+  }
+  render();
+}
+
+function cycleDescLang() {
+  if (S.mode !== 'descriptive' || !S.started) return;
+  S.descLangIdx = (S.descLangIdx + 1) % descLangs().length;
+  interrupt();
+  Object.assign(S, { lines: [], forceFull: true, saidNoChange: false, nextAt: Date.now() + 1700 });
+  clearSubs();
+  render();
+  titleCard();
+}
+
+function togglePause() {
+  S.paused = !S.paused;
+  if (S.paused) interrupt();
+  else S.nextAt = Date.now() + 300;
+  render();
+}
+
+function toggleTheme() {
+  S.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+  store.set('theme', S.theme);
+  render();
+}
+
+function toggleView() {
+  S.view = S.view === 'clean' ? 'info' : 'clean';
+  store.set('view', S.view);
+  const u = new URL(location.href);
+  S.view === 'clean' ? u.searchParams.set('view', 'clean') : u.searchParams.delete('view');
+  history.replaceState(null, '', u);
+  if (S.view === 'clean' && S.mode !== 'descriptive') setMode('descriptive');
+  else render();
+}
+
+function toggleStill() {
+  S.forcedStill = !S.forcedStill;
+  S.stillCount = S.forcedStill ? 2 : 0;
+  updateHud();
+}
+
+function narrateNow() {
+  if (!S.started) return;
+  interrupt();
+  S.paused = false;
+  S.forceFull = true;
+  render();
+  narrate({ force: true, arrival: true });
+}
+
+async function flipCamera() {
+  S.facing = S.facing === 'user' ? 'environment' : 'user';
+  S.userFlipped = true;
+  try { await startCamera(); } catch (e) { console.error('[camera] flip failed', e); }
+}
+
+function toggleSettings() {
+  const d = $('#settings');
+  if (d.open) return d.close();
+  refreshStatus();
+  d.showModal();
+}
+
+async function wakeLock() {
+  try { S.wake = await navigator.wakeLock?.request('screen'); } catch {}
+}
+document.addEventListener('visibilitychange', () => document.visibilityState === 'visible' && S.started && wakeLock());
+
+async function start() {
+  if (S.started) return;
+  unlockAudio(); // synchronously inside the tap, before any await
+  S.facing = isPhone && S.mode === 'descriptive' ? 'environment' : 'user';
+  try {
+    await startCamera();
+  } catch (e) {
+    console.error('[camera]', e);
+    $('.cam-error').hidden = false;
+    return;
+  }
+  S.started = true;
+  S.startTime = Date.now();
+  S.forceFull = true;
+  S.nextAt = Date.now() + 1700;
+  $('#start').hidden = true;
+  $('#stage').hidden = false;
+  document.body.classList.add('running');
+  wakeLock();
+  setMusic();
+  render();
+  titleCard();
+  poke();
+  $('#controls [data-action=narrate]').focus({ preventScroll: true });
+}
+
+// ---------- Input ----------
+document.addEventListener('click', (e) => {
+  const b = e.target.closest('[data-action]');
+  if (!b) return;
+  if (e.detail > 0 && b.dataset.action !== 'start') b.blur(); // mouse/touch: keep Space free for pause
+  ({
+    start,
+    mode: () => setMode(b.dataset.mode),
+    'site-lang': () => setSiteLang(b.dataset.lang),
+    theme: toggleTheme,
+    view: toggleView,
+    narrate: narrateNow,
+    pause: togglePause,
+    'desc-lang': cycleDescLang,
+    flip: flipCamera,
+    settings: toggleSettings,
+    'text-smaller': () => { S.settings.textScale = Math.max(0.8, +(S.settings.textScale - 0.1).toFixed(1)); saveSettings(); render(); },
+    'text-larger': () => { S.settings.textScale = Math.min(2, +(S.settings.textScale + 0.1).toFixed(1)); saveSettings(); render(); },
+  })[b.dataset.action]?.();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  if (e.target.closest?.('input, textarea, select, [contenteditable]')) return;
+  const k = e.key.toLowerCase();
+  if (k === 'k') return e.preventDefault(), toggleSettings();
+  if ($('dialog[open]')) return;
+  if (k === ' ') {
+    if (e.target.closest?.('button, a') || !S.started) return;
+    e.preventDefault();
+    return togglePause();
+  }
+  const actions = { 1: () => setMode('documentary'), 2: () => setMode('funny'), 3: () => setMode('descriptive'), 4: () => setMode('pumpkin'), l: cycleDescLang, n: narrateNow, s: toggleStill, t: toggleTheme, a: toggleView };
+  if (actions[k] && (S.started || 'ta'.includes(k))) {
+    e.preventDefault();
+    actions[k]();
+  }
+});
+
+const bind = (id, ev, fn) => $(id).addEventListener(ev, fn);
+bind('#opt-eleven', 'change', (e) => { S.settings.useEleven = e.target.checked; saveSettings(); });
+bind('#opt-srmute', 'change', (e) => { S.settings.srMute = e.target.checked; saveSettings(); });
+bind('#opt-hidevideo', 'change', (e) => { S.settings.hideVideo = e.target.checked; saveSettings(); render(); });
+bind('#opt-still', 'input', (e) => { S.settings.still = Number(e.target.value); saveSettings(); });
+bind('#opt-customlang', 'change', (e) => { S.settings.customLang = e.target.value.slice(0, 40); saveSettings(); render(); });
+
+// Auto-hide the control bar after a few idle seconds (infomercial view only).
+let idleTimer;
+function poke() {
+  document.body.classList.remove('idle');
+  clearTimeout(idleTimer);
+  idleTimer = setTimeout(() => {
+    if (S.started && S.view === 'info' && !$('#controls').contains(document.activeElement) && !$('dialog[open]')) document.body.classList.add('idle');
+  }, 4000);
+}
+['pointermove', 'pointerdown', 'keydown'].forEach((ev) => addEventListener(ev, poke, { passive: true }));
+
+// Keep subtitles just above the control bar, however many rows it wraps to.
+new ResizeObserver(([e]) => document.documentElement.style.setProperty('--bar-h', Math.ceil(e.borderBoxSize?.[0]?.blockSize ?? e.target.offsetHeight) + 'px')).observe($('#controls'));
+
+motionQuery.addEventListener?.('change', render);
+darkQuery.addEventListener?.('change', render);
+
+// ---------- Boot ----------
+buildLcd();
+render();
+refreshStatus();

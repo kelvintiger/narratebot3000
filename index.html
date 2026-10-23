@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark light">
+  <meta name="description" content="NarrateBot 3000 turns any webcam into a live narrator: nature documentary, comedy movie trailer, or plain description in any language.">
+  <title>NarrateBot 3000</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1a3a'/%3E%3Cline x1='32' y1='6' x2='32' y2='14' stroke='%23fff' stroke-width='3'/%3E%3Ccircle cx='32' cy='6' r='4' fill='%23e3122d'/%3E%3Crect x='12' y='14' width='40' height='32' rx='8' fill='%23fff'/%3E%3Ccircle cx='24' cy='28' r='5' fill='%23e3122d'/%3E%3Ccircle cx='40' cy='28' r='5' fill='%23e3122d'/%3E%3Crect x='22' y='37' width='20' height='4' rx='2' fill='%230b1a3a'/%3E%3Crect x='18' y='48' width='28' height='10' rx='3' fill='%23e3122d'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-view="info" data-mode="documentary">
+  <a class="skip" href="#controls">Skip to controls</a>
+
+  <!-- Site switchers: language, theme, view (top corner, always visible) -->
+  <div class="switchers" role="group" data-i18n-aria="btn.siteLang">
+    <div class="langs" role="group" data-i18n-aria="btn.siteLang">
+      <button type="button" data-action="site-lang" data-lang="en" lang="en">EN</button>
+      <button type="button" data-action="site-lang" data-lang="es" lang="es">ES</button>
+      <button type="button" data-action="site-lang" data-lang="zh" lang="zh-Hans">中文</button>
+    </div>
+    <button type="button" class="icon-btn" data-action="theme" id="theme-btn"><span aria-hidden="true" class="theme-icon">☾</span><span class="sr-only theme-label"></span></button>
+    <button type="button" class="view-btn" data-action="view" id="view-btn"></button>
+  </div>
+
+  <!-- ===== Start screen ===== -->
+  <main id="start" class="screen">
+    <div class="crt" aria-hidden="true"></div>
+    <section class="info-only start-info">
+      <p class="callnow" data-i18n="callNow"></p>
+      <h1 class="sr-only">NarrateBot 3000</h1>
+      <div class="lcd-panel" aria-label="1-800-NARRATE-BOT-3000" role="img">
+        <span class="lcd" data-lcd="1-800-NARRATE-"></span><span class="lcd" data-lcd="BOT-3000"></span>
+      </div>
+      <p class="product" aria-hidden="true">NARRATEBOT 3000</p>
+      <p class="tagline" data-i18n="tagline"></p>
+      <button type="button" class="order-btn" data-action="start" data-i18n="order"></button>
+      <div class="burst burst-1" aria-hidden="true"><span data-i18n="burst1"></span></div>
+      <div class="burst burst-2" aria-hidden="true"><span data-i18n="burst2"></span></div>
+      <p class="fineprint" data-i18n="finePrint"></p>
+      <div class="ticker" aria-hidden="true"><div class="ticker-track"></div></div>
+    </section>
+    <section class="clean-only start-clean">
+      <h1>NarrateBot 3000</h1>
+      <p class="clean-sub" data-i18n="cleanSub"></p>
+      <p data-i18n="cleanExplain"></p>
+      <button type="button" class="start-btn" data-action="start" data-i18n="start"></button>
+    </section>
+    <p class="cam-error" role="alert" hidden data-i18n="camError"></p>
+  </main>
+
+  <!-- ===== Running stage ===== -->
+  <main id="stage" class="screen" hidden>
+    <div class="zoomwrap"><video id="cam" playsinline muted autoplay></video></div>
+    <div class="vignette" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="letterbox top" aria-hidden="true"></div>
+    <div class="letterbox bottom" aria-hidden="true"></div>
+
+    <div id="pumpkin" aria-hidden="true">
+      <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <radialGradient id="pk-body" cx="45%" cy="40%" r="70%"><stop offset="0" stop-color="#ffa53a"/><stop offset=".6" stop-color="#e86a0c"/><stop offset="1" stop-color="#8a3200"/></radialGradient>
+          <radialGradient id="pk-candle" cx="50%" cy="60%" r="65%"><stop offset="0" stop-color="#fff6c2"/><stop offset=".45" stop-color="#ffcf3a"/><stop offset="1" stop-color="#ff7a00"/></radialGradient>
+          <radialGradient id="pk-spill" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ff8a1f" stop-opacity=".55"/><stop offset="1" stop-color="#ff8a1f" stop-opacity="0"/></radialGradient>
+          <filter id="pk-glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="14" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <polygon id="pk-eye-l" points="285,525 440,440 425,565"/>
+          <polygon id="pk-eye-r" points="715,525 560,440 575,565"/>
+          <polygon id="pk-nose" points="500,565 458,640 542,640"/>
+          <path id="pk-mouth" d="M250,650 L320,690 L345,660 L382,712 L420,700 L445,668 L472,716 L528,716 L555,668 L580,700 L618,712 L655,660 L680,690 L750,650 Q725,775 610,815 L585,782 L552,826 L500,804 L448,826 L415,782 L390,815 Q275,775 250,650 Z"/>
+        </defs>
+        <ellipse class="pk-spill" cx="500" cy="900" rx="460" ry="80" fill="url(#pk-spill)"/>
+        <path d="M478,250 C470,200 480,150 520,110 L548,128 C520,160 515,205 522,250 Z" fill="#3f6b1f" stroke="#24410f" stroke-width="6"/>
+        <g fill="url(#pk-body)" stroke="#7a2c00" stroke-width="6">
+          <ellipse cx="255" cy="565" rx="205" ry="300"/>
+          <ellipse cx="745" cy="565" rx="205" ry="300"/>
+          <ellipse cx="380" cy="560" rx="225" ry="320"/>
+          <ellipse cx="620" cy="560" rx="225" ry="320"/>
+          <ellipse cx="500" cy="555" rx="210" ry="325"/>
+        </g>
+        <g fill="#2a0c00"><use href="#pk-eye-l"/><use href="#pk-eye-r"/><use href="#pk-nose"/><use href="#pk-mouth"/></g>
+        <g class="pk-lit" fill="url(#pk-candle)" filter="url(#pk-glow)">
+          <use href="#pk-eye-l"/><use href="#pk-eye-r"/><use href="#pk-nose"/><use href="#pk-mouth" class="pk-mouth"/>
+        </g>
+      </svg>
+      <div class="embers"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+
+    <div class="hud" aria-hidden="true">
+      <div class="live-badge"><span class="dot">●</span> <span data-i18n="live"></span></div>
+      <div class="readout">
+        <div class="lcd-small" id="fieldlog"></div>
+        <div class="lcd-small herd" id="herd" data-i18n="herdNone"></div>
+      </div>
+      <div class="mode-label lcd-small" id="mode-label"></div>
+      <div class="lang-label" id="lang-label"></div>
+    </div>
+
+    <div class="bottom">
+      <p id="status" class="status" aria-hidden="true"></p>
+      <p id="unchanged" class="unchanged" hidden data-i18n="unchanged"></p>
+      <div id="subs" class="subs" aria-hidden="true">
+        <p class="sub-main" id="sub-main"></p>
+        <p class="sub-trans" id="sub-trans" lang="en"></p>
+      </div>
+    </div>
+
+    <div id="card" class="card" hidden aria-hidden="true"><div class="card-banner"></div><div class="card-title"></div><div class="card-sub"></div></div>
+    <div id="nowshowing" class="nowshowing" hidden aria-hidden="true"><div class="ns-label" data-i18n="nowShowing"></div><div class="ns-title"></div></div>
+
+    <nav id="controls" class="controls" data-i18n-aria="btn.settings">
+      <div class="ctl-group modes" role="group">
+        <button type="button" data-action="mode" data-mode="documentary"><span aria-hidden="true">🦁</span><span class="lbl" data-mode-label="documentary"></span></button>
+        <button type="button" data-action="mode" data-mode="funny"><span aria-hidden="true">🎬</span><span class="lbl" data-mode-label="funny"></span></button>
+        <button type="button" data-action="mode" data-mode="descriptive"><span aria-hidden="true">👁</span><span class="lbl" data-mode-label="descriptive"></span></button>
+        <button type="button" data-action="mode" data-mode="pumpkin"><span aria-hidden="true">🎃</span><span class="lbl" data-mode-label="pumpkin"></span></button>
+      </div>
+      <div class="ctl-group" role="group">
+        <button type="button" data-action="narrate"><span aria-hidden="true">⚡</span><span class="lbl" data-i18n="btn.describe"></span></button>
+        <button type="button" data-action="pause" id="pause-btn"><span aria-hidden="true" class="pause-icon">❚❚</span><span class="lbl pause-lbl"></span></button>
+        <button type="button" data-action="desc-lang" id="desc-lang-btn"><span aria-hidden="true">🌐</span><span class="lbl" id="desc-lang-lbl"></span></button>
+        <button type="button" data-action="flip"><span aria-hidden="true">⟲</span><span class="lbl" data-i18n="btn.flip"></span></button>
+        <button type="button" data-action="settings"><span aria-hidden="true">⚙</span><span class="lbl" data-i18n="btn.settings"></span></button>
+      </div>
+    </nav>
+  </main>
+
+  <!-- Screen reader announcements -->
+  <div id="live" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+  <div id="announce" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- ===== Settings: call center order form ===== -->
+  <dialog id="settings" aria-labelledby="set-title">
+    <form method="dialog" class="form">
+      <header class="form-head">
+        <h2 id="set-title"><span class="info-only" data-i18n="set.title"></span><span class="clean-only" data-i18n="set.titleClean"></span></h2>
+        <p class="info-only form-sub" data-i18n="set.sub"></p>
+        <button type="submit" class="close-btn" data-i18n-aria="btn.close">✕</button>
+      </header>
+
+      <fieldset>
+        <label class="row switch"><input type="checkbox" id="opt-eleven"> <span data-i18n="set.useEleven"></span></label>
+        <dl class="counters">
+          <dt data-i18n="set.charsSession"></dt><dd id="chars-session" class="lcd-small">0</dd>
+          <dt data-i18n="set.charsToday"></dt><dd id="chars-today" class="lcd-small">–</dd>
+          <dt data-i18n="set.narrToday"></dt><dd id="narr-today" class="lcd-small">–</dd>
+        </dl>
+        <label class="row switch"><input type="checkbox" id="opt-srmute"> <span data-i18n="set.srMute"></span></label>
+        <label class="row switch"><input type="checkbox" id="opt-hidevideo"> <span data-i18n="set.hideVideo"></span></label>
+      </fieldset>
+
+      <fieldset>
+        <label for="opt-still" class="row-label" data-i18n="set.stillness"></label>
+        <input type="range" id="opt-still" min="2" max="30" step="1">
+        <p class="debug"><span data-i18n="set.stillDebug"></span>: <output id="still-debug" class="lcd-small">0 / –</output></p>
+      </fieldset>
+
+      <fieldset>
+        <legend data-i18n="set.textSize"></legend>
+        <div class="row">
+          <button type="button" data-action="text-smaller" data-i18n-aria="set.smaller">A−</button>
+          <output id="text-size">100%</output>
+          <button type="button" data-action="text-larger" data-i18n-aria="set.larger">A+</button>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <label for="opt-customlang" class="row-label" data-i18n="set.customLang"></label>
+        <input type="text" id="opt-customlang" maxlength="40" autocomplete="off" aria-describedby="customlang-hint">
+        <p id="customlang-hint" class="hint" data-i18n="set.customLangHint"></p>
+      </fieldset>
+
+      <fieldset>
+        <legend data-i18n="set.config"></legend>
+        <ul id="config-list" class="config"></ul>
+      </fieldset>
+
+      <fieldset>
+        <legend data-i18n="set.hotkeys"></legend>
+        <dl id="hotkey-list" class="hotkeys"></dl>
+      </fieldset>
+    </form>
+  </dialog>
+
+  <!-- ===== Passcode ===== -->
+  <dialog id="passcode" aria-labelledby="pass-title">
+    <form class="form" id="pass-form">
+      <h2 id="pass-title"><span class="info-only" data-i18n="pass.title"></span><span class="clean-only" data-i18n="pass.titleClean"></span></h2>
+      <label for="pass-input" data-i18n="pass.label"></label>
+      <input type="password" id="pass-input" autocomplete="off" required>
+      <p id="pass-error" class="pass-error" role="alert" hidden data-i18n="pass.wrong"></p>
+      <button type="submit" class="order-btn small" data-i18n="pass.submit"></button>
+    </form>
+  </dialog>
+
+  <audio id="voice" preload="auto"></audio>
+  <script src="i18n.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
