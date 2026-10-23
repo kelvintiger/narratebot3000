@@ -154,13 +154,18 @@ async function refreshStatus() {
   return S.status;
 }
 
+const REQUIRED_VARS = new Set(['GEMINI_API_KEY', 'ELEVENLABS_API_KEY']); // everything else has a default
+
 function renderStatus() {
   const st = S.status;
   $('#chars-session').textContent = S.charsSession;
   $('#chars-today').textContent = st ? `${S.ttsToday ?? st.today.ttsChars} / ${st.limits.ttsChars}` : '–';
   $('#narr-today').textContent = st ? `${st.today.narrations} / ${st.limits.narrations}` : '–';
   $('#config-list').innerHTML = st
-    ? Object.entries(st.configured).map(([k, v]) => `<li class="${v ? 'ok' : 'missing'}"><code>${k}</code> <span>${v ? '✓ ' + t('set.yes') : '✗ ' + t('set.no')}</span></li>`).join('')
+    ? Object.entries(st.configured).map(([k, v]) => {
+        const label = v ? '✓ ' + t('set.yes') : REQUIRED_VARS.has(k) ? '✗ ' + t('set.no') : '– ' + t('set.dflt');
+        return `<li class="${v || !REQUIRED_VARS.has(k) ? 'ok' : 'missing'}"><code>${k}</code> <span>${label}</span></li>`;
+      }).join('')
     : '<li class="missing">/api/status ✗</li>';
 }
 
@@ -279,10 +284,16 @@ function speakBrowser(text, lang) {
 // Resolves true when the clip played (or was interrupted), false on a load/playback error.
 function playVoice(src) {
   return new Promise((resolve) => {
-    const done = (ok) => { voiceEl.onended = voiceEl.onerror = null; resolve(ok); };
+    let done = (ok) => { voiceEl.onended = voiceEl.onerror = null; resolve(ok); };
     S.stopVoice = () => done(true);
     voiceEl.onended = () => done(true);
     voiceEl.onerror = () => done(false);
+    // A stalled stream never fires ended/error: give up if it hasn't started in 9s, and cap a line at 30s.
+    const t1 = setTimeout(() => voiceEl.paused && done(false), 9000);
+    const t2 = setTimeout(() => done(true), 30000);
+    voiceEl.onplaying = () => clearTimeout(t1);
+    const fin = done;
+    done = (ok) => { clearTimeout(t1); clearTimeout(t2); voiceEl.onplaying = null; voiceEl.pause(); fin(ok); };
     voiceEl.src = src;
     voiceEl.play().catch(() => done(false));
   });
