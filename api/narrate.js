@@ -20,9 +20,9 @@ function modelsFor(mode) {
   return i === -1 ? [first, ...CHAIN] : CHAIN.slice(i);
 }
 
-// Minimum thinking: Gemini 3 takes thinkingLevel, older models take thinkingBudget (never both).
-const thinkingFor = (model) =>
-  model.startsWith('gemini-3') ? { thinkingLevel: 'minimal' } : { thinkingBudget: 0 };
+// Minimum thinking, tried in order until the model accepts one (never send both fields).
+// thinkingLevel "minimal" still spent ~500 thought tokens (~7s) on gemini-3.8-flash, so try a zero budget first.
+const THINKING_OPTIONS = [{ thinkingBudget: 0 }, { thinkingLevel: 'minimal' }];
 
 async function callGemini(model, body, ms) {
   const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
@@ -77,16 +77,18 @@ export default async function handler(req, res) {
       generationConfig: {
         temperature: TEMPERATURE[mode],
         maxOutputTokens: 1024, // includes any thinking tokens; only tokens actually used are billed
-        thinkingConfig: thinkingFor(model),
+        thinkingConfig: THINKING_OPTIONS[0],
         ...(isJson && { responseMimeType: 'application/json' }),
       },
     };
     try {
       let { status, data } = await callGemini(model, body, left);
-      // Some models reject the thinking setting: retry the same model without it.
-      if (status === 400 && /thinking/i.test(data?.error?.message || '')) {
-        delete body.generationConfig.thinkingConfig;
+      // Some models reject a thinking setting: retry the same model with the next one, then without.
+      for (let i = 1; status === 400 && /thinking/i.test(data?.error?.message || ''); i++) {
+        if (THINKING_OPTIONS[i]) body.generationConfig.thinkingConfig = THINKING_OPTIONS[i];
+        else delete body.generationConfig.thinkingConfig;
         ({ status, data } = await callGemini(model, body, DEADLINE_MS - (Date.now() - started)));
+        if (!THINKING_OPTIONS[i]) break;
       }
       if (status === 200) {
         const text = (data.candidates?.[0]?.content?.parts || [])
