@@ -271,7 +271,7 @@ function speakBrowser(text, lang) {
     u.lang = lang.bcp || 'en-US';
     const v = pickVoice(u.lang);
     if (v) u.voice = v;
-    Object.assign(u, { documentary: { rate: 0.88, pitch: 0.9 }, funny: { rate: 0.95, pitch: 0.7 }, pumpkin: { rate: 0.9, pitch: 1.3 } }[S.mode] || {});
+    Object.assign(u, { documentary: { rate: 1, pitch: 0.9 }, funny: { rate: 1.05, pitch: 0.7 }, pumpkin: { rate: 1, pitch: 1.3 } }[S.mode] || { rate: 1.1 });
     let timer;
     const done = () => { clearTimeout(timer); resolve(); };
     timer = setTimeout(done, 4000 + text.length * 110); // Safari sometimes never fires onend

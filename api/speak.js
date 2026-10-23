@@ -13,6 +13,7 @@ const VOICES = {
 };
 const LANGUAGE_VOICES = { es: env.VOICE_SPANISH, zh: env.VOICE_CHINESE };
 const LANGUAGE_SETTINGS = { stability: 0.7, similarity_boost: 0.75, style: 0 };
+const SPEED = 1.1; // ElevenLabs speaking rate, 0.7–1.2 (1.0 = the voice's natural pace)
 
 const MODEL = env.ELEVENLABS_MODEL || 'eleven_multilingual_v2';
 const MODEL_TELUGU = env.ELEVENLABS_MODEL_TELUGU || 'eleven_v3'; // multilingual_v2 has no Telugu; v3 lists te
@@ -38,7 +39,7 @@ export default async function handler(req, res) {
   const voice = LANGUAGE_VOICES[lang] ? { id: LANGUAGE_VOICES[lang], settings: LANGUAGE_SETTINGS } : base;
   const model = lang === 'te' ? MODEL_TELUGU : MODEL;
   // ponytail: v3 documents stability as three presets (0 creative, 0.5 natural, 1 robust), so snap to the nearest.
-  const settings = model === 'eleven_v3' ? { ...voice.settings, stability: Math.round(voice.settings.stability * 2) / 2 } : voice.settings;
+  const settings = model === 'eleven_v3' ? { ...voice.settings, stability: Math.round(voice.settings.stability * 2) / 2 } : { ...voice.settings, speed: SPEED };
 
   const ac = new AbortController();
   let timer = setTimeout(() => ac.abort(), FIRST_BYTE_MS);
