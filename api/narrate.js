@@ -12,6 +12,7 @@ const CHAIN = ['gemini-3.8-flash', 'gemini-3.6-flash', 'gemini-3.1-flash-lite', 
 const TEMPERATURE = { documentary: 1, funny: 1, descriptive: 0.3, pumpkin: 0.9 };
 const MAX_IMAGE_CHARS = 4_000_000; // ~3 MB of JPEG as base64
 const DEADLINE_MS = 8000;
+const SLOW_MODEL_MS = 5500; // a flash model that runs over this hands the request to a lite model
 
 // Models to try, starting at the configured one and moving down the chain.
 function modelsFor(mode) {
@@ -69,9 +70,12 @@ export default async function handler(req, res) {
   const isJson = JSON_MODES.has(mode);
   const started = Date.now();
 
-  for (const model of modelsFor(mode)) {
+  const models = modelsFor(mode);
+  for (let m = 0; m < models.length; m++) {
+    const model = models[m];
     const left = DEADLINE_MS - (Date.now() - started);
     if (left < 500) break;
+    const isLite = model.includes('lite');
     const body = {
       contents: [{ parts: [{ inline_data: { mime_type: 'image/jpeg', data: b.image } }, { text: prompt }] }],
       generationConfig: {
@@ -82,7 +86,7 @@ export default async function handler(req, res) {
       },
     };
     try {
-      let { status, data } = await callGemini(model, body, left);
+      let { status, data } = await callGemini(model, body, isLite ? left : Math.min(left, SLOW_MODEL_MS));
       // Some models reject a thinking setting: retry the same model with the next one, then without.
       for (let i = 1; status === 400 && /thinking/i.test(data?.error?.message || ''); i++) {
         if (THINKING_OPTIONS[i]) body.generationConfig.thinkingConfig = THINKING_OPTIONS[i];
@@ -107,7 +111,10 @@ export default async function handler(req, res) {
       if (![404, 429].includes(status) && !/quota|exhaust|not found/i.test(data?.error?.message || '')) break;
     } catch (e) {
       console.error(`[narrate] ${model} failed: ${e.name} ${e.message}`);
-      break; // timeout or network: let the frontend use a fallback line
+      // Slow flash model: retry once on the next lite model; otherwise let the frontend use a fallback line.
+      const lite = models.findIndex((x, i) => i > m && x.includes('lite'));
+      if (e.name !== 'TimeoutError' || isLite || lite === -1) break;
+      m = lite - 1;
     }
   }
   return res.status(502).json({ error: 'Narration unavailable' });
