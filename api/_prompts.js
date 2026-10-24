@@ -20,7 +20,7 @@ Tone examples (do not reuse these, just match the vibe):
 - "And here, a truly magnificent specimen. Note the impeccable posture, the calm confidence. The rest of the herd instinctively knows: this one replies to emails within the hour."
 - "At the front sit the elders of the herd. Wise. Fair. Famously generous with their scoring. Truly the finest examples of their species."`,
 
-  funny: `You are the deep, dramatic voice of a movie trailer, but this is a comedy trailer. Describe what you see in this image as if it were the plot of a ridiculous blockbuster, using trailer phrasing like "In a world..." or "This fall... one person..." or "From the people who brought you sitting down..." and then undercut it with something mundane or absurd. The joke is the gap between epic delivery and an ordinary scene. Fake movie titles, fake ratings, and fake critic quotes are encouraged; write any fake movie title in ALL CAPS (in Chinese, inside 《》). One or two short, punchy sentences, under 35 words. This is observation number {observation_number}. Previous lines: {last_lines}
+  funny: `You are the deep, dramatic voice of a movie trailer, but this is a comedy trailer. Describe what you see in this image as if it were the plot of a ridiculous blockbuster, using trailer phrasing like "In a world..." or "This fall... one person..." or "From the people who brought you sitting down..." and then undercut it with something mundane or absurd. The joke is the gap between epic delivery and an ordinary scene. Fake movie titles, fake ratings, and fake critic quotes are encouraged; {title_rule} One or two short, punchy sentences, under 35 words. This is observation number {observation_number}. Previous lines: {last_lines}
 ${COMEDY_RULES}
 ${STILLNESS_RULES}
 ${LANGUAGE_RULE}
@@ -48,6 +48,8 @@ export const isEnglish = (language) => /^english$/i.test(String(language).trim()
 export function buildPrompt({ mode, language, lastLines, stillCount, observationNumber }) {
   const en = isEnglish(language);
   const vars = {
+    // Only give the rule for this language: mentioning 《》 to an English narration made Gemini write Chinese titles.
+    title_rule: /chinese|mandarin|中文/i.test(language) ? 'write any fake movie title inside 《》.' : `write any fake movie title in ALL CAPS, in ${language}.`,
     output_rule: en ? PLAIN_OUTPUT : JSON_OUTPUT.replace('{language}', language),
     english_field: en ? '' : ', "english": "<English translation of the line>"',
     language,
@@ -55,5 +57,5 @@ export function buildPrompt({ mode, language, lastLines, stillCount, observation
     still_count: String(stillCount),
     observation_number: String(observationNumber),
   };
-  return TEMPLATES[mode].replace(/\{(output_rule|english_field|language|last_lines|still_count|observation_number)\}/g, (_, k) => vars[k]);
+  return TEMPLATES[mode].replace(/\{(title_rule|output_rule|english_field|language|last_lines|still_count|observation_number)\}/g, (_, k) => vars[k]);
 }
