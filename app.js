@@ -535,17 +535,28 @@ async function fetchLine({ force = false, skipDiff = false, arrival = false, ahe
   return text ? { gen, mode, lang, text, english: tidy(english) } : null;
 }
 
-// While the last sentence plays, fetch the next line and start loading its first sentence.
+// Fetch the next line while this one plays. Its first sentence's audio can only start loading once the
+// current line's last sentence is playing (the idle element is busy with this line's next sentence until then).
 function startLookahead(gen) {
   if (gen !== S.gen || S.ahead || S.paused || S.mode === 'pumpkin') return;
-  const ahead = (S.ahead = { gen, done: false });
+  const ahead = (S.ahead = { gen, done: false, armed: false });
   ahead.p = sleep(Math.max(0, S.lastCaptureAt + CONFIG.minCaptureGapMs - Date.now()))
     .then(() => (gen === S.gen ? fetchLine({ ahead: true }) : null))
     .then((line) => {
       ahead.done = true;
-      if (line?.text && line.gen === S.gen) prefetchLine(line);
+      ahead.line = line;
+      if (ahead.armed && line?.text && line.gen === S.gen) prefetchLine(line);
       return line;
     });
+}
+
+// Called when the current line's last sentence starts: the idle element is free for the next line's audio.
+function armLookahead(gen) {
+  startLookahead(gen);
+  const ahead = S.ahead;
+  if (!ahead || ahead.armed) return;
+  ahead.armed = true;
+  if (ahead.line?.text && ahead.line.gen === S.gen) prefetchLine(ahead.line);
 }
 
 // Show + speak a line, then follow straight on with the look-ahead line if one was prepared.
@@ -557,7 +568,10 @@ async function playLine(line) {
     S.lines = [...S.lines, line.text].slice(-8);
     showLine(line.text, line.english, line.lang);
     if (line.mode === 'funny' && S.stillCount >= 2) nowShowing(line.text);
-    await speak(line, () => startLookahead(gen));
+    // Comedy modes start the next line as this one begins, so it's ready in time; Descriptive waits for the
+    // last sentence so a blind user hears the scene as it is now, not as it was a whole line ago.
+    if (line.mode !== 'descriptive') startLookahead(gen);
+    await speak(line, () => armLookahead(gen));
     const ahead = S.ahead;
     if (gen !== S.gen || !ahead) break;
     if (!ahead.done) setStatus(t('waiting.' + line.mode));
