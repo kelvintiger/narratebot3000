@@ -1,4 +1,4 @@
-// GET /api/speak?text=&mode=&lang=   or   POST /api/speak { text, mode, language }  ->  streamed audio/mpeg
+// GET /api/speak?text=&mode=&lang=&prev=&next=   or   POST /api/speak { text, mode, language, prev, next }  ->  streamed audio/mpeg
 // GET lets an <audio> element start playing while ElevenLabs is still generating; POST is kept for passcode-protected demos.
 import { rejectBadRequest, incrDaily, checkSpeakLimit, DAILY_TTS_CHAR_LIMIT } from './_lib.js';
 
@@ -18,6 +18,8 @@ const SPEED = 1.1; // ElevenLabs speaking rate, 0.7–1.2 (1.0 = the voice's nat
 const MODEL = env.ELEVENLABS_MODEL || 'eleven_multilingual_v2';
 const MODEL_TELUGU = env.ELEVENLABS_MODEL_TELUGU || 'eleven_v3'; // multilingual_v2 has no Telugu; v3 lists te
 const MODELS_WITH_LANGUAGE_CODE = new Set(['eleven_flash_v2_5', 'eleven_turbo_v2_5', 'eleven_v3']);
+// Request stitching: the surrounding sentences keep prosody continuous when a line is spoken one sentence per request.
+const MODELS_WITH_STITCHING = new Set(['eleven_multilingual_v2']);
 const FIRST_BYTE_MS = 8000;
 const STREAM_MS = 14000; // vercel.json maxDuration is 15s
 
@@ -29,6 +31,7 @@ export default async function handler(req, res) {
   const text = String(q.text || '').trim();
   if (!text || text.length > 300) return res.status(400).json({ error: 'Text missing or over 300 characters' });
   const lang = String(q.lang || q.language || 'en').toLowerCase().slice(0, 2);
+  const prev = String(q.prev || '').trim().slice(-300), next = String(q.next || '').trim().slice(0, 300);
 
   if (!(await checkSpeakLimit(req))) return res.status(429).json({ error: 'Too many voice requests this minute' });
   const used = await incrDaily('tts', text.length);
@@ -41,7 +44,6 @@ export default async function handler(req, res) {
   // ponytail: v3 documents stability as three presets (0 creative, 0.5 natural, 1 robust), so snap to the nearest.
   const settings = model === 'eleven_v3' ? { ...voice.settings, stability: Math.round(voice.settings.stability * 2) / 2 } : { ...voice.settings, speed: SPEED };
 
-  const started = Date.now();
   const ac = new AbortController();
   let timer = setTimeout(() => ac.abort(), FIRST_BYTE_MS);
   res.on?.('close', () => ac.abort()); // listener left or interrupted: stop generating
@@ -49,7 +51,12 @@ export default async function handler(req, res) {
     const r = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voice.id}/stream?output_format=mp3_44100_128`, {
       method: 'POST',
       headers: { 'content-type': 'application/json', 'xi-api-key': env.ELEVENLABS_API_KEY, accept: 'audio/mpeg' },
-      body: JSON.stringify({ text, model_id: model, voice_settings: settings, ...(MODELS_WITH_LANGUAGE_CODE.has(model) && { language_code: lang }) }),
+      body: JSON.stringify({
+        text, model_id: model, voice_settings: settings,
+        ...(MODELS_WITH_LANGUAGE_CODE.has(model) && { language_code: lang }),
+        ...(MODELS_WITH_STITCHING.has(model) && prev && { previous_text: prev }),
+        ...(MODELS_WITH_STITCHING.has(model) && next && { next_text: next }),
+      }),
       signal: ac.signal,
     });
     clearTimeout(timer);
@@ -61,13 +68,7 @@ export default async function handler(req, res) {
     res.setHeader('content-type', 'audio/mpeg');
     res.setHeader('cache-control', 'no-store');
     res.status(200);
-    const t0 = Date.now();
-    let first = true;
-    for await (const chunk of r.body) {
-      if (first) res.setHeader('x-el-first-chunk-ms', String(Date.now() - started)), (first = false);
-      res.write(chunk);
-    }
-    console.log(`[speak] ${model} first chunk ${Date.now() - t0}ms after headers`);
+    for await (const chunk of r.body) res.write(chunk);
     res.end();
   } catch (e) {
     console.error(`[speak] failed: ${e.name} ${e.message}`);

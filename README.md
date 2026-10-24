@@ -31,7 +31,7 @@ The webcam needs `localhost` or HTTPS. To test on a phone, use the deployed link
 
 Voice settings (stability, style, and so on) live in the `VOICES` object at the top of `api/speak.js`. Prompts live in `api/_prompts.js`.
 
-Narration languages: English, Spanish, Chinese, Hindi, Telugu, French, Arabic, Korean, Japanese, Portuguese, plus a custom one from Settings. Non-English lines also come back with an English translation, shown under the subtitle when the site is in English. ElevenLabs audio streams to the page (`GET /api/speak`), so speech starts before the whole clip is generated; passcode-protected demos fall back to a POST download.
+Narration languages: English, Spanish, Chinese, Hindi, Telugu, French, Arabic, Korean, Japanese, Portuguese, plus a custom one from Settings. Non-English lines also come back with an English translation, shown under the subtitle when the site is in English. ElevenLabs audio streams to the page (`GET /api/speak`), so speech starts before the whole clip is generated; passcode-protected demos fall back to a POST download. Speech is requested sentence by sentence, using ElevenLabs request stitching (`previous_text`/`next_text`) so the sentences sound continuous, and the next line is captured and its first sentence loaded while the current one plays.
 
 ## Hotkeys
 

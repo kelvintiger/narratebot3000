@@ -30,7 +30,7 @@ const upstash = redis && {
   ipMinute: new Ratelimit({ redis, prefix: 'nb:ipm', limiter: Ratelimit.slidingWindow(12, '1 m') }),
   ipDay: new Ratelimit({ redis, prefix: 'nb:ipd', limiter: Ratelimit.fixedWindow(150, '1 d') }),
   globalMinute: new Ratelimit({ redis, prefix: 'nb:gm', limiter: Ratelimit.slidingWindow(60, '1 m') }),
-  speakMinute: new Ratelimit({ redis, prefix: 'nb:spk', limiter: Ratelimit.slidingWindow(30, '1 m') }),
+  speakMinute: new Ratelimit({ redis, prefix: 'nb:spk', limiter: Ratelimit.slidingWindow(90, '1 m') }), // up to 4 sentence requests per line
 };
 
 async function allowed(name, key, max, windowMs) {
@@ -71,7 +71,7 @@ export async function checkNarrationLimits(req) {
   return null;
 }
 
-export const checkSpeakLimit = (req) => allowed('speakMinute', clientIp(req), 30, 60_000);
+export const checkSpeakLimit = (req) => allowed('speakMinute', clientIp(req), 90, 60_000);
 
 // ---- passcode + origin ----
 export function passcodeOk(req) {

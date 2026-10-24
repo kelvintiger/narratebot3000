@@ -8,6 +8,9 @@ const CONFIG = {
   captureWidth: 1024,
   jpegQuality: 0.75,
   apiTimeoutMs: 8500,
+  minCaptureGapMs: 3000, // look-ahead never captures sooner than this after the previous capture
+  minSegmentChars: 25, // shorter sentences ride along with the next one
+  maxSegments: 4, // voice requests per line
   music: { volume: 0.08, ducked: 0.02, fadeSec: 1, trim: { documentary: 1, funny: 0.85, pumpkin: 0.6 } }, // tracks master near -12 dBFS RMS
   tracks: { documentary: 'documentary.mp3', funny: 'funny.mp3', pumpkin: 'spooky.mp3' },
 };
@@ -51,7 +54,7 @@ const S = {
   mode: 'documentary', narrLangCode: store.get('narrLang', null),
   started: false, paused: false, busy: false, speaking: false, gen: 0,
   lines: [], obs: 0, stillCount: 0, forcedStill: false, lastDiff: null, prevTiny: null,
-  nextAt: 0, forceFull: true, saidNoChange: false,
+  nextAt: 0, forceFull: true, saidNoChange: false, lastCaptureAt: 0, ahead: null,
   facing: 'user', userFlipped: false, stream: null,
   status: null, budgetHit: false, charsSession: 0, ttsToday: null,
   startTime: 0, specimen: 1 + Math.floor(Math.random() * 999),
@@ -63,6 +66,9 @@ S.mode = S.view === 'clean' ? 'descriptive' : 'documentary';
 
 const video = $('#cam');
 const voiceEl = $('#voice');
+const voiceEls = [voiceEl, $('#voice2')]; // alternate: one plays while the other loads the next sentence
+const otherVoice = (el) => (el === voiceEls[0] ? voiceEls[1] : voiceEls[0]);
+S.voice = voiceEls[1]; // the element that played last; the first sentence goes on #voice
 const motionQuery = matchMedia('(prefers-reduced-motion: reduce)');
 const darkQuery = matchMedia('(prefers-color-scheme: dark)');
 const isPhone = matchMedia('(pointer: coarse)').matches && Math.min(screen.width, screen.height) < 600;
@@ -218,7 +224,8 @@ function unlockAudio() {
       ctx = new AC();
       analyser = ctx.createAnalyser();
       analyser.fftSize = 512;
-      ctx.createMediaElementSource(voiceEl).connect(analyser).connect(ctx.destination);
+      analyser.connect(ctx.destination);
+      for (const el of voiceEls) ctx.createMediaElementSource(el).connect(analyser);
       for (const [mode, file] of Object.entries(CONFIG.tracks)) {
         const el = new Audio(file);
         el.loop = true;
@@ -234,8 +241,8 @@ function unlockAudio() {
     }
   }
   ctx?.resume();
-  voiceEl.src = silentWavUrl();
-  voiceEl.play().catch(() => {});
+  const silent = silentWavUrl();
+  for (const el of voiceEls) { el.src = silent; el.play().catch(() => {}); }
   if ('speechSynthesis' in window) {
     const u = new SpeechSynthesisUtterance(' ');
     u.volume = 0;
@@ -281,62 +288,127 @@ function speakBrowser(text, lang) {
   });
 }
 
-// Resolves true when the clip played (or was interrupted), false on a load/playback error.
-function playVoice(src) {
+function loadVoice(el, src) { el.preload = 'auto'; el.src = el._src = src; }
+function resetVoice(el) { // also aborts the network request
+  el.onended = el.onerror = el.onplaying = null;
+  el.pause();
+  el.removeAttribute('src');
+  el._src = '';
+  el.load();
+}
+
+// Plays el (loading src first unless it's already prefetched). Resolves true when the clip played
+// (or was interrupted), false on a load/playback error. onStart fires once, when audio starts.
+function playVoice(el, src, onStart) {
   return new Promise((resolve) => {
-    let done = (ok) => { voiceEl.onended = voiceEl.onerror = null; resolve(ok); };
-    S.stopVoice = () => done(true);
-    voiceEl.onended = () => done(true);
-    voiceEl.onerror = () => done(false);
-    // A stalled stream never fires ended/error: give up if it hasn't started in 9s, and cap a line at 30s.
-    const t1 = setTimeout(() => voiceEl.paused && done(false), 9000);
+    let started = false;
+    const done = (ok) => { clearTimeout(t1); clearTimeout(t2); el.onended = el.onerror = el.onplaying = null; el.pause(); resolve(ok); };
+    // A stalled stream never fires ended/error: give up if it hasn't started in 9s, and cap a sentence at 30s.
+    const t1 = setTimeout(() => el.paused && done(false), 9000);
     const t2 = setTimeout(() => done(true), 30000);
-    voiceEl.onplaying = () => clearTimeout(t1);
-    const fin = done;
-    done = (ok) => { clearTimeout(t1); clearTimeout(t2); voiceEl.onplaying = null; voiceEl.pause(); fin(ok); };
-    voiceEl.src = src;
-    voiceEl.play().catch(() => done(false));
+    S.stopVoice = () => done(true);
+    S.voice = el;
+    el.onended = () => done(true);
+    el.onerror = () => done(false);
+    el.onplaying = () => { clearTimeout(t1); if (!started) (started = true), onStart?.(); };
+    if (src) loadVoice(el, src);
+    if (el.error) return done(false); // a prefetch that already failed
+    el.play().catch(() => done(false));
   });
 }
 
-async function speakEleven(text, lang) {
-  if (!S.status?.passcodeRequired) {
-    // Stream: the <audio> element starts playing while ElevenLabs is still generating.
-    S.charsSession += text.length;
-    renderStatus();
-    const ok = await playVoice('/api/speak?' + new URLSearchParams({ text, mode: S.mode, lang: lang.code }));
-    if (!ok) refreshStatus().then((st) => { if (st && st.today.ttsChars >= st.limits.ttsChars) S.budgetHit = true; });
-    return ok;
-  }
-  // ponytail: an <audio> GET can't send the passcode header, so passcode demos keep the POST + blob download.
+// Split a line into at most maxSegments sentence groups, each at least minSegmentChars long.
+function sentences(text, code) {
+  let parts;
   try {
-    const r = await api('/api/speak', { text, mode: S.mode, language: lang.code });
+    parts = [...new Intl.Segmenter(code === 'xx' ? undefined : code, { granularity: 'sentence' }).segment(text)].map((p) => p.segment);
+  } catch {
+    parts = [];
+    let at = 0;
+    for (const m of text.matchAll(/[.!?…]+["'”’)]*\s+|[。！？]+[」』”’]*\s*/g)) parts.push(text.slice(at, (at = m.index + m[0].length)));
+    if (at < text.length) parts.push(text.slice(at));
+  }
+  const out = [];
+  let buf = '';
+  for (const p of parts) if ((buf += p).trim().length >= CONFIG.minSegmentChars) out.push(buf), (buf = '');
+  if (buf) out.length ? (out[out.length - 1] += buf) : out.push(buf);
+  const n = CONFIG.maxSegments;
+  return out.length > n ? [...out.slice(0, n - 1), out.slice(n - 1).join('')] : out;
+}
+
+const streamEleven = () => S.settings.useEleven && S.status?.elevenlabs && !S.budgetHit && !S.status.passcodeRequired && !S.settings.srMute;
+function segSrc(line, i) {
+  const seg = line.segs, prev = seg.slice(0, i).join('').trim(), next = seg.slice(i + 1).join('').trim();
+  return '/api/speak?' + new URLSearchParams({ text: seg[i].trim(), mode: line.mode, lang: line.lang.code, ...(prev && { prev }), ...(next && { next }) });
+}
+
+// Start loading the first sentence of a look-ahead line on the idle element, without playing it.
+function prefetchLine(line) {
+  if (!streamEleven()) return;
+  line.segs = sentences(line.text, line.lang.code);
+  const el = otherVoice(S.voice);
+  if (!el.paused) return;
+  loadVoice(el, segSrc(line, 0));
+  line.pre = el;
+}
+
+// Returns the text still unspoken ('' when done or interrupted), for the browser voice to finish.
+async function speakEleven(line, onLast) {
+  const { text, lang } = line;
+  if (!S.status?.passcodeRequired) {
+    // Stream sentence by sentence: the next sentence loads on the other element while this one plays.
+    const segs = (line.segs ||= sentences(text, lang.code));
+    let el = line.pre || otherVoice(S.voice);
+    for (let i = 0; i < segs.length; i++) {
+      const next = otherVoice(el), src = segSrc(line, i), last = i === segs.length - 1;
+      S.charsSession += segs[i].trim().length;
+      renderStatus();
+      const ok = await playVoice(el, el._src === src ? null : src, () => (last ? onLast() : loadVoice(next, segSrc(line, i + 1))));
+      if (line.gen !== S.gen) return '';
+      if (!ok) {
+        if (!last) resetVoice(next);
+        refreshStatus().then((st) => { if (st && st.today.ttsChars >= st.limits.ttsChars) S.budgetHit = true; });
+        return segs.slice(i).join('').trim();
+      }
+      el = next;
+    }
+    return '';
+  }
+  // ponytail: an <audio> GET can't send the passcode header, so passcode demos keep the whole-line POST + blob download.
+  try {
+    const r = await api('/api/speak', { text, mode: line.mode, language: lang.code });
     const today = r.headers.get('x-tts-today');
     if (today) S.ttsToday = Number(today);
     if (r.status === 429) {
       if ((await r.json().catch(() => ({}))).budget) S.budgetHit = true;
-      return false;
+      return text;
     }
-    if (!r.ok) return false;
+    if (!r.ok) return text;
     const url = URL.createObjectURL(await r.blob());
+    if (line.gen !== S.gen) return '';
     S.charsSession += text.length;
     renderStatus();
-    await playVoice(url);
+    await playVoice(otherVoice(S.voice), url, onLast);
     URL.revokeObjectURL(url);
-    return true;
+    return '';
   } catch (e) {
     console.warn('[speak]', e.message);
-    return false;
+    return text;
   }
 }
 
-async function speak(text, lang) {
+// onLast fires once, when the line's final sentence starts: the cue to prepare the next line.
+async function speak(line, onLast) {
+  let cued = false;
+  const cue = () => { if (!cued) (cued = true), onLast?.(); };
+  if (line.pre && !streamEleven()) resetVoice(line.pre);
   S.speaking = true;
   setMusic();
   try {
-    if (S.settings.srMute) return await sleep(Math.max(2500, text.length * 60));
-    if (S.settings.useEleven && S.status?.elevenlabs && !S.budgetHit && (await speakEleven(text, lang))) return;
-    await speakBrowser(text, lang);
+    if (S.settings.srMute) return cue(), await new Promise((r) => { S.stopVoice = r; setTimeout(r, Math.max(2500, line.text.length * 60)); });
+    let rest = line.text;
+    if (S.settings.useEleven && S.status?.elevenlabs && !S.budgetHit) rest = await speakEleven(line, cue);
+    if (rest && line.gen === S.gen) cue(), await speakBrowser(rest, line.lang);
   } finally {
     S.speaking = false;
     S.lastSpokeAt = Date.now();
@@ -345,9 +417,9 @@ async function speak(text, lang) {
 }
 
 function stopSpeech() {
-  voiceEl.pause();
-  window.speechSynthesis?.cancel();
   S.stopVoice?.();
+  voiceEls.forEach(resetVoice);
+  window.speechSynthesis?.cancel();
 }
 
 // ---------- Camera + frames ----------
@@ -406,23 +478,25 @@ function fallbackLine(mode, lang) {
 
 const tidy = (s) => String(s || '').replace(/[*_#`]/g, '').replace(/\s+/g, ' ').replace(/^["“”]+|["“”]+$/g, '').trim().slice(0, 300);
 
-async function narrate({ force = false, skipDiff = false, arrival = false } = {}) {
-  if (S.busy || !video.videoWidth) return;
+// Capture a frame and ask for a line. Returns { gen, mode, lang, text, english }, { gen, unchanged }, or null.
+// ahead: a look-ahead request made while the previous line is still playing, so nothing on screen changes.
+async function fetchLine({ force = false, skipDiff = false, arrival = false, ahead = false } = {}) {
+  if (S.busy || !video.videoWidth) return null;
   const gen = S.gen, mode = S.mode, lang = narrLang();
   if (!skipDiff) {
     S.lastDiff = frameDiff();
     updateStill(S.lastDiff);
   }
   S.nextAt = Date.now() + CONFIG.intervalMs;
+  S.lastCaptureAt = Date.now();
   const full = force || S.forceFull;
   S.forceFull = false;
 
-  if (mode === 'descriptive' && !full && S.stillCount >= 2) return showUnchanged(true);
-  showUnchanged(false);
+  if (mode === 'descriptive' && !full && S.stillCount >= 2) return { gen, unchanged: true };
+  if (!ahead) showUnchanged(false), setStatus(t('waiting.' + mode));
 
   S.busy = true;
   S.obs++;
-  setStatus(t('waiting.' + mode));
   let result = null;
   try {
     const r = await api('/api/narrate', {
@@ -434,35 +508,66 @@ async function narrate({ force = false, skipDiff = false, arrival = false } = {}
   } catch (e) {
     console.warn('[narrate] using fallback:', e.message);
   }
-  if (gen !== S.gen) return; // mode/language switched mid-request
+  if (gen !== S.gen) return null; // mode/language switched mid-request
   S.busy = false;
   setStatus('');
 
   let text, english = '';
   if (!result) {
-    if (mode === 'pumpkin' && !arrival) return;
+    if (mode === 'pumpkin' && !arrival) return null;
     text = fallbackLine(mode, lang);
   } else {
-    if (mode === 'pumpkin' && result.person_close === false) return;
+    if (mode === 'pumpkin' && result.person_close === false) return null;
     text = result.narration ?? result.line ?? result.text;
     english = result.english || '';
   }
   if (result && mode === 'descriptive') {
     if (result.changed === false && !full) {
-      if (S.saidNoChange) return showUnchanged(true);
+      if (S.saidNoChange) return { gen, unchanged: true };
       S.saidNoChange = true;
       text = NO_CHANGE[lang.code] || NO_CHANGE.en;
       english = '';
     } else S.saidNoChange = false;
   }
-
   text = tidy(text);
-  if (!text) return;
-  S.lines = [...S.lines, text].slice(-8);
-  showLine(text, tidy(english), lang);
-  if (mode === 'funny' && S.stillCount >= 2) nowShowing(text);
-  await speak(text, lang);
+  return text ? { gen, mode, lang, text, english: tidy(english) } : null;
+}
+
+// While the last sentence plays, fetch the next line and start loading its first sentence.
+function startLookahead(gen) {
+  if (gen !== S.gen || S.ahead || S.paused || S.mode === 'pumpkin') return;
+  const ahead = (S.ahead = { gen, done: false });
+  ahead.p = sleep(Math.max(0, S.lastCaptureAt + CONFIG.minCaptureGapMs - Date.now()))
+    .then(() => (gen === S.gen ? fetchLine({ ahead: true }) : null))
+    .then((line) => {
+      ahead.done = true;
+      if (line?.text && line.gen === S.gen) prefetchLine(line);
+      return line;
+    });
+}
+
+// Show + speak a line, then follow straight on with the look-ahead line if one was prepared.
+async function playLine(line) {
+  const gen = line.gen;
+  while (line && line.gen === S.gen) {
+    if (line.unchanged) { showUnchanged(true); break; }
+    showUnchanged(false);
+    S.lines = [...S.lines, line.text].slice(-8);
+    showLine(line.text, line.english, line.lang);
+    if (line.mode === 'funny' && S.stillCount >= 2) nowShowing(line.text);
+    await speak(line, () => startLookahead(gen));
+    const ahead = S.ahead;
+    if (gen !== S.gen || !ahead) break;
+    if (!ahead.done) setStatus(t('waiting.' + line.mode));
+    line = await ahead.p;
+    if (S.ahead === ahead) S.ahead = null;
+  }
   if (gen === S.gen) S.nextAt = Math.max(S.nextAt, Date.now()); // cadence stays ~7s from the previous capture start
+}
+
+async function narrate(opts) {
+  const line = await fetchLine(opts);
+  if (line) await playLine(line);
 }
 
 function pumpkinTick() {
@@ -480,12 +585,13 @@ function pumpkinTick() {
   }
 }
 
+let ticks = 0;
 setInterval(() => {
-  updateHud();
-  if (!S.started || S.paused || S.busy || S.speaking || !video.videoWidth) return;
-  if (S.mode === 'pumpkin') pumpkinTick();
+  if (++ticks % 4 === 0) updateHud();
+  if (!S.started || S.paused || S.busy || S.speaking || S.ahead || !video.videoWidth) return;
+  if (S.mode === 'pumpkin') { if (ticks % 4 === 0) pumpkinTick(); } // pumpkin's stillness counts assume a 1s tick
   else if (Date.now() >= S.nextAt) narrate();
-}, 1000);
+}, 250);
 
 // ---------- On-screen output ----------
 function setStatus(s) { $('#status').textContent = s; }
@@ -589,7 +695,7 @@ let flick = 0.3, lastFlick = 0;
 function pumpkinFrame(now) {
   if (S.started && S.mode === 'pumpkin') {
     let glow, mouth = 1;
-    if (S.speaking && !voiceEl.paused && analyser) {
+    if (S.speaking && voiceEls.some((el) => !el.paused) && analyser) {
       analyser.getByteTimeDomainData(pkData);
       let sum = 0;
       for (const v of pkData) sum += ((v - 128) / 128) ** 2;
@@ -618,6 +724,7 @@ requestAnimationFrame(pumpkinFrame);
 function interrupt() {
   S.gen++;
   S.busy = false;
+  S.ahead = null;
   stopSpeech();
   setStatus('');
 }
