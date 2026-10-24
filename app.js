@@ -338,7 +338,9 @@ function sentences(text, code) {
 
 const streamEleven = () => S.settings.useEleven && S.status?.elevenlabs && !S.budgetHit && !S.status.passcodeRequired && !S.settings.srMute;
 function segSrc(line, i) {
-  const seg = line.segs, prev = seg.slice(0, i).join('').trim(), next = seg.slice(i + 1).join('').trim();
+  // The first sentence is on the critical path and stitching adds ~0.5-1s to ElevenLabs' first byte, so only
+  // later sentences (prefetched while the previous one plays) carry previous/next text.
+  const seg = line.segs, prev = seg.slice(0, i).join('').trim(), next = i ? seg.slice(i + 1).join('').trim() : '';
   return '/api/speak?' + new URLSearchParams({ text: seg[i].trim(), mode: line.mode, lang: line.lang.code, ...(prev && { prev }), ...(next && { next }) });
 }
 
