@@ -41,6 +41,7 @@ export default async function handler(req, res) {
   // ponytail: v3 documents stability as three presets (0 creative, 0.5 natural, 1 robust), so snap to the nearest.
   const settings = model === 'eleven_v3' ? { ...voice.settings, stability: Math.round(voice.settings.stability * 2) / 2 } : { ...voice.settings, speed: SPEED };
 
+  const started = Date.now();
   const ac = new AbortController();
   let timer = setTimeout(() => ac.abort(), FIRST_BYTE_MS);
   res.on?.('close', () => ac.abort()); // listener left or interrupted: stop generating
@@ -60,7 +61,13 @@ export default async function handler(req, res) {
     res.setHeader('content-type', 'audio/mpeg');
     res.setHeader('cache-control', 'no-store');
     res.status(200);
-    for await (const chunk of r.body) res.write(chunk);
+    const t0 = Date.now();
+    let first = true;
+    for await (const chunk of r.body) {
+      if (first) res.setHeader('x-el-first-chunk-ms', String(Date.now() - started)), (first = false);
+      res.write(chunk);
+    }
+    console.log(`[speak] ${model} first chunk ${Date.now() - t0}ms after headers`);
     res.end();
   } catch (e) {
     console.error(`[speak] failed: ${e.name} ${e.message}`);
