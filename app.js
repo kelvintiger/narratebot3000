@@ -330,7 +330,9 @@ function sentences(text, code) {
   }
   const out = [];
   let buf = '';
-  for (const p of parts) if ((buf += p).trim().length >= CONFIG.minSegmentChars) out.push(buf), (buf = '');
+  // A CJK character takes about as long to say as 3 Latin letters, so weight it when measuring a sentence.
+  const spoken = (str) => str.trim().length + 2 * (str.match(/[\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af]/g) || []).length;
+  for (const p of parts) if (spoken((buf += p)) >= CONFIG.minSegmentChars) out.push(buf), (buf = '');
   if (buf) out.length ? (out[out.length - 1] += buf) : out.push(buf);
   const n = CONFIG.maxSegments;
   return out.length > n ? [...out.slice(0, n - 1), out.slice(n - 1).join('')] : out;
