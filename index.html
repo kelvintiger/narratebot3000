@@ -145,8 +145,17 @@
       </header>
 
       <fieldset>
+        <legend data-i18n="access.legend"></legend>
+        <p class="access-now"><span data-i18n="access.current"></span> <strong id="access-now"></strong></p>
+        <div class="row wrap access-btns">
+          <button type="button" id="btn-change-keys"></button>
+          <button type="button" id="btn-remove-access" hidden></button>
+        </div>
+      </fieldset>
+
+      <fieldset>
         <label class="row switch"><input type="checkbox" id="opt-eleven"> <span data-i18n="set.useEleven"></span></label>
-        <dl class="counters">
+        <dl class="counters" id="counters" hidden>
           <dt data-i18n="set.charsSession"></dt><dd id="chars-session" class="lcd-small">0</dd>
           <dt data-i18n="set.charsToday"></dt><dd id="chars-today" class="lcd-small">–</dd>
           <dt data-i18n="set.narrToday"></dt><dd id="narr-today" class="lcd-small">–</dd>
@@ -182,7 +191,7 @@
         <p id="customlang-hint" class="hint" data-i18n="set.customLangHint"></p>
       </fieldset>
 
-      <fieldset>
+      <fieldset id="config-set" hidden>
         <legend data-i18n="set.config"></legend>
         <ul id="config-list" class="config"></ul>
       </fieldset>
@@ -194,14 +203,65 @@
     </form>
   </dialog>
 
-  <!-- ===== Passcode ===== -->
-  <dialog id="passcode" aria-labelledby="pass-title">
-    <form class="form" id="pass-form">
-      <h2 id="pass-title"><span class="info-only" data-i18n="pass.title"></span><span class="clean-only" data-i18n="pass.titleClean"></span></h2>
-      <label for="pass-input" data-i18n="pass.label"></label>
-      <input type="password" id="pass-input" autocomplete="off" required>
-      <p id="pass-error" class="pass-error" role="alert" hidden data-i18n="pass.wrong"></p>
-      <button type="submit" class="order-btn small" data-i18n="pass.submit"></button>
+  <!-- ===== Bring your own keys ===== -->
+  <dialog id="keys" aria-labelledby="keys-title">
+    <form class="form" id="keys-form">
+      <header class="form-head">
+        <h2 id="keys-title"><span class="info-only" data-i18n="keys.title"></span><span class="clean-only" data-i18n="keys.titleClean"></span></h2>
+        <p class="info-only form-sub" data-i18n="keys.sub"></p>
+        <button type="button" class="close-btn" data-close data-i18n-aria="btn.close">✕</button>
+      </header>
+      <p id="keys-msg" class="form-msg" role="status" hidden></p>
+      <p class="form-intro" data-i18n="keys.intro"></p>
+
+      <fieldset>
+        <div class="key-label">
+          <label for="key-gemini" class="row-label" data-i18n="keys.gemini"></label>
+          <button type="button" class="info-btn" aria-expanded="false" aria-controls="help-gemini"><span aria-hidden="true">i</span><span class="sr-only" data-i18n="keys.geminiHelp"></span></button>
+        </div>
+        <div id="help-gemini" class="key-help" hidden>
+          <p><span data-i18n="keys.getAt"></span> <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">aistudio.google.com/apikey<span class="sr-only" data-i18n="keys.newTab"></span></a></p>
+          <p data-i18n="keys.geminiSteps"></p>
+          <p data-i18n="keys.geminiCost"></p>
+        </div>
+        <input type="password" id="key-gemini" data-1p-ignore data-lpignore="true" data-bwignore name="gemini" autocomplete="off" spellcheck="false" autocapitalize="off" required aria-describedby="keys-error">
+      </fieldset>
+
+      <fieldset>
+        <div class="key-label">
+          <label for="key-eleven" class="row-label" data-i18n="keys.eleven"></label>
+          <button type="button" class="info-btn" aria-expanded="false" aria-controls="help-eleven"><span aria-hidden="true">i</span><span class="sr-only" data-i18n="keys.elevenHelp"></span></button>
+        </div>
+        <div id="help-eleven" class="key-help" hidden>
+          <p><span data-i18n="keys.getAt"></span> <a href="https://elevenlabs.io/app/settings/api-keys" target="_blank" rel="noopener noreferrer">elevenlabs.io/app/settings/api-keys<span class="sr-only" data-i18n="keys.newTab"></span></a></p>
+          <p data-i18n="keys.elevenSteps"></p>
+          <p data-i18n="keys.elevenCost"></p>
+        </div>
+        <input type="password" id="key-eleven" data-1p-ignore data-lpignore="true" data-bwignore name="eleven" autocomplete="off" spellcheck="false" autocapitalize="off" aria-describedby="keys-error">
+      </fieldset>
+
+      <p class="hint form-intro" data-i18n="keys.privacy"></p>
+      <p id="keys-error" class="form-error" role="alert" hidden></p>
+      <div class="form-actions">
+        <button type="submit" class="order-btn small" id="keys-save" data-i18n="keys.save"></button>
+        <button type="button" class="plain-btn" data-close data-i18n="keys.cancel"></button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- ===== Owner access (opened by 5 taps on the starburst / heading, or Shift+O) ===== -->
+  <dialog id="owner" aria-labelledby="owner-title">
+    <form class="form" id="owner-form">
+      <header class="form-head">
+        <h2 id="owner-title"><span class="info-only" data-i18n="owner.title"></span><span class="clean-only" data-i18n="owner.titleClean"></span></h2>
+        <button type="button" class="close-btn" data-close data-i18n-aria="btn.close">✕</button>
+      </header>
+      <div class="form-body">
+        <label for="owner-input" class="row-label" data-i18n="owner.label"></label>
+        <input type="password" id="owner-input" autocomplete="current-password" spellcheck="false" autocapitalize="off" required aria-describedby="owner-error">
+        <p id="owner-error" class="form-error" role="alert" hidden></p>
+        <div class="form-actions"><button type="submit" class="order-btn small" id="owner-save" data-i18n="owner.submit"></button></div>
+      </div>
     </form>
   </dialog>
 

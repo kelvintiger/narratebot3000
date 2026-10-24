@@ -56,12 +56,13 @@ const S = {
   lines: [], obs: 0, stillCount: 0, forcedStill: false, lastDiff: null, prevTiny: null,
   nextAt: 0, forceFull: true, saidNoChange: false, lastCaptureAt: 0, ahead: null,
   facing: 'user', userFlipped: false, stream: null,
-  status: null, budgetHit: false, charsSession: 0, ttsToday: null,
+  status: null, budgetHit: false, charsSession: 0,
+  access: 'none', statusLoaded: false, voiceOff: false, voiceFails: 0, // access: 'owner' | 'byok' | 'none'
   startTime: 0, specimen: 1 + Math.floor(Math.random() * 999),
-  passcode: store.get('passcode', ''),
   pumpkinStill: 0, pumpkinChanged: true, lastSpokeAt: 0, lastFallback: '',
 };
 if (urlView) store.set('view', S.view);
+try { localStorage.removeItem('nb3k:passcode'); } catch {} // left over from the old demo passcode
 S.mode = S.view === 'clean' ? 'descriptive' : 'documentary';
 
 const video = $('#cam');
@@ -146,57 +147,171 @@ function buildLcd() {
   });
 }
 
-// ---------- Status, passcode, counters ----------
+// ---------- Status, access, counters ----------
 async function refreshStatus() {
   try {
-    const r = await fetch('/api/status', { headers: S.passcode ? { 'x-demo-passcode': S.passcode } : {}, signal: AbortSignal.timeout(5000) });
+    const r = await fetch('/api/status', { signal: AbortSignal.timeout(5000) });
     S.status = r.ok ? await r.json() : null;
   } catch (e) {
     console.warn('[status] unavailable', e.message);
     S.status = null;
   }
-  if (S.status?.passcodeRequired && !S.status.passcodeOk) askPasscode(Boolean(S.passcode));
+  if (S.status) S.access = S.status.access || 'none';
+  S.statusLoaded = true;
   renderStatus();
   return S.status;
 }
+S.statusP = null; // the boot-time refreshStatus(), so an early tap on Start can wait for it
 
-const REQUIRED_VARS = new Set(['GEMINI_API_KEY', 'ELEVENLABS_API_KEY']); // everything else has a default
+const REQUIRED_VARS = new Set(['GEMINI_API_KEY', 'ELEVENLABS_API_KEY', 'OWNER_PASSCODE', 'SESSION_SECRET']); // everything else has a default
 
 function renderStatus() {
-  const st = S.status;
+  const st = S.status, owner = S.access === 'owner' && st?.configured;
+  $('#access-now').textContent = t('access.' + S.access);
+  $('#btn-change-keys').textContent = S.access === 'byok' ? t('access.change') : t('access.add');
+  const rm = $('#btn-remove-access');
+  rm.hidden = S.access === 'none';
+  rm.textContent = S.access === 'owner' ? t('access.lock') : t('access.remove');
+  $('#counters').hidden = !owner;
+  $('#config-set').hidden = !owner;
+  if (!owner) return;
   $('#chars-session').textContent = S.charsSession;
-  $('#chars-today').textContent = st ? `${S.ttsToday ?? st.today.ttsChars} / ${st.limits.ttsChars}` : '–';
-  $('#narr-today').textContent = st ? `${st.today.narrations} / ${st.limits.narrations}` : '–';
-  $('#config-list').innerHTML = st
-    ? Object.entries(st.configured).map(([k, v]) => {
-        const label = v ? '✓ ' + t('set.yes') : REQUIRED_VARS.has(k) ? '✗ ' + t('set.no') : '– ' + t('set.dflt');
-        return `<li class="${v || !REQUIRED_VARS.has(k) ? 'ok' : 'missing'}"><code>${k}</code> <span>${label}</span></li>`;
-      }).join('')
-    : '<li class="missing">/api/status ✗</li>';
+  $('#chars-today').textContent = `${st.today.ttsChars} / ${st.limits.ttsChars}`;
+  $('#narr-today').textContent = `${st.today.narrations} / ${st.limits.narrations}`;
+  $('#config-list').innerHTML = Object.entries(st.configured).map(([k, v]) => {
+    const label = v ? '✓ ' + t('set.yes') : REQUIRED_VARS.has(k) ? '✗ ' + t('set.no') : '– ' + t('set.dflt');
+    return `<li class="${v || !REQUIRED_VARS.has(k) ? 'ok' : 'missing'}"><code>${k}</code> <span>${label}</span></li>`;
+  }).join('');
 }
 
-function askPasscode(wrong) {
-  const d = $('#passcode');
-  $('#pass-error').hidden = !wrong;
-  if (!d.open) d.showModal();
+// ---- Bring-your-own-keys dialog ----
+function showFormError(id, key) {
+  const el = $(id);
+  el.textContent = key ? t(key) : '';
+  el.hidden = !key;
 }
-$('#pass-form').addEventListener('submit', async (e) => {
+
+// msgKey explains why the dialog opened mid-session (key rejected, keys removed).
+function openKeys(msgKey) {
+  const d = $('#keys');
+  $('#settings').open && $('#settings').close();
+  showFormError('#keys-msg', msgKey);
+  showFormError('#keys-error', null);
+  $$('#keys input').forEach((i) => i.removeAttribute('aria-invalid'));
+  if (!d.open) d.showModal();
+  $('#key-gemini').focus();
+}
+
+async function saveKeys(e) {
   e.preventDefault();
-  S.passcode = $('#pass-input').value.trim();
-  store.set('passcode', S.passcode);
-  const st = await refreshStatus();
-  if (!st || st.passcodeOk) $('#passcode').close();
-});
+  if (!S.started) unlockAudio(); // synchronously inside the tap (iOS), before any await
+  const gemini = $('#key-gemini').value.trim(), eleven = $('#key-eleven').value.trim();
+  const fail = (key, input) => {
+    showFormError('#keys-error', key);
+    $$('#keys input').forEach((i) => i.toggleAttribute('aria-invalid', i === input));
+    input?.focus();
+  };
+  if (!gemini) return fail('keys.needGemini', $('#key-gemini'));
+  const btn = $('#keys-save');
+  btn.disabled = true;
+  btn.textContent = t('keys.saving');
+  let r = null, j = {};
+  try {
+    r = await fetch('/api/session', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ geminiKey: gemini, ...(eleven && { elevenLabsKey: eleven }) }),
+      signal: AbortSignal.timeout(10000),
+    });
+    j = await r.json().catch(() => ({}));
+  } catch {}
+  btn.disabled = false;
+  btn.textContent = t('keys.save');
+  if (!r?.ok) {
+    if (r?.status === 429) return fail('keys.tooMany', null);
+    if (j.error === 'gemini-invalid') return fail('keys.geminiInvalid', $('#key-gemini'));
+    if (j.error === 'key-format') return j.field === 'elevenlabs' ? fail('keys.formatEleven', $('#key-eleven')) : fail('keys.format', $('#key-gemini'));
+    return fail('keys.failed', null);
+  }
+  if (eleven) { S.settings.useEleven = true; saveSettings(); }
+  Object.assign(S, { voiceOff: false, voiceFails: 0, budgetHit: false });
+  await refreshStatus();
+  $('#keys').close();
+  render();
+  if (!S.started) start();
+  else if (S.paused) togglePause();
+}
+
+// ---- Owner access (hidden: 5 quick taps on the starburst / heading, or Shift+O) ----
+function openOwner() {
+  const d = $('#owner');
+  if (d.open) return;
+  $$('dialog[open]').forEach((x) => x.close());
+  showFormError('#owner-error', null);
+  d.showModal();
+  $('#owner-input').focus();
+}
+
+async function saveOwner(e) {
+  e.preventDefault();
+  const input = $('#owner-input'), btn = $('#owner-save');
+  btn.disabled = true;
+  let r = null;
+  try {
+    r = await fetch('/api/session', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ passcode: input.value }),
+      signal: AbortSignal.timeout(8000),
+    });
+  } catch {}
+  btn.disabled = false;
+  if (!r?.ok) {
+    showFormError('#owner-error', r?.status === 429 ? 'owner.tooMany' : 'owner.wrong');
+    input.setAttribute('aria-invalid', 'true');
+    input.select();
+    return;
+  }
+  Object.assign(S, { voiceOff: false, voiceFails: 0, budgetHit: false });
+  await refreshStatus();
+  $('#owner').close();
+  render();
+  $('#announce').textContent = t('owner.done');
+  if (S.started && S.paused) togglePause();
+}
+
+async function removeAccess() {
+  try { await fetch('/api/session', { method: 'DELETE', signal: AbortSignal.timeout(5000) }); } catch {}
+  await refreshStatus();
+  render();
+  if (S.started) {
+    if (!S.paused) togglePause();
+    openKeys('keys.removed');
+  }
+}
+
+// /api/narrate said no: our key is locked or the visitor's key was refused. Stop instead of looping on fallbacks.
+function accessDenied(reason) {
+  if (S.started && !S.paused) togglePause();
+  refreshStatus();
+  openKeys(reason === 'gemini-key' ? 'keys.badKey' : 'keys.needKeys');
+}
+
+function tapUnlock(el) {
+  let taps = [];
+  el.addEventListener('click', () => {
+    const now = Date.now();
+    taps = [...taps.filter((x) => now - x < 3000), now];
+    if (taps.length >= 5) { taps = []; openOwner(); }
+  });
+}
 
 function api(path, body) {
   return fetch(path, {
     method: 'POST',
-    headers: { 'content-type': 'application/json', ...(S.passcode && { 'x-demo-passcode': S.passcode }) },
+    headers: { 'content-type': 'application/json' },
     body: JSON.stringify(body),
     signal: AbortSignal.timeout(CONFIG.apiTimeoutMs),
-  }).then((r) => {
-    if (r.status === 401) askPasscode(true);
-    return r;
   });
 }
 
@@ -338,7 +453,7 @@ function sentences(text, code) {
   return out.length > n ? [...out.slice(0, n - 1), out.slice(n - 1).join('')] : out;
 }
 
-const streamEleven = () => S.settings.useEleven && S.status?.elevenlabs && !S.budgetHit && !S.status.passcodeRequired && !S.settings.srMute;
+const streamEleven = () => S.settings.useEleven && S.status?.elevenlabs && !S.budgetHit && !S.voiceOff && !S.settings.srMute;
 function segSrc(line, i) {
   // The first sentence is on the critical path and stitching adds ~0.5-1s to ElevenLabs' first byte, so only
   // later sentences (prefetched while the previous one plays) carry previous/next text.
@@ -356,49 +471,37 @@ function prefetchLine(line) {
   line.pre = el;
 }
 
+// After a failed sentence: an <audio> error can't show the HTTP status, so ask /api/status what changed.
+function voiceFailed() {
+  S.voiceFails++;
+  refreshStatus().then((st) => {
+    if (!st) return;
+    if (st.access === 'owner' && st.today.ttsChars >= st.limits.ttsChars) S.budgetHit = true;
+    // Visitors: no ElevenLabs key, or it keeps failing (bad key, no quota): use the browser voice for this session.
+    if (st.access !== 'owner' && (!st.byok?.elevenlabs || S.voiceFails >= 2)) S.voiceOff = true;
+  });
+}
+
 // Returns the text still unspoken ('' when done or interrupted), for the browser voice to finish.
+// Streams sentence by sentence: the next sentence loads on the other element while this one plays.
 async function speakEleven(line, onLast) {
-  const { text, lang } = line;
-  if (!S.status?.passcodeRequired) {
-    // Stream sentence by sentence: the next sentence loads on the other element while this one plays.
-    const segs = (line.segs ||= sentences(text, lang.code));
-    let el = line.pre || otherVoice(S.voice);
-    for (let i = 0; i < segs.length; i++) {
-      const next = otherVoice(el), src = segSrc(line, i), last = i === segs.length - 1;
-      S.charsSession += segs[i].trim().length;
-      renderStatus();
-      const ok = await playVoice(el, el._src === src ? null : src, () => (last ? onLast() : loadVoice(next, segSrc(line, i + 1))));
-      if (line.gen !== S.gen) return '';
-      if (!ok) {
-        if (!last) resetVoice(next);
-        refreshStatus().then((st) => { if (st && st.today.ttsChars >= st.limits.ttsChars) S.budgetHit = true; });
-        return segs.slice(i).join('').trim();
-      }
-      el = next;
-    }
-    return '';
-  }
-  // ponytail: an <audio> GET can't send the passcode header, so passcode demos keep the whole-line POST + blob download.
-  try {
-    const r = await api('/api/speak', { text, mode: line.mode, language: lang.code });
-    const today = r.headers.get('x-tts-today');
-    if (today) S.ttsToday = Number(today);
-    if (r.status === 429) {
-      if ((await r.json().catch(() => ({}))).budget) S.budgetHit = true;
-      return text;
-    }
-    if (!r.ok) return text;
-    const url = URL.createObjectURL(await r.blob());
-    if (line.gen !== S.gen) return '';
-    S.charsSession += text.length;
+  const segs = (line.segs ||= sentences(line.text, line.lang.code));
+  let el = line.pre || otherVoice(S.voice);
+  for (let i = 0; i < segs.length; i++) {
+    const next = otherVoice(el), src = segSrc(line, i), last = i === segs.length - 1;
+    S.charsSession += segs[i].trim().length;
     renderStatus();
-    await playVoice(otherVoice(S.voice), url, onLast);
-    URL.revokeObjectURL(url);
-    return '';
-  } catch (e) {
-    console.warn('[speak]', e.message);
-    return text;
+    const ok = await playVoice(el, el._src === src ? null : src, () => (last ? onLast() : loadVoice(next, segSrc(line, i + 1))));
+    if (line.gen !== S.gen) return '';
+    if (!ok) {
+      if (!last) resetVoice(next);
+      voiceFailed();
+      return segs.slice(i).join('').trim();
+    }
+    S.voiceFails = 0;
+    el = next;
   }
+  return '';
 }
 
 // onLast fires once, when the line's final sentence starts: the cue to prepare the next line.
@@ -411,7 +514,7 @@ async function speak(line, onLast) {
   try {
     if (S.settings.srMute) return cue(), await new Promise((r) => { S.stopVoice = r; setTimeout(r, Math.max(2500, line.text.length * 60)); });
     let rest = line.text;
-    if (S.settings.useEleven && S.status?.elevenlabs && !S.budgetHit) rest = await speakEleven(line, cue);
+    if (streamEleven()) rest = await speakEleven(line, cue);
     if (rest && line.gen === S.gen) cue(), await speakBrowser(rest, line.lang);
   } finally {
     S.speaking = false;
@@ -501,20 +604,25 @@ async function fetchLine({ force = false, skipDiff = false, arrival = false, ahe
 
   S.busy = true;
   S.obs++;
-  let result = null;
+  let result = null, denied = null, quota = false;
   try {
     const r = await api('/api/narrate', {
       image: grabJpeg(), mode, language: lang.name, lastLines: S.lines.slice(-4),
       stillCount: mode === 'descriptive' ? 0 : S.stillCount, observationNumber: S.obs,
     });
-    if (!r.ok) throw new Error('HTTP ' + r.status);
-    result = await r.json();
+    if (r.status === 401) denied = (await r.json().catch(() => ({}))).error || 'access';
+    else if (r.status === 429 && S.access === 'byok' && (await r.json().catch(() => ({}))).error === 'gemini-quota') quota = true;
+    else if (!r.ok) throw new Error('HTTP ' + r.status);
+    else result = await r.json();
   } catch (e) {
     console.warn('[narrate] using fallback:', e.message);
   }
   if (gen !== S.gen) return null; // mode/language switched mid-request
   S.busy = false;
   setStatus('');
+  if (denied) return accessDenied(denied), null;
+  // The visitor's own Gemini quota ran out: say so and wait a minute instead of looping fallback lines.
+  if (quota) return setStatus(t('keys.quota')), (S.nextAt = Date.now() + 60000), null;
 
   let text, english = '';
   if (!result) {
@@ -841,6 +949,7 @@ async function flipCamera() {
 function toggleSettings() {
   const d = $('#settings');
   if (d.open) return d.close();
+  if ($('dialog[open]')) return; // the keys or owner dialog is up
   refreshStatus();
   d.showModal();
 }
@@ -849,6 +958,17 @@ async function wakeLock() {
   try { S.wake = await navigator.wakeLock?.request('screen'); } catch {}
 }
 document.addEventListener('visibilitychange', () => document.visibilityState === 'visible' && S.started && wakeLock());
+
+// Start button: without access, ask for the visitor's own keys instead of starting.
+async function begin() {
+  if (S.started) return;
+  if (!S.statusLoaded) {
+    unlockAudio(); // still inside the tap
+    await S.statusP;
+  }
+  if (S.access === 'none') return openKeys();
+  start();
+}
 
 async function start() {
   if (S.started) return;
@@ -882,7 +1002,7 @@ document.addEventListener('click', (e) => {
   if (!b) return;
   if (e.detail > 0 && b.dataset.action !== 'start') b.blur(); // mouse/touch: keep Space free for pause
   ({
-    start,
+    start: begin,
     mode: () => setMode(b.dataset.mode),
     'site-lang': () => setSiteLang(b.dataset.lang),
     theme: toggleTheme,
@@ -902,6 +1022,7 @@ document.addEventListener('keydown', (e) => {
   const k = e.key.toLowerCase();
   if (k === 'k') return e.preventDefault(), toggleSettings();
   if ($('dialog[open]')) return;
+  if (k === 'o' && e.shiftKey) return e.preventDefault(), openOwner();
   if (k === ' ') {
     if (e.target.closest?.('button, a') || !S.started) return;
     e.preventDefault();
@@ -915,7 +1036,26 @@ document.addEventListener('keydown', (e) => {
 });
 
 const bind = (id, ev, fn) => $(id).addEventListener(ev, fn);
-bind('#opt-eleven', 'change', (e) => { S.settings.useEleven = e.target.checked; saveSettings(); });
+bind('#opt-eleven', 'change', (e) => {
+  S.settings.useEleven = e.target.checked;
+  if (S.settings.useEleven) Object.assign(S, { voiceOff: false, voiceFails: 0 }); // switching it back on retries ElevenLabs
+  saveSettings();
+});
+bind('#keys-form', 'submit', saveKeys);
+bind('#owner-form', 'submit', saveOwner);
+bind('#btn-change-keys', 'click', () => openKeys());
+bind('#btn-remove-access', 'click', removeAccess);
+$$('dialog [data-close]').forEach((b) => b.addEventListener('click', () => b.closest('dialog').close()));
+$$('.info-btn').forEach((b) => b.addEventListener('click', () => {
+  const open = b.getAttribute('aria-expanded') !== 'true';
+  b.setAttribute('aria-expanded', open);
+  document.getElementById(b.getAttribute('aria-controls')).hidden = !open;
+}));
+// Keys never linger in the page once a dialog closes.
+bind('#keys', 'close', () => $$('#keys input').forEach((i) => (i.value = '')));
+bind('#owner', 'close', () => { $('#owner-input').value = ''; $('#owner-input').removeAttribute('aria-invalid'); });
+tapUnlock($('.burst-1'));
+tapUnlock($('.start-clean h1'));
 bind('#opt-srmute', 'change', (e) => { S.settings.srMute = e.target.checked; saveSettings(); });
 bind('#opt-hidevideo', 'change', (e) => { S.settings.hideVideo = e.target.checked; saveSettings(); render(); });
 bind('#opt-still', 'input', (e) => { S.settings.still = Number(e.target.value); saveSettings(); });
@@ -943,4 +1083,4 @@ darkQuery.addEventListener?.('change', render);
 // ---------- Boot ----------
 buildLcd();
 render();
-refreshStatus();
+S.statusP = refreshStatus();

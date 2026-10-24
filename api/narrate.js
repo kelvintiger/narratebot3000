@@ -3,8 +3,9 @@
 // Gemini config. Billing is on; paid limits: gemini-3.8-flash 1,000 RPM / 10,000 RPD,
 // gemini-3.1-flash-lite 4,000 RPM / 150,000 RPD. Money is the only real constraint:
 // DAILY_NARRATION_LIMIT protects a small prepaid balance shared with the Replit version.
+// Owner sessions use GEMINI_API_KEY; visitors bring their own key (getAccess), which never counts against our caps.
 import { buildPrompt, MODES, JSON_MODES, isEnglish } from './_prompts.js';
-import { rejectBadRequest, checkNarrationLimits } from './_lib.js';
+import { rejectBadRequest, checkNarrationLimits, getAccess, redact } from './_lib.js';
 
 const MODEL_FUNNY = process.env.GEMINI_MODEL_FUNNY || 'gemini-3.8-flash'; // documentary, funny, pumpkin
 const MODEL_FAST = process.env.GEMINI_MODEL_FAST || 'gemini-3.1-flash-lite'; // descriptive
@@ -25,15 +26,22 @@ function modelsFor(mode) {
 // thinkingLevel "minimal" still spent ~500 thought tokens (~7s) on gemini-3.8-flash, so try a zero budget first.
 const THINKING_OPTIONS = [{ thinkingBudget: 0 }, { thinkingLevel: 'minimal' }];
 
-async function callGemini(model, body, ms) {
+async function callGemini(model, body, ms, key) {
   const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
     method: 'POST',
-    headers: { 'content-type': 'application/json', 'x-goog-api-key': process.env.GEMINI_API_KEY },
+    headers: { 'content-type': 'application/json', 'x-goog-api-key': key },
     body: JSON.stringify(body),
     signal: AbortSignal.timeout(ms),
   });
   const data = await r.json().catch(() => ({}));
   return { status: r.status, data };
+}
+
+// A visitor's key that Google refuses (invalid, revoked, API not enabled, restricted).
+function badKey(status, data) {
+  if (status === 401 || status === 403) return true;
+  const e = data?.error || {};
+  return status === 400 && (/api[ _]?key/i.test(e.message || '') || (e.details || []).some((d) => /API_KEY/.test(d?.reason || '')));
 }
 
 function parseJson(raw) {
@@ -46,7 +54,11 @@ function parseJson(raw) {
 
 export default async function handler(req, res) {
   if (rejectBadRequest(req, res)) return;
-  if (!process.env.GEMINI_API_KEY) return res.status(503).json({ error: 'Gemini not configured' });
+  const access = getAccess(req);
+  if (access.mode === 'none') return res.status(401).json({ error: 'access' });
+  const owner = access.mode === 'owner';
+  const key = owner ? process.env.GEMINI_API_KEY : access.gemini;
+  if (!key) return res.status(503).json({ error: 'Gemini not configured' });
 
   const b = req.body || {};
   const mode = MODES.includes(b.mode) ? b.mode : null;
@@ -57,7 +69,7 @@ export default async function handler(req, res) {
   const lastLines = (Array.isArray(b.lastLines) ? b.lastLines : []).slice(-4).map((l) => String(l).slice(0, 300));
   const clampInt = (v, max) => Math.min(max, Math.max(0, Math.floor(Number(v) || 0)));
 
-  const limited = await checkNarrationLimits(req);
+  const limited = await checkNarrationLimits(req, { owner });
   if (limited) return res.status(429).json({ error: limited });
 
   const prompt = buildPrompt({
@@ -86,12 +98,12 @@ export default async function handler(req, res) {
       },
     };
     try {
-      let { status, data } = await callGemini(model, body, isLite ? left : Math.min(left, SLOW_MODEL_MS));
+      let { status, data } = await callGemini(model, body, isLite ? left : Math.min(left, SLOW_MODEL_MS), key);
       // Some models reject a thinking setting: retry the same model with the next one, then without.
       for (let i = 1; status === 400 && /thinking/i.test(data?.error?.message || ''); i++) {
         if (THINKING_OPTIONS[i]) body.generationConfig.thinkingConfig = THINKING_OPTIONS[i];
         else delete body.generationConfig.thinkingConfig;
-        ({ status, data } = await callGemini(model, body, DEADLINE_MS - (Date.now() - started)));
+        ({ status, data } = await callGemini(model, body, DEADLINE_MS - (Date.now() - started), key));
         if (!THINKING_OPTIONS[i]) break;
       }
       if (status === 200) {
@@ -102,17 +114,20 @@ export default async function handler(req, res) {
           .trim();
         const u = data.usageMetadata || {};
         const usage = { finish: data.candidates?.[0]?.finishReason, thoughts: u.thoughtsTokenCount || 0, out: u.candidatesTokenCount || 0, ms: Date.now() - started };
-        console.log(`[narrate] ${mode} ${model} ${JSON.stringify(usage)}`);
+        console.log(`[narrate] ${access.mode} ${mode} ${model} ${JSON.stringify(usage)}`);
         if (!text) return res.status(502).json({ error: 'Empty response' });
         if (!isJson) return res.json({ text, model, usage });
         const p = parseJson(text);
         const o = p && typeof p === 'object' ? p : { text };
         return res.json({ ...o, text: o.narration ?? o.line ?? o.text ?? '', english: o.english || '', model, usage });
       }
-      console.error(`[narrate] ${model} -> ${status}: ${data?.error?.message?.slice(0, 200)}`);
+      console.error(`[narrate] ${access.mode} ${model} -> ${status}: ${redact(data?.error?.message, key).slice(0, 200)}`);
+      if (!owner && badKey(status, data)) return res.status(401).json({ error: 'gemini-key' });
+      // A visitor's own quota: answer now instead of spending more of it walking the model chain.
+      if (!owner && status === 429) return res.status(429).json({ error: 'gemini-quota' });
       if (![404, 429].includes(status) && !/quota|exhaust|not found/i.test(data?.error?.message || '')) break;
     } catch (e) {
-      console.error(`[narrate] ${model} failed: ${e.name} ${e.message}`);
+      console.error(`[narrate] ${model} failed: ${e.name} ${redact(e.message, key)}`);
       // Slow flash model: retry once on the next lite model; otherwise let the frontend use a fallback line.
       const lite = models.findIndex((x, i) => i > m && x.includes('lite'));
       if (e.name !== 'TimeoutError' || isLite || lite === -1) break;
