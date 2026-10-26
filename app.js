@@ -15,24 +15,53 @@ const CONFIG = {
   tracks: { documentary: 'documentary.mp3', funny: 'funny.mp3', pumpkin: 'spooky.mp3' },
 };
 const MODES = ['documentary', 'funny', 'descriptive', 'pumpkin'];
-const SITE_LANGS = {
-  en: { name: 'English', code: 'en', bcp: 'en-US', html: 'en' },
-  es: { name: 'Spanish', code: 'es', bcp: 'es-ES', html: 'es' },
-  zh: { name: 'Chinese (Simplified)', code: 'zh', bcp: 'zh-CN', html: 'zh-Hans' },
-};
-const NARR_LANGS = [
-  { name: 'English', code: 'en', bcp: 'en-US', label: 'English' },
-  { name: 'Spanish', code: 'es', bcp: 'es-ES', label: 'Español' },
-  { name: 'Chinese (Simplified)', code: 'zh', bcp: 'zh-CN', label: '中文' },
-  { name: 'Hindi', code: 'hi', bcp: 'hi-IN', label: 'हिन्दी' },
-  { name: 'Telugu', code: 'te', bcp: 'te-IN', label: 'తెలుగు' },
-  { name: 'French', code: 'fr', bcp: 'fr-FR', label: 'Français' },
-  { name: 'Arabic', code: 'ar', bcp: 'ar-SA', label: 'العربية' },
-  { name: 'Korean', code: 'ko', bcp: 'ko-KR', label: '한국어' },
-  { name: 'Japanese', code: 'ja', bcp: 'ja-JP', label: '日本語' },
-  { name: 'Portuguese', code: 'pt', bcp: 'pt-BR', label: 'Português' },
-];
+// Every language ElevenLabs Eleven v3 speaks (https://elevenlabs.io/docs/models). One table for the site
+// language, the narration language, speech and lang/dir attributes. name: sent to Gemini; native: what people pick;
+// bcp: BCP-47 for browser speech; html: the lang attribute when it differs from the code.
+const LANGS = [
+  ['af', 'Afrikaans', 'Afrikaans', 'af-ZA'], ['ar', 'Arabic', 'العربية', 'ar-SA', 1], ['hy', 'Armenian', 'Հայերեն', 'hy-AM'],
+  ['as', 'Assamese', 'অসমীয়া', 'as-IN'], ['ast', 'Asturian', 'Asturianu', 'ast-ES'], ['az', 'Azerbaijani', 'Azərbaycan', 'az-AZ'],
+  ['be', 'Belarusian', 'Беларуская', 'be-BY'], ['bn', 'Bengali', 'বাংলা', 'bn-IN'], ['bs', 'Bosnian', 'Bosanski', 'bs-BA'],
+  ['bg', 'Bulgarian', 'Български', 'bg-BG'], ['my', 'Burmese', 'မြန်မာ', 'my-MM'], ['yue', 'Cantonese', '粵語', 'yue-HK'],
+  ['ca', 'Catalan', 'Català', 'ca-ES'], ['ceb', 'Cebuano', 'Cebuano', 'ceb-PH'], ['ny', 'Chichewa', 'Chichewa', 'ny-MW'],
+  ['hr', 'Croatian', 'Hrvatski', 'hr-HR'], ['cs', 'Czech', 'Čeština', 'cs-CZ'], ['da', 'Danish', 'Dansk', 'da-DK'],
+  ['nl', 'Dutch', 'Nederlands', 'nl-NL'], ['en', 'English', 'English', 'en-US'], ['et', 'Estonian', 'Eesti', 'et-EE'],
+  ['fil', 'Filipino', 'Filipino', 'fil-PH'], ['fi', 'Finnish', 'Suomi', 'fi-FI'], ['fr', 'French', 'Français', 'fr-FR'],
+  ['gl', 'Galician', 'Galego', 'gl-ES'], ['ka', 'Georgian', 'ქართული', 'ka-GE'], ['de', 'German', 'Deutsch', 'de-DE'],
+  ['el', 'Greek', 'Ελληνικά', 'el-GR'], ['gu', 'Gujarati', 'ગુજરાતી', 'gu-IN'], ['ha', 'Hausa', 'Hausa', 'ha-NG'],
+  ['he', 'Hebrew', 'עברית', 'he-IL', 1], ['hi', 'Hindi', 'हिन्दी', 'hi-IN'], ['hu', 'Hungarian', 'Magyar', 'hu-HU'],
+  ['is', 'Icelandic', 'Íslenska', 'is-IS'], ['id', 'Indonesian', 'Bahasa Indonesia', 'id-ID'], ['ga', 'Irish', 'Gaeilge', 'ga-IE'],
+  ['it', 'Italian', 'Italiano', 'it-IT'], ['ja', 'Japanese', '日本語', 'ja-JP'], ['jv', 'Javanese', 'Basa Jawa', 'jv-ID'],
+  ['kn', 'Kannada', 'ಕನ್ನಡ', 'kn-IN'], ['kk', 'Kazakh', 'Қазақ тілі', 'kk-KZ'], ['ky', 'Kirghiz', 'Кыргызча', 'ky-KG'],
+  ['ko', 'Korean', '한국어', 'ko-KR'], ['lv', 'Latvian', 'Latviešu', 'lv-LV'], ['ln', 'Lingala', 'Lingála', 'ln-CD'],
+  ['lt', 'Lithuanian', 'Lietuvių', 'lt-LT'], ['lb', 'Luxembourgish', 'Lëtzebuergesch', 'lb-LU'], ['mk', 'Macedonian', 'Македонски', 'mk-MK'],
+  ['ms', 'Malay', 'Bahasa Melayu', 'ms-MY'], ['ml', 'Malayalam', 'മലയാളം', 'ml-IN'], ['mt', 'Maltese', 'Malti', 'mt-MT'],
+  // zh keeps the name Gemini has always been sent, so Chinese narration doesn't drift to Traditional characters
+  ['zh', 'Chinese (Simplified)', '中文 (简体)', 'zh-CN', 0, 'zh-Hans'], ['mi', 'Māori', 'Te Reo Māori', 'mi-NZ'], ['mr', 'Marathi', 'मराठी', 'mr-IN'],
+  ['mn', 'Mongolian', 'Монгол', 'mn-MN'], ['ne', 'Nepali', 'नेपाली', 'ne-NP'], ['no', 'Norwegian', 'Norsk', 'nb-NO'],
+  ['oc', 'Occitan', 'Occitan', 'oc-FR'], ['or', 'Odia', 'ଓଡ଼ିଆ', 'or-IN'], ['ps', 'Pashto', 'پښتو', 'ps-AF', 1],
+  ['fa', 'Persian', 'فارسی', 'fa-IR', 1], ['pl', 'Polish', 'Polski', 'pl-PL'], ['pt', 'Portuguese', 'Português', 'pt-BR'],
+  ['pa', 'Punjabi', 'ਪੰਜਾਬੀ', 'pa-IN'], ['ro', 'Romanian', 'Română', 'ro-RO'], ['ru', 'Russian', 'Русский', 'ru-RU'],
+  ['sr', 'Serbian', 'Српски', 'sr-RS'], ['sd', 'Sindhi', 'سنڌي', 'sd-PK', 1], ['sk', 'Slovak', 'Slovenčina', 'sk-SK'],
+  ['sl', 'Slovenian', 'Slovenščina', 'sl-SI'], ['so', 'Somali', 'Soomaali', 'so-SO'], ['es', 'Spanish', 'Español', 'es-ES'],
+  ['sw', 'Swahili', 'Kiswahili', 'sw-KE'], ['sv', 'Swedish', 'Svenska', 'sv-SE'], ['tg', 'Tajik', 'Тоҷикӣ', 'tg-TJ'],
+  ['ta', 'Tamil', 'தமிழ்', 'ta-IN'], ['te', 'Telugu', 'తెలుగు', 'te-IN'], ['th', 'Thai', 'ไทย', 'th-TH'],
+  ['tr', 'Turkish', 'Türkçe', 'tr-TR'], ['uk', 'Ukrainian', 'Українська', 'uk-UA'], ['ur', 'Urdu', 'اردو', 'ur-PK', 1],
+  ['uz', 'Uzbek', 'Oʻzbekcha', 'uz-UZ'], ['vi', 'Vietnamese', 'Tiếng Việt', 'vi-VN'], ['cy', 'Welsh', 'Cymraeg', 'cy-GB'],
+  ['yo', 'Yoruba', 'Yorùbá', 'yo-NG'],
+].map(([code, name, native, bcp, rtl, html]) => ({ code, name, native, label: native, bcp, rtl: !!rtl, html: html || code }));
+const LANG = Object.fromEntries(LANGS.map((l) => [l.code, l]));
 const NO_CHANGE = { en: 'No change.', es: 'Sin cambios.', zh: '没有变化。', hi: 'कोई बदलाव नहीं।', te: 'మార్పు లేదు.', fr: 'Aucun changement.', ar: 'لا تغيير.', ko: '변화 없음.', ja: '変化はありません。', pt: 'Sem mudanças.' };
+// Browser language -> ours: the primary subtag, plus the old/alternate codes browsers still send.
+const LANG_ALIASES = { nb: 'no', nn: 'no', tl: 'fil', iw: 'he', in: 'id' };
+function browserLang() {
+  for (const tag of navigator.languages?.length ? navigator.languages : [navigator.language || '']) {
+    const p = String(tag).toLowerCase().split(/[-_]/)[0];
+    const code = LANG_ALIASES[p] || p;
+    if (LANG[code]) return code;
+  }
+  return 'en';
+}
 
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -47,10 +76,10 @@ const store = {
 const params = new URLSearchParams(location.search);
 const urlView = params.get('view');
 const S = {
-  siteLang: store.get('lang', null) || ((navigator.language || '').match(/^(en|es|zh)/)?.[1] ?? 'en'),
+  siteLang: LANG[store.get('lang', null)] ? store.get('lang', null) : browserLang(),
   view: urlView === 'clean' || urlView === 'info' ? urlView : store.get('view', 'info'),
   theme: store.get('theme', null), // null = follow the system
-  settings: { useEleven: false, still: 8, textScale: 1, customLang: '', srMute: false, hideVideo: false, music: 100, ...store.get('settings', {}) },
+  settings: { useEleven: false, still: 8, textScale: 1, customLang: '', srMute: false, hideVideo: false, music: 100, breakSec: 5, ...store.get('settings', {}) },
   mode: 'documentary', narrLangCode: store.get('narrLang', null),
   started: false, paused: false, busy: false, speaking: false, gen: 0,
   lines: [], obs: 0, stillCount: 0, forcedStill: false, lastDiff: null, prevTiny: null,
@@ -76,6 +105,30 @@ const isPhone = matchMedia('(pointer: coarse)').matches && Math.min(screen.width
 const calm = () => S.view === 'clean' || motionQuery.matches;
 
 // ---------- i18n ----------
+// One JSON file per language in /i18n. English is fetched at boot (preloaded in index.html) and fills any missing key;
+// other languages load when chosen and are cached. Until one arrives, or if it doesn't exist yet, the page shows English.
+const I18N = {};
+const packP = {};
+let textReady = false; // the first render with text waits for English (and briefly for the site language)
+function loadPack(code) {
+  if (!LANG[code]) return Promise.resolve(null);
+  return (packP[code] ||= (async () => {
+    for (let i = 0, tries = code === 'en' ? 3 : 1; i < tries; i++) {
+      try {
+        const r = await fetch(`/i18n/${code}.json`);
+        if (r.status === 404) return null; // not translated yet: English it is
+        if (r.ok) {
+          I18N[code] = await r.json();
+          if (textReady && (code === S.siteLang || code === 'en')) render();
+          return I18N[code];
+        }
+      } catch {}
+      if (i < tries - 1) await sleep(1500);
+    }
+    delete packP[code]; // a network failure: try again next time this language is picked
+    return null;
+  })());
+}
 const pick = (obj, path) => path.split('.').reduce((o, k) => o?.[k], obj);
 function t(path, vars) {
   let s = pick(I18N[S.siteLang], path) ?? pick(I18N.en, path) ?? '';
@@ -83,14 +136,16 @@ function t(path, vars) {
   return s;
 }
 const modeName = (m) => t((S.view === 'clean' ? 'modeClean.' : 'mode.') + m);
-const narrLangs = () => (S.settings.customLang.trim() ? [...NARR_LANGS, { name: S.settings.customLang.trim(), code: 'xx', label: S.settings.customLang.trim() }] : NARR_LANGS);
-const narrLang = () => narrLangs().find((l) => l.code === (S.narrLangCode || S.siteLang)) || NARR_LANGS.find((l) => l.code === S.siteLang);
+const narrLangs = () => (S.settings.customLang.trim() ? [...LANGS, { name: S.settings.customLang.trim(), code: 'xx', label: S.settings.customLang.trim() }] : LANGS);
+const narrLang = () => narrLangs().find((l) => l.code === (S.narrLangCode || S.siteLang)) || LANG[S.siteLang];
 const showLangLabel = () => S.mode === 'descriptive' || narrLang().code !== S.siteLang;
-const htmlLang = (code) => (code === 'zh' ? 'zh-Hans' : code === 'xx' ? '' : code);
+const htmlLang = (code) => LANG[code]?.html || ''; // '' for the custom language: unknown
+const breakMs = (mode) => (mode === 'documentary' || mode === 'funny' ? Math.min(30, Math.max(0, Math.round(Number(S.settings.breakSec)) || 0)) * 1000 : 0);
 
 function render() {
   const html = document.documentElement;
-  html.lang = SITE_LANGS[S.siteLang].html;
+  html.lang = htmlLang(S.siteLang);
+  html.dir = LANG[S.siteLang].rtl ? 'rtl' : 'ltr';
   const dark = S.theme ? S.theme === 'dark' : darkQuery.matches;
   html.dataset.theme = dark ? 'dark' : 'light';
   document.body.dataset.view = S.view;
@@ -99,11 +154,20 @@ function render() {
   document.body.classList.toggle('no-video', S.settings.hideVideo);
   document.body.classList.toggle('mirror', S.facing === 'user');
   html.style.setProperty('--text-scale', S.settings.textScale);
+  $('#site-lang').value = S.siteLang;
+  if (!textReady) return; // no text until English has loaded
 
-  $$('[data-i18n]').forEach((el) => (el.textContent = t(el.dataset.i18n)));
+  const rtl = LANG[S.siteLang].rtl;
+  $$('[data-i18n]').forEach((el) => {
+    el.textContent = t(el.dataset.i18n);
+    // Text not translated yet falls back to English: mark it, so screen readers say it in English and an RTL page
+    // doesn't reorder it.
+    const english = S.siteLang !== 'en' && pick(I18N[S.siteLang], el.dataset.i18n) == null;
+    english ? el.setAttribute('lang', 'en') : el.removeAttribute('lang');
+    english && rtl ? (el.dir = 'ltr') : el.removeAttribute('dir');
+  });
   $$('[data-i18n-aria]').forEach((el) => el.setAttribute('aria-label', t(el.dataset.i18nAria)));
   $$('[data-mode-label]').forEach((el) => (el.textContent = modeName(el.dataset.modeLabel)));
-  $$('[data-action=site-lang]').forEach((b) => b.setAttribute('aria-pressed', b.dataset.lang === S.siteLang));
   $$('[data-action=mode]').forEach((b) => {
     b.setAttribute('aria-pressed', b.dataset.mode === S.mode);
     b.setAttribute('aria-label', modeName(b.dataset.mode));
@@ -133,6 +197,8 @@ function render() {
   $('#opt-still').value = S.settings.still;
   $('#opt-music').value = S.settings.music;
   $('#music-level').textContent = S.settings.music + '%';
+  $('#opt-break').value = S.settings.breakSec;
+  $('#break-level').textContent = t('set.breakValue', { n: S.settings.breakSec });
   $('#opt-customlang').value = S.settings.customLang;
   $('#text-size').textContent = Math.round(S.settings.textScale * 100) + '%';
   renderStatus();
@@ -417,7 +483,7 @@ function speakBrowser(text, lang) {
   return new Promise((resolve) => {
     if (!('speechSynthesis' in window)) return setTimeout(resolve, 1500 + text.length * 60);
     const u = new SpeechSynthesisUtterance(text);
-    u.lang = lang.bcp || 'en-US';
+    u.lang = lang.bcp === 'yue-HK' ? 'zh-HK' : lang.bcp || 'en-US'; // browsers file Cantonese voices under zh-HK
     const v = pickVoice(u.lang);
     if (v) u.voice = v;
     Object.assign(u, { documentary: { rate: 1, pitch: 0.9 }, funny: { rate: 1.05, pitch: 0.7 }, pumpkin: { rate: 1, pitch: 1.3 } }[S.mode] || { rate: 1.1 });
@@ -611,7 +677,7 @@ function grabJpeg() {
 // ---------- Narration ----------
 function fallbackLine(mode, lang) {
   const key = (mode === 'documentary' || mode === 'funny') && S.stillCount >= 1 ? mode + 'Still' : mode;
-  const pack = I18N[lang.code] || I18N[S.siteLang];
+  const pack = [I18N[lang.code], I18N[S.siteLang], I18N.en].find((p) => p?.fallback?.[key]?.length);
   const list = pack.fallback[key].filter((l) => l !== S.lastFallback);
   return (S.lastFallback = list[Math.floor(Math.random() * list.length)]);
 }
@@ -670,7 +736,7 @@ async function fetchLine({ force = false, skipDiff = false, arrival = false, ahe
     if (result.changed === false && !full) {
       if (S.saidNoChange) return { gen, unchanged: true };
       S.saidNoChange = true;
-      text = NO_CHANGE[lang.code] || NO_CHANGE.en;
+      text = I18N[lang.code]?.noChange || NO_CHANGE[lang.code] || NO_CHANGE.en;
       english = '';
     } else S.saidNoChange = false;
   }
@@ -680,9 +746,10 @@ async function fetchLine({ force = false, skipDiff = false, arrival = false, ahe
 
 // Fetch the next line while this one plays. Its first sentence's audio can only start loading once the
 // current line's last sentence is playing (the idle element is busy with this line's next sentence until then).
-function startLookahead(gen) {
+// at: the earliest time to capture (a break between lines captures late, so the frame is fresh when the line plays).
+function startLookahead(gen, at = 0) {
   if (gen !== S.gen || S.ahead || S.paused || S.mode === 'pumpkin') return;
-  const delay = Math.max(0, S.lastCaptureAt + CONFIG.minCaptureGapMs - Date.now());
+  const delay = Math.max(0, S.lastCaptureAt + CONFIG.minCaptureGapMs - Date.now(), at - Date.now());
   const ahead = (S.ahead = { gen, done: false, armed: false, reqAt: Date.now() + delay });
   ahead.p = sleep(delay)
     .then(() => (gen === S.gen ? fetchLine({ ahead: true }) : null))
@@ -725,8 +792,22 @@ async function playLine(line) {
     if (!hold) show();
     // Comedy modes start the next line as this one begins, so it's ready in time; Descriptive waits for the
     // last sentence so a blind user hears the scene as it is now, not as it was a whole line ago.
-    if (cur.mode !== 'descriptive') startLookahead(gen);
-    await speak(cur, () => armLookahead(gen), show);
+    // With a break between lines (Documentary, Funny), the next capture waits until the break is nearly over instead.
+    const brk = breakMs(cur.mode);
+    if (cur.mode !== 'descriptive' && !brk) startLookahead(gen);
+    await speak(cur, () => !brk && armLookahead(gen), show);
+    if (brk && gen === S.gen) {
+      // Capture so the next line is ready, first sentence loaded, as the break ends: start this device's usual
+      // wait before then. The countdown counts down to the end of the break.
+      const until = Date.now() + brk, from = until - waitEstimate();
+      startLookahead(gen, from);
+      armLookahead(gen); // both voice elements are idle now
+      endWait(false);
+      beginWait(from, false, false);
+      let wake;
+      await new Promise((r) => { const tm = setTimeout(r, brk); S.wakeBreak = wake = () => (clearTimeout(tm), r()); });
+      if (S.wakeBreak === wake) S.wakeBreak = null;
+    }
     const ahead = S.ahead;
     if (gen !== S.gen || !ahead) break;
     if (!ahead.done) beginWait(ahead.reqAt, true, false);
@@ -843,7 +924,8 @@ function showLine(text, english, lang) {
   const main = $('#sub-main');
   const code = htmlLang(lang.code);
   main.lang = code;
-  main.dir = lang.code === 'ar' ? 'rtl' : 'auto';
+  const dir = LANG[lang.code]?.rtl ? 'rtl' : 'auto';
+  main.dir = dir;
   main.classList.remove('pop');
   if (S.mode === 'documentary' && !calm()) {
     main.innerHTML = '';
@@ -867,6 +949,7 @@ function showLine(text, english, lang) {
   $('#subs').classList.add('on');
   const live = $('#live');
   live.lang = code;
+  live.dir = dir;
   live.textContent = text;
 }
 
@@ -960,6 +1043,7 @@ requestAnimationFrame(pumpkinFrame);
 // ---------- Actions ----------
 function interrupt() {
   S.gen++;
+  S.wakeBreak?.(); // a break between lines ends now
   S.busy = false;
   S.ahead = null;
   stopSpeech();
@@ -984,7 +1068,8 @@ function setMode(m) {
 }
 
 function setSiteLang(l) {
-  if (!SITE_LANGS[l]) return;
+  if (!LANG[l]) return;
+  loadPack(l); // renders again when it arrives; English until then
   S.siteLang = l;
   store.set('lang', l);
   S.narrLangCode = l;
@@ -999,6 +1084,7 @@ function setSiteLang(l) {
 
 function setNarrLang(code) {
   if (!narrLangs().some((l) => l.code === code)) return;
+  loadPack(code); // for its fallback lines
   S.narrLangCode = code;
   store.set('narrLang', code);
   interrupt();
@@ -1116,7 +1202,6 @@ document.addEventListener('click', (e) => {
   ({
     start: begin,
     mode: () => setMode(b.dataset.mode),
-    'site-lang': () => setSiteLang(b.dataset.lang),
     theme: toggleTheme,
     view: toggleView,
     narrate: narrateNow,
@@ -1172,7 +1257,9 @@ bind('#opt-srmute', 'change', (e) => { S.settings.srMute = e.target.checked; sav
 bind('#opt-hidevideo', 'change', (e) => { S.settings.hideVideo = e.target.checked; saveSettings(); render(); });
 bind('#opt-still', 'input', (e) => { S.settings.still = Number(e.target.value); saveSettings(); });
 bind('#opt-music', 'input', (e) => { S.settings.music = Number(e.target.value); $('#music-level').textContent = S.settings.music + '%'; saveSettings(); setMusic(); });
+bind('#opt-break', 'input', (e) => { S.settings.breakSec = Number(e.target.value); $('#break-level').textContent = t('set.breakValue', { n: S.settings.breakSec }); saveSettings(); });
 bind('#narr-lang', 'change', (e) => setNarrLang(e.target.value));
+bind('#site-lang', 'change', (e) => setSiteLang(e.target.value));
 bind('#opt-customlang', 'change', (e) => { S.settings.customLang = e.target.value.slice(0, 40); saveSettings(); render(); });
 
 // Auto-hide the control bar after a few idle seconds (infomercial view only).
@@ -1194,6 +1281,13 @@ darkQuery.addEventListener?.('change', render);
 
 // ---------- Boot ----------
 $$('[data-icon]').forEach((el) => setIcon(el, el.dataset.icon));
+$('#site-lang').replaceChildren(...LANGS.map((l) => Object.assign(new Option(l.native, l.code), { lang: l.html })));
 buildLcd();
 render();
 S.statusP = refreshStatus();
+// First text: English, plus up to a second's wait for the site language so it doesn't flash English first.
+const siteP = loadPack(S.siteLang);
+(function firstText() {
+  loadPack('en').then((en) => (en ? Promise.race([siteP, sleep(1000)]).then(() => { textReady = true; render(); }) : setTimeout(firstText, 5000)));
+})();
+if (S.narrLangCode && S.narrLangCode !== S.siteLang) loadPack(S.narrLangCode);

@@ -1,0 +1,217 @@
+{
+  "callNow": "CALL NOW! OPERATORS ARE STANDING BY!",
+  "tagline": "Your world, narrated.",
+  "order": "ORDER NOW",
+  "burst1": "AS SEEN ON TV!",
+  "burst2": "ONLY $0.00!",
+  "finePrint": "*Not a real phone number. Please do not call. NarrateBot 3000 is not responsible for narrations that are too accurate. Results may vary. Batteries not included.",
+  "ticker": [
+    "'It described my cat perfectly!' – Satisfied Customer",
+    "'I've never felt so seen.' – Also a Customer",
+    "'My houseplant has never sounded so majestic.' – Customer, Probably",
+    "'I laughed. I cried. I sat very still.' – The Herd"
+  ],
+  "cleanSub": "Live scene narration from your camera",
+  "cleanExplain": "Point your camera at the world and NarrateBot 3000 describes out loud what it sees, in your language.",
+  "start": "Start",
+  "butWait": "BUT WAIT... THERE'S MORE!",
+  "nowWith": "NOW WITH {mode} MODE!",
+  "mode": {
+    "documentary": "DOCUMENTARY",
+    "funny": "FUNNY",
+    "descriptive": "DESCRIPTIVE",
+    "pumpkin": "PUMPKIN"
+  },
+  "modeClean": {
+    "documentary": "Documentary style",
+    "funny": "Movie trailer style",
+    "descriptive": "Descriptive mode",
+    "pumpkin": "Pumpkin style"
+  },
+  "countdown": {
+    "in": "Narrating in {n}…",
+    "late": "Narrating…",
+    "visitor": "Waiting for a visitor…",
+    "sr": "Narrating shortly"
+  },
+  "live": "LIVE",
+  "specimen": "SPECIMEN",
+  "observation": "OBSERVATION",
+  "herdNone": "HERD ACTIVITY: NONE DETECTED",
+  "unchanged": "Scene unchanged",
+  "paused": "PAUSED",
+  "nowShowing": "NOW SHOWING",
+  "btn": {
+    "describe": "Describe now",
+    "pause": "Pause",
+    "play": "Play",
+    "flip": "Flip camera",
+    "settings": "Settings",
+    "themeDark": "Dark theme",
+    "themeLight": "Light theme",
+    "accessible": "Accessible view",
+    "infomercial": "Infomercial view",
+    "narrLang": "Narration language",
+    "close": "Close",
+    "siteLang": "Site language"
+  },
+  "set": {
+    "title": "CALL CENTER ORDER FORM",
+    "titleClean": "Settings",
+    "sub": "Operators are standing by",
+    "useEleven": "Use ElevenLabs voice",
+    "charsSession": "Characters sent this session",
+    "charsToday": "Characters today (all users)",
+    "narrToday": "Narrations today",
+    "config": "Configuration",
+    "stillness": "Stillness sensitivity",
+    "stillDebug": "Still count / last difference",
+    "textSize": "Text size",
+    "smaller": "Smaller text",
+    "larger": "Larger text",
+    "customLang": "Custom narration language",
+    "customLangHint": "Added to the narration language list (L)",
+    "music": "Music volume",
+    "srMute": "Don't speak aloud (screen reader reads the text)",
+    "hideVideo": "Hide the video, show only narration text",
+    "hotkeys": "Hotkeys",
+    "yes": "set",
+    "no": "missing",
+    "dflt": "default",
+    "breakLen": "Break between lines",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Modes"
+    ],
+    [
+      "L",
+      "Narration language"
+    ],
+    [
+      "N",
+      "Describe now"
+    ],
+    [
+      "S",
+      "Stillness on/off"
+    ],
+    [
+      "T",
+      "Theme"
+    ],
+    [
+      "A",
+      "Accessible view"
+    ],
+    [
+      "Space",
+      "Pause / play"
+    ],
+    [
+      "K",
+      "Settings"
+    ]
+  ],
+  "keys": {
+    "title": "BRING YOUR OWN KEYS",
+    "titleClean": "Use your own keys",
+    "sub": "Operators need your keys to take this call",
+    "intro": "NarrateBot 3000 runs on your own Gemini key for narration and, if you like, an ElevenLabs key for voices.",
+    "gemini": "Gemini API key",
+    "eleven": "ElevenLabs API key (optional)",
+    "geminiHelp": "How to get a Gemini key",
+    "elevenHelp": "How to get an ElevenLabs key",
+    "getAt": "Get a key at",
+    "newTab": " (opens in a new tab)",
+    "geminiSteps": "Sign in, choose Create API key, then paste the key here.",
+    "geminiCost": "Google offers a free tier with usage limits; heavier use is billed to your Google account.",
+    "elevenSteps": "Create a key with Text to Speech access, then paste it here.",
+    "elevenCost": "The free plan includes a monthly character allowance. Some voices need a paid plan; if a voice isn't available we use a standard voice, or your browser's voice if you leave this blank.",
+    "privacy": "Your keys are kept in an encrypted cookie in this browser and sent to our server only to make your requests. We never store or log them. You can remove them any time in Settings.",
+    "save": "Save & start",
+    "saving": "Checking…",
+    "cancel": "Cancel",
+    "needGemini": "Enter your Gemini key.",
+    "geminiInvalid": "Google didn't accept that Gemini key. Check it and try again.",
+    "format": "That doesn't look like an API key. Paste the whole key, with no spaces.",
+    "formatEleven": "That ElevenLabs key doesn't look right. Paste the whole key, or leave it blank.",
+    "tooMany": "Too many tries. Wait 15 minutes.",
+    "failed": "Couldn't check your key right now. Try again in a moment.",
+    "needKeys": "To keep narrating, add your own keys.",
+    "quota": "Your Gemini key hit its usage limit. Trying again in a minute…",
+    "badKey": "Google rejected your Gemini key. Check it or paste a new one.",
+    "removed": "Your keys were removed. Add keys to keep narrating."
+  },
+  "owner": {
+    "title": "OWNER ACCESS",
+    "titleClean": "Owner access",
+    "label": "Owner password",
+    "submit": "Unlock",
+    "wrong": "That didn't work.",
+    "tooMany": "Too many tries. Wait 15 minutes.",
+    "done": "Owner access unlocked."
+  },
+  "access": {
+    "legend": "Access",
+    "current": "Current access:",
+    "owner": "Owner",
+    "byok": "Your own keys",
+    "none": "No keys",
+    "change": "Change keys",
+    "add": "Use your own keys",
+    "remove": "Remove my keys",
+    "lock": "Lock owner access"
+  },
+  "camError": "Camera unavailable. Check camera permission and that the page is on HTTPS.",
+  "fallback": {
+    "documentary": [
+      "And here we observe a gathering of the species, each one more distinguished than the last. Truly, nature at its finest.",
+      "A remarkable specimen leans forward, eyes fixed on the glowing screen, with the patience of a creature that knows great things take time.",
+      "Notice the quiet confidence of this herd. Not one has panicked, despite being so far from their natural snack supply.",
+      "The colony has assembled around the light source, as their ancestors did before them. Some things, it seems, are eternal.",
+      "One specimen adjusts its posture with tremendous dignity. The others take note. A leader has emerged.",
+      "In the wild, very few creatures can sit through a demo with such grace. And yet, here they are. Magnificent."
+    ],
+    "documentaryStill": [
+      "The herd has not moved. Not a twitch. The narrator, for his part, remains hopeful.",
+      "Still nothing. The specimens appear to be conserving energy, perhaps for the applause.",
+      "It has been some time now. One begins to suspect the herd is waiting for the narrator to be funny. He is trying.",
+      "Total stillness. Scientists have a word for this behavior. The word is 'judging.'",
+      "The narrator has observed houseplants with more visible ambition. Please, someone, anyone, move a finger.",
+      "Rest assured, the herd is perfectly safe. They are simply choosing, with great dignity, not to move."
+    ],
+    "funny": [
+      "In a world... where one room dared to watch a laptop... a legend is born. Rated PG for Pretty Good.",
+      "This fall... a group of brilliant strangers... and a webcam that has seen too much. THE AUDIENCE. Now in theaters.",
+      "From the studio that brought you sitting down... comes its boldest sequel yet. SITTING DOWN 2: STILL SEATED.",
+      "Critics are calling it 'the best-dressed crowd ever filmed by a laptop.' Coming soon to this exact room.",
+      "One room. Zero explosions. Unlimited charisma. THE HACKATHON. Two thumbs way, way up.",
+      "They came for the demo... they stayed for the free snacks... THE ATTENDEES. Certified fresh."
+    ],
+    "funnyStill": [
+      "This winter... absolutely nothing happens. And it is breathtaking. STILL LIFE: THE MOVIE.",
+      "Twelve heroes. One room. Zero movement. THE STATUES. Rated S for Suspiciously Stationary.",
+      "From the director of WAITING... comes WAITING 2: STILL WAITING. Critics say it 'really sits with you.'",
+      "In a world where no one moves... one narrator... begs. Please. Anyone. Wave.",
+      "Coming soon: THE LONGEST PAUSE. Ninety minutes. One room. Not a single blink.",
+      "This summer... the audience faces its greatest challenge yet... raising one hand. THE GESTURE. Now playing."
+    ],
+    "descriptive": [
+      "The camera is on. I'll describe the scene again in a moment.",
+      "I couldn't get a description just now. Hold the camera steady and I'll try again.",
+      "Still looking. A new description is coming shortly."
+    ],
+    "pumpkin": [
+      "Heh heh heh... welcome, brave visitor! What a costume. Truly gourd-geous.",
+      "Boo! Ha, did I scare you? Your outfit certainly scared me, in the best way.",
+      "Oho, come closer, come closer... I love a guest with style. You light up my whole face.",
+      "Heh heh... a fine costume for a fine night. I'm positively glowing with envy.",
+      "Welcome, welcome! I'd give you a hug, but I'm mostly hollow inside. Lovely outfit, though.",
+      "Heh heh heh... I've seen many costumes tonight, but yours? Spook-tacular."
+    ]
+  },
+  "noChange": "No change."
+}

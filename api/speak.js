@@ -18,8 +18,13 @@ const SPEED = 1.1; // ElevenLabs speaking rate, 0.7–1.2 (1.0 = the voice's nat
 
 const FALLBACK_VOICE = 'JBFqnCBsd6RMkjVDRZzb'; // ElevenLabs premade "George": available on every plan, for visitors' keys
 
-const MODEL = env.ELEVENLABS_MODEL || 'eleven_multilingual_v2';
-const MODEL_TELUGU = env.ELEVENLABS_MODEL_TELUGU || 'eleven_v3'; // multilingual_v2 has no Telugu; v3 lists te
+const MODEL = env.ELEVENLABS_MODEL || 'eleven_multilingual_v2'; // chosen for voice quality, for the languages it speaks
+const MODEL_V3 = env.ELEVENLABS_MODEL_V3 || env.ELEVENLABS_MODEL_TELUGU || 'eleven_v3'; // every other language
+// The languages the app offers: the 85 Eleven v3 supports (https://elevenlabs.io/docs/models). Anything else -> 'en'.
+const LANGS = new Set(('af ar hy as ast az be bn bs bg my yue ca ceb ny hr cs da nl en et fil fi fr gl ka de el gu ha he hi hu is id ga it ' +
+  'ja jv kn kk ky ko lv ln lt lb mk ms ml mt zh mi mr mn ne no oc or ps fa pl pt pa ro ru sr sd sk sl so es sw sv tg ta te th tr uk ur uz vi cy yo').split(' '));
+// The 29 eleven_multilingual_v2 speaks.
+const V2_LANGS = new Set('en ja zh de hi fr ko pt it es id nl tr fil pl sv bg ro ar cs el fi hr ms sk da ta uk ru'.split(' '));
 const MODELS_WITH_LANGUAGE_CODE = new Set(['eleven_flash_v2_5', 'eleven_turbo_v2_5', 'eleven_v3']);
 // Request stitching: the surrounding sentences keep prosody continuous when a line is spoken one sentence per request.
 const MODELS_WITH_STITCHING = new Set(['eleven_multilingual_v2']);
@@ -37,7 +42,8 @@ export default async function handler(req, res) {
   const q = { ...(req.query || {}), ...(req.method === 'POST' ? req.body || {} : {}) };
   const text = String(q.text || '').trim();
   if (!text || text.length > 300) return res.status(400).json({ error: 'Text missing or over 300 characters' });
-  const lang = String(q.lang || q.language || 'en').toLowerCase().slice(0, 2);
+  const rawLang = String(q.lang || q.language || 'en').toLowerCase();
+  const lang = /^[a-z]{2,3}$/.test(rawLang) && LANGS.has(rawLang) ? rawLang : 'en';
   const prev = String(q.prev || '').trim().slice(-300), next = String(q.next || '').trim().slice(0, 300);
 
   if (!(await checkSpeakLimit(req))) return res.status(429).json({ error: 'Too many voice requests this minute' });
@@ -49,7 +55,7 @@ export default async function handler(req, res) {
 
   const base = Object.hasOwn(VOICES, q.mode) ? VOICES[q.mode] : VOICES.documentary;
   const voice = LANGUAGE_VOICES[lang] ? { id: LANGUAGE_VOICES[lang], settings: LANGUAGE_SETTINGS } : base;
-  const model = lang === 'te' ? MODEL_TELUGU : MODEL;
+  const model = V2_LANGS.has(lang) ? MODEL : MODEL_V3;
   // ponytail: v3 documents stability as three presets (0 creative, 0.5 natural, 1 robust), so snap to the nearest.
   const settings = model === 'eleven_v3' ? { ...voice.settings, stability: Math.round(voice.settings.stability * 2) / 2 } : { ...voice.settings, speed: SPEED };
   const body = JSON.stringify({

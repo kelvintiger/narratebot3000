@@ -11,16 +11,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap">
   <link rel="stylesheet" href="styles.css">
+  <link rel="preload" href="/i18n/en.json" as="fetch" type="application/json" crossorigin>
 </head>
 <body data-view="info" data-mode="documentary">
   <a class="skip" href="#controls">Skip to controls</a>
 
   <!-- Site switchers: language, theme, view (top corner, always visible) -->
-  <div class="switchers" role="group" data-i18n-aria="btn.siteLang">
-    <div class="langs" role="group" data-i18n-aria="btn.siteLang">
-      <button type="button" data-action="site-lang" data-lang="en" lang="en">EN</button>
-      <button type="button" data-action="site-lang" data-lang="es" lang="es">ES</button>
-      <button type="button" data-action="site-lang" data-lang="zh" lang="zh-Hans">中文</button>
+  <div class="switchers">
+    <div class="site-lang">
+      <label for="site-lang" class="sr-only" data-i18n="btn.siteLang">Site language</label>
+      <span class="ic" data-icon="globe" aria-hidden="true"></span>
+      <select id="site-lang"></select>
     </div>
     <button type="button" class="icon-btn" data-action="theme" id="theme-btn"><span aria-hidden="true" class="ic theme-icon" data-icon="moon"></span><span class="sr-only theme-label"></span></button>
     <button type="button" class="view-btn" data-action="view" id="view-btn"></button>
@@ -98,7 +99,7 @@
     </div>
 
     <div class="bottom">
-      <p id="countdown" class="countdown" aria-hidden="true"></p>
+      <p id="countdown" class="countdown" dir="auto" aria-hidden="true"></p>
       <p id="status" class="status" aria-hidden="true"></p>
       <p id="unchanged" class="unchanged" hidden data-i18n="unchanged"></p>
       <div id="subs" class="subs" aria-hidden="true">
@@ -173,6 +174,12 @@
       </fieldset>
 
       <fieldset>
+        <label for="opt-break" class="row-label" data-i18n="set.breakLen"></label>
+        <input type="range" id="opt-break" min="0" max="30" step="1" aria-describedby="break-level">
+        <p class="debug"><output id="break-level" for="opt-break" class="lcd-small">5 s</output></p>
+      </fieldset>
+
+      <fieldset>
         <label for="opt-music" class="row-label" data-i18n="set.music"></label>
         <input type="range" id="opt-music" min="0" max="100" step="5" aria-describedby="music-level">
         <p class="debug"><output id="music-level" for="opt-music" class="lcd-small">100%</output></p>
@@ -181,9 +188,9 @@
       <fieldset>
         <legend data-i18n="set.textSize"></legend>
         <div class="row">
-          <button type="button" data-action="text-smaller" data-i18n-aria="set.smaller">A−</button>
+          <button type="button" dir="ltr" data-action="text-smaller" data-i18n-aria="set.smaller">A−</button>
           <output id="text-size">100%</output>
-          <button type="button" data-action="text-larger" data-i18n-aria="set.larger">A+</button>
+          <button type="button" dir="ltr" data-action="text-larger" data-i18n-aria="set.larger">A+</button>
         </div>
       </fieldset>
 
@@ -269,7 +276,6 @@
 
   <audio id="voice" preload="auto"></audio>
   <audio id="voice2" preload="auto"></audio>
-  <script src="i18n.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
