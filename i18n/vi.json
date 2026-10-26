@@ -1,0 +1,217 @@
+{
+  "callNow": "GỌI NGAY! TỔNG ĐÀI VIÊN ĐANG CHỜ BẠN!",
+  "tagline": "Thế giới của bạn, qua lời kể.",
+  "order": "ĐẶT HÀNG NGAY",
+  "burst1": "ĐÃ LÊN SÓNG TRUYỀN HÌNH!",
+  "burst2": "CHỈ $0.00!",
+  "finePrint": "*Đây không phải số điện thoại thật. Vui lòng đừng gọi. NarrateBot 3000 không chịu trách nhiệm cho những lời kể quá chính xác. Kết quả có thể khác nhau. Không kèm pin.",
+  "ticker": [
+    "'Nó tả con mèo của tôi chuẩn không cần chỉnh!' – Khách hàng hài lòng",
+    "'Chưa bao giờ tôi thấy mình được thấu hiểu đến thế.' – Cũng là khách hàng",
+    "'Chậu cây của tôi chưa bao giờ nghe oai vệ đến vậy.' – Chắc là khách hàng",
+    "'Tôi cười. Tôi khóc. Tôi ngồi im re.' – Cả bầy"
+  ],
+  "cleanSub": "Thuyết minh trực tiếp khung cảnh từ camera của bạn",
+  "cleanExplain": "Hướng camera ra thế giới, NarrateBot 3000 sẽ đọc to những gì nó thấy, bằng ngôn ngữ của bạn.",
+  "start": "Bắt đầu",
+  "butWait": "KHOAN ĐÃ... VẪN CÒN NỮA!",
+  "nowWith": "NAY CÓ THÊM CHẾ ĐỘ {mode}!",
+  "mode": {
+    "documentary": "PHIM TÀI LIỆU",
+    "funny": "HÀI HƯỚC",
+    "descriptive": "MÔ TẢ",
+    "pumpkin": "BÍ NGÔ"
+  },
+  "modeClean": {
+    "documentary": "Kiểu phim tài liệu",
+    "funny": "Kiểu trailer phim",
+    "descriptive": "Chế độ mô tả",
+    "pumpkin": "Kiểu bí ngô"
+  },
+  "countdown": {
+    "in": "Thuyết minh sau {n} giây…",
+    "late": "Đang thuyết minh…",
+    "visitor": "Đang chờ khách ghé thăm…",
+    "sr": "Sắp bắt đầu thuyết minh"
+  },
+  "live": "TRỰC TIẾP",
+  "specimen": "MẪU VẬT",
+  "observation": "QUAN SÁT",
+  "herdNone": "HOẠT ĐỘNG CỦA BẦY: KHÔNG PHÁT HIỆN",
+  "unchanged": "Khung cảnh không đổi",
+  "paused": "TẠM DỪNG",
+  "nowShowing": "ĐANG CHIẾU",
+  "btn": {
+    "describe": "Mô tả ngay",
+    "pause": "Tạm dừng",
+    "play": "Phát",
+    "flip": "Đổi camera",
+    "settings": "Cài đặt",
+    "themeDark": "Giao diện tối",
+    "themeLight": "Giao diện sáng",
+    "accessible": "Chế độ dễ tiếp cận",
+    "infomercial": "Chế độ quảng cáo",
+    "narrLang": "Ngôn ngữ thuyết minh",
+    "close": "Đóng",
+    "siteLang": "Ngôn ngữ trang"
+  },
+  "set": {
+    "title": "PHIẾU ĐẶT HÀNG TỔNG ĐÀI",
+    "titleClean": "Cài đặt",
+    "sub": "Tổng đài viên đang chờ bạn",
+    "useEleven": "Dùng giọng ElevenLabs",
+    "charsSession": "Số ký tự đã gửi trong phiên này",
+    "charsToday": "Số ký tự hôm nay (mọi người dùng)",
+    "narrToday": "Số lượt thuyết minh hôm nay",
+    "config": "Cấu hình",
+    "stillness": "Độ nhạy khi đứng yên",
+    "stillDebug": "Số lần đứng yên / chênh lệch gần nhất",
+    "textSize": "Cỡ chữ",
+    "smaller": "Chữ nhỏ hơn",
+    "larger": "Chữ lớn hơn",
+    "customLang": "Ngôn ngữ thuyết minh tùy chỉnh",
+    "customLangHint": "Được thêm vào danh sách ngôn ngữ thuyết minh (L)",
+    "music": "Âm lượng nhạc",
+    "srMute": "Không đọc to (trình đọc màn hình sẽ đọc văn bản)",
+    "hideVideo": "Ẩn video, chỉ hiện văn bản thuyết minh",
+    "hotkeys": "Phím tắt",
+    "yes": "đã đặt",
+    "no": "chưa có",
+    "dflt": "mặc định",
+    "breakLen": "Khoảng nghỉ giữa các câu",
+    "breakValue": "{n} giây"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Chế độ"
+    ],
+    [
+      "L",
+      "Ngôn ngữ thuyết minh"
+    ],
+    [
+      "N",
+      "Mô tả ngay"
+    ],
+    [
+      "S",
+      "Bật/tắt phát hiện đứng yên"
+    ],
+    [
+      "T",
+      "Giao diện"
+    ],
+    [
+      "A",
+      "Chế độ dễ tiếp cận"
+    ],
+    [
+      "Phím cách",
+      "Tạm dừng / phát"
+    ],
+    [
+      "K",
+      "Cài đặt"
+    ]
+  ],
+  "keys": {
+    "title": "MANG KHÓA CỦA BẠN ĐẾN!",
+    "titleClean": "Dùng khóa của riêng bạn",
+    "sub": "Tổng đài viên cần khóa của bạn để nhận cuộc gọi này",
+    "intro": "NarrateBot 3000 dùng khóa Gemini của chính bạn để thuyết minh và, nếu muốn, một khóa ElevenLabs cho giọng đọc.",
+    "gemini": "Khóa API Gemini",
+    "eleven": "Khóa API ElevenLabs (không bắt buộc)",
+    "geminiHelp": "Cách lấy khóa Gemini",
+    "elevenHelp": "Cách lấy khóa ElevenLabs",
+    "getAt": "Lấy khóa tại",
+    "newTab": " (mở trong thẻ mới)",
+    "geminiSteps": "Đăng nhập, chọn Create API key, rồi dán khóa vào đây.",
+    "geminiCost": "Google có gói miễn phí với giới hạn sử dụng; nếu dùng nhiều hơn, phí sẽ tính vào tài khoản Google của bạn.",
+    "elevenSteps": "Tạo một khóa có quyền Text to Speech, rồi dán vào đây.",
+    "elevenCost": "Gói miễn phí có hạn mức ký tự hằng tháng. Một số giọng cần gói trả phí; nếu giọng không khả dụng, chúng tôi dùng một giọng tiêu chuẩn, hoặc giọng của trình duyệt nếu bạn để trống ô này.",
+    "privacy": "Khóa của bạn được giữ trong một cookie đã mã hóa trên trình duyệt này và chỉ được gửi đến máy chủ của chúng tôi để thực hiện các yêu cầu của bạn. Chúng tôi không bao giờ lưu trữ hay ghi nhật ký khóa. Bạn có thể xóa chúng bất cứ lúc nào trong Cài đặt.",
+    "save": "Lưu & bắt đầu",
+    "saving": "Đang kiểm tra…",
+    "cancel": "Hủy",
+    "needGemini": "Nhập khóa Gemini của bạn.",
+    "geminiInvalid": "Google không chấp nhận khóa Gemini đó. Hãy kiểm tra lại rồi thử lần nữa.",
+    "format": "Đó có vẻ không phải khóa API. Hãy dán toàn bộ khóa, không có dấu cách.",
+    "formatEleven": "Khóa ElevenLabs đó có vẻ không đúng. Hãy dán toàn bộ khóa, hoặc để trống.",
+    "tooMany": "Thử quá nhiều lần. Hãy đợi 15 phút.",
+    "failed": "Hiện không thể kiểm tra khóa của bạn. Hãy thử lại sau giây lát.",
+    "needKeys": "Để tiếp tục thuyết minh, hãy thêm khóa của riêng bạn.",
+    "quota": "Khóa Gemini của bạn đã chạm giới hạn sử dụng. Sẽ thử lại sau một phút…",
+    "badKey": "Google đã từ chối khóa Gemini của bạn. Hãy kiểm tra lại hoặc dán khóa mới.",
+    "removed": "Đã xóa khóa của bạn. Thêm khóa để tiếp tục thuyết minh."
+  },
+  "owner": {
+    "title": "QUYỀN TRUY CẬP CHỦ SỞ HỮU",
+    "titleClean": "Quyền truy cập chủ sở hữu",
+    "label": "Mật khẩu chủ sở hữu",
+    "submit": "Mở khóa",
+    "wrong": "Không được rồi.",
+    "tooMany": "Thử quá nhiều lần. Hãy đợi 15 phút.",
+    "done": "Đã mở khóa quyền chủ sở hữu."
+  },
+  "access": {
+    "legend": "Truy cập",
+    "current": "Quyền truy cập hiện tại:",
+    "owner": "Chủ sở hữu",
+    "byok": "Khóa của riêng bạn",
+    "none": "Không có khóa",
+    "change": "Đổi khóa",
+    "add": "Dùng khóa của riêng bạn",
+    "remove": "Xóa khóa của tôi",
+    "lock": "Khóa quyền chủ sở hữu"
+  },
+  "camError": "Không dùng được camera. Hãy kiểm tra quyền truy cập camera và đảm bảo trang đang chạy trên HTTPS.",
+  "fallback": {
+    "documentary": [
+      "Và tại đây, chúng ta quan sát một cuộc tụ họp của loài này, cá thể nào cũng đường bệ hơn cá thể trước. Quả thật, thiên nhiên ở dạng tuyệt mỹ nhất.",
+      "Một mẫu vật đáng kinh ngạc chồm người về phía trước, mắt dán vào màn hình phát sáng, với sự kiên nhẫn của một sinh vật biết rằng điều vĩ đại cần thời gian.",
+      "Hãy chú ý sự tự tin điềm tĩnh của bầy này. Không một cá thể nào hoảng loạn, dù đang ở rất xa nguồn đồ ăn vặt tự nhiên của chúng.",
+      "Quần thể đã tụ lại quanh nguồn sáng, như tổ tiên chúng từng làm. Có vẻ như có những điều là vĩnh cửu.",
+      "Một mẫu vật chỉnh lại tư thế với phong thái vô cùng trang nghiêm. Những cá thể khác để ý. Một thủ lĩnh đã xuất hiện.",
+      "Trong tự nhiên, rất ít sinh vật có thể ngồi trọn một buổi demo duyên dáng đến thế. Vậy mà, chúng ở đây. Thật tráng lệ."
+    ],
+    "documentaryStill": [
+      "Bầy vẫn chưa nhúc nhích. Không một cái giật mình. Còn người dẫn chuyện thì vẫn hy vọng.",
+      "Vẫn chẳng có gì. Các mẫu vật dường như đang tiết kiệm năng lượng, có lẽ để vỗ tay.",
+      "Đã một lúc rồi. Người ta bắt đầu ngờ rằng bầy đang chờ người dẫn chuyện nói gì đó buồn cười. Anh ấy đang cố đây.",
+      "Bất động hoàn toàn. Các nhà khoa học có một từ cho hành vi này. Từ đó là 'phán xét'.",
+      "Người dẫn chuyện từng thấy những chậu cây còn nhiều tham vọng hơn. Làm ơn, ai đó, bất kỳ ai, nhúc nhích một ngón tay đi.",
+      "Xin yên tâm, bầy hoàn toàn an toàn. Chúng chỉ đang chọn, một cách vô cùng đường bệ, việc không cử động."
+    ],
+    "funny": [
+      "Trong một thế giới... nơi một căn phòng dám xem một chiếc laptop... một huyền thoại ra đời. Phân loại K: Khá là hay.",
+      "Mùa thu này... một nhóm người lạ tài năng... và một chiếc webcam đã thấy quá nhiều. KHÁN GIẢ. Đang chiếu tại rạp.",
+      "Từ hãng phim từng mang đến cho bạn NGỒI... là phần tiếp theo táo bạo nhất. NGỒI 2: VẪN CÒN NGỒI.",
+      "Giới phê bình gọi đây là 'đám đông ăn mặc đẹp nhất từng được laptop ghi hình.' Sắp ra mắt, ngay tại căn phòng này.",
+      "Một căn phòng. Không vụ nổ nào. Sức hút vô hạn. HACKATHON. Hai ngón cái giơ cao, thật cao.",
+      "Họ đến vì buổi demo... họ ở lại vì đồ ăn vặt miễn phí... NGƯỜI THAM DỰ. Chứng nhận tươi mới."
+    ],
+    "funnyStill": [
+      "Mùa đông này... tuyệt đối không có gì xảy ra. Và điều đó thật nghẹt thở. TĨNH VẬT: BỘ PHIM.",
+      "Mười hai người hùng. Một căn phòng. Không một cử động. NHỮNG BỨC TƯỢNG. Phân loại Đ: Đứng im đáng ngờ.",
+      "Từ đạo diễn của CHỜ ĐỢI... là CHỜ ĐỢI 2: VẪN CÒN CHỜ. Giới phê bình nói phim 'ngồi lại với bạn rất lâu.'",
+      "Trong một thế giới nơi không ai cử động... một người dẫn chuyện... van nài. Làm ơn. Ai cũng được. Vẫy tay đi.",
+      "Sắp ra mắt: KHOẢNG DỪNG DÀI NHẤT. Chín mươi phút. Một căn phòng. Không một cái chớp mắt.",
+      "Mùa hè này... khán giả đối mặt thử thách lớn nhất... giơ một tay lên. CỬ CHỈ. Đang chiếu."
+    ],
+    "descriptive": [
+      "Camera đang bật. Tôi sẽ mô tả lại khung cảnh trong giây lát.",
+      "Tôi chưa lấy được mô tả lúc này. Hãy giữ camera ổn định, tôi sẽ thử lại.",
+      "Vẫn đang quan sát. Mô tả mới sắp có."
+    ],
+    "pumpkin": [
+      "Hê hê hê... chào mừng, vị khách dũng cảm! Bộ trang phục gì thế này. Đẹp đến ngô ngàng luôn!",
+      "Hù! Ha, sợ chưa? Trang phục của bạn mới làm tôi sợ đấy, theo nghĩa tốt nhất.",
+      "Ồ hô, lại gần đây, lại gần nữa... tôi mê những vị khách có gu. Bạn làm cả khuôn mặt tôi sáng bừng.",
+      "Hê hê... một bộ đồ tuyệt cho một đêm tuyệt. Tôi đang ghen tị đến phát sáng đây.",
+      "Chào mừng, chào mừng! Tôi muốn ôm bạn lắm, nhưng bên trong tôi gần như rỗng tuếch. Dù sao thì bộ đồ đẹp lắm.",
+      "Hê hê hê... tối nay tôi thấy nhiều bộ đồ lắm rồi, nhưng của bạn ư? Đẹp hết hồn ma!"
+    ]
+  },
+  "noChange": "Không có thay đổi."
+}

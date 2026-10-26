@@ -1,0 +1,217 @@
+{
+  "callNow": "ZVANIET TŪLĪT! OPERATORI GAIDA!",
+  "tagline": "Jūsu pasaule, izstāstīta.",
+  "order": "PASŪTIET TŪLĪT",
+  "burst1": "REDZĒTS TV!",
+  "burst2": "TIKAI 0,00 $!",
+  "finePrint": "*Tas nav īsts tālruņa numurs. Lūdzu, nezvaniet. NarrateBot 3000 neatbild par pārāk precīziem stāstījumiem. Rezultāti var atšķirties. Baterijas nav iekļautas.",
+  "ticker": [
+    "„Tas lieliski aprakstīja manu kaķi!“ – Apmierināts klients",
+    "„Nekad neesmu juties tik pamanīts.“ – Arī klients",
+    "„Mans istabas augs nekad nav skanējis tik majestātiski.“ – Klients, droši vien",
+    "„Es smējos. Es raudāju. Es sēdēju ļoti mierīgi.“ – Bars"
+  ],
+  "cleanSub": "Ainas stāstījums tiešraidē no jūsu kameras",
+  "cleanExplain": "Pavērsiet kameru pret pasauli, un NarrateBot 3000 skaļi aprakstīs redzēto jūsu valodā.",
+  "start": "Sākt",
+  "butWait": "BET PAGAIDIET... TAS VĒL NAV VISS!",
+  "nowWith": "TAGAD AR REŽĪMU: {mode}!",
+  "mode": {
+    "documentary": "DOKUMENTĀLS",
+    "funny": "SMIEKLĪGS",
+    "descriptive": "APRAKSTOŠS",
+    "pumpkin": "ĶIRBIS"
+  },
+  "modeClean": {
+    "documentary": "Dokumentālās filmas stils",
+    "funny": "Filmas treilera stils",
+    "descriptive": "Aprakstošais režīms",
+    "pumpkin": "Ķirbja stils"
+  },
+  "countdown": {
+    "in": "Stāstījums pēc {n}…",
+    "late": "Stāstu…",
+    "visitor": "Gaidu apmeklētāju…",
+    "sr": "Stāstījums drīz sāksies"
+  },
+  "live": "TIEŠRAIDE",
+  "specimen": "EKSEMPLĀRS",
+  "observation": "NOVĒROJUMS",
+  "herdNone": "BARA AKTIVITĀTE: NAV KONSTATĒTA",
+  "unchanged": "Aina nemainīga",
+  "paused": "PAUZE",
+  "nowShowing": "TAGAD RĀDĀM",
+  "btn": {
+    "describe": "Aprakstīt tagad",
+    "pause": "Pauze",
+    "play": "Atskaņot",
+    "flip": "Apgriezt kameru",
+    "settings": "Iestatījumi",
+    "themeDark": "Tumšais motīvs",
+    "themeLight": "Gaišais motīvs",
+    "accessible": "Pieejamais skats",
+    "infomercial": "Reklāmas skats",
+    "narrLang": "Stāstījuma valoda",
+    "close": "Aizvērt",
+    "siteLang": "Vietnes valoda"
+  },
+  "set": {
+    "title": "ZVANU CENTRA PASŪTĪJUMA VEIDLAPA",
+    "titleClean": "Iestatījumi",
+    "sub": "Operatori gaida",
+    "useEleven": "Izmantot ElevenLabs balsi",
+    "charsSession": "Šajā sesijā nosūtītās rakstzīmes",
+    "charsToday": "Rakstzīmes šodien (visi lietotāji)",
+    "narrToday": "Stāstījumi šodien",
+    "config": "Konfigurācija",
+    "stillness": "Nekustīguma jutīgums",
+    "stillDebug": "Nekustīguma skaits / pēdējā atšķirība",
+    "textSize": "Teksta lielums",
+    "smaller": "Mazāks teksts",
+    "larger": "Lielāks teksts",
+    "customLang": "Pielāgota stāstījuma valoda",
+    "customLangHint": "Tiek pievienota stāstījuma valodu sarakstam (L)",
+    "music": "Mūzikas skaļums",
+    "srMute": "Nerunāt skaļi (ekrāna lasītājs nolasa tekstu)",
+    "hideVideo": "Paslēpt video, rādīt tikai stāstījuma tekstu",
+    "hotkeys": "Īsinājumtaustiņi",
+    "yes": "iestatīta",
+    "no": "trūkst",
+    "dflt": "noklusējums",
+    "breakLen": "Pauze starp teikumiem",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Režīmi"
+    ],
+    [
+      "L",
+      "Stāstījuma valoda"
+    ],
+    [
+      "N",
+      "Aprakstīt tagad"
+    ],
+    [
+      "S",
+      "Nekustīgums iesl./izsl."
+    ],
+    [
+      "T",
+      "Motīvs"
+    ],
+    [
+      "A",
+      "Pieejamais skats"
+    ],
+    [
+      "Atstarpe",
+      "Pauze / atskaņot"
+    ],
+    [
+      "K",
+      "Iestatījumi"
+    ]
+  ],
+  "keys": {
+    "title": "ATNESIET SAVAS ATSLĒGAS",
+    "titleClean": "Izmantojiet savas atslēgas",
+    "sub": "Operatoriem šim zvanam vajag jūsu atslēgas",
+    "intro": "NarrateBot 3000 darbojas ar jūsu pašu Gemini atslēgu stāstījumam un, ja vēlaties, ElevenLabs atslēgu balsīm.",
+    "gemini": "Gemini API atslēga",
+    "eleven": "ElevenLabs API atslēga (neobligāti)",
+    "geminiHelp": "Kā iegūt Gemini atslēgu",
+    "elevenHelp": "Kā iegūt ElevenLabs atslēgu",
+    "getAt": "Atslēgu var iegūt šeit:",
+    "newTab": " (atveras jaunā cilnē)",
+    "geminiSteps": "Pierakstieties, izvēlieties Create API key un ielīmējiet atslēgu šeit.",
+    "geminiCost": "Google piedāvā bezmaksas līmeni ar lietošanas ierobežojumiem; lielāka lietošana tiek apmaksāta no jūsu Google konta.",
+    "elevenSteps": "Izveidojiet atslēgu ar Text to Speech piekļuvi un ielīmējiet to šeit.",
+    "elevenCost": "Bezmaksas plāns ietver ikmēneša rakstzīmju apjomu. Dažām balsīm vajag maksas plānu; ja balss nav pieejama, mēs izmantojam standarta balsi vai jūsu pārlūka balsi, ja atstājat šo lauku tukšu.",
+    "privacy": "Jūsu atslēgas atrodas šifrētā sīkdatnē šajā pārlūkā un tiek sūtītas uz mūsu serveri tikai jūsu pieprasījumu izpildei. Mēs tās nekad neuzglabājam un nereģistrējam žurnālos. Jūs varat tās jebkurā laikā noņemt iestatījumos.",
+    "save": "Saglabāt un sākt",
+    "saving": "Pārbauda…",
+    "cancel": "Atcelt",
+    "needGemini": "Ievadiet savu Gemini atslēgu.",
+    "geminiInvalid": "Google nepieņēma šo Gemini atslēgu. Pārbaudiet to un mēģiniet vēlreiz.",
+    "format": "Tas neizskatās pēc API atslēgas. Ielīmējiet visu atslēgu bez atstarpēm.",
+    "formatEleven": "Šī ElevenLabs atslēga neizskatās pareiza. Ielīmējiet visu atslēgu vai atstājiet lauku tukšu.",
+    "tooMany": "Pārāk daudz mēģinājumu. Pagaidiet 15 minūtes.",
+    "failed": "Pašlaik nevarēja pārbaudīt jūsu atslēgu. Mēģiniet vēlreiz pēc brīža.",
+    "needKeys": "Lai turpinātu stāstījumu, pievienojiet savas atslēgas.",
+    "quota": "Jūsu Gemini atslēga sasniedza lietošanas ierobežojumu. Mēģināsim vēlreiz pēc minūtes…",
+    "badKey": "Google noraidīja jūsu Gemini atslēgu. Pārbaudiet to vai ielīmējiet jaunu.",
+    "removed": "Jūsu atslēgas tika noņemtas. Pievienojiet atslēgas, lai turpinātu stāstījumu."
+  },
+  "owner": {
+    "title": "ĪPAŠNIEKA PIEKĻUVE",
+    "titleClean": "Īpašnieka piekļuve",
+    "label": "Īpašnieka parole",
+    "submit": "Atbloķēt",
+    "wrong": "Neizdevās.",
+    "tooMany": "Pārāk daudz mēģinājumu. Pagaidiet 15 minūtes.",
+    "done": "Īpašnieka piekļuve atbloķēta."
+  },
+  "access": {
+    "legend": "Piekļuve",
+    "current": "Pašreizējā piekļuve:",
+    "owner": "Īpašnieks",
+    "byok": "Jūsu atslēgas",
+    "none": "Nav atslēgu",
+    "change": "Mainīt atslēgas",
+    "add": "Izmantot savas atslēgas",
+    "remove": "Noņemt manas atslēgas",
+    "lock": "Bloķēt īpašnieka piekļuvi"
+  },
+  "camError": "Kamera nav pieejama. Pārbaudiet kameras atļauju un vai lapa izmanto HTTPS.",
+  "fallback": {
+    "documentary": [
+      "Un šeit mēs vērojam sugas pulcēšanos, katrs eksemplārs cienījamāks par iepriekšējo. Patiesi, daba savā labākajā izskatā.",
+      "Ievērojams eksemplārs noliecas uz priekšu, acis pievērstas spīdošajam ekrānam, ar tādas radības pacietību, kas zina, ka lielām lietām vajag laiku.",
+      "Ievērojiet šī bara kluso pašpārliecinātību. Neviens nav krītis panikā, lai gan viņi ir tik tālu no sava dabiskā uzkodu avota.",
+      "Kolonija ir sapulcējusies ap gaismas avotu, kā to darīja viņu senči. Dažas lietas, šķiet, ir mūžīgas.",
+      "Viens eksemplārs ar milzīgu cieņu pielāgo savu stāju. Pārējie to pamana. Ir parādījies līderis.",
+      "Savvaļā ļoti nedaudzas radības spēj nosēdēt demonstrāciju ar tādu grāciju. Un tomēr, te nu viņi ir. Lieliski."
+    ],
+    "documentaryStill": [
+      "Bars nav pakustējies. Ne mazākās raustīšanās. Stāstnieks, savukārt, joprojām ir cerību pilns.",
+      "Joprojām nekā. Eksemplāri, šķiet, taupa enerģiju, varbūt aplausiem.",
+      "Ir pagājis kāds laiks. Rodas aizdomas, ka bars gaida, kad stāstnieks būs smieklīgs. Viņš cenšas.",
+      "Pilnīgs nekustīgums. Zinātniekiem ir vārds šai uzvedībai. Šis vārds ir „nosodīšana“.",
+      "Stāstnieks ir vērojis istabas augus ar redzamākām ambīcijām. Lūdzu, kāds, jebkurš, pakustiniet pirkstu.",
+      "Esiet droši, bars ir pilnīgā drošībā. Viņi vienkārši ar lielu cieņu izvēlas nekustēties."
+    ],
+    "funny": [
+      "Pasaulē... kur viena istaba uzdrošinājās skatīties klēpjdatoru... dzimst leģenda. Vērtējums PG: Pamatīgi Ģeniāli.",
+      "Šorudens... ģeniālu svešinieku grupa... un tīmekļa kamera, kas redzējusi par daudz. SKATĪTĀJI. Tagad kinoteātros.",
+      "No studijas, kas jums deva sēdēšanu... nāk tās drosmīgākais turpinājums. SĒDĒŠANA 2: JOPROJĀM SĒŽAM.",
+      "Kritiķi to sauc par „vislabāk ģērbto pūli, ko jebkad filmējis klēpjdators“. Drīzumā tieši šajā istabā.",
+      "Viena istaba. Nulle sprādzienu. Neierobežota harizma. HAKATONS. Divi īkšķi augstu, augstu gaisā.",
+      "Viņi nāca demonstrācijas dēļ... palika bezmaksas uzkodu dēļ... DALĪBNIEKI. Garantēti svaigs."
+    ],
+    "funnyStill": [
+      "Šoziem... nenotiek pilnīgi nekas. Un tas aizrauj elpu. KLUSĀ DABA: FILMA.",
+      "Divpadsmit varoņi. Viena istaba. Nulle kustību. STATUJAS. Vērtējums S: Satraucoši Statiski.",
+      "No filmas GAIDĪŠANA režisora... nāk GAIDĪŠANA 2: JOPROJĀM GAIDĀM. Kritiķi saka, ka tā „pieķēdē pie krēsla“.",
+      "Pasaulē, kur neviens nekustas... viens stāstnieks... lūdzas. Lūdzu. Kāds. Pamājiet.",
+      "Drīzumā: GARĀKĀ PAUZE. Deviņdesmit minūtes. Viena istaba. Neviena acu mirkšķa.",
+      "Šovasar... skatītāji saskaras ar savu lielāko izaicinājumu... vienas rokas pacelšanu. ŽESTS. Tagad uz ekrāniem."
+    ],
+    "descriptive": [
+      "Kamera ir ieslēgta. Pēc brīža es atkal aprakstīšu ainu.",
+      "Pašlaik nevarēju iegūt aprakstu. Turiet kameru mierīgi, un es mēģināšu vēlreiz.",
+      "Joprojām skatos. Jauns apraksts drīz būs."
+    ],
+    "pumpkin": [
+      "He he he... laipni lūdzam, drosmīgais apmeklētāj! Kāds kostīms. Patiesi ķirbjaini skaists.",
+      "Bū! Ha, vai es jūs nobiedēju? Jūsu tērps noteikti nobiedēja mani, vislabākajā nozīmē.",
+      "Oho, nāciet tuvāk, nāciet tuvāk... Man patīk viesi ar stilu. Jūs izgaismojat visu manu seju.",
+      "He he... smalks kostīms smalkai naktij. Es burtiski kvēloju no skaudības.",
+      "Laipni lūdzam, laipni lūdzam! Es jūs apskautu, bet iekšā esmu pārsvarā tukšs. Tomēr jauks tērps.",
+      "He he he... šovakar esmu redzējis daudz kostīmu, bet jūsējais? Spokaini lielisks."
+    ]
+  },
+  "noChange": "Bez izmaiņām."
+}

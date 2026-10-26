@@ -1,0 +1,217 @@
+{
+  "callNow": "HRINGDU NÚNA! SÍMAFÓLKIÐ BÍÐUR!",
+  "tagline": "Heimurinn þinn, sagður upphátt.",
+  "order": "PANTAÐU NÚNA",
+  "burst1": "SÉÐ Í SJÓNVARPI!",
+  "burst2": "AÐEINS 0,00 $!",
+  "finePrint": "*Þetta er ekki raunverulegt símanúmer. Vinsamlegast ekki hringja. NarrateBot 3000 ber ekki ábyrgð á frásögnum sem eru of nákvæmar. Niðurstöður geta verið mismunandi. Rafhlöður fylgja ekki.",
+  "ticker": [
+    "„Hann lýsti kettinum mínum fullkomlega!“ – Ánægður viðskiptavinur",
+    "„Mér hefur aldrei fundist ég jafn séður.“ – Líka viðskiptavinur",
+    "„Stofublómið mitt hefur aldrei hljómað svona tignarlega.“ – Viðskiptavinur, líklega",
+    "„Ég hló. Ég grét. Ég sat grafkyrr.“ – Hjörðin"
+  ],
+  "cleanSub": "Lifandi lýsing á umhverfinu úr myndavélinni þinni",
+  "cleanExplain": "Beindu myndavélinni að heiminum og NarrateBot 3000 lýsir upphátt því sem hann sér, á þínu tungumáli.",
+  "start": "Byrja",
+  "butWait": "EN BÍDDU... ÞAÐ ER MEIRA!",
+  "nowWith": "NÚ LÍKA: {mode}!",
+  "mode": {
+    "documentary": "HEIMILDAMYND",
+    "funny": "FYNDIÐ",
+    "descriptive": "LÝSANDI",
+    "pumpkin": "GRASKER"
+  },
+  "modeClean": {
+    "documentary": "Heimildamyndastíll",
+    "funny": "Bíóstiklustíll",
+    "descriptive": "Lýsandi hamur",
+    "pumpkin": "Graskersstíll"
+  },
+  "countdown": {
+    "in": "Frásögn eftir {n}…",
+    "late": "Segi frá…",
+    "visitor": "Bíð eftir gesti…",
+    "sr": "Frásögn hefst innan skamms"
+  },
+  "live": "BEINT",
+  "specimen": "EINTAK",
+  "observation": "ATHUGUN",
+  "herdNone": "VIRKNI HJARÐAR: ENGIN GREIND",
+  "unchanged": "Óbreytt sena",
+  "paused": "Í BIÐ",
+  "nowShowing": "SÝNT NÚNA",
+  "btn": {
+    "describe": "Lýsa núna",
+    "pause": "Gera hlé",
+    "play": "Spila",
+    "flip": "Snúa myndavél",
+    "settings": "Stillingar",
+    "themeDark": "Dökkt þema",
+    "themeLight": "Ljóst þema",
+    "accessible": "Aðgengilegt útlit",
+    "infomercial": "Auglýsingaútlit",
+    "narrLang": "Tungumál frásagnar",
+    "close": "Loka",
+    "siteLang": "Tungumál síðu"
+  },
+  "set": {
+    "title": "PÖNTUNAREYÐUBLAÐ SÍMAVERS",
+    "titleClean": "Stillingar",
+    "sub": "Símafólkið bíður",
+    "useEleven": "Nota ElevenLabs-rödd",
+    "charsSession": "Stafir sendir í þessari lotu",
+    "charsToday": "Stafir í dag (allir notendur)",
+    "narrToday": "Frásagnir í dag",
+    "config": "Uppsetning",
+    "stillness": "Næmi fyrir kyrrstöðu",
+    "stillDebug": "Kyrrstöðutalning / síðasti munur",
+    "textSize": "Textastærð",
+    "smaller": "Minni texti",
+    "larger": "Stærri texti",
+    "customLang": "Sérsniðið tungumál frásagnar",
+    "customLangHint": "Bætt við lista yfir tungumál frásagnar (L)",
+    "music": "Hljóðstyrkur tónlistar",
+    "srMute": "Ekki tala upphátt (skjálesari les textann)",
+    "hideVideo": "Fela myndskeið, sýna aðeins frásagnartexta",
+    "hotkeys": "Flýtilyklar",
+    "yes": "stillt",
+    "no": "vantar",
+    "dflt": "sjálfgefið",
+    "breakLen": "Hlé milli setninga",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Hamir"
+    ],
+    [
+      "L",
+      "Tungumál frásagnar"
+    ],
+    [
+      "N",
+      "Lýsa núna"
+    ],
+    [
+      "S",
+      "Kyrrstaða af/á"
+    ],
+    [
+      "T",
+      "Þema"
+    ],
+    [
+      "A",
+      "Aðgengilegt útlit"
+    ],
+    [
+      "Bilslá",
+      "Hlé / spila"
+    ],
+    [
+      "K",
+      "Stillingar"
+    ]
+  ],
+  "keys": {
+    "title": "KOMDU MEÐ EIGIN LYKLA",
+    "titleClean": "Notaðu eigin lykla",
+    "sub": "Símafólkið þarf lyklana þína til að taka þetta símtal",
+    "intro": "NarrateBot 3000 keyrir á þínum eigin Gemini-lykli fyrir frásögn og, ef þú vilt, ElevenLabs-lykli fyrir raddir.",
+    "gemini": "Gemini API-lykill",
+    "eleven": "ElevenLabs API-lykill (valfrjálst)",
+    "geminiHelp": "Svona færðu Gemini-lykil",
+    "elevenHelp": "Svona færðu ElevenLabs-lykil",
+    "getAt": "Fáðu lykil á",
+    "newTab": " (opnast í nýjum flipa)",
+    "geminiSteps": "Skráðu þig inn, veldu Create API key og límdu svo lykilinn hér.",
+    "geminiCost": "Google býður ókeypis þrep með notkunartakmörkunum; meiri notkun er rukkuð á Google-reikninginn þinn.",
+    "elevenSteps": "Búðu til lykil með Text to Speech aðgangi og límdu hann svo hér.",
+    "elevenCost": "Ókeypis áskriftin inniheldur mánaðarlegan stafakvóta. Sumar raddir þurfa greidda áskrift; ef rödd er ekki í boði notum við staðlaða rödd, eða rödd vafrans þíns ef þú skilur þetta eftir autt.",
+    "privacy": "Lyklarnir þínir eru geymdir í dulkóðaðri vafraköku í þessum vafra og sendir á netþjóninn okkar eingöngu til að framkvæma beiðnir þínar. Við vistum þá aldrei né skráum þá í annála. Þú getur fjarlægt þá hvenær sem er í Stillingum.",
+    "save": "Vista og byrja",
+    "saving": "Athuga…",
+    "cancel": "Hætta við",
+    "needGemini": "Sláðu inn Gemini-lykilinn þinn.",
+    "geminiInvalid": "Google samþykkti ekki þennan Gemini-lykil. Athugaðu hann og reyndu aftur.",
+    "format": "Þetta lítur ekki út eins og API-lykill. Límdu allan lykilinn, án bila.",
+    "formatEleven": "Þessi ElevenLabs-lykill lítur ekki rétt út. Límdu allan lykilinn eða skildu reitinn eftir auðan.",
+    "tooMany": "Of margar tilraunir. Bíddu í 15 mínútur.",
+    "failed": "Ekki tókst að athuga lykilinn þinn núna. Reyndu aftur eftir smástund.",
+    "needKeys": "Bættu við eigin lyklum til að halda áfram.",
+    "quota": "Gemini-lykillinn þinn náði notkunarmörkum. Reyni aftur eftir mínútu…",
+    "badKey": "Google hafnaði Gemini-lyklinum þínum. Athugaðu hann eða límdu inn nýjan.",
+    "removed": "Lyklarnir þínir voru fjarlægðir. Bættu við lyklum til að halda frásögninni áfram."
+  },
+  "owner": {
+    "title": "AÐGANGUR EIGANDA",
+    "titleClean": "Aðgangur eiganda",
+    "label": "Lykilorð eiganda",
+    "submit": "Opna",
+    "wrong": "Það gekk ekki.",
+    "tooMany": "Of margar tilraunir. Bíddu í 15 mínútur.",
+    "done": "Aðgangur eiganda opnaður."
+  },
+  "access": {
+    "legend": "Aðgangur",
+    "current": "Núverandi aðgangur:",
+    "owner": "Eigandi",
+    "byok": "Eigin lyklar",
+    "none": "Engir lyklar",
+    "change": "Breyta lyklum",
+    "add": "Nota eigin lykla",
+    "remove": "Fjarlægja lyklana mína",
+    "lock": "Læsa aðgangi eiganda"
+  },
+  "camError": "Myndavél ekki tiltæk. Athugaðu heimild fyrir myndavél og að síðan sé á HTTPS.",
+  "fallback": {
+    "documentary": [
+      "Og hér sjáum við samkomu tegundarinnar, hvert eintak virðulegra en það síðasta. Sannarlega náttúran upp á sitt besta.",
+      "Merkilegt eintak hallar sér fram, augun límd við glóandi skjáinn, með þolinmæði veru sem veit að stórir hlutir taka tíma.",
+      "Taktu eftir hljóðlátu sjálfsöryggi þessarar hjarðar. Ekki eitt hefur farið á taugum, þrátt fyrir að vera svo fjarri náttúrulegri snarluppsprettu sinni.",
+      "Nýlendan hefur safnast saman umhverfis ljósgjafann, eins og forfeður hennar gerðu. Sumt, að því er virðist, er eilíft.",
+      "Eitt eintak lagar líkamsstöðu sína af gríðarlegri reisn. Hin taka eftir. Leiðtogi er kominn fram.",
+      "Í náttúrunni geta afar fáar verur setið í gegnum kynningu af slíkum þokka. Og samt, hér eru þær. Stórfenglegt."
+    ],
+    "documentaryStill": [
+      "Hjörðin hefur ekki hreyft sig. Ekki einn kippur. Sögumaðurinn er þó enn vongóður.",
+      "Enn ekkert. Eintökin virðast spara orku, kannski fyrir lófatakið.",
+      "Nú er liðinn nokkur tími. Mann fer að gruna að hjörðin bíði eftir að sögumaðurinn verði fyndinn. Hann er að reyna.",
+      "Algjör kyrrð. Vísindamenn eiga orð yfir þessa hegðun. Orðið er „að dæma“.",
+      "Sögumaðurinn hefur séð stofublóm með sýnilegri metnað. Gerið það, einhver, hver sem er, hreyfið fingur.",
+      "Vertu viss, hjörðin er fullkomlega örugg. Hún velur einfaldlega, af mikilli reisn, að hreyfa sig ekki."
+    ],
+    "funny": [
+      "Í heimi... þar sem eitt herbergi þorði að horfa á fartölvu... fæðist goðsögn. Merkt PG: Prýðilega Gott.",
+      "Í haust... hópur snjallra ókunnugra... og vefmyndavél sem hefur séð of mikið. ÁHORFENDURNIR. Nú í bíó.",
+      "Frá kvikmyndaverinu sem færði þér setuna... kemur djarfasta framhaldið hingað til. SETAN 2: SITJUM ENN.",
+      "Gagnrýnendur kalla hana „best klædda hóp sem fartölva hefur nokkurn tíma tekið upp“. Bráðum í nákvæmlega þessu herbergi.",
+      "Eitt herbergi. Engar sprengingar. Endalaus sjarmi. HAKKAÞONIÐ. Tveir þumlar langt, langt upp.",
+      "Þau komu fyrir kynninguna... urðu eftir fyrir ókeypis snarlið... GESTIRNIR. Vottað ferskt."
+    ],
+    "funnyStill": [
+      "Í vetur... gerist nákvæmlega ekkert. Og það er stórkostlegt. KYRRALÍF: MYNDIN.",
+      "Tólf hetjur. Eitt herbergi. Engin hreyfing. STYTTURNAR. Merkt K: Kynlega Kyrrar.",
+      "Frá leikstjóra BIÐARINNAR... kemur BIÐIN 2: BÍÐUM ENN. Gagnrýnendur segja að hún „sitji lengi í manni“.",
+      "Í heimi þar sem enginn hreyfir sig... einn sögumaður... grátbiður. Gerið það. Einhver. Veifið.",
+      "Bráðum: LENGSTA HLÉIÐ. Níutíu mínútur. Eitt herbergi. Ekki eitt augnablikk.",
+      "Í sumar... mætir salurinn sinni stærstu áskorun... að rétta upp eina hönd. BENDINGIN. Nú í sýningu."
+    ],
+    "descriptive": [
+      "Myndavélin er á. Ég lýsi umhverfinu aftur eftir smástund.",
+      "Ég náði ekki í lýsingu rétt í þessu. Haltu myndavélinni kyrri og ég reyni aftur.",
+      "Enn að skoða. Ný lýsing kemur innan skamms."
+    ],
+    "pumpkin": [
+      "He he he... velkominn, hugrakki gestur! Þvílíkur búningur. Hreint graskerslega glæsilegur.",
+      "Bú! Ha, hræddi ég þig? Búningurinn þinn hræddi mig svo sannarlega, á besta hátt.",
+      "Ohó, komdu nær, komdu nær... Ég elska gesti með stíl. Þú lýsir upp allt andlitið á mér.",
+      "He he... flottur búningur fyrir flotta nótt. Ég glói hreinlega af öfund.",
+      "Velkominn, velkominn! Ég myndi faðma þig, en ég er að mestu holur að innan. Fallegur búningur samt.",
+      "He he he... ég hef séð marga búninga í kvöld, en þinn? Draugalega góður."
+    ]
+  },
+  "noChange": "Engin breyting."
+}

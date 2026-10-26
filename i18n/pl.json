@@ -1,0 +1,217 @@
+{
+  "callNow": "ZADZWOŃ TERAZ! NASI KONSULTANCI CZEKAJĄ!",
+  "tagline": "Twój świat, opowiedziany.",
+  "order": "ZAMÓW TERAZ",
+  "burst1": "ZNANE Z TELEWIZJI!",
+  "burst2": "TYLKO 0,00 $!",
+  "finePrint": "*To nie jest prawdziwy numer telefonu. Prosimy nie dzwonić. NarrateBot 3000 nie odpowiada za narracje zbyt trafne. Wyniki mogą się różnić. Baterie nie są dołączone.",
+  "ticker": [
+    "„Idealnie opisał mojego kota!” – Zadowolona klientka",
+    "„Nigdy nie czułem się tak dostrzeżony.” – Też klient",
+    "„Mój kwiatek doniczkowy nigdy nie brzmiał tak majestatycznie.” – Klient, chyba",
+    "„Śmiałem się. Płakałem. Siedziałem bez ruchu.” – Stado"
+  ],
+  "cleanSub": "Narracja na żywo tego, co widzi Twoja kamera",
+  "cleanExplain": "Skieruj kamerę na świat, a NarrateBot 3000 opisze na głos, co widzi, w Twoim języku.",
+  "start": "Start",
+  "butWait": "ALE TO NIE WSZYSTKO!",
+  "nowWith": "TERAZ Z TRYBEM {mode}!",
+  "mode": {
+    "documentary": "DOKUMENT",
+    "funny": "ZABAWNY",
+    "descriptive": "OPISOWY",
+    "pumpkin": "DYNIA"
+  },
+  "modeClean": {
+    "documentary": "Styl dokumentalny",
+    "funny": "Styl zwiastuna filmowego",
+    "descriptive": "Tryb opisowy",
+    "pumpkin": "Styl dyni"
+  },
+  "countdown": {
+    "in": "Narracja za {n}…",
+    "late": "Trwa narracja…",
+    "visitor": "Czekam na gościa…",
+    "sr": "Narracja za chwilę"
+  },
+  "live": "NA ŻYWO",
+  "specimen": "OKAZ",
+  "observation": "OBSERWACJA",
+  "herdNone": "AKTYWNOŚĆ STADA: NIE WYKRYTO",
+  "unchanged": "Scena bez zmian",
+  "paused": "WSTRZYMANO",
+  "nowShowing": "TERAZ W KINACH",
+  "btn": {
+    "describe": "Opisz teraz",
+    "pause": "Wstrzymaj",
+    "play": "Odtwórz",
+    "flip": "Przełącz kamerę",
+    "settings": "Ustawienia",
+    "themeDark": "Ciemny motyw",
+    "themeLight": "Jasny motyw",
+    "accessible": "Widok dostępny",
+    "infomercial": "Widok telezakupów",
+    "narrLang": "Język narracji",
+    "close": "Zamknij",
+    "siteLang": "Język strony"
+  },
+  "set": {
+    "title": "FORMULARZ ZAMÓWIENIA CALL CENTER",
+    "titleClean": "Ustawienia",
+    "sub": "Nasi konsultanci czekają",
+    "useEleven": "Użyj głosu ElevenLabs",
+    "charsSession": "Znaki wysłane w tej sesji",
+    "charsToday": "Znaki dzisiaj (wszyscy użytkownicy)",
+    "narrToday": "Narracje dzisiaj",
+    "config": "Konfiguracja",
+    "stillness": "Czułość na bezruch",
+    "stillDebug": "Licznik bezruchu / ostatnia różnica",
+    "textSize": "Rozmiar tekstu",
+    "smaller": "Mniejszy tekst",
+    "larger": "Większy tekst",
+    "customLang": "Własny język narracji",
+    "customLangHint": "Dodany do listy języków narracji (L)",
+    "music": "Głośność muzyki",
+    "srMute": "Nie mów na głos (czytnik ekranu odczyta tekst)",
+    "hideVideo": "Ukryj wideo, pokazuj tylko tekst narracji",
+    "hotkeys": "Skróty klawiszowe",
+    "yes": "ustawiony",
+    "no": "brak",
+    "dflt": "domyślny",
+    "breakLen": "Przerwa między zdaniami",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Tryby"
+    ],
+    [
+      "L",
+      "Język narracji"
+    ],
+    [
+      "N",
+      "Opisz teraz"
+    ],
+    [
+      "S",
+      "Bezruch wł./wył."
+    ],
+    [
+      "T",
+      "Motyw"
+    ],
+    [
+      "A",
+      "Widok dostępny"
+    ],
+    [
+      "Spacja",
+      "Wstrzymaj / odtwórz"
+    ],
+    [
+      "K",
+      "Ustawienia"
+    ]
+  ],
+  "keys": {
+    "title": "PRZYNIEŚ WŁASNE KLUCZE",
+    "titleClean": "Użyj własnych kluczy",
+    "sub": "Konsultanci potrzebują Twoich kluczy, aby odebrać to połączenie",
+    "intro": "NarrateBot 3000 działa na Twoim własnym kluczu Gemini do narracji oraz, jeśli chcesz, kluczu ElevenLabs do głosów.",
+    "gemini": "Klucz API Gemini",
+    "eleven": "Klucz API ElevenLabs (opcjonalny)",
+    "geminiHelp": "Jak zdobyć klucz Gemini",
+    "elevenHelp": "Jak zdobyć klucz ElevenLabs",
+    "getAt": "Klucz uzyskasz na stronie",
+    "newTab": " (otwiera się w nowej karcie)",
+    "geminiSteps": "Zaloguj się, wybierz Create API key, a potem wklej klucz tutaj.",
+    "geminiCost": "Google oferuje bezpłatny poziom z limitami użycia; intensywniejsze użycie jest rozliczane na Twoim koncie Google.",
+    "elevenSteps": "Utwórz klucz z dostępem do Text to Speech, a potem wklej go tutaj.",
+    "elevenCost": "Bezpłatny plan obejmuje miesięczny limit znaków. Niektóre głosy wymagają płatnego planu; jeśli głos jest niedostępny, użyjemy standardowego głosu albo głosu Twojej przeglądarki, jeśli zostawisz to pole puste.",
+    "privacy": "Twoje klucze są przechowywane w zaszyfrowanym pliku cookie w tej przeglądarce i wysyłane na nasz serwer wyłącznie w celu realizacji Twoich żądań. Nigdy ich nie przechowujemy ani nie zapisujemy w logach. Możesz je w każdej chwili usunąć w Ustawieniach.",
+    "save": "Zapisz i zacznij",
+    "saving": "Sprawdzanie…",
+    "cancel": "Anuluj",
+    "needGemini": "Wpisz swój klucz Gemini.",
+    "geminiInvalid": "Google nie zaakceptował tego klucza Gemini. Sprawdź go i spróbuj ponownie.",
+    "format": "To nie wygląda na klucz API. Wklej cały klucz, bez spacji.",
+    "formatEleven": "Ten klucz ElevenLabs nie wygląda poprawnie. Wklej cały klucz albo zostaw pole puste.",
+    "tooMany": "Zbyt wiele prób. Odczekaj 15 minut.",
+    "failed": "Nie udało się teraz sprawdzić klucza. Spróbuj ponownie za chwilę.",
+    "needKeys": "Aby kontynuować narrację, dodaj własne klucze.",
+    "quota": "Twój klucz Gemini osiągnął limit użycia. Ponowna próba za minutę…",
+    "badKey": "Google odrzucił Twój klucz Gemini. Sprawdź go lub wklej nowy.",
+    "removed": "Twoje klucze zostały usunięte. Dodaj klucze, aby kontynuować narrację."
+  },
+  "owner": {
+    "title": "DOSTĘP WŁAŚCICIELA",
+    "titleClean": "Dostęp właściciela",
+    "label": "Hasło właściciela",
+    "submit": "Odblokuj",
+    "wrong": "Nie udało się.",
+    "tooMany": "Zbyt wiele prób. Odczekaj 15 minut.",
+    "done": "Dostęp właściciela odblokowany."
+  },
+  "access": {
+    "legend": "Dostęp",
+    "current": "Obecny dostęp:",
+    "owner": "Właściciel",
+    "byok": "Własne klucze",
+    "none": "Brak kluczy",
+    "change": "Zmień klucze",
+    "add": "Użyj własnych kluczy",
+    "remove": "Usuń moje klucze",
+    "lock": "Zablokuj dostęp właściciela"
+  },
+  "camError": "Kamera niedostępna. Sprawdź uprawnienia do kamery i czy strona działa przez HTTPS.",
+  "fallback": {
+    "documentary": [
+      "A oto obserwujemy zgromadzenie gatunku, każdy osobnik dostojniejszy od poprzedniego. Doprawdy, natura w najlepszym wydaniu.",
+      "Niezwykły okaz pochyla się do przodu, wpatrzony w świecący ekran, z cierpliwością stworzenia, które wie, że wielkie rzeczy wymagają czasu.",
+      "Zwróćcie uwagę na spokojną pewność siebie tego stada. Nikt nie wpada w panikę, choć są tak daleko od naturalnych zapasów chipsów.",
+      "Kolonia zebrała się wokół źródła światła, tak jak niegdyś ich przodkowie. Niektóre rzeczy, jak się zdaje, są wieczne.",
+      "Jeden z okazów poprawia postawę z ogromną godnością. Pozostali to odnotowują. Wyłonił się przywódca.",
+      "Na wolności niewiele stworzeń potrafi z taką gracją przesiedzieć całe demo. A jednak oto one. Wspaniałe."
+    ],
+    "documentaryStill": [
+      "Stado się nie poruszyło. Ani drgnienia. Narrator ze swej strony wciąż ma nadzieję.",
+      "Nadal nic. Okazy zdają się oszczędzać energię, być może na oklaski.",
+      "Minęło już trochę czasu. Zaczynamy podejrzewać, że stado czeka, aż narrator będzie zabawny. On się stara.",
+      "Całkowity bezruch. Naukowcy mają na to zachowanie słowo. Tym słowem jest „ocenianie”.",
+      "Narrator widywał kwiatki doniczkowe z większymi ambicjami. Proszę, ktokolwiek, ruszcie choć palcem.",
+      "Spokojnie, stadu nic nie grozi. Po prostu postanawia, z wielką godnością, się nie ruszać."
+    ],
+    "funny": [
+      "W świecie… gdzie jedna sala odważyła się patrzeć w laptopa… rodzi się legenda. Film bez ograniczeń wiekowych i bez akcji.",
+      "Tej jesieni… grupa genialnych nieznajomych… i kamerka, która widziała za dużo. PUBLICZNOŚĆ. Już w kinach.",
+      "Od studia, które dało wam „siedzenie”… nadchodzi najodważniejsza kontynuacja. SIEDZENIE 2: NADAL SIEDZIMY.",
+      "Krytycy nazywają ją „najlepiej ubraną widownią, jaką kiedykolwiek sfilmował laptop”. Wkrótce dokładnie w tej sali.",
+      "Jedna sala. Zero wybuchów. Nieograniczona charyzma. HACKATHON. Dwa kciuki bardzo, bardzo w górę.",
+      "Przyszli na demo… zostali dla darmowych przekąsek… UCZESTNICY. Hit sezonu."
+    ],
+    "funnyStill": [
+      "Tej zimy… nie dzieje się absolutnie nic. I zapiera to dech w piersiach. MARTWA NATURA: FILM.",
+      "Dwunastu bohaterów. Jedna sala. Zero ruchu. POSĄGI. Dozwolone od zera ruchów.",
+      "Od reżysera CZEKANIA… nadchodzi CZEKANIE 2: WCIĄŻ CZEKAMY. Krytycy: „przykuwa do fotela”.",
+      "W świecie, w którym nikt się nie rusza… jeden narrator… błaga. Proszę. Ktokolwiek. Pomachajcie.",
+      "Wkrótce: NAJDŁUŻSZA PAUZA. Dziewięćdziesiąt minut. Jedna sala. Ani jednego mrugnięcia.",
+      "Tego lata… publiczność staje przed największym wyzwaniem… podniesieniem ręki. GEST. Już na ekranach."
+    ],
+    "descriptive": [
+      "Kamera jest włączona. Za chwilę ponownie opiszę scenę.",
+      "Nie udało mi się teraz uzyskać opisu. Trzymaj kamerę nieruchomo, a spróbuję ponownie.",
+      "Nadal patrzę. Nowy opis pojawi się wkrótce."
+    ],
+    "pumpkin": [
+      "He he he… witaj, dzielny gościu! Co za strój. Po prostu dyniowspaniały.",
+      "Buu! Ha, wystraszyłem cię? Twój strój na pewno wystraszył mnie, w najlepszym sensie.",
+      "Oho, podejdź bliżej, bliżej… Uwielbiam gości z klasą. Rozświetlasz mi całą twarz.",
+      "He he… piękny strój na piękną noc. Aż płonę z zazdrości.",
+      "Witaj, witaj! Uściskałbym cię, ale w środku jestem raczej pusty. Za to strój cudny.",
+      "He he he… widziałem dziś wiele strojów, ale twój? Upiornie dobry."
+    ]
+  },
+  "noChange": "Bez zmian."
+}

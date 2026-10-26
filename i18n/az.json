@@ -1,0 +1,217 @@
+{
+  "callNow": "İNDİCƏ ZƏNG EDİN! OPERATORLAR HAZIRDIR!",
+  "tagline": "Sizin dünyanız, səsləndirilmiş.",
+  "order": "İNDİCƏ SİFARİŞ EDİN",
+  "burst1": "TELEVİZORDA GÖRDÜYÜNÜZ KİMİ!",
+  "burst2": "CƏMİ $0.00!",
+  "finePrint": "*Bu, real telefon nömrəsi deyil. Lütfən, zəng etməyin. NarrateBot 3000 həddən artıq dəqiq təsvirlərə görə məsuliyyət daşımır. Nəticələr fərqli ola bilər. Batareyalar daxil deyil.",
+  "ticker": [
+    "'Pişiyimi mükəmməl təsvir etdi!' – Məmnun Müştəri",
+    "'Heç vaxt özümü bu qədər anlaşılmış hiss etməmişdim.' – Bu da Müştəri",
+    "'Dibçək bitkim heç vaxt bu qədər əzəmətli səslənməmişdi.' – Müştəri, Yəqin ki",
+    "'Güldüm. Ağladım. Tamamilə tərpənmədən oturdum.' – Sürü"
+  ],
+  "cleanSub": "Kameranızdan canlı səhnə təsviri",
+  "cleanExplain": "Kameranı dünyaya tutun və NarrateBot 3000 gördüklərini sizin dilinizdə ucadan təsvir edəcək.",
+  "start": "Başla",
+  "butWait": "AMMA GÖZLƏYİN... HƏLƏ BU HAMISI DEYİL!",
+  "nowWith": "İNDİ {mode} REJİMİ İLƏ!",
+  "mode": {
+    "documentary": "SƏNƏDLİ FİLM",
+    "funny": "GÜLMƏLİ",
+    "descriptive": "TƏSVİRİ",
+    "pumpkin": "BALQABAQ"
+  },
+  "modeClean": {
+    "documentary": "Sənədli film üslubu",
+    "funny": "Film treyleri üslubu",
+    "descriptive": "Təsviri rejim",
+    "pumpkin": "Balqabaq üslubu"
+  },
+  "countdown": {
+    "in": "{n} saniyəyə təsvir…",
+    "late": "Təsvir edilir…",
+    "visitor": "Qonaq gözlənilir…",
+    "sr": "Təsvir tezliklə başlayacaq"
+  },
+  "live": "CANLI",
+  "specimen": "NÜMUNƏ",
+  "observation": "MÜŞAHİDƏ",
+  "herdNone": "SÜRÜ FƏALİYYƏTİ: AŞKAR EDİLMƏDİ",
+  "unchanged": "Səhnə dəyişməyib",
+  "paused": "FASİLƏ",
+  "nowShowing": "İNDİ EKRANDA",
+  "btn": {
+    "describe": "İndi təsvir et",
+    "pause": "Fasilə",
+    "play": "Oynat",
+    "flip": "Kameranı çevir",
+    "settings": "Parametrlər",
+    "themeDark": "Tünd tema",
+    "themeLight": "Açıq tema",
+    "accessible": "Əlçatan görünüş",
+    "infomercial": "Reklam görünüşü",
+    "narrLang": "Təsvir dili",
+    "close": "Bağla",
+    "siteLang": "Sayt dili"
+  },
+  "set": {
+    "title": "ZƏNG MƏRKƏZİ SİFARİŞ FORMASI",
+    "titleClean": "Parametrlər",
+    "sub": "Operatorlar hazırdır",
+    "useEleven": "ElevenLabs səsindən istifadə et",
+    "charsSession": "Bu sessiyada göndərilən simvollar",
+    "charsToday": "Bugünkü simvollar (bütün istifadəçilər)",
+    "narrToday": "Bugünkü təsvirlər",
+    "config": "Konfiqurasiya",
+    "stillness": "Hərəkətsizlik həssaslığı",
+    "stillDebug": "Hərəkətsizlik sayı / son fərq",
+    "textSize": "Mətn ölçüsü",
+    "smaller": "Kiçik mətn",
+    "larger": "Böyük mətn",
+    "customLang": "Fərdi təsvir dili",
+    "customLangHint": "Təsvir dilləri siyahısına əlavə olunur (L)",
+    "music": "Musiqinin səs səviyyəsi",
+    "srMute": "Ucadan danışma (ekran oxuyucusu mətni oxuyacaq)",
+    "hideVideo": "Videonu gizlət, yalnız təsvir mətnini göstər",
+    "hotkeys": "Qısayol düymələri",
+    "yes": "təyin edilib",
+    "no": "yoxdur",
+    "dflt": "standart",
+    "breakLen": "Sətirlər arasında fasilə",
+    "breakValue": "{n} san"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Rejimlər"
+    ],
+    [
+      "L",
+      "Təsvir dili"
+    ],
+    [
+      "N",
+      "İndi təsvir et"
+    ],
+    [
+      "S",
+      "Hərəkətsizlik açıq/bağlı"
+    ],
+    [
+      "T",
+      "Tema"
+    ],
+    [
+      "A",
+      "Əlçatan görünüş"
+    ],
+    [
+      "Boşluq",
+      "Fasilə / oynat"
+    ],
+    [
+      "K",
+      "Parametrlər"
+    ]
+  ],
+  "keys": {
+    "title": "ÖZ AÇARLARINIZI GƏTİRİN",
+    "titleClean": "Öz açarlarınızdan istifadə edin",
+    "sub": "Bu zəngi qəbul etmək üçün operatorlara açarlarınız lazımdır",
+    "intro": "NarrateBot 3000 təsvir üçün sizin öz Gemini açarınızla, istəsəniz, səslər üçün isə ElevenLabs açarı ilə işləyir.",
+    "gemini": "Gemini API açarı",
+    "eleven": "ElevenLabs API açarı (istəyə görə)",
+    "geminiHelp": "Gemini açarını necə əldə etmək olar",
+    "elevenHelp": "ElevenLabs açarını necə əldə etmək olar",
+    "getAt": "Açarı buradan əldə edin:",
+    "newTab": " (yeni tabda açılır)",
+    "geminiSteps": "Daxil olun, Create API key seçin, sonra açarı bura yapışdırın.",
+    "geminiCost": "Google istifadə limitləri ilə pulsuz səviyyə təqdim edir; daha çox istifadə Google hesabınıza ödənişli olaraq yazılır.",
+    "elevenSteps": "Text to Speech icazəsi olan açar yaradın, sonra onu bura yapışdırın.",
+    "elevenCost": "Pulsuz plana aylıq simvol limiti daxildir. Bəzi səslər ödənişli plan tələb edir; səs mövcud deyilsə, standart səsdən, bu sahəni boş qoysanız isə brauzerinizin səsindən istifadə edirik.",
+    "privacy": "Açarlarınız bu brauzerdə şifrələnmiş cookie-də saxlanılır və serverimizə yalnız sorğularınızı yerinə yetirmək üçün göndərilir. Biz onları heç vaxt saxlamırıq və ya loglamırıq. Onları istənilən vaxt Parametrlərdən silə bilərsiniz.",
+    "save": "Yadda saxla və başla",
+    "saving": "Yoxlanılır…",
+    "cancel": "Ləğv et",
+    "needGemini": "Gemini açarınızı daxil edin.",
+    "geminiInvalid": "Google bu Gemini açarını qəbul etmədi. Yoxlayın və yenidən cəhd edin.",
+    "format": "Bu, API açarına oxşamır. Bütün açarı boşluqsuz yapışdırın.",
+    "formatEleven": "Bu ElevenLabs açarı düzgün görünmür. Bütün açarı yapışdırın və ya boş saxlayın.",
+    "tooMany": "Həddən çox cəhd. 15 dəqiqə gözləyin.",
+    "failed": "Hazırda açarınızı yoxlamaq mümkün olmadı. Bir azdan yenidən cəhd edin.",
+    "needKeys": "Təsvirə davam etmək üçün öz açarlarınızı əlavə edin.",
+    "quota": "Gemini açarınız istifadə limitinə çatdı. Bir dəqiqəyə yenidən cəhd edirik…",
+    "badKey": "Google Gemini açarınızı rədd etdi. Onu yoxlayın və ya yenisini yapışdırın.",
+    "removed": "Açarlarınız silindi. Təsvirə davam etmək üçün açar əlavə edin."
+  },
+  "owner": {
+    "title": "SAHİB GİRİŞİ",
+    "titleClean": "Sahib girişi",
+    "label": "Sahib şifrəsi",
+    "submit": "Kilidi aç",
+    "wrong": "Alınmadı.",
+    "tooMany": "Həddən çox cəhd. 15 dəqiqə gözləyin.",
+    "done": "Sahib girişi açıldı."
+  },
+  "access": {
+    "legend": "Giriş",
+    "current": "Cari giriş:",
+    "owner": "Sahib",
+    "byok": "Öz açarlarınız",
+    "none": "Açar yoxdur",
+    "change": "Açarları dəyiş",
+    "add": "Öz açarlarınızdan istifadə edin",
+    "remove": "Açarlarımı sil",
+    "lock": "Sahib girişini kilidlə"
+  },
+  "camError": "Kamera əlçatan deyil. Kamera icazəsini və səhifənin HTTPS üzərində olduğunu yoxlayın.",
+  "fallback": {
+    "documentary": [
+      "Və burada növün bir toplantısını müşahidə edirik, hər biri əvvəlkindən daha zadəgan. Həqiqətən, təbiət ən gözəl halında.",
+      "Diqqətəlayiq bir nümunə irəli əyilir, gözlərini parlayan ekrana dikib, böyük işlərin vaxt tələb etdiyini bilən bir məxluqun səbri ilə.",
+      "Bu sürünün sakit özünəinamına diqqət edin. Təbii qəlyanaltı ehtiyatlarından bu qədər uzaq olsalar da, heç biri təlaşa düşməyib.",
+      "Koloniya, əcdadlarının etdiyi kimi, işıq mənbəyinin ətrafında toplanıb. Bəzi şeylər, görünür, əbədidir.",
+      "Bir nümunə böyük ləyaqətlə duruşunu düzəldir. Digərləri bunu qeyd edir. Lider ortaya çıxıb.",
+      "Vəhşi təbiətdə çox az məxluq demoya bu qədər zərafətlə dözə bilər. Amma budur, onlar buradadır. Möhtəşəm."
+    ],
+    "documentaryStill": [
+      "Sürü tərpənməyib. Bir qımıltı belə yoxdur. Danışan isə hələ də ümidini itirmir.",
+      "Hələ də heç nə. Nümunələr, deyəsən, enerjilərini qoruyurlar, bəlkə də alqış üçün.",
+      "Xeyli vaxt keçib. Adamda şübhə yaranır ki, sürü danışanın gülməli olmasını gözləyir. O, çalışır.",
+      "Tam hərəkətsizlik. Alimlərin bu davranış üçün bir sözü var. O söz 'mühakimə'dir.",
+      "Danışan dibçək bitkilərində bundan daha çox ambisiya görüb. Xahiş edirəm, kimsə, hər kəs, heç olmasa bir barmağınızı tərpədin.",
+      "Narahat olmayın, sürü tam təhlükəsizdir. Onlar sadəcə böyük ləyaqətlə tərpənməməyi seçirlər."
+    ],
+    "funny": [
+      "Elə bir dünyada... bir otağın noutbuka baxmağa cəsarət etdiyi... bir əfsanə doğulur. PG reytinqi: Pis deyil, Gözəldir.",
+      "Bu payız... bir qrup parlaq yad adam... və həddən çox şey görmüş bir veb-kamera. TAMAŞAÇILAR. İndi kinoteatrlarda.",
+      "Sizə oturmağı təqdim edən studiyadan... onun ən cəsarətli davamı. OTURMAQ 2: HƏLƏ DƏ OTURUBLAR.",
+      "Tənqidçilər onu 'noutbukun çəkdiyi ən yaxşı geyinmiş izdiham' adlandırır. Tezliklə məhz bu otaqda.",
+      "Bir otaq. Sıfır partlayış. Sonsuz xarizma. HAKATON. İki baş barmaq yuxarı, lap yuxarı.",
+      "Onlar demo üçün gəldilər... pulsuz qəlyanaltı üçün qaldılar... İŞTİRAKÇILAR. Təsdiqlənmiş təzəlik."
+    ],
+    "funnyStill": [
+      "Bu qış... tamamilə heç nə baş vermir. Və bu, nəfəs kəsicidir. NATÜRMORT: FİLM.",
+      "On iki qəhrəman. Bir otaq. Sıfır hərəkət. HEYKƏLLƏR. S reytinqi: Sirli şəkildə Sabit.",
+      "GÖZLƏMƏ filminin rejissorundan... GÖZLƏMƏ 2: HƏLƏ DƏ GÖZLƏYİRİK. Tənqidçilər deyir ki, 'film sizinlə birlikdə oturur.'",
+      "Heç kimin tərpənmədiyi bir dünyada... bir danışan... yalvarır. Xahiş edirəm. Kimsə. Əl yelləyin.",
+      "Tezliklə: ƏN UZUN FASİLƏ. Doxsan dəqiqə. Bir otaq. Bir dəfə də olsun göz qırpılmır.",
+      "Bu yay... tamaşaçılar ən böyük sınaqla üz-üzə gəlir... bir əl qaldırmaq. JEST. İndi ekranlarda."
+    ],
+    "descriptive": [
+      "Kamera açıqdır. Bir azdan səhnəni yenidən təsvir edəcəyəm.",
+      "İndi təsvir almaq mümkün olmadı. Kameranı sabit tutun, yenidən cəhd edəcəyəm.",
+      "Hələ də baxıram. Yeni təsvir tezliklə gələcək."
+    ],
+    "pumpkin": [
+      "He-he-he... xoş gəlmisiniz, cəsur qonaq! Nə kostyumdur. Həqiqətən balqabaq-bənzərsiz.",
+      "Bu! Ha, qorxdunuz? Kostyumunuz məni qorxutdu, ən yaxşı mənada.",
+      "Oho, yaxın gəlin, yaxın gəlin... Zövqlü qonaqları çox sevirəm. Bütün üzümü işıqlandırırsınız.",
+      "He-he... gözəl gecə üçün gözəl kostyum. Paxıllıqdan sözün əsl mənasında parlayıram.",
+      "Xoş gəlmisiniz, xoş gəlmisiniz! Sizi qucaqlayardım, amma içim demək olar ki, boşdur. Kostyumunuz isə gözəldir.",
+      "He-he-he... bu gecə çox kostyum gördüm, bəs sizinki? Xəyal-qəşəng."
+    ]
+  },
+  "noChange": "Dəyişiklik yoxdur."
+}

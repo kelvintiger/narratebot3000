@@ -1,0 +1,217 @@
+{
+  "callNow": "CHAMA XA! AS OPERADORAS ESTÁN AGARDANDO!",
+  "tagline": "O teu mundo, narrado.",
+  "order": "PIDE XA",
+  "burst1": "VISTO NA TELE!",
+  "burst2": "SÓ 0,00 $!",
+  "finePrint": "*Non é un número de teléfono real. Por favor, non chames. NarrateBot 3000 non se fai responsable de narracións demasiado precisas. Os resultados poden variar. Pilas non incluídas.",
+  "ticker": [
+    "'Describiu o meu gato á perfección!' – Cliente satisfeito",
+    "'Nunca me sentira tan visto.' – Tamén cliente",
+    "'A miña planta nunca soara tan maxestosa.' – Cliente, seguramente",
+    "'Rin. Chorei. Quedei moi quieto.' – A Manada"
+  ],
+  "cleanSub": "Narración en directo da escena desde a túa cámara",
+  "cleanExplain": "Apunta a cámara ao mundo e NarrateBot 3000 describe en voz alta o que ve, no teu idioma.",
+  "start": "Comezar",
+  "butWait": "PERO AGARDA... AÍNDA HAI MÁIS!",
+  "nowWith": "AGORA CON MODO {mode}!",
+  "mode": {
+    "documentary": "DOCUMENTAL",
+    "funny": "DIVERTIDO",
+    "descriptive": "DESCRITIVO",
+    "pumpkin": "CABAZA"
+  },
+  "modeClean": {
+    "documentary": "Estilo documental",
+    "funny": "Estilo tráiler de cine",
+    "descriptive": "Modo descritivo",
+    "pumpkin": "Estilo cabaza"
+  },
+  "countdown": {
+    "in": "Narrando en {n}…",
+    "late": "Narrando…",
+    "visitor": "Agardando unha visita…",
+    "sr": "Narración en breve"
+  },
+  "live": "EN DIRECTO",
+  "specimen": "EXEMPLAR",
+  "observation": "OBSERVACIÓN",
+  "herdNone": "ACTIVIDADE DA MANADA: NINGUNHA DETECTADA",
+  "unchanged": "Escena sen cambios",
+  "paused": "EN PAUSA",
+  "nowShowing": "EN CARTEL",
+  "btn": {
+    "describe": "Describir agora",
+    "pause": "Pausa",
+    "play": "Reproducir",
+    "flip": "Cambiar cámara",
+    "settings": "Axustes",
+    "themeDark": "Tema escuro",
+    "themeLight": "Tema claro",
+    "accessible": "Vista accesible",
+    "infomercial": "Vista teletenda",
+    "narrLang": "Idioma da narración",
+    "close": "Pechar",
+    "siteLang": "Idioma do sitio"
+  },
+  "set": {
+    "title": "FORMULARIO DE PEDIDO DO CENTRO DE CHAMADAS",
+    "titleClean": "Axustes",
+    "sub": "As operadoras están agardando",
+    "useEleven": "Usar a voz de ElevenLabs",
+    "charsSession": "Caracteres enviados nesta sesión",
+    "charsToday": "Caracteres hoxe (todos os usuarios)",
+    "narrToday": "Narracións hoxe",
+    "config": "Configuración",
+    "stillness": "Sensibilidade á quietude",
+    "stillDebug": "Contador de quietude / última diferenza",
+    "textSize": "Tamaño do texto",
+    "smaller": "Texto máis pequeno",
+    "larger": "Texto máis grande",
+    "customLang": "Idioma de narración personalizado",
+    "customLangHint": "Engádese á lista de idiomas de narración (L)",
+    "music": "Volume da música",
+    "srMute": "Non falar en voz alta (o lector de pantalla le o texto)",
+    "hideVideo": "Ocultar o vídeo, mostrar só o texto da narración",
+    "hotkeys": "Atallos de teclado",
+    "yes": "definida",
+    "no": "falta",
+    "dflt": "predeterminado",
+    "breakLen": "Pausa entre frases",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Modos"
+    ],
+    [
+      "L",
+      "Idioma da narración"
+    ],
+    [
+      "N",
+      "Describir agora"
+    ],
+    [
+      "S",
+      "Quietude si/non"
+    ],
+    [
+      "T",
+      "Tema"
+    ],
+    [
+      "A",
+      "Vista accesible"
+    ],
+    [
+      "Espazo",
+      "Pausa / reproducir"
+    ],
+    [
+      "K",
+      "Axustes"
+    ]
+  ],
+  "keys": {
+    "title": "TRAE AS TÚAS CHAVES",
+    "titleClean": "Usa as túas propias chaves",
+    "sub": "As operadoras precisan as túas chaves para atender esta chamada",
+    "intro": "NarrateBot 3000 funciona coa túa propia chave de Gemini para a narración e, se queres, cunha chave de ElevenLabs para as voces.",
+    "gemini": "Chave da API de Gemini",
+    "eleven": "Chave da API de ElevenLabs (opcional)",
+    "geminiHelp": "Como obter unha chave de Gemini",
+    "elevenHelp": "Como obter unha chave de ElevenLabs",
+    "getAt": "Obtén unha chave en",
+    "newTab": " (ábrese nunha nova lapela)",
+    "geminiSteps": "Inicia sesión, escolle Create API key e pega aquí a chave.",
+    "geminiCost": "Google ofrece un nivel gratuíto con límites de uso; o uso intensivo cóbrase na túa conta de Google.",
+    "elevenSteps": "Crea unha chave con acceso a Text to Speech e pégaa aquí.",
+    "elevenCost": "O plan gratuíto inclúe unha cota mensual de caracteres. Algunhas voces precisan un plan de pago; se unha voz non está dispoñible usamos unha voz estándar, ou a voz do teu navegador se deixas isto en branco.",
+    "privacy": "As túas chaves gárdanse nunha cookie cifrada neste navegador e só se envían ao noso servidor para facer as túas solicitudes. Nunca as almacenamos nin as rexistramos. Podes eliminalas cando queiras en Axustes.",
+    "save": "Gardar e comezar",
+    "saving": "Comprobando…",
+    "cancel": "Cancelar",
+    "needGemini": "Introduce a túa chave de Gemini.",
+    "geminiInvalid": "Google non aceptou esa chave de Gemini. Revísaa e téntao de novo.",
+    "format": "Iso non parece unha chave de API. Pega a chave completa, sen espazos.",
+    "formatEleven": "Esa chave de ElevenLabs non parece correcta. Pega a chave completa ou déixaa en branco.",
+    "tooMany": "Demasiados intentos. Agarda 15 minutos.",
+    "failed": "Non se puido comprobar a túa chave agora. Téntao de novo nun momento.",
+    "needKeys": "Para seguir narrando, engade as túas propias chaves.",
+    "quota": "A túa chave de Gemini chegou ao seu límite de uso. Tentarase de novo nun minuto…",
+    "badKey": "Google rexeitou a túa chave de Gemini. Revísaa ou pega unha nova.",
+    "removed": "Elimináronse as túas chaves. Engade chaves para seguir narrando."
+  },
+  "owner": {
+    "title": "ACCESO DE PROPIETARIO",
+    "titleClean": "Acceso de propietario",
+    "label": "Contrasinal de propietario",
+    "submit": "Desbloquear",
+    "wrong": "Iso non funcionou.",
+    "tooMany": "Demasiados intentos. Agarda 15 minutos.",
+    "done": "Acceso de propietario desbloqueado."
+  },
+  "access": {
+    "legend": "Acceso",
+    "current": "Acceso actual:",
+    "owner": "Propietario",
+    "byok": "As túas propias chaves",
+    "none": "Sen chaves",
+    "change": "Cambiar chaves",
+    "add": "Usar as túas propias chaves",
+    "remove": "Eliminar as miñas chaves",
+    "lock": "Bloquear o acceso de propietario"
+  },
+  "camError": "Cámara non dispoñible. Comproba o permiso da cámara e que a páxina estea en HTTPS.",
+  "fallback": {
+    "documentary": [
+      "E aquí observamos unha reunión da especie, cada exemplar máis distinguido ca o anterior. Verdadeiramente, a natureza no seu mellor momento.",
+      "Un exemplar notable inclínase cara adiante, cos ollos cravados na pantalla luminosa, coa paciencia dunha criatura que sabe que as grandes cousas levan tempo.",
+      "Observen a serena confianza desta manada. Ningún entrou en pánico, a pesar de estar tan lonxe da súa fonte natural de lambetadas.",
+      "A colonia reuniuse arredor da fonte de luz, como fixeron os seus antepasados. Hai cousas, ao parecer, que son eternas.",
+      "Un exemplar axusta a postura cunha dignidade tremenda. Os demais tomano en conta. Xurdiu un líder.",
+      "Na natureza, moi poucas criaturas aguantan unha demo con tanta elegancia. E aínda así, aquí están. Magníficos."
+    ],
+    "documentaryStill": [
+      "A manada non se moveu. Nin un tremor. O narrador, pola súa parte, segue esperanzado.",
+      "Aínda nada. Os exemplares parecen aforrar enerxía, quizais para os aplausos.",
+      "Xa pasou un tempo. Un comeza a sospeitar que a manada agarda a que o narrador teña graza. Estase esforzando.",
+      "Quietude total. Os científicos teñen unha palabra para este comportamento. A palabra é 'xulgar'.",
+      "O narrador xa observou plantas con máis ambición visible. Por favor, alguén, quen sexa, mova un dedo.",
+      "Tranquilos, a manada está perfectamente a salvo. Simplemente escollen, con gran dignidade, non moverse."
+    ],
+    "funny": [
+      "Nun mundo... onde un cuarto se atreveu a mirar un portátil... nace unha lenda. Para todos os públicos, sobre todo os guapos.",
+      "Este outono... un grupo de descoñecidos brillantes... e unha webcam que xa viu demasiado. O PÚBLICO. Agora nos cines.",
+      "Do estudio que vos trouxo estar sentados... chega a súa secuela máis atrevida. SENTADOS 2: AÍNDA NA CADEIRA.",
+      "A crítica dío: 'o público mellor vestido que xamais filmou un portátil'. Proximamente nesta mesma sala.",
+      "Unha sala. Cero explosións. Carisma ilimitado. O HACKATHON. Dous polgares moi, moi arriba.",
+      "Viñeron pola demo... quedaron polas lambetadas de balde... OS ASISTENTES. Frescura garantida."
+    ],
+    "funnyStill": [
+      "Este inverno... non pasa absolutamente nada. E é impresionante. NATUREZA MORTA: A PELÍCULA.",
+      "Doce heroes. Unha sala. Cero movemento. AS ESTATUAS. Só para públicos sospeitosamente quietos.",
+      "Do director de AGARDANDO... chega AGARDANDO 2: AÍNDA AGARDANDO. A crítica di que 'déixate sentado'.",
+      "Nun mundo onde ninguén se move... un narrador... suplica. Por favor. Quen sexa. Saúda coa man.",
+      "Proximamente: A PAUSA MÁIS LONGA. Noventa minutos. Unha sala. Nin un só pestanexo.",
+      "Este verán... o público enfronta o seu maior reto... levantar unha man. O XESTO. Agora en cartel."
+    ],
+    "descriptive": [
+      "A cámara está acendida. Volverei describir a escena nun momento.",
+      "Non puiden obter unha descrición agora. Mantén a cámara quieta e tentareino de novo.",
+      "Aínda mirando. Pronto chegará unha nova descrición."
+    ],
+    "pumpkin": [
+      "Je je je... benvida, valente visita! Que disfrace. Simplemente cabacístico.",
+      "Bu! Ha, asusteite? O teu traxe si que me asustou a min, no mellor sentido.",
+      "Oho, achégate, achégate... Encántame unha visita con estilo. Ilumínasme a cara enteira.",
+      "Je je... un bo disfrace para unha boa noite. Estou a brillar de envexa.",
+      "Benvida, benvida! Dariache unha aperta, pero estou case baleira por dentro. Bonito traxe, iso si.",
+      "Je je je... vin moitos disfraces esta noite, pero o teu? Arrepiantemente xenial."
+    ]
+  },
+  "noChange": "Sen cambios."
+}

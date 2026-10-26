@@ -1,0 +1,217 @@
+{
+  "callNow": "HELISTA KOHE! OPERAATORID OOTAVAD!",
+  "tagline": "Sinu maailm, jutustatud.",
+  "order": "TELLI KOHE",
+  "burst1": "TUNTUD TELEKAST!",
+  "burst2": "AINULT 0,00 $!",
+  "finePrint": "*See pole päris telefoninumber. Palun ära helista. NarrateBot 3000 ei vastuta liiga täpsete jutustuste eest. Tulemused võivad erineda. Patareid ei kuulu komplekti.",
+  "ticker": [
+    "„See kirjeldas mu kassi täiuslikult!“ – Rahulolev klient",
+    "„Ma pole kunagi tundnud end nii nähtuna.“ – Samuti klient",
+    "„Mu toataim pole kunagi nii majesteetlik kõlanud.“ – Klient, arvatavasti",
+    "„Ma naersin. Ma nutsin. Ma istusin väga vaikselt.“ – Kari"
+  ],
+  "cleanSub": "Stseeni otsejutustus sinu kaamerast",
+  "cleanExplain": "Suuna kaamera maailma poole ja NarrateBot 3000 kirjeldab valjusti, mida ta näeb, sinu keeles.",
+  "start": "Alusta",
+  "butWait": "AGA OOTA... SEE POLE KÕIK!",
+  "nowWith": "NÜÜD REŽIIMIGA {mode}!",
+  "mode": {
+    "documentary": "DOKUMENTAAL",
+    "funny": "NALJAKAS",
+    "descriptive": "KIRJELDAV",
+    "pumpkin": "KÕRVITS"
+  },
+  "modeClean": {
+    "documentary": "Dokumentaalfilmi stiil",
+    "funny": "Filmitreileri stiil",
+    "descriptive": "Kirjeldav režiim",
+    "pumpkin": "Kõrvitsa stiil"
+  },
+  "countdown": {
+    "in": "Jutustamiseni {n}…",
+    "late": "Jutustan…",
+    "visitor": "Ootan külalist…",
+    "sr": "Jutustus algab kohe"
+  },
+  "live": "OTSE",
+  "specimen": "ISEND",
+  "observation": "VAATLUS",
+  "herdNone": "KARJA AKTIIVSUS: PUUDUB",
+  "unchanged": "Stseen muutumatu",
+  "paused": "PAUSIL",
+  "nowShowing": "PRAEGU EKRAANIL",
+  "btn": {
+    "describe": "Kirjelda kohe",
+    "pause": "Paus",
+    "play": "Esita",
+    "flip": "Pööra kaamerat",
+    "settings": "Seaded",
+    "themeDark": "Tume teema",
+    "themeLight": "Hele teema",
+    "accessible": "Ligipääsetav vaade",
+    "infomercial": "Reklaamivaade",
+    "narrLang": "Jutustuse keel",
+    "close": "Sulge",
+    "siteLang": "Saidi keel"
+  },
+  "set": {
+    "title": "KÕNEKESKUSE TELLIMUSVORM",
+    "titleClean": "Seaded",
+    "sub": "Operaatorid ootavad",
+    "useEleven": "Kasuta ElevenLabs häält",
+    "charsSession": "Sel seansil saadetud märgid",
+    "charsToday": "Märgid täna (kõik kasutajad)",
+    "narrToday": "Jutustusi täna",
+    "config": "Konfiguratsioon",
+    "stillness": "Liikumatuse tundlikkus",
+    "stillDebug": "Liikumatuse loendur / viimane erinevus",
+    "textSize": "Teksti suurus",
+    "smaller": "Väiksem tekst",
+    "larger": "Suurem tekst",
+    "customLang": "Kohandatud jutustuse keel",
+    "customLangHint": "Lisatakse jutustuse keelte loendisse (L)",
+    "music": "Muusika helitugevus",
+    "srMute": "Ära räägi valjusti (ekraanilugeja loeb teksti)",
+    "hideVideo": "Peida video, näita ainult jutustuse teksti",
+    "hotkeys": "Kiirklahvid",
+    "yes": "määratud",
+    "no": "puudub",
+    "dflt": "vaikimisi",
+    "breakLen": "Paus lausete vahel",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Režiimid"
+    ],
+    [
+      "L",
+      "Jutustuse keel"
+    ],
+    [
+      "N",
+      "Kirjelda kohe"
+    ],
+    [
+      "S",
+      "Liikumatus sisse/välja"
+    ],
+    [
+      "T",
+      "Teema"
+    ],
+    [
+      "A",
+      "Ligipääsetav vaade"
+    ],
+    [
+      "Tühik",
+      "Paus / esita"
+    ],
+    [
+      "K",
+      "Seaded"
+    ]
+  ],
+  "keys": {
+    "title": "TOO OMA VÕTMED",
+    "titleClean": "Kasuta oma võtmeid",
+    "sub": "Operaatorid vajavad selle kõne jaoks sinu võtmeid",
+    "intro": "NarrateBot 3000 töötab sinu enda Gemini võtmega jutustamiseks ja soovi korral ElevenLabs võtmega häälte jaoks.",
+    "gemini": "Gemini API võti",
+    "eleven": "ElevenLabs API võti (valikuline)",
+    "geminiHelp": "Kuidas saada Gemini võtit",
+    "elevenHelp": "Kuidas saada ElevenLabs võtit",
+    "getAt": "Võtme saad aadressilt",
+    "newTab": " (avaneb uuel vahelehel)",
+    "geminiSteps": "Logi sisse, vali Create API key ja kleebi võti siia.",
+    "geminiCost": "Google pakub tasuta taset kasutuspiirangutega; suurem kasutus arveldatakse sinu Google'i kontolt.",
+    "elevenSteps": "Loo võti, millel on Text to Speech juurdepääs, ja kleebi see siia.",
+    "elevenCost": "Tasuta pakett sisaldab igakuist märkide limiiti. Mõned hääled vajavad tasulist paketti; kui hääl pole saadaval, kasutame tavahäält või sinu brauseri häält, kui jätad selle välja tühjaks.",
+    "privacy": "Sinu võtmeid hoitakse selles brauseris krüpteeritud küpsises ja saadetakse meie serverisse ainult sinu päringute tegemiseks. Me ei salvesta ega logi neid kunagi. Saad need igal ajal seadetes eemaldada.",
+    "save": "Salvesta ja alusta",
+    "saving": "Kontrollin…",
+    "cancel": "Tühista",
+    "needGemini": "Sisesta oma Gemini võti.",
+    "geminiInvalid": "Google ei aktsepteerinud seda Gemini võtit. Kontrolli seda ja proovi uuesti.",
+    "format": "See ei näe välja nagu API võti. Kleebi kogu võti ilma tühikuteta.",
+    "formatEleven": "See ElevenLabs võti ei tundu õige. Kleebi kogu võti või jäta väli tühjaks.",
+    "tooMany": "Liiga palju katseid. Oota 15 minutit.",
+    "failed": "Sinu võtit ei saanud praegu kontrollida. Proovi hetke pärast uuesti.",
+    "needKeys": "Jutustamise jätkamiseks lisa oma võtmed.",
+    "quota": "Sinu Gemini võti jõudis kasutuspiirini. Proovin minuti pärast uuesti…",
+    "badKey": "Google lükkas sinu Gemini võtme tagasi. Kontrolli seda või kleebi uus.",
+    "removed": "Sinu võtmed eemaldati. Jutustamise jätkamiseks lisa võtmed."
+  },
+  "owner": {
+    "title": "OMANIKU LIGIPÄÄS",
+    "titleClean": "Omaniku ligipääs",
+    "label": "Omaniku parool",
+    "submit": "Ava",
+    "wrong": "See ei õnnestunud.",
+    "tooMany": "Liiga palju katseid. Oota 15 minutit.",
+    "done": "Omaniku ligipääs avatud."
+  },
+  "access": {
+    "legend": "Ligipääs",
+    "current": "Praegune ligipääs:",
+    "owner": "Omanik",
+    "byok": "Sinu võtmed",
+    "none": "Võtmeid pole",
+    "change": "Muuda võtmeid",
+    "add": "Kasuta oma võtmeid",
+    "remove": "Eemalda minu võtmed",
+    "lock": "Lukusta omaniku ligipääs"
+  },
+  "camError": "Kaamera pole saadaval. Kontrolli kaamera luba ja et leht kasutab HTTPS-i.",
+  "fallback": {
+    "documentary": [
+      "Ja siin näeme liigi kogunemist, iga isend eelmisest väärikam. Tõesti, loodus oma parimas vormis.",
+      "Märkimisväärne isend kummardub ettepoole, pilk naelutatud helendavale ekraanile, olendi kannatlikkusega, kes teab, et suured asjad võtavad aega.",
+      "Pane tähele selle karja vaikset enesekindlust. Mitte ükski pole paanikasse sattunud, kuigi nad on oma loomulikust näksivarust nii kaugel.",
+      "Koloonia on kogunenud valgusallika ümber, nagu nende esivanemad enne neid. Mõned asjad on, näib, igavesed.",
+      "Üks isend kohendab tohutu väärikusega oma kehahoiakut. Teised märkavad. Esile on kerkinud juht.",
+      "Looduses suudavad väga vähesed olendid demo sellise graatsiaga läbi istuda. Ja ometi, siin nad on. Suurepärane."
+    ],
+    "documentaryStill": [
+      "Kari pole liikunud. Mitte tõmblustki. Jutustaja jääb omalt poolt lootusrikkaks.",
+      "Ikka mitte midagi. Isendid näivad energiat säästvat, ehk aplausi jaoks.",
+      "Möödunud on juba tükk aega. Tekib kahtlus, et kari ootab, millal jutustaja naljakaks muutub. Ta püüab.",
+      "Täielik liikumatus. Teadlastel on selle käitumise kohta sõna. See sõna on „hukkamõistmine“.",
+      "Jutustaja on näinud toataimi, kel on rohkem nähtavat ambitsiooni. Palun, keegi, ükskõik kes, liiguta sõrme.",
+      "Ole mureta, kari on täiesti ohutu. Nad lihtsalt otsustavad suure väärikusega mitte liikuda."
+    ],
+    "funny": [
+      "Maailmas... kus üks tuba julges vaadata sülearvutit... sünnib legend. Vanusepiirang PG: Päris Geniaalne.",
+      "Sel sügisel... rühm säravaid võõraid... ja veebikaamera, mis on näinud liiga palju. PUBLIK. Nüüd kinodes.",
+      "Stuudiolt, kes tõi sulle istumise... tuleb selle julgeim järg. ISTUMINE 2: IKKA ISTUME.",
+      "Kriitikud nimetavad seda „parimini riietatud rahvahulgaks, keda sülearvuti on kunagi filminud“. Varsti just selles toas.",
+      "Üks tuba. Null plahvatust. Piiramatu karisma. HÄKATON. Kaks pöialt kõrgel, kõrgel üleval.",
+      "Nad tulid demo pärast... jäid tasuta näksi pärast... OSALEJAD. Garanteeritult värske."
+    ],
+    "funnyStill": [
+      "Sel talvel... ei juhtu absoluutselt mitte midagi. Ja see võtab hingetuks. VAIKELU: FILM.",
+      "Kaksteist kangelast. Üks tuba. Null liikumist. KUJUD. Vanusepiirang S: Salapäraselt Staatiline.",
+      "Režissöörilt, kes tegi filmi OOTAMINE... tuleb OOTAMINE 2: IKKA OOTAME. Kriitikud ütlevad, et see „naelutab tooli külge“.",
+      "Maailmas, kus keegi ei liigu... üks jutustaja... anub. Palun. Keegi. Lehvita.",
+      "Varsti: KÕIGE PIKEM PAUS. Üheksakümmend minutit. Üks tuba. Mitte ühtegi silmapilgutust.",
+      "Sel suvel... seisab publik silmitsi oma suurima väljakutsega... ühe käe tõstmisega. ŽEST. Nüüd kinodes."
+    ],
+    "descriptive": [
+      "Kaamera on sees. Kirjeldan stseeni hetke pärast uuesti.",
+      "Ma ei saanud praegu kirjeldust. Hoia kaamerat paigal ja ma proovin uuesti.",
+      "Vaatan veel. Uus kirjeldus tuleb peagi."
+    ],
+    "pumpkin": [
+      "Hehe-hee... tere tulemast, julge külaline! Milline kostüüm. Tõeliselt kõrvitsakaunis.",
+      "Põõ! Ha, kas ma ehmatasin sind? Sinu riietus ehmatas küll mind, parimas mõttes.",
+      "Ohoo, tule lähemale, tule lähemale... Ma armastan stiilseid külalisi. Sa valgustad kogu mu näo.",
+      "Hehe... uhke kostüüm uhkeks ööks. Ma lausa helendan kadedusest.",
+      "Tere tulemast, tere tulemast! Ma kallistaksin sind, aga ma olen seest enamasti õõnes. Armas riietus siiski.",
+      "Hehe-hee... olen täna õhtul näinud palju kostüüme, aga sinu oma? Kummituslikult kaunis."
+    ]
+  },
+  "noChange": "Muutusi pole."
+}

@@ -1,0 +1,217 @@
+{
+  "callNow": "FFONIWCH NAWR! MAE'R GWEITHREDWYR YN AROS!",
+  "tagline": "Eich byd, wedi'i adrodd.",
+  "order": "ARCHEBWCH NAWR",
+  "burst1": "FEL AR Y TELEDU!",
+  "burst2": "DIM OND $0.00!",
+  "finePrint": "*Nid rhif ffôn go iawn yw hwn. Peidiwch â ffonio. Nid yw NarrateBot 3000 yn gyfrifol am adroddiadau sy'n rhy gywir. Gall canlyniadau amrywio. Batris heb eu cynnwys.",
+  "ticker": [
+    "‘Disgrifiodd fy nghath yn berffaith!’ – Cwsmer Bodlon",
+    "‘Dw i erioed wedi teimlo mor weladwy.’ – Cwsmer Arall",
+    "‘Dydy fy mhlanhigyn tŷ erioed wedi swnio mor fawreddog.’ – Cwsmer, Mae'n Debyg",
+    "‘Chwerthais. Llefais. Eisteddais yn llonydd iawn.’ – Y Gyr"
+  ],
+  "cleanSub": "Adrodd golygfa'n fyw o'ch camera",
+  "cleanExplain": "Pwyntiwch eich camera at y byd ac mae NarrateBot 3000 yn disgrifio'n uchel yr hyn y mae'n ei weld, yn eich iaith chi.",
+  "start": "Dechrau",
+  "butWait": "OND ARHOSWCH... MAE RHAGOR!",
+  "nowWith": "NAWR GYDA MODD: {mode}!",
+  "mode": {
+    "documentary": "DOGFEN",
+    "funny": "DONIOL",
+    "descriptive": "DISGRIFIADOL",
+    "pumpkin": "PWMPEN"
+  },
+  "modeClean": {
+    "documentary": "Arddull rhaglen ddogfen",
+    "funny": "Arddull rhaghysbyseb ffilm",
+    "descriptive": "Modd disgrifiadol",
+    "pumpkin": "Arddull pwmpen"
+  },
+  "countdown": {
+    "in": "Adrodd ymhen {n}…",
+    "late": "Wrthi'n adrodd…",
+    "visitor": "Yn aros am ymwelydd…",
+    "sr": "Adrodd cyn bo hir"
+  },
+  "live": "BYW",
+  "specimen": "SBESIMEN",
+  "observation": "ARSYLLIAD",
+  "herdNone": "GWEITHGAREDD Y GYR: DIM",
+  "unchanged": "Golygfa heb newid",
+  "paused": "WEDI SEIBIO",
+  "nowShowing": "YN DANGOS NAWR",
+  "btn": {
+    "describe": "Disgrifio nawr",
+    "pause": "Seibio",
+    "play": "Chwarae",
+    "flip": "Troi'r camera",
+    "settings": "Gosodiadau",
+    "themeDark": "Thema dywyll",
+    "themeLight": "Thema olau",
+    "accessible": "Golwg hygyrch",
+    "infomercial": "Golwg hysbyseb",
+    "narrLang": "Iaith adrodd",
+    "close": "Cau",
+    "siteLang": "Iaith y wefan"
+  },
+  "set": {
+    "title": "FFURFLEN ARCHEBU'R GANOLFAN ALWADAU",
+    "titleClean": "Gosodiadau",
+    "sub": "Mae'r gweithredwyr yn aros",
+    "useEleven": "Defnyddio llais ElevenLabs",
+    "charsSession": "Nodau a anfonwyd y sesiwn hon",
+    "charsToday": "Nodau heddiw (pob defnyddiwr)",
+    "narrToday": "Adroddiadau heddiw",
+    "config": "Ffurfweddiad",
+    "stillness": "Sensitifrwydd llonyddwch",
+    "stillDebug": "Cyfrif llonyddwch / gwahaniaeth olaf",
+    "textSize": "Maint testun",
+    "smaller": "Testun llai",
+    "larger": "Testun mwy",
+    "customLang": "Iaith adrodd bersonol",
+    "customLangHint": "Ychwanegir at y rhestr ieithoedd adrodd (L)",
+    "music": "Lefel sain cerddoriaeth",
+    "srMute": "Peidio â siarad yn uchel (darllenydd sgrin yn darllen y testun)",
+    "hideVideo": "Cuddio'r fideo, dangos testun yr adrodd yn unig",
+    "hotkeys": "Bysellau brys",
+    "yes": "wedi'i gosod",
+    "no": "ar goll",
+    "dflt": "rhagosodiad",
+    "breakLen": "Saib rhwng llinellau",
+    "breakValue": "{n} e"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Moddau"
+    ],
+    [
+      "L",
+      "Iaith adrodd"
+    ],
+    [
+      "N",
+      "Disgrifio nawr"
+    ],
+    [
+      "S",
+      "Llonyddwch ymlaen/i ffwrdd"
+    ],
+    [
+      "T",
+      "Thema"
+    ],
+    [
+      "A",
+      "Golwg hygyrch"
+    ],
+    [
+      "Bylchwr",
+      "Seibio / chwarae"
+    ],
+    [
+      "K",
+      "Gosodiadau"
+    ]
+  ],
+  "keys": {
+    "title": "DEWCH Â'CH ALLWEDDI EICH HUN",
+    "titleClean": "Defnyddio'ch allweddi",
+    "sub": "Mae angen eich allweddi ar y gweithredwyr i gymryd yr alwad hon",
+    "intro": "Mae NarrateBot 3000 yn rhedeg ar eich allwedd Gemini eich hun ar gyfer adrodd ac, os hoffech chi, allwedd ElevenLabs ar gyfer lleisiau.",
+    "gemini": "Allwedd API Gemini",
+    "eleven": "Allwedd API ElevenLabs (dewisol)",
+    "geminiHelp": "Sut i gael allwedd Gemini",
+    "elevenHelp": "Sut i gael allwedd ElevenLabs",
+    "getAt": "Mynnwch allwedd yn",
+    "newTab": " (yn agor mewn tab newydd)",
+    "geminiSteps": "Mewngofnodwch, dewiswch Create API key, yna gludwch yr allwedd yma.",
+    "geminiCost": "Mae Google yn cynnig haen am ddim gyda therfynau defnydd; codir tâl ar eich cyfrif Google am ddefnydd trymach.",
+    "elevenSteps": "Crëwch allwedd gyda mynediad Text to Speech, yna gludwch hi yma.",
+    "elevenCost": "Mae'r cynllun am ddim yn cynnwys lwfans nodau misol. Mae angen cynllun taledig ar rai lleisiau; os nad yw llais ar gael rydym yn defnyddio llais safonol, neu lais eich porwr os byddwch yn gadael hwn yn wag.",
+    "privacy": "Mae'ch allweddi'n cael eu cadw mewn cwci wedi'i amgryptio yn y porwr hwn a'u hanfon i'n gweinydd dim ond i wneud eich ceisiadau. Nid ydym byth yn eu storio nac yn eu cofnodi. Gallwch eu tynnu unrhyw bryd yn y Gosodiadau.",
+    "save": "Cadw a dechrau",
+    "saving": "Yn gwirio…",
+    "cancel": "Canslo",
+    "needGemini": "Rhowch eich allwedd Gemini.",
+    "geminiInvalid": "Ni dderbyniodd Google yr allwedd Gemini honno. Gwiriwch hi a rhowch gynnig arall arni.",
+    "format": "Dydy hynny ddim yn edrych fel allwedd API. Gludwch yr allwedd gyfan, heb fylchau.",
+    "formatEleven": "Dydy'r allwedd ElevenLabs honno ddim yn edrych yn iawn. Gludwch yr allwedd gyfan, neu gadewch hi'n wag.",
+    "tooMany": "Gormod o ymdrechion. Arhoswch 15 munud.",
+    "failed": "Methu gwirio'ch allwedd ar hyn o bryd. Rhowch gynnig arall arni mewn munud.",
+    "needKeys": "I barhau i adrodd, ychwanegwch eich allweddi eich hun.",
+    "quota": "Mae'ch allwedd Gemini wedi cyrraedd ei therfyn defnydd. Rhoi cynnig arall arni ymhen munud…",
+    "badKey": "Gwrthododd Google eich allwedd Gemini. Gwiriwch hi neu gludwch un newydd.",
+    "removed": "Cafodd eich allweddi eu tynnu. Ychwanegwch allweddi i barhau i adrodd."
+  },
+  "owner": {
+    "title": "MYNEDIAD Y PERCHENNOG",
+    "titleClean": "Mynediad y perchennog",
+    "label": "Cyfrinair y perchennog",
+    "submit": "Datgloi",
+    "wrong": "Wnaeth hynny ddim gweithio.",
+    "tooMany": "Gormod o ymdrechion. Arhoswch 15 munud.",
+    "done": "Mynediad wedi'i ddatgloi."
+  },
+  "access": {
+    "legend": "Mynediad",
+    "current": "Mynediad presennol:",
+    "owner": "Perchennog",
+    "byok": "Eich allweddi eich hun",
+    "none": "Dim allweddi",
+    "change": "Newid allweddi",
+    "add": "Defnyddio'ch allweddi",
+    "remove": "Tynnu fy allweddi",
+    "lock": "Cloi mynediad y perchennog"
+  },
+  "camError": "Camera ddim ar gael. Gwiriwch ganiatâd y camera a bod y dudalen ar HTTPS.",
+  "fallback": {
+    "documentary": [
+      "Ac yma gwelwn gynulliad o'r rhywogaeth, pob un yn fwy urddasol na'r olaf. Yn wir, natur ar ei gorau.",
+      "Mae sbesimen rhyfeddol yn pwyso ymlaen, ei lygaid wedi'u hoelio ar y sgrin ddisglair, gydag amynedd creadur sy'n gwybod bod pethau mawr yn cymryd amser.",
+      "Sylwch ar hyder tawel y gyr hwn. Does yr un wedi cynhyrfu, er eu bod mor bell o'u cyflenwad naturiol o fyrbrydau.",
+      "Mae'r nythfa wedi ymgasglu o amgylch ffynhonnell y golau, fel y gwnaeth eu hynafiaid o'u blaenau. Mae rhai pethau, mae'n ymddangos, yn dragwyddol.",
+      "Mae un sbesimen yn addasu ei osgo ag urddas aruthrol. Mae'r lleill yn sylwi. Mae arweinydd wedi codi.",
+      "Yn y gwyllt, ychydig iawn o greaduriaid all eistedd drwy arddangosiad gyda'r fath ras. Ac eto, dyma nhw. Godidog."
+    ],
+    "documentaryStill": [
+      "Dydy'r gyr ddim wedi symud. Dim un plwc. Mae'r adroddwr, o'i ran ef, yn dal yn obeithiol.",
+      "Dim byd o hyd. Mae'n ymddangos bod y sbesimenau'n arbed ynni, efallai ar gyfer y gymeradwyaeth.",
+      "Mae cryn amser wedi mynd heibio. Mae rhywun yn dechrau amau bod y gyr yn aros i'r adroddwr fod yn ddoniol. Mae'n trio.",
+      "Llonyddwch llwyr. Mae gan wyddonwyr air am yr ymddygiad hwn. Y gair yw ‘beirniadu’.",
+      "Mae'r adroddwr wedi gweld planhigion tŷ â mwy o uchelgais amlwg. Plîs, rhywun, unrhyw un, symudwch fys.",
+      "Peidiwch â phoeni, mae'r gyr yn hollol ddiogel. Maen nhw'n dewis, gydag urddas mawr, peidio â symud."
+    ],
+    "funny": [
+      "Mewn byd... lle mentrodd un ystafell wylio gliniadur... mae chwedl yn cael ei geni. Gradd PG: Pur Gampus.",
+      "Yr hydref hwn... criw o ddieithriaid disglair... a gwe-gamera sydd wedi gweld gormod. Y GYNULLEIDFA. Yn y sinemâu nawr.",
+      "O'r stiwdio a ddaeth ag eistedd i chi... daw ei dilyniant mwyaf beiddgar eto. EISTEDD 2: YN DAL I EISTEDD.",
+      "Mae beirniaid yn ei alw'n ‘y dorf sydd wedi'i gwisgo orau a ffilmiwyd erioed gan liniadur’. Yn dod yn fuan i'r union ystafell hon.",
+      "Un ystafell. Dim ffrwydradau. Carisma diderfyn. YR HACATHON. Dau fawd i fyny'n uchel, uchel.",
+      "Daethon nhw am yr arddangosiad... arhoson nhw am y byrbrydau am ddim... Y MYNYCHWYR. Ffres, wedi'i ardystio."
+    ],
+    "funnyStill": [
+      "Y gaeaf hwn... does dim byd o gwbl yn digwydd. Ac mae'n cipio'r anadl. BYWYD LLONYDD: Y FFILM.",
+      "Deuddeg arwr. Un ystafell. Dim symud. Y CERFLUNIAU. Gradd S: Syfrdanol o Sefydlog.",
+      "Gan gyfarwyddwr AROS... daw AROS 2: YN DAL I AROS. Mae beirniaid yn dweud ei bod ‘yn aros gyda chi’.",
+      "Mewn byd lle nad oes neb yn symud... mae un adroddwr... yn erfyn. Plîs. Unrhyw un. Codwch law.",
+      "Yn dod yn fuan: Y SAIB HIRAF. Naw deg munud. Un ystafell. Dim un amrantiad.",
+      "Yr haf hwn... mae'r gynulleidfa'n wynebu ei her fwyaf eto... codi un llaw. YR YSTUM. Yn y sinemâu nawr."
+    ],
+    "descriptive": [
+      "Mae'r camera ymlaen. Bydda i'n disgrifio'r olygfa eto mewn eiliad.",
+      "Methais gael disgrifiad y tro hwn. Daliwch y camera'n llonydd a bydda i'n trio eto.",
+      "Yn dal i edrych. Mae disgrifiad newydd ar ei ffordd."
+    ],
+    "pumpkin": [
+      "Hi hi hi... croeso, ymwelydd dewr! Am wisg. Pwmpen-ogoneddus yn wir.",
+      "Bw! Ha, wnes i godi ofn arnoch chi? Mae'ch gwisg yn sicr wedi codi ofn arna i, yn y ffordd orau.",
+      "O-ho, dewch yn nes, dewch yn nes... Dw i wrth fy modd â gwestai steilus. Rydych chi'n goleuo fy wyneb i gyd.",
+      "Hi hi... gwisg wych am noson wych. Dw i'n tywynnu o genfigen.",
+      "Croeso, croeso! Byddwn i'n eich cofleidio, ond dw i'n wag y tu mewn gan fwyaf. Gwisg hyfryd, serch hynny.",
+      "Hi hi hi... dw i wedi gweld llawer o wisgoedd heno, ond eich un chi? Bwganus o wych."
+    ]
+  },
+  "noChange": "Dim newid."
+}

@@ -1,0 +1,217 @@
+{
+  "callNow": "VOLAJTE HNEĎ! OPERÁTORI ČAKAJÚ!",
+  "tagline": "Tvoj svet, porozprávaný.",
+  "order": "OBJEDNAJTE HNEĎ",
+  "burst1": "ZNÁME Z TV!",
+  "burst2": "LEN 0,00 €!",
+  "finePrint": "*Nie je to skutočné telefónne číslo. Prosím, nevolajte. NarrateBot 3000 nezodpovedá za príliš presné rozprávanie. Výsledky sa môžu líšiť. Batérie nie sú súčasťou balenia.",
+  "ticker": [
+    "„Opísal moju mačku dokonale!“ – Spokojná zákazníčka",
+    "„Nikdy som sa necítil taký pochopený.“ – Tiež zákazník",
+    "„Moja izbová rastlina nikdy neznela tak majestátne.“ – Zákazník, asi",
+    "„Smial som sa. Plakal som. Sedel som úplne bez pohnutia.“ – Stádo"
+  ],
+  "cleanSub": "Živé rozprávanie scény z tvojej kamery",
+  "cleanExplain": "Namier kameru na svet a NarrateBot 3000 nahlas opíše, čo vidí, v tvojom jazyku.",
+  "start": "Spustiť",
+  "butWait": "ALE POČKAJTE... TO NIE JE VŠETKO!",
+  "nowWith": "TERAZ V REŽIME {mode}!",
+  "mode": {
+    "documentary": "DOKUMENT",
+    "funny": "VTIPNÝ",
+    "descriptive": "POPISNÝ",
+    "pumpkin": "TEKVICA"
+  },
+  "modeClean": {
+    "documentary": "Dokumentárny štýl",
+    "funny": "Štýl filmového traileru",
+    "descriptive": "Popisný režim",
+    "pumpkin": "Tekvicový štýl"
+  },
+  "countdown": {
+    "in": "Rozprávanie o {n}…",
+    "late": "Rozprávam…",
+    "visitor": "Čakám na návštevníka…",
+    "sr": "Rozprávanie čoskoro začne"
+  },
+  "live": "NAŽIVO",
+  "specimen": "EXEMPLÁR",
+  "observation": "POZOROVANIE",
+  "herdNone": "AKTIVITA STÁDA: ŽIADNA",
+  "unchanged": "Scéna bez zmeny",
+  "paused": "POZASTAVENÉ",
+  "nowShowing": "PRÁVE UVÁDZAME",
+  "btn": {
+    "describe": "Opísať teraz",
+    "pause": "Pozastaviť",
+    "play": "Prehrať",
+    "flip": "Otočiť kameru",
+    "settings": "Nastavenia",
+    "themeDark": "Tmavá téma",
+    "themeLight": "Svetlá téma",
+    "accessible": "Prístupné zobrazenie",
+    "infomercial": "Teleshopping",
+    "narrLang": "Jazyk rozprávania",
+    "close": "Zavrieť",
+    "siteLang": "Jazyk webu"
+  },
+  "set": {
+    "title": "OBJEDNÁVKOVÝ FORMULÁR CALL CENTRA",
+    "titleClean": "Nastavenia",
+    "sub": "Operátori čakajú",
+    "useEleven": "Použiť hlas ElevenLabs",
+    "charsSession": "Znaky odoslané v tejto relácii",
+    "charsToday": "Znaky dnes (všetci používatelia)",
+    "narrToday": "Rozprávania dnes",
+    "config": "Konfigurácia",
+    "stillness": "Citlivosť na nehybnosť",
+    "stillDebug": "Počet pokoja / posledný rozdiel",
+    "textSize": "Veľkosť textu",
+    "smaller": "Menší text",
+    "larger": "Väčší text",
+    "customLang": "Vlastný jazyk rozprávania",
+    "customLangHint": "Pridá sa do zoznamu jazykov rozprávania (L)",
+    "music": "Hlasitosť hudby",
+    "srMute": "Nehovoriť nahlas (text číta čítačka obrazovky)",
+    "hideVideo": "Skryť video, zobraziť len text rozprávania",
+    "hotkeys": "Klávesové skratky",
+    "yes": "nastavené",
+    "no": "chýba",
+    "dflt": "predvolené",
+    "breakLen": "Pauza medzi vetami",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Režimy"
+    ],
+    [
+      "L",
+      "Jazyk rozprávania"
+    ],
+    [
+      "N",
+      "Opísať teraz"
+    ],
+    [
+      "S",
+      "Nehybnosť zap/vyp"
+    ],
+    [
+      "T",
+      "Téma"
+    ],
+    [
+      "A",
+      "Prístupné zobrazenie"
+    ],
+    [
+      "Space",
+      "Pozastaviť / prehrať"
+    ],
+    [
+      "K",
+      "Nastavenia"
+    ]
+  ],
+  "keys": {
+    "title": "PRINESTE SI VLASTNÉ KĽÚČE",
+    "titleClean": "Použiť vlastné kľúče",
+    "sub": "Operátori potrebujú vaše kľúče, aby prijali hovor",
+    "intro": "NarrateBot 3000 beží na tvojom vlastnom kľúči Gemini na rozprávanie a, ak chceš, na kľúči ElevenLabs pre hlasy.",
+    "gemini": "API kľúč Gemini",
+    "eleven": "API kľúč ElevenLabs (voliteľné)",
+    "geminiHelp": "Ako získať kľúč Gemini",
+    "elevenHelp": "Ako získať kľúč ElevenLabs",
+    "getAt": "Kľúč získaš na",
+    "newTab": " (otvorí sa na novej karte)",
+    "geminiSteps": "Prihlás sa, zvoľ Create API key a kľúč vlož sem.",
+    "geminiCost": "Google ponúka bezplatnú úroveň s limitmi; väčšie využitie sa účtuje na tvoj účet Google.",
+    "elevenSteps": "Vytvor kľúč s prístupom Text to Speech a vlož ho sem.",
+    "elevenCost": "Bezplatný plán zahŕňa mesačný limit znakov. Niektoré hlasy vyžadujú platený plán; ak hlas nie je dostupný, použijeme štandardný hlas, alebo hlas prehliadača, ak pole necháš prázdne.",
+    "privacy": "Tvoje kľúče sú uložené v šifrovanom cookie v tomto prehliadači a na náš server sa posielajú len na vybavenie tvojich požiadaviek. Nikdy ich neukladáme ani nezaznamenávame. Kedykoľvek ich môžeš odstrániť v Nastaveniach.",
+    "save": "Uložiť a spustiť",
+    "saving": "Overujem…",
+    "cancel": "Zrušiť",
+    "needGemini": "Zadaj svoj kľúč Gemini.",
+    "geminiInvalid": "Google tento kľúč Gemini neprijal. Skontroluj ho a skús to znova.",
+    "format": "Toto nevyzerá ako API kľúč. Vlož celý kľúč bez medzier.",
+    "formatEleven": "Tento kľúč ElevenLabs nevyzerá správne. Vlož celý kľúč, alebo pole nechaj prázdne.",
+    "tooMany": "Príliš veľa pokusov. Počkaj 15 minút.",
+    "failed": "Kľúč sa teraz nedá overiť. Skús to o chvíľu.",
+    "needKeys": "Na ďalšie rozprávanie pridaj vlastné kľúče.",
+    "quota": "Tvoj kľúč Gemini dosiahol limit. Skúsim to znova o minútu…",
+    "badKey": "Google odmietol tvoj kľúč Gemini. Skontroluj ho alebo vlož nový.",
+    "removed": "Tvoje kľúče boli odstránené. Na ďalšie rozprávanie pridaj kľúče."
+  },
+  "owner": {
+    "title": "PRÍSTUP VLASTNÍKA",
+    "titleClean": "Prístup vlastníka",
+    "label": "Heslo vlastníka",
+    "submit": "Odomknúť",
+    "wrong": "Nepodarilo sa.",
+    "tooMany": "Príliš veľa pokusov. Počkaj 15 minút.",
+    "done": "Prístup vlastníka odomknutý."
+  },
+  "access": {
+    "legend": "Prístup",
+    "current": "Aktuálny prístup:",
+    "owner": "Vlastník",
+    "byok": "Vlastné kľúče",
+    "none": "Bez kľúčov",
+    "change": "Zmeniť kľúče",
+    "add": "Použiť vlastné kľúče",
+    "remove": "Odstrániť moje kľúče",
+    "lock": "Zamknúť prístup vlastníka"
+  },
+  "camError": "Kamera nie je dostupná. Skontroluj povolenie kamery a či stránka beží na HTTPS.",
+  "fallback": {
+    "documentary": [
+      "A tu pozorujeme zhromaždenie tohto druhu, každý jedinec vznešenejší než predchádzajúci. Príroda v celej svojej kráse.",
+      "Pozoruhodný exemplár sa nakláňa dopredu, oči upreté na žiariacu obrazovku, s trpezlivosťou tvora, ktorý vie, že veľké veci chcú čas.",
+      "Všimnite si tichú sebaistotu tohto stáda. Nikto nespanikáril, hoci sú tak ďaleko od svojich prirodzených zásob desiatej.",
+      "Kolónia sa zhromaždila okolo zdroja svetla, tak ako kedysi ich predkovia. Niektoré veci sú zrejme večné.",
+      "Jeden exemplár si s nesmiernou dôstojnosťou upravuje postoj. Ostatní si to všímajú. Vzišiel vodca.",
+      "Vo voľnej prírode len máloktorý tvor vydrží prezentáciu s takou gráciou. A predsa, tu sú. Úchvatné."
+    ],
+    "documentaryStill": [
+      "Stádo sa nepohlo. Ani myknutie. Rozprávač však stále dúfa.",
+      "Stále nič. Exempláre zrejme šetria energiu, možno na potlesk.",
+      "Už nejaký čas sa nič nedeje. Človek začína tušiť, že stádo čaká, kým bude rozprávač vtipný. Snaží sa.",
+      "Úplná nehybnosť. Vedci majú pre toto správanie slovo. To slovo je „hodnotenie“.",
+      "Rozprávač už videl izbové rastliny s väčšou ambíciou. Prosím, niekto, ktokoľvek, pohnite prstom.",
+      "Nemajte obavy, stádo je v úplnom bezpečí. Len sa s veľkou dôstojnosťou rozhodlo nehýbať."
+    ],
+    "funny": [
+      "Vo svete... kde sa jedna miestnosť odvážila sledovať notebook... sa rodí legenda. Prístupné, lebo Prijateľné.",
+      "Túto jeseň... skupina skvelých cudzincov... a webkamera, ktorá videla priveľa. PUBLIKUM. Teraz v kinách.",
+      "Od štúdia, ktoré vám prinieslo sedenie... prichádza jeho najodvážnejšie pokračovanie. SEDENIE 2: STÁLE SEDÍME.",
+      "Kritici to nazývajú „najlepšie oblečený dav, aký kedy notebook natočil“. Čoskoro práve v tejto miestnosti.",
+      "Jedna miestnosť. Nula výbuchov. Neobmedzená charizma. HACKATHON. Dva palce poriadne hore.",
+      "Prišli kvôli demu... zostali kvôli desiate zadarmo... ÚČASTNÍCI. Certifikovane čerstvé."
+    ],
+    "funnyStill": [
+      "Túto zimu... sa nestane vôbec nič. A je to dych berúce. ZÁTIŠIE: FILM.",
+      "Dvanásť hrdinov. Jedna miestnosť. Nula pohybu. SOCHY. Nevhodné pre Nikoho, kto sa Hýbe.",
+      "Od režiséra filmu ČAKANIE... prichádza ČAKANIE 2: STÁLE ČAKÁME. Kritici hovoria, že „vás to prikuje k sedadlu“.",
+      "Vo svete, kde sa nikto nehýbe... jeden rozprávač... prosí. Prosím. Ktokoľvek. Zamávajte.",
+      "Už čoskoro: NAJDLHŠIA PAUZA. Deväťdesiat minút. Jedna miestnosť. Ani jedno žmurknutie.",
+      "Toto leto... čelí publikum svojej najväčšej výzve... zdvihnúť jednu ruku. GESTO. Teraz v kinách."
+    ],
+    "descriptive": [
+      "Kamera je zapnutá. O chvíľu scénu opíšem znova.",
+      "Popis sa teraz nepodarilo získať. Drž kameru pokojne a skúsim to znova.",
+      "Stále sa pozerám. Nový popis príde o chvíľu."
+    ],
+    "pumpkin": [
+      "Che che che... vitaj, statočný návštevník! To je ale kostým. Naozaj tekvico-krásny.",
+      "Bú! Cha, vyľakal som ťa? Tvoj kostým vyľakal mňa, v tom najlepšom zmysle.",
+      "Ohó, poď bližšie, ešte bližšie... Zbožňujem hostí so štýlom. Rozžiariš mi celú tvár.",
+      "Che che... skvelý kostým na skvelú noc. Celý žeraviem od závisti.",
+      "Vitaj, vitaj! Objal by som ťa, ale vnútri som skoro dutý. Krásny kostým, každopádne.",
+      "Che che che... dnes som videl kopu kostýmov, ale ten tvoj? Strašidelne skvelý."
+    ]
+  },
+  "noChange": "Bez zmeny."
+}

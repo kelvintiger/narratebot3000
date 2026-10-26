@@ -1,0 +1,217 @@
+{
+  "callNow": "GLAOIGH ANOIS! TÁ OIBREOIRÍ AR FÁIL!",
+  "tagline": "Do shaol, á insint.",
+  "order": "ORDAIGH ANOIS",
+  "burst1": "FEICTHE AR AN TEILIFÍS!",
+  "burst2": "$0.00 AMHÁIN!",
+  "finePrint": "*Ní fíoruimhir theileafóin í seo. Ná glaoigh, le do thoil. Níl NarrateBot 3000 freagrach as insintí atá ró-chruinn. D'fhéadfadh torthaí a bheith éagsúil. Ní chuirtear cadhnraí san áireamh.",
+  "ticker": [
+    "‘Rinne sé cur síos foirfe ar mo chat!’ – Custaiméir Sásta",
+    "‘Níor mhothaigh mé riamh chomh feicthe sin.’ – Custaiméir Eile",
+    "‘Níor chuala mé mo phlanda tí riamh chomh maorga sin.’ – Custaiméir, Is Dócha",
+    "‘Rinne mé gáire. Ghoil mé. Shuigh mé go han-socair.’ – An Tréad"
+  ],
+  "cleanSub": "Insint bheo ar an radharc ó do cheamara",
+  "cleanExplain": "Dírigh do cheamara ar an domhan agus déanfaidh NarrateBot 3000 cur síos os ard ar a bhfeiceann sé, i do theanga féin.",
+  "start": "Tosaigh",
+  "butWait": "ACH FAN... TÁ NÍOS MÓ ANN!",
+  "nowWith": "ANOIS LE MÓD: {mode}!",
+  "mode": {
+    "documentary": "CÁIPÉISEACH",
+    "funny": "GREANNMHAR",
+    "descriptive": "TUAIRISCIÚIL",
+    "pumpkin": "PUIMCÍN"
+  },
+  "modeClean": {
+    "documentary": "Stíl chláir faisnéise",
+    "funny": "Stíl réamhbhlaiseadh scannáin",
+    "descriptive": "Mód tuairisciúil",
+    "pumpkin": "Stíl phuimcín"
+  },
+  "countdown": {
+    "in": "Insint i gceann {n}…",
+    "late": "Ag insint…",
+    "visitor": "Ag fanacht le cuairteoir…",
+    "sr": "Insint ar ball beag"
+  },
+  "live": "BEO",
+  "specimen": "EISEAMAL",
+  "observation": "BREATHNÚ",
+  "herdNone": "GNÍOMHAÍOCHT TRÉIDE: DADA",
+  "unchanged": "Radharc gan athrú",
+  "paused": "AR SOS",
+  "nowShowing": "Á THAISPEÁINT ANOIS",
+  "btn": {
+    "describe": "Déan cur síos anois",
+    "pause": "Sos",
+    "play": "Seinn",
+    "flip": "Iompaigh an ceamara",
+    "settings": "Socruithe",
+    "themeDark": "Téama dorcha",
+    "themeLight": "Téama geal",
+    "accessible": "Amharc inrochtana",
+    "infomercial": "Amharc fógraíochta",
+    "narrLang": "Teanga na hinsinte",
+    "close": "Dún",
+    "siteLang": "Teanga an tsuímh"
+  },
+  "set": {
+    "title": "FOIRM ORDAITHE AN IONAID GHLAONNA",
+    "titleClean": "Socruithe",
+    "sub": "Tá oibreoirí ar fáil",
+    "useEleven": "Úsáid guth ElevenLabs",
+    "charsSession": "Carachtair seolta sa seisiún seo",
+    "charsToday": "Carachtair inniu (gach úsáideoir)",
+    "narrToday": "Insintí inniu",
+    "config": "Cumraíocht",
+    "stillness": "Íogaireacht socrachta",
+    "stillDebug": "Socracht / difríocht dheiridh",
+    "textSize": "Méid an téacs",
+    "smaller": "Téacs níos lú",
+    "larger": "Téacs níos mó",
+    "customLang": "Teanga insinte shaincheaptha",
+    "customLangHint": "Curtha le liosta theangacha na hinsinte (L)",
+    "music": "Airde an cheoil",
+    "srMute": "Ná labhair os ard (léann an léitheoir scáileáin an téacs)",
+    "hideVideo": "Folaigh an físeán, taispeáin téacs na hinsinte amháin",
+    "hotkeys": "Aicearraí",
+    "yes": "socraithe",
+    "no": "in easnamh",
+    "dflt": "réamhshocrú",
+    "breakLen": "Sos idir línte",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Móid"
+    ],
+    [
+      "L",
+      "Teanga na hinsinte"
+    ],
+    [
+      "N",
+      "Déan cur síos anois"
+    ],
+    [
+      "S",
+      "Socracht ar/as"
+    ],
+    [
+      "T",
+      "Téama"
+    ],
+    [
+      "A",
+      "Amharc inrochtana"
+    ],
+    [
+      "Spás",
+      "Sos / seinn"
+    ],
+    [
+      "K",
+      "Socruithe"
+    ]
+  ],
+  "keys": {
+    "title": "TABHAIR D'EOCHRACHA FÉIN",
+    "titleClean": "Úsáid d'eochracha féin",
+    "sub": "Tá d'eochracha ag teastáil ó na hoibreoirí don ghlao seo",
+    "intro": "Ritheann NarrateBot 3000 ar d'eochair Gemini féin don insint agus, más mian leat, ar eochair ElevenLabs do ghutha.",
+    "gemini": "Eochair API Gemini",
+    "eleven": "Eochair API ElevenLabs (roghnach)",
+    "geminiHelp": "Conas eochair Gemini a fháil",
+    "elevenHelp": "Conas eochair ElevenLabs a fháil",
+    "getAt": "Faigh eochair ag",
+    "newTab": " (osclaítear i gcluaisín nua é)",
+    "geminiSteps": "Sínigh isteach, roghnaigh Create API key, agus ansin greamaigh an eochair anseo.",
+    "geminiCost": "Cuireann Google sraith saor in aisce ar fáil le teorainneacha úsáide; gearrtar úsáid níos troime ar do chuntas Google.",
+    "elevenSteps": "Cruthaigh eochair a bhfuil rochtain Text to Speech aici, agus ansin greamaigh anseo í.",
+    "elevenCost": "Áirítear liúntas carachtar míosúil sa phlean saor in aisce. Tá plean íoctha ag teastáil do roinnt guthanna; mura bhfuil guth ar fáil úsáidimid guth caighdeánach, nó guth do bhrabhsálaí má fhágann tú é seo bán.",
+    "privacy": "Coinnítear d'eochracha i bhfianán criptithe sa bhrabhsálaí seo agus ní sheoltar chuig ár bhfreastalaí iad ach chun d'iarratais a dhéanamh. Ní stórálaimid ná ní logálaimid iad riamh. Is féidir leat iad a bhaint am ar bith sna Socruithe.",
+    "save": "Sábháil agus tosaigh",
+    "saving": "Á seiceáil…",
+    "cancel": "Cealaigh",
+    "needGemini": "Cuir isteach d'eochair Gemini.",
+    "geminiInvalid": "Níor ghlac Google leis an eochair Gemini sin. Seiceáil í agus bain triail eile as.",
+    "format": "Ní cosúil le heochair API é sin. Greamaigh an eochair iomlán, gan spásanna.",
+    "formatEleven": "Ní cosúil go bhfuil an eochair ElevenLabs sin ceart. Greamaigh an eochair iomlán, nó fág bán í.",
+    "tooMany": "An iomarca iarrachtaí. Fan 15 nóiméad.",
+    "failed": "Níorbh fhéidir d'eochair a sheiceáil anois. Bain triail eile as i gceann nóiméid.",
+    "needKeys": "Le leanúint den insint, cuir d'eochracha féin leis.",
+    "quota": "Shroich d'eochair Gemini a teorainn úsáide. Triail eile i gceann nóiméid…",
+    "badKey": "Dhiúltaigh Google d'eochair Gemini. Seiceáil í nó greamaigh ceann nua.",
+    "removed": "Baineadh d'eochracha. Cuir eochracha leis le leanúint den insint."
+  },
+  "owner": {
+    "title": "ROCHTAIN AN ÚINÉARA",
+    "titleClean": "Rochtain an úinéara",
+    "label": "Pasfhocal an úinéara",
+    "submit": "Díghlasáil",
+    "wrong": "Níor oibrigh sé sin.",
+    "tooMany": "An iomarca iarrachtaí. Fan 15 nóiméad.",
+    "done": "Rochtain an úinéara díghlasáilte."
+  },
+  "access": {
+    "legend": "Rochtain",
+    "current": "Rochtain reatha:",
+    "owner": "Úinéir",
+    "byok": "D'eochracha féin",
+    "none": "Gan eochracha",
+    "change": "Athraigh eochracha",
+    "add": "Úsáid d'eochracha féin",
+    "remove": "Bain m'eochracha",
+    "lock": "Glasáil rochtain an úinéara"
+  },
+  "camError": "Níl an ceamara ar fáil. Seiceáil cead an cheamara agus go bhfuil an leathanach ar HTTPS.",
+  "fallback": {
+    "documentary": [
+      "Agus anseo feicimid cruinniú den speiceas, gach ceann acu níos uaisle ná an ceann roimhe. Go deimhin, an dúlra ar a fheabhas.",
+      "Claonann eiseamal iontach chun tosaigh, a shúile greamaithe den scáileán lonrach, le foighne créatúir a bhfuil a fhios aige go dtógann rudaí móra am.",
+      "Tabhair faoi deara muinín chiúin an tréada seo. Níor tháinig scaoll ar aon cheann acu, cé go bhfuil siad i bhfad óna bhfoinse nádúrtha sneaiceanna.",
+      "Tá an choilíneacht bailithe timpeall ar fhoinse an tsolais, mar a rinne a sinsir rompu. Tá rudaí áirithe, is cosúil, síoraí.",
+      "Socraíonn eiseamal amháin a staidiúir le dínit ollmhór. Tugann na cinn eile faoi deara é. Tá ceannaire tagtha chun cinn.",
+      "Sa fhiántas, is beag créatúr atá in ann suí trí thaispeántas le grásta mar sin. Agus fós, seo iad. Iontach."
+    ],
+    "documentaryStill": [
+      "Níor bhog an tréad. Oiread agus preab. Tá an scéalaí, dá thaobh féin, dóchasach i gcónaí.",
+      "Faic fós. Is cosúil go bhfuil na heiseamail ag spáráil fuinnimh, don bhualadh bos b'fhéidir.",
+      "Tá tamall ann anois. Tosaíonn duine ag ceapadh go bhfuil an tréad ag fanacht go mbeidh an scéalaí greannmhar. Tá sé ag iarraidh.",
+      "Socracht iomlán. Tá focal ag eolaithe ar an iompar seo. Is é an focal ná ‘breithiúnas’.",
+      "Chonaic an scéalaí plandaí tí a raibh níos mó uaillmhéine le feiceáil iontu. Le do thoil, duine éigin, aon duine, bog méar.",
+      "Ná bíodh imní ort, tá an tréad go hiomlán sábháilte. Níl siad ach ag roghnú, le dínit mhór, gan bogadh."
+    ],
+    "funny": [
+      "I ndomhan... inar leomh seomra amháin féachaint ar ríomhaire glúine... beirtear finscéal. Rátáilte MG: Maith Go leor.",
+      "An fómhar seo... grúpa strainséirí iontacha... agus ceamara gréasáin a chonaic an iomarca. AN LUCHT FÉACHANA. Sna pictiúrlanna anois.",
+      "Ón stiúideo a thug suí síos duit... tagann an seicheamh is dána fós. SUÍ SÍOS 2: INÁR SUÍ FÓS.",
+      "Tugann léirmheastóirí ‘an slua is fearr gléasta a scannánaigh ríomhaire glúine riamh’ air. Go luath sa seomra seo féin.",
+      "Seomra amháin. Pléascadh ar bith. Carisma gan teorainn. AN HAICEATÓN. Dhá ordóg suas go hard, hard.",
+      "Tháinig siad don taispeántas... d'fhan siad do na sneaiceanna saor in aisce... NA RANNPHÁIRTITHE. Úr deimhnithe."
+    ],
+    "funnyStill": [
+      "An geimhreadh seo... ní tharlaíonn faic ar chor ar bith. Agus baineann sé an anáil asat. BEATHA CHIÚIN: AN SCANNÁN.",
+      "Dháréag laoch. Seomra amháin. Gluaiseacht ar bith. NA DEALBHA. Rátáilte S: Socair go hAmhrasach.",
+      "Ó stiúrthóir AN FHANACHT... tagann AN FANACHT 2: AG FANACHT FÓS. Deir léirmheastóirí ‘go bhfanann sé leat’.",
+      "I ndomhan nach mbogann aon duine ann... impíonn scéalaí amháin. Le do thoil. Aon duine. Croith lámh.",
+      "Go luath: AN SOS IS FAIDE. Nócha nóiméad. Seomra amháin. Gan oiread agus caochadh súile.",
+      "An samhradh seo... tugann an lucht féachana aghaidh ar a ndúshlán is mó... lámh amháin a ardú. AN COMHARTHA. Á thaispeáint anois."
+    ],
+    "descriptive": [
+      "Tá an ceamara ar siúl. Déanfaidh mé cur síos ar an radharc arís i gceann nóiméid.",
+      "Ní raibh mé in ann cur síos a fháil anois díreach. Coinnigh an ceamara socair agus bainfidh mé triail eile as.",
+      "Ag féachaint fós. Tá cur síos nua ag teacht go luath."
+    ],
+    "pumpkin": [
+      "He he he... fáilte, a chuairteoir chróga! A leithéid de chulaith. Puimcín-álainn go deimhin.",
+      "Bú! Ha, ar chuir mé eagla ort? Chuir do chulaith eagla ormsa, ar an mbealach is fearr.",
+      "Ohó, tar níos gaire, tar níos gaire... Is breá liom aoi a bhfuil stíl aige. Lasann tú m'aghaidh ar fad.",
+      "He he... culaith bhreá d'oíche bhreá. Táim ag lonrú le héad.",
+      "Fáilte, fáilte! Thabharfainn barróg duit, ach táim folamh istigh den chuid is mó. Culaith álainn, áfach.",
+      "He he he... chonaic mé go leor cultacha anocht, ach do cheannsa? Taibhsiúil ar fad."
+    ]
+  },
+  "noChange": "Gan athrú."
+}

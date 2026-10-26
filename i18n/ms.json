@@ -1,0 +1,217 @@
+{
+  "callNow": "HUBUNGI SEKARANG! OPERATOR KAMI SEDIA MENANTI!",
+  "tagline": "Dunia anda, dinaratifkan.",
+  "order": "TEMPAH SEKARANG",
+  "burst1": "SEPERTI DI TV!",
+  "burst2": "HANYA $0.00!",
+  "finePrint": "*Bukan nombor telefon sebenar. Tolong jangan telefon. NarrateBot 3000 tidak bertanggungjawab atas naratif yang terlalu tepat. Keputusan mungkin berbeza. Bateri tidak disertakan.",
+  "ticker": [
+    "“Kucing saya diterangkan dengan sempurna!” – Pelanggan Berpuas Hati",
+    "“Tak pernah saya rasa diperhatikan begini.” – Pelanggan Juga",
+    "“Pokok hiasan saya tak pernah kedengaran sehebat ini.” – Pelanggan, Rasanya",
+    "“Saya ketawa. Saya menangis. Saya duduk diam-diam.” – Sang Kawanan"
+  ],
+  "cleanSub": "Naratif langsung dari kamera anda",
+  "cleanExplain": "Halakan kamera anda ke sekeliling dan NarrateBot 3000 akan menerangkan dengan suara apa yang dilihatnya, dalam bahasa anda.",
+  "start": "Mula",
+  "butWait": "TUNGGU DULU... ADA LAGI!",
+  "nowWith": "KINI DENGAN MOD {mode}!",
+  "mode": {
+    "documentary": "DOKUMENTARI",
+    "funny": "KELAKAR",
+    "descriptive": "DESKRIPTIF",
+    "pumpkin": "LABU"
+  },
+  "modeClean": {
+    "documentary": "Gaya dokumentari",
+    "funny": "Gaya treler filem",
+    "descriptive": "Mod deskriptif",
+    "pumpkin": "Gaya labu"
+  },
+  "countdown": {
+    "in": "Naratif dalam {n}…",
+    "late": "Sedang menaratif…",
+    "visitor": "Menunggu pelawat…",
+    "sr": "Naratif akan bermula sebentar lagi"
+  },
+  "live": "SIARAN LANGSUNG",
+  "specimen": "SPESIMEN",
+  "observation": "PEMERHATIAN",
+  "herdNone": "AKTIVITI KAWANAN: TIADA DIKESAN",
+  "unchanged": "Adegan tidak berubah",
+  "paused": "DIJEDA",
+  "nowShowing": "KINI DITAYANGKAN",
+  "btn": {
+    "describe": "Terangkan sekarang",
+    "pause": "Jeda",
+    "play": "Main",
+    "flip": "Tukar kamera",
+    "settings": "Tetapan",
+    "themeDark": "Tema gelap",
+    "themeLight": "Tema cerah",
+    "accessible": "Paparan mudah akses",
+    "infomercial": "Paparan iklan TV",
+    "narrLang": "Bahasa naratif",
+    "close": "Tutup",
+    "siteLang": "Bahasa laman"
+  },
+  "set": {
+    "title": "BORANG TEMPAHAN PUSAT PANGGILAN",
+    "titleClean": "Tetapan",
+    "sub": "Operator kami sedia menanti",
+    "useEleven": "Guna suara ElevenLabs",
+    "charsSession": "Aksara dihantar dalam sesi ini",
+    "charsToday": "Aksara hari ini (semua pengguna)",
+    "narrToday": "Naratif hari ini",
+    "config": "Konfigurasi",
+    "stillness": "Kepekaan keadaan pegun",
+    "stillDebug": "Kiraan pegun / perbezaan terakhir",
+    "textSize": "Saiz teks",
+    "smaller": "Teks lebih kecil",
+    "larger": "Teks lebih besar",
+    "customLang": "Bahasa naratif tersuai",
+    "customLangHint": "Ditambah ke senarai bahasa naratif (L)",
+    "music": "Kelantangan muzik",
+    "srMute": "Jangan bersuara (pembaca skrin membaca teks)",
+    "hideVideo": "Sembunyikan video, tunjukkan teks naratif sahaja",
+    "hotkeys": "Kekunci pintas",
+    "yes": "ditetapkan",
+    "no": "tiada",
+    "dflt": "lalai",
+    "breakLen": "Rehat antara ayat",
+    "breakValue": "{n} saat"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Mod"
+    ],
+    [
+      "L",
+      "Bahasa naratif"
+    ],
+    [
+      "N",
+      "Terangkan sekarang"
+    ],
+    [
+      "S",
+      "Pegun hidup/mati"
+    ],
+    [
+      "T",
+      "Tema"
+    ],
+    [
+      "A",
+      "Paparan mudah akses"
+    ],
+    [
+      "Ruang",
+      "Jeda / main"
+    ],
+    [
+      "K",
+      "Tetapan"
+    ]
+  ],
+  "keys": {
+    "title": "BAWA KUNCI ANDA SENDIRI",
+    "titleClean": "Guna kunci anda sendiri",
+    "sub": "Operator perlukan kunci anda untuk menjawab panggilan ini",
+    "intro": "NarrateBot 3000 berjalan menggunakan kunci Gemini anda sendiri untuk naratif dan, jika mahu, kunci ElevenLabs untuk suara.",
+    "gemini": "Kunci API Gemini",
+    "eleven": "Kunci API ElevenLabs (pilihan)",
+    "geminiHelp": "Cara mendapatkan kunci Gemini",
+    "elevenHelp": "Cara mendapatkan kunci ElevenLabs",
+    "getAt": "Dapatkan kunci di",
+    "newTab": " (dibuka dalam tab baharu)",
+    "geminiSteps": "Log masuk, pilih Create API key, kemudian tampal kunci di sini.",
+    "geminiCost": "Google menawarkan peringkat percuma dengan had penggunaan; penggunaan lebih banyak akan dicaj ke akaun Google anda.",
+    "elevenSteps": "Cipta kunci dengan akses Text to Speech, kemudian tampal di sini.",
+    "elevenCost": "Pelan percuma termasuk peruntukan aksara bulanan. Sesetengah suara memerlukan pelan berbayar; jika suara tidak tersedia, kami gunakan suara standard, atau suara pelayar anda jika ruangan ini dibiarkan kosong.",
+    "privacy": "Kunci anda disimpan dalam kuki yang disulitkan dalam pelayar ini dan dihantar ke pelayan kami hanya untuk melaksanakan permintaan anda. Kami tidak sekali-kali menyimpan atau merekodkannya. Anda boleh membuangnya pada bila-bila masa dalam Tetapan.",
+    "save": "Simpan & mula",
+    "saving": "Menyemak…",
+    "cancel": "Batal",
+    "needGemini": "Masukkan kunci Gemini anda.",
+    "geminiInvalid": "Google tidak menerima kunci Gemini itu. Semak dan cuba lagi.",
+    "format": "Itu tidak kelihatan seperti kunci API. Tampal keseluruhan kunci, tanpa ruang.",
+    "formatEleven": "Kunci ElevenLabs itu nampaknya tidak betul. Tampal keseluruhan kunci, atau biarkan kosong.",
+    "tooMany": "Terlalu banyak cubaan. Tunggu 15 minit.",
+    "failed": "Kunci anda tidak dapat disemak sekarang. Cuba lagi sebentar nanti.",
+    "needKeys": "Untuk terus menaratif, tambahkan kunci anda sendiri.",
+    "quota": "Kunci Gemini anda telah mencapai had penggunaan. Mencuba semula dalam seminit…",
+    "badKey": "Google menolak kunci Gemini anda. Semak atau tampal kunci baharu.",
+    "removed": "Kunci anda telah dibuang. Tambahkan kunci untuk terus menaratif."
+  },
+  "owner": {
+    "title": "AKSES PEMILIK",
+    "titleClean": "Akses pemilik",
+    "label": "Kata laluan pemilik",
+    "submit": "Buka kunci",
+    "wrong": "Tidak berjaya.",
+    "tooMany": "Terlalu banyak cubaan. Tunggu 15 minit.",
+    "done": "Akses pemilik dibuka."
+  },
+  "access": {
+    "legend": "Akses",
+    "current": "Akses semasa:",
+    "owner": "Pemilik",
+    "byok": "Kunci anda sendiri",
+    "none": "Tiada kunci",
+    "change": "Tukar kunci",
+    "add": "Guna kunci anda sendiri",
+    "remove": "Buang kunci saya",
+    "lock": "Kunci akses pemilik"
+  },
+  "camError": "Kamera tidak tersedia. Semak kebenaran kamera dan pastikan halaman dibuka melalui HTTPS.",
+  "fallback": {
+    "documentary": [
+      "Dan di sini kita memerhatikan satu perhimpunan spesies ini, setiap satunya lebih anggun daripada yang sebelumnya. Sungguh, alam semula jadi pada tahap terbaiknya.",
+      "Satu spesimen yang menakjubkan condong ke hadapan, mata tertumpu pada skrin yang bercahaya, dengan kesabaran makhluk yang tahu perkara hebat memerlukan masa.",
+      "Perhatikan keyakinan tenang kawanan ini. Tiada seorang pun panik, walaupun begitu jauh dari bekalan kudapan semula jadi mereka.",
+      "Koloni ini berkumpul mengelilingi sumber cahaya, seperti nenek moyang mereka dahulu. Nampaknya, ada perkara yang kekal abadi.",
+      "Satu spesimen membetulkan postur dengan penuh bermaruah. Yang lain mengambil perhatian. Seorang pemimpin telah muncul.",
+      "Di alam liar, sangat sedikit makhluk yang mampu duduk sepanjang demo dengan seanggun ini. Namun, di sinilah mereka. Hebat sungguh."
+    ],
+    "documentaryStill": [
+      "Kawanan ini masih tidak bergerak. Tiada sebarang kedutan. Sang narator pula masih menaruh harapan.",
+      "Masih tiada apa-apa. Spesimen-spesimen ini nampaknya sedang menjimatkan tenaga, mungkin untuk tepukan.",
+      "Sudah agak lama. Mula timbul syak bahawa kawanan ini menunggu sang narator menjadi kelakar. Dia sedang mencuba.",
+      "Pegun sepenuhnya. Saintis ada istilah untuk tingkah laku ini. Istilahnya ialah “menghakimi.”",
+      "Sang narator pernah melihat pokok hiasan yang lebih bercita-cita tinggi. Tolonglah, sesiapa sahaja, gerakkan satu jari.",
+      "Jangan risau, kawanan ini selamat sepenuhnya. Mereka cuma memilih, dengan penuh bermaruah, untuk tidak bergerak."
+    ],
+    "funny": [
+      "Di sebuah dunia... di mana satu bilik berani merenung komputer riba... sebuah legenda lahir. Klasifikasi U: Untuk semua, tiada aksi.",
+      "Musim luruh ini... sekumpulan orang asing yang bijak... dan kamera web yang sudah melihat terlalu banyak. PARA PENONTON. Kini di pawagam.",
+      "Dari studio yang membawakan anda “duduk”... hadir sekuel paling berani. DUDUK 2: MASIH DUDUK.",
+      "Pengkritik menggelarnya “penonton paling bergaya pernah dirakam komputer riba.” Akan datang ke bilik ini juga.",
+      "Satu bilik. Sifar letupan. Karisma tanpa had. HACKATHON. Dua ibu jari tinggi, tinggi sekali.",
+      "Mereka datang untuk demo... mereka kekal untuk snek percuma... PARA PESERTA. Pasti pecah panggung."
+    ],
+    "funnyStill": [
+      "Musim sejuk ini... langsung tiada apa yang berlaku. Dan ia memukau. ALAM PEGUN: FILEM.",
+      "Dua belas wira. Satu bilik. Sifar pergerakan. PARA PATUNG. Klasifikasi P: Pegun Mencurigakan.",
+      "Dari pengarah MENUNGGU... hadir MENUNGGU 2: MASIH MENUNGGU. Kata pengkritik, ia “buat anda terpaku di kerusi.”",
+      "Di dunia di mana tiada siapa bergerak... seorang narator... merayu. Tolonglah. Sesiapa. Lambai tangan.",
+      "Akan datang: JEDA PALING PANJANG. Sembilan puluh minit. Satu bilik. Tiada satu kelipan pun.",
+      "Musim panas ini... penonton berdepan cabaran terbesar mereka... mengangkat sebelah tangan. ISYARAT. Kini ditayangkan."
+    ],
+    "descriptive": [
+      "Kamera dihidupkan. Saya akan menerangkan adegan ini semula sebentar lagi.",
+      "Saya tidak dapat menerangkan buat masa ini. Pegang kamera dengan stabil dan saya akan cuba lagi.",
+      "Masih memerhati. Penerangan baharu akan tiba sebentar lagi."
+    ],
+    "pumpkin": [
+      "Hehehe... selamat datang, pelawat yang berani! Hebatnya kostum. Memang labu-biasa.",
+      "Bu! Ha, terkejut ya? Pakaian kamu pun buat saya terkejut, dalam erti kata yang terbaik.",
+      "Oho, mari dekat, mari dekat... Saya suka tetamu yang bergaya. Kamu buat seluruh muka saya bersinar.",
+      "Hehe... kostum hebat untuk malam yang indah. Saya sampai menyala kerana cemburu.",
+      "Selamat datang, selamat datang! Saya nak peluk kamu, tapi dalam saya hampir kosong. Cantik pakaian kamu, tau.",
+      "Hehehe... malam ini saya dah nampak banyak kostum, tapi kamu punya? Seram-tastik."
+    ]
+  },
+  "noChange": "Tiada perubahan."
+}

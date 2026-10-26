@@ -1,0 +1,217 @@
+{
+  "callNow": "IMBANI TSOPANO! OGWIRA NTCHITO ALI OKONZEKA!",
+  "tagline": "Dziko lanu, mu nkhani.",
+  "order": "ODANI TSOPANO",
+  "burst1": "MONGA ZIMAONEKERA PA TV!",
+  "burst2": "$0.00 YOKHA!",
+  "finePrint": "*Iyi si nambala ya foni yeniyeni. Chonde musaimbe. NarrateBot 3000 sichiyankha pa nkhani zolondola mopitirira muyeso. Zotsatira zingasiyane. Mabatire sanaphatikizidwe.",
+  "ticker": [
+    "'Inafotokoza mphaka wanga bwino kwambiri!' – Kasitomala Wokhutira",
+    "'Sindinamvepo kuwonedwa chotere.' – Nayenso Kasitomala",
+    "'Chomera changa cha m'nyumba sichinamvekepo chaulemerero chotere.' – Kasitomala, Mwina",
+    "'Ndinaseka. Ndinalira. Ndinakhala chete kwambiri.' – Gulu la Ziweto"
+  ],
+  "cleanSub": "Kufotokoza zochitika pompopompo kuchokera ku kamera yanu",
+  "cleanExplain": "Lozani kamera yanu kudziko ndipo NarrateBot 3000 imafotokoza mokweza zomwe ikuwona, m'chinenero chanu.",
+  "start": "Yambani",
+  "butWait": "KOMA DIKIRANI... PALI ZINA!",
+  "nowWith": "TSOPANO NDI NJIRA YA {mode}!",
+  "mode": {
+    "documentary": "ZENIZENI",
+    "funny": "ZOSEKETSA",
+    "descriptive": "KUFOTOKOZA",
+    "pumpkin": "DZUNGU"
+  },
+  "modeClean": {
+    "documentary": "Kalembedwe ka filimu ya zenizeni",
+    "funny": "Kalembedwe ka kalavani ya filimu",
+    "descriptive": "Njira yofotokozera",
+    "pumpkin": "Kalembedwe ka dzungu"
+  },
+  "countdown": {
+    "in": "Kufotokoza pakapita {n}…",
+    "late": "Ikufotokoza…",
+    "visitor": "Ikudikira mlendo…",
+    "sr": "Kufotokoza kukubwera posachedwa"
+  },
+  "live": "POMPOPOMPO",
+  "specimen": "CHITSANZO",
+  "observation": "KUWONA",
+  "herdNone": "ZOCHITA ZA GULU: PALIBE ZOONEKA",
+  "unchanged": "Zochitika sizinasinthe",
+  "paused": "YAIMITSIDWA",
+  "nowShowing": "IKUWONETSEDWA TSOPANO",
+  "btn": {
+    "describe": "Fotokozani tsopano",
+    "pause": "Imitsani",
+    "play": "Pitirizani",
+    "flip": "Tembenuzani kamera",
+    "settings": "Zokonda",
+    "themeDark": "Mutu wakuda",
+    "themeLight": "Mutu wowala",
+    "accessible": "Mawonekedwe osavuta",
+    "infomercial": "Mawonekedwe a malonda",
+    "narrLang": "Chinenero cha nkhani",
+    "close": "Tsekani",
+    "siteLang": "Chinenero cha tsamba"
+  },
+  "set": {
+    "title": "FOMU YOYITANITSIRA YA MALO OIMBIRA FONI",
+    "titleClean": "Zokonda",
+    "sub": "Ogwira ntchito ali okonzeka",
+    "useEleven": "Gwiritsani ntchito mawu a ElevenLabs",
+    "charsSession": "Zilembo zotumizidwa mu gawo ili",
+    "charsToday": "Zilembo lero (ogwiritsa ntchito onse)",
+    "narrToday": "Nkhani zofotokozedwa lero",
+    "config": "Kakonzedwe",
+    "stillness": "Kukhudzika kwa kusasuntha",
+    "stillDebug": "Chiwerengero cha kusasuntha / kusiyana komaliza",
+    "textSize": "Kukula kwa malemba",
+    "smaller": "Malemba ang'ono",
+    "larger": "Malemba aakulu",
+    "customLang": "Chinenero chanu cha nkhani",
+    "customLangHint": "Chimawonjezeredwa pa mndandanda wa zinenero za nkhani (L)",
+    "music": "Mphamvu ya nyimbo",
+    "srMute": "Musalankhule mokweza (chowerengera sikirini chimawerenga malemba)",
+    "hideVideo": "Bisani kanema, onetsani malemba a nkhani okha",
+    "hotkeys": "Makiyi achidule",
+    "yes": "zakhazikitsidwa",
+    "no": "palibe",
+    "dflt": "zokhazikika",
+    "breakLen": "Kupuma pakati pa mizere",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Njira"
+    ],
+    [
+      "L",
+      "Chinenero cha nkhani"
+    ],
+    [
+      "N",
+      "Fotokozani tsopano"
+    ],
+    [
+      "S",
+      "Kusasuntha yatsa/zimitsa"
+    ],
+    [
+      "T",
+      "Mutu"
+    ],
+    [
+      "A",
+      "Mawonekedwe osavuta"
+    ],
+    [
+      "Sipesi",
+      "Imitsani / pitirizani"
+    ],
+    [
+      "K",
+      "Zokonda"
+    ]
+  ],
+  "keys": {
+    "title": "BWERANI NDI MAKIYI ANU",
+    "titleClean": "Gwiritsani ntchito makiyi anu",
+    "sub": "Ogwira ntchito akufuna makiyi anu kuti alandire foni iyi",
+    "intro": "NarrateBot 3000 imagwira ntchito ndi kiyi yanu ya Gemini pofotokoza ndipo, mukafuna, kiyi ya ElevenLabs ya mawu.",
+    "gemini": "Kiyi ya API ya Gemini",
+    "eleven": "Kiyi ya API ya ElevenLabs (mwakufuna)",
+    "geminiHelp": "Mmene mungapezere kiyi ya Gemini",
+    "elevenHelp": "Mmene mungapezere kiyi ya ElevenLabs",
+    "getAt": "Pezani kiyi pa",
+    "newTab": " (imatseguka mu tabu yatsopano)",
+    "geminiSteps": "Lowani, sankhani Create API key, kenako matani kiyi apa.",
+    "geminiCost": "Google imapereka gawo laulere lokhala ndi malire; kugwiritsa ntchito kwambiri kumalipiritsidwa ku akaunti yanu ya Google.",
+    "elevenSteps": "Pangani kiyi yokhala ndi mwayi wa Text to Speech, kenako muimatani apa.",
+    "elevenCost": "Dongosolo laulere lili ndi zilembo zololedwa mwezi uliwonse. Mawu ena amafuna dongosolo lolipira; ngati mawu palibe timagwiritsa ntchito mawu wamba, kapena mawu a msakatuli wanu ngati musiya malo awa opanda kanthu.",
+    "privacy": "Makiyi anu amasungidwa mu cookie yotetezedwa mwachinsinsi (encrypted) mu msakatuli uyu ndipo amatumizidwa ku seva yathu pokhapokha kuti tichite zopempha zanu. Sitiwasunga kapena kuwalemba konse. Mungawachotse nthawi iliyonse mu Zokonda.",
+    "save": "Sungani ndi kuyamba",
+    "saving": "Ikufufuza…",
+    "cancel": "Letsani",
+    "needGemini": "Lowetsani kiyi yanu ya Gemini.",
+    "geminiInvalid": "Google sinavomere kiyi ya Gemini imeneyo. Ifufuzeni ndipo yesaninso.",
+    "format": "Imeneyo sikuoneka ngati kiyi ya API. Matani kiyi yonse, popanda mipata.",
+    "formatEleven": "Kiyi ya ElevenLabs imeneyo sikuoneka bwino. Matani kiyi yonse, kapena isiyeni yopanda kanthu.",
+    "tooMany": "Mwayesa kambirimbiri. Dikirani mphindi 15.",
+    "failed": "Sitinathe kufufuza kiyi yanu pakali pano. Yesaninso posachedwa.",
+    "needKeys": "Kuti mupitirize kufotokoza, onjezani makiyi anu.",
+    "quota": "Kiyi yanu ya Gemini yafika malire ake. Tiyesanso pakapita mphindi imodzi…",
+    "badKey": "Google yakana kiyi yanu ya Gemini. Ifufuzeni kapena matani yatsopano.",
+    "removed": "Makiyi anu achotsedwa. Onjezani makiyi kuti mupitirize kufotokoza."
+  },
+  "owner": {
+    "title": "MWAYI WA MWINI",
+    "titleClean": "Mwayi wa mwini",
+    "label": "Mawu achinsinsi a mwini",
+    "submit": "Tsegulani",
+    "wrong": "Sizinagwire ntchito.",
+    "tooMany": "Mwayesa kambirimbiri. Dikirani mphindi 15.",
+    "done": "Mwayi wa mwini watsegulidwa."
+  },
+  "access": {
+    "legend": "Mwayi",
+    "current": "Mwayi wapano:",
+    "owner": "Mwini",
+    "byok": "Makiyi anu",
+    "none": "Palibe makiyi",
+    "change": "Sinthani makiyi",
+    "add": "Gwiritsani ntchito makiyi anu",
+    "remove": "Chotsani makiyi anga",
+    "lock": "Tsekani mwayi wa mwini"
+  },
+  "camError": "Kamera sikupezeka. Onani chilolezo cha kamera komanso kuti tsamba lili pa HTTPS.",
+  "fallback": {
+    "documentary": [
+      "Ndipo apa tikuwona msonkhano wa mtundu uwu, aliyense wolemekezeka kuposa wam'mbuyo. Zoonadi, chilengedwe chili pabwino kwambiri.",
+      "Chitsanzo chodabwitsa chikuwerama kutsogolo, maso ali pa sikirini yowala, ndi kuleza mtima kwa cholengedwa chodziwa kuti zinthu zazikulu zimatenga nthawi.",
+      "Onani kudzidalira kwachete kwa gulu ili. Palibe ngakhale m'modzi amene wachita mantha, ngakhale ali kutali chotere ndi kumene amapeza zokhwasula-khwasula.",
+      "Gululo lasonkhana mozungulira kuwala, monga momwe makolo awo anachitira. Zinthu zina, zikuoneka, n'zamuyaya.",
+      "Chitsanzo chimodzi chikukonza kakhalidwe kake ndi ulemu waukulu. Enawo akuona. Mtsogoleri watulukira.",
+      "Kuthengo, zolengedwa zochepa kwambiri zingakhale pa chiwonetsero ndi ulemu wotere. Komabe, ali pano. Zodabwitsa."
+    ],
+    "documentaryStill": [
+      "Gulu silinasunthe. Ngakhale pang'ono. Wofotokoza, kumbali yake, akadali ndi chiyembekezo.",
+      "Palibebe kanthu. Zitsanzozi zikuoneka kuti zikusunga mphamvu, mwina za kuwomba m'manja.",
+      "Patha nthawi tsopano. Munthu akuyamba kukayikira kuti gulu likudikira wofotokoza kuti aseketse. Akuyesetsa.",
+      "Bata lathunthu. Asayansi ali ndi mawu a khalidwe ili. Mawuwo ndi 'kuweruza.'",
+      "Wofotokoza waonapo zomera za m'nyumba zokhala ndi chikhumbo chooneka kuposa pamenepa. Chonde, wina, aliyense, sunthani chala.",
+      "Musadandaule, gulu lili bwino kotheratu. Akungosankha, ndi ulemu waukulu, kusasuntha."
+    ],
+    "funny": [
+      "M'dziko... momwe chipinda chimodzi chinalimba mtima kuonera laputopu... ngwazi ibadwa. Yovomerezeka kwa onse, makamaka okongola.",
+      "Nyengo ino... gulu la alendo anzeru... ndi webukamu yomwe yaona zambiri. OWONERA. Tsopano m'malo owonera makanema.",
+      "Kuchokera ku situdiyo yomwe inakubweretserani kukhala pansi... ikubwera gawo lake lachiwiri lolimba mtima kwambiri. KUKHALA PANSI 2: TIDAKALI PANSI.",
+      "Otsutsa akuti ndi 'gulu lovala bwino kwambiri lomwe laputopu inajambulapo.' Ikubwera posachedwa m'chipinda chomwe chino.",
+      "Chipinda chimodzi. Palibe kuphulika. Chikoka chopanda malire. HACKATHON. Zala zazikulu ziwiri m'mwamba kwambiri.",
+      "Anabwera chifukwa cha chiwonetsero... anakhala chifukwa cha zokhwasula-khwasula zaulere... OBWERA. Zatsopano zotsimikizika."
+    ],
+    "funnyStill": [
+      "M'nyengo yozizira ino... palibe chilichonse chikuchitika. Ndipo n'zodabwitsa. MOYO WABATA: FILIMU.",
+      "Ngwazi khumi ndi ziwiri. Chipinda chimodzi. Palibe kusuntha. ZIBOLIBOLI. Bata lokayikitsa.",
+      "Kuchokera kwa wotsogolera KUDIKIRA... ikubwera KUDIKIRA 2: TIKADALI KUDIKIRA. Otsutsa akuti 'imakukhazika pansi kwambiri.'",
+      "M'dziko lomwe palibe amene akusuntha... wofotokoza mmodzi... akupempha. Chonde. Aliyense. Kwezani dzanja.",
+      "Ikubwera posachedwa: KUIMA KWAUTALI KWAMBIRI. Mphindi makumi asanu ndi anayi. Chipinda chimodzi. Palibe ngakhale kuphethira kamodzi.",
+      "M'chilimwe chino... owonera akukumana ndi vuto lawo lalikulu... kukweza dzanja limodzi. CHIZINDIKIRO. Tsopano ikuwonetsedwa."
+    ],
+    "descriptive": [
+      "Kamera yayatsidwa. Ndifotokozanso zochitikazo posachedwa.",
+      "Sindinathe kupeza kufotokoza pakali pano. Gwirani kamera mosasuntha ndipo ndiyesanso.",
+      "Ndikuyang'anabe. Kufotokoza kwatsopano kukubwera posachedwa."
+    ],
+    "pumpkin": [
+      "He he he... takulandirani, mlendo wolimba mtima! Ndi chovala chotani! Chokongola ngati dzungu.",
+      "Bu! Ha, ndakuopsani? Chovala chanu ndithudi chandiopsa ine, m'njira yabwino kwambiri.",
+      "Oho, bwerani pafupi, bwerani pafupi... Ndimakonda mlendo wa kalembedwe. Mwawalitsa nkhope yanga yonse.",
+      "He he... chovala chabwino cha usiku wabwino. Ndikuwala ndi nsanje.",
+      "Takulandirani, takulandirani! Ndikadakukumbatirani, koma mkati ndine wopanda kanthu. Chovala chokongola, komabe.",
+      "He he he... ndaona zovala zambiri usiku uno, koma chanu? Chochititsa mantha mokongola."
+    ]
+  },
+  "noChange": "Palibe kusintha."
+}

@@ -1,0 +1,217 @@
+{
+  "callNow": "NAZOVITE ODMAH! OPERATERI VAS ČEKAJU!",
+  "tagline": "Tvoj svijet, ispričan.",
+  "order": "NARUČITE ODMAH",
+  "burst1": "VIĐENO NA TV-U!",
+  "burst2": "SAMO 0,00 €!",
+  "finePrint": "*Nije pravi broj telefona. Molimo, ne zovite. NarrateBot 3000 ne odgovara za pretjerano točne naracije. Rezultati se mogu razlikovati. Baterije nisu uključene.",
+  "ticker": [
+    "„Savršeno je opisao moju mačku!” – Zadovoljna mušterija",
+    "„Nikad se nisam osjećao tako viđenim.” – Isto mušterija",
+    "„Moja sobna biljka nikad nije zvučala tako veličanstveno.” – Mušterija, valjda",
+    "„Smijao sam se. Plakao sam. Sjedio sam potpuno mirno.” – Krdo"
+  ],
+  "cleanSub": "Naracija scene uživo s tvoje kamere",
+  "cleanExplain": "Usmjeri kameru prema svijetu i NarrateBot 3000 naglas opisuje što vidi, na tvom jeziku.",
+  "start": "Pokreni",
+  "butWait": "ALI ČEKAJTE... IMA JOŠ!",
+  "nowWith": "SADA S NAČINOM {mode}!",
+  "mode": {
+    "documentary": "DOKUMENTARAC",
+    "funny": "SMIJEŠNO",
+    "descriptive": "OPISNO",
+    "pumpkin": "BUNDEVA"
+  },
+  "modeClean": {
+    "documentary": "Dokumentarni stil",
+    "funny": "Stil filmskog trailera",
+    "descriptive": "Opisni način",
+    "pumpkin": "Stil bundeve"
+  },
+  "countdown": {
+    "in": "Naracija za {n}…",
+    "late": "Pripovijedam…",
+    "visitor": "Čekam posjetitelja…",
+    "sr": "Naracija uskoro počinje"
+  },
+  "live": "UŽIVO",
+  "specimen": "PRIMJERAK",
+  "observation": "OPAŽANJE",
+  "herdNone": "AKTIVNOST KRDA: NEMA",
+  "unchanged": "Scena nepromijenjena",
+  "paused": "PAUZIRANO",
+  "nowShowing": "UPRAVO PRIKAZUJEMO",
+  "btn": {
+    "describe": "Opiši sada",
+    "pause": "Pauza",
+    "play": "Nastavi",
+    "flip": "Okreni kameru",
+    "settings": "Postavke",
+    "themeDark": "Tamna tema",
+    "themeLight": "Svijetla tema",
+    "accessible": "Pristupačni prikaz",
+    "infomercial": "Reklamni prikaz",
+    "narrLang": "Jezik naracije",
+    "close": "Zatvori",
+    "siteLang": "Jezik stranice"
+  },
+  "set": {
+    "title": "OBRAZAC ZA NARUDŽBU POZIVNOG CENTRA",
+    "titleClean": "Postavke",
+    "sub": "Operateri vas čekaju",
+    "useEleven": "Koristi ElevenLabs glas",
+    "charsSession": "Znakova poslano u ovoj sesiji",
+    "charsToday": "Znakova danas (svi korisnici)",
+    "narrToday": "Naracija danas",
+    "config": "Konfiguracija",
+    "stillness": "Osjetljivost na mirovanje",
+    "stillDebug": "Brojač mirovanja / zadnja razlika",
+    "textSize": "Veličina teksta",
+    "smaller": "Manji tekst",
+    "larger": "Veći tekst",
+    "customLang": "Prilagođeni jezik naracije",
+    "customLangHint": "Dodaje se na popis jezika naracije (L)",
+    "music": "Glasnoća glazbe",
+    "srMute": "Ne govori naglas (čitač zaslona čita tekst)",
+    "hideVideo": "Sakrij video, prikaži samo tekst naracije",
+    "hotkeys": "Prečaci",
+    "yes": "postavljen",
+    "no": "nedostaje",
+    "dflt": "zadano",
+    "breakLen": "Stanka između rečenica",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Načini"
+    ],
+    [
+      "L",
+      "Jezik naracije"
+    ],
+    [
+      "N",
+      "Opiši sada"
+    ],
+    [
+      "S",
+      "Mirovanje uklj./isklj."
+    ],
+    [
+      "T",
+      "Tema"
+    ],
+    [
+      "A",
+      "Pristupačni prikaz"
+    ],
+    [
+      "Space",
+      "Pauza / reprodukcija"
+    ],
+    [
+      "K",
+      "Postavke"
+    ]
+  ],
+  "keys": {
+    "title": "DONESITE VLASTITE KLJUČEVE",
+    "titleClean": "Koristi vlastite ključeve",
+    "sub": "Operaterima trebaju vaši ključevi da prime poziv",
+    "intro": "NarrateBot 3000 radi s tvojim vlastitim Gemini ključem za naraciju i, ako želiš, ElevenLabs ključem za glasove.",
+    "gemini": "Gemini API ključ",
+    "eleven": "ElevenLabs API ključ (neobavezno)",
+    "geminiHelp": "Kako dobiti Gemini ključ",
+    "elevenHelp": "Kako dobiti ElevenLabs ključ",
+    "getAt": "Ključ nabavi na",
+    "newTab": " (otvara se u novoj kartici)",
+    "geminiSteps": "Prijavi se, odaberi Create API key i zalijepi ključ ovdje.",
+    "geminiCost": "Google nudi besplatnu razinu s ograničenjima; veća upotreba naplaćuje se na tvoj Google račun.",
+    "elevenSteps": "Izradi ključ s pristupom Text to Speech i zalijepi ga ovdje.",
+    "elevenCost": "Besplatni plan uključuje mjesečnu kvotu znakova. Neki glasovi traže plaćeni plan; ako glas nije dostupan, koristimo standardni glas ili glas preglednika ako polje ostaviš prazno.",
+    "privacy": "Tvoji ključevi čuvaju se u šifriranom kolačiću u ovom pregledniku i šalju se našem poslužitelju samo radi izvršavanja tvojih zahtjeva. Nikad ih ne spremamo niti bilježimo. Možeš ih ukloniti u bilo kojem trenutku u Postavkama.",
+    "save": "Spremi i pokreni",
+    "saving": "Provjeravam…",
+    "cancel": "Odustani",
+    "needGemini": "Unesi svoj Gemini ključ.",
+    "geminiInvalid": "Google nije prihvatio taj Gemini ključ. Provjeri ga i pokušaj ponovno.",
+    "format": "To ne izgleda kao API ključ. Zalijepi cijeli ključ, bez razmaka.",
+    "formatEleven": "Taj ElevenLabs ključ ne izgleda ispravno. Zalijepi cijeli ključ ili ostavi polje prazno.",
+    "tooMany": "Previše pokušaja. Pričekaj 15 minuta.",
+    "failed": "Trenutačno ne mogu provjeriti ključ. Pokušaj ponovno za trenutak.",
+    "needKeys": "Za nastavak naracije dodaj vlastite ključeve.",
+    "quota": "Tvoj Gemini ključ dosegnuo je ograničenje. Novi pokušaj za minutu…",
+    "badKey": "Google je odbio tvoj Gemini ključ. Provjeri ga ili zalijepi novi.",
+    "removed": "Tvoji ključevi su uklonjeni. Dodaj ključeve za nastavak naracije."
+  },
+  "owner": {
+    "title": "PRISTUP VLASNIKA",
+    "titleClean": "Pristup vlasnika",
+    "label": "Lozinka vlasnika",
+    "submit": "Otključaj",
+    "wrong": "Nije uspjelo.",
+    "tooMany": "Previše pokušaja. Pričekaj 15 minuta.",
+    "done": "Pristup vlasnika otključan."
+  },
+  "access": {
+    "legend": "Pristup",
+    "current": "Trenutačni pristup:",
+    "owner": "Vlasnik",
+    "byok": "Vlastiti ključevi",
+    "none": "Bez ključeva",
+    "change": "Promijeni ključeve",
+    "add": "Koristi vlastite ključeve",
+    "remove": "Ukloni moje ključeve",
+    "lock": "Zaključaj pristup vlasnika"
+  },
+  "camError": "Kamera nije dostupna. Provjeri dopuštenje za kameru i radi li stranica preko HTTPS-a.",
+  "fallback": {
+    "documentary": [
+      "I ovdje promatramo okupljanje ove vrste, svaki primjerak otmjeniji od prethodnog. Priroda u svom najboljem izdanju.",
+      "Izvanredan primjerak naginje se naprijed, pogleda prikovanog za svijetleći zaslon, sa strpljenjem stvorenja koje zna da velike stvari traže vrijeme.",
+      "Primijetite tiho samopouzdanje ovog krda. Nitko nije paničario, iako su tako daleko od svojih prirodnih zaliha grickalica.",
+      "Kolonija se okupila oko izvora svjetla, kao što su to činili njihovi preci. Neke su stvari, čini se, vječne.",
+      "Jedan primjerak namješta držanje s golemim dostojanstvom. Ostali to bilježe. Pojavio se vođa.",
+      "U divljini vrlo malo stvorenja može odsjediti demo s takvom gracioznošću. A ipak, evo ih. Veličanstveno."
+    ],
+    "documentaryStill": [
+      "Krdo se nije pomaknulo. Ni trzaja. Pripovjedač, sa svoje strane, i dalje se nada.",
+      "Još ništa. Primjerci, čini se, štede energiju, možda za pljesak.",
+      "Prošlo je već neko vrijeme. Čovjek počinje sumnjati da krdo čeka da pripovjedač postane duhovit. Trudi se.",
+      "Potpuno mirovanje. Znanstvenici imaju riječ za ovo ponašanje. Ta riječ je „osuđivanje”.",
+      "Pripovjedač je vidio sobne biljke s više vidljive ambicije. Molim vas, netko, bilo tko, pomaknite prst.",
+      "Budite bez brige, krdo je potpuno sigurno. Samo odlučuje, s velikim dostojanstvom, da se ne miče."
+    ],
+    "funny": [
+      "U svijetu... gdje se jedna prostorija usudila gledati laptop... rađa se legenda. Za sve uzraste, jer je Super.",
+      "Ove jeseni... skupina briljantnih neznanaca... i web-kamera koja je vidjela previše. PUBLIKA. Sada u kinima.",
+      "Od studija koji vam je donio sjedenje... stiže najhrabriji nastavak. SJEDENJE 2: JOŠ SJEDIMO.",
+      "Kritičari je zovu „najbolje odjevenom publikom koju je laptop ikad snimio”. Uskoro baš u ovoj prostoriji.",
+      "Jedna prostorija. Nula eksplozija. Neograničena karizma. HACKATHON. Dva palca jako, jako gore.",
+      "Došli su zbog dema... ostali zbog besplatnih grickalica... SUDIONICI. Certificirano svježe."
+    ],
+    "funnyStill": [
+      "Ove zime... ne događa se apsolutno ništa. I oduzima dah. MRTVA PRIRODA: FILM.",
+      "Dvanaest junaka. Jedna prostorija. Nula pokreta. KIPOVI. 15+: Sumnjivo Statični.",
+      "Od redatelja filma ČEKANJE... stiže ČEKANJE 2: JOŠ ČEKAMO. Kritičari kažu da vas „prikuje za sjedalo”.",
+      "U svijetu gdje se nitko ne miče... jedan pripovjedač... moli. Molim vas. Bilo tko. Mahnite.",
+      "Uskoro: NAJDUŽA STANKA. Devedeset minuta. Jedna prostorija. Ni jedan treptaj.",
+      "Ovog ljeta... publika se suočava sa svojim najvećim izazovom... podići jednu ruku. GESTA. Sada u kinima."
+    ],
+    "descriptive": [
+      "Kamera je uključena. Uskoro ću ponovno opisati scenu.",
+      "Trenutačno nisam dobio opis. Drži kameru mirno i pokušat ću ponovno.",
+      "Još gledam. Novi opis stiže uskoro."
+    ],
+    "pumpkin": [
+      "He he he... dobro došao, hrabri posjetitelju! Kakav kostim. Doista bundevast.",
+      "Bu! Ha, jesam li te prepao? Tvoj kostim je sigurno prepao mene, u najboljem smislu.",
+      "Oho, priđi bliže, bliže... Obožavam goste sa stilom. Obasjavaš mi cijelo lice.",
+      "He he... odličan kostim za odličnu noć. Sav sjajim od zavisti.",
+      "Dobro došao, dobro došao! Zagrlio bih te, ali iznutra sam uglavnom šupalj. Divan kostim, ipak.",
+      "He he he... vidio sam večeras puno kostima, ali tvoj? Sablasno dobar."
+    ]
+  },
+  "noChange": "Nema promjene."
+}

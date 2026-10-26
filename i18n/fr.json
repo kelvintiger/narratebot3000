@@ -1,0 +1,217 @@
+{
+  "callNow": "APPELEZ MAINTENANT ! NOS STANDARDISTES ATTENDENT VOTRE APPEL !",
+  "tagline": "Votre monde, raconté.",
+  "order": "COMMANDEZ MAINTENANT",
+  "burst1": "VU À LA TÉLÉ !",
+  "burst2": "SEULEMENT 0,00 $ !",
+  "finePrint": "*Ce numéro n’existe pas. Merci de ne pas appeler. NarrateBot 3000 décline toute responsabilité pour les narrations trop justes. Les résultats peuvent varier. Piles non incluses.",
+  "ticker": [
+    "« Il a décrit mon chat à la perfection ! » – Une cliente comblée",
+    "« Je ne me suis jamais senti aussi vu. » – Un autre client",
+    "« Ma plante verte n’a jamais eu l’air aussi majestueuse. » – Un client, probablement",
+    "« J’ai ri. J’ai pleuré. Je suis resté parfaitement immobile. » – Le troupeau"
+  ],
+  "cleanSub": "Narration en direct de la scène filmée par votre caméra",
+  "cleanExplain": "Pointez votre caméra vers le monde et NarrateBot 3000 décrit à voix haute ce qu’il voit, dans votre langue.",
+  "start": "Démarrer",
+  "butWait": "MAIS CE N’EST PAS TOUT !",
+  "nowWith": "MAINTENANT AVEC LE MODE {mode} !",
+  "mode": {
+    "documentary": "DOCUMENTAIRE",
+    "funny": "HUMOUR",
+    "descriptive": "DESCRIPTIF",
+    "pumpkin": "CITROUILLE"
+  },
+  "modeClean": {
+    "documentary": "Style documentaire",
+    "funny": "Style bande-annonce",
+    "descriptive": "Mode descriptif",
+    "pumpkin": "Style citrouille"
+  },
+  "countdown": {
+    "in": "Narration dans {n}…",
+    "late": "Narration…",
+    "visitor": "En attente d’un visiteur…",
+    "sr": "Narration imminente"
+  },
+  "live": "EN DIRECT",
+  "specimen": "SPÉCIMEN",
+  "observation": "OBSERVATION",
+  "herdNone": "ACTIVITÉ DU TROUPEAU : AUCUNE",
+  "unchanged": "Scène inchangée",
+  "paused": "EN PAUSE",
+  "nowShowing": "À L’AFFICHE",
+  "btn": {
+    "describe": "Décrire maintenant",
+    "pause": "Pause",
+    "play": "Lecture",
+    "flip": "Changer de caméra",
+    "settings": "Paramètres",
+    "themeDark": "Thème sombre",
+    "themeLight": "Thème clair",
+    "accessible": "Vue accessible",
+    "infomercial": "Vue téléachat",
+    "narrLang": "Langue de narration",
+    "close": "Fermer",
+    "siteLang": "Langue du site"
+  },
+  "set": {
+    "title": "BON DE COMMANDE DU STANDARD",
+    "titleClean": "Paramètres",
+    "sub": "Nos standardistes attendent votre appel",
+    "useEleven": "Utiliser la voix ElevenLabs",
+    "charsSession": "Caractères envoyés pendant cette session",
+    "charsToday": "Caractères aujourd’hui (tous les utilisateurs)",
+    "narrToday": "Narrations aujourd’hui",
+    "config": "Configuration",
+    "stillness": "Sensibilité à l’immobilité",
+    "stillDebug": "Compteur d’immobilité / dernière différence",
+    "textSize": "Taille du texte",
+    "smaller": "Texte plus petit",
+    "larger": "Texte plus grand",
+    "customLang": "Langue de narration personnalisée",
+    "customLangHint": "Ajoutée à la liste des langues de narration (L)",
+    "music": "Volume de la musique",
+    "srMute": "Ne pas parler à voix haute (le lecteur d’écran lit le texte)",
+    "hideVideo": "Masquer la vidéo, n’afficher que le texte de la narration",
+    "hotkeys": "Raccourcis clavier",
+    "yes": "définie",
+    "no": "manquante",
+    "dflt": "par défaut",
+    "breakLen": "Pause entre les répliques",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Modes"
+    ],
+    [
+      "L",
+      "Langue de narration"
+    ],
+    [
+      "N",
+      "Décrire maintenant"
+    ],
+    [
+      "S",
+      "Immobilité activée/désactivée"
+    ],
+    [
+      "T",
+      "Thème"
+    ],
+    [
+      "A",
+      "Vue accessible"
+    ],
+    [
+      "Espace",
+      "Pause / lecture"
+    ],
+    [
+      "K",
+      "Paramètres"
+    ]
+  ],
+  "keys": {
+    "title": "APPORTEZ VOS PROPRES CLÉS",
+    "titleClean": "Utiliser vos propres clés",
+    "sub": "Nos standardistes ont besoin de vos clés pour prendre cet appel",
+    "intro": "NarrateBot 3000 fonctionne avec votre propre clé Gemini pour la narration et, si vous le souhaitez, une clé ElevenLabs pour les voix.",
+    "gemini": "Clé API Gemini",
+    "eleven": "Clé API ElevenLabs (facultative)",
+    "geminiHelp": "Comment obtenir une clé Gemini",
+    "elevenHelp": "Comment obtenir une clé ElevenLabs",
+    "getAt": "Obtenez une clé sur",
+    "newTab": " (s’ouvre dans un nouvel onglet)",
+    "geminiSteps": "Connectez-vous, choisissez Create API key, puis collez la clé ici.",
+    "geminiCost": "Google propose une offre gratuite avec des limites d’utilisation ; un usage plus intensif est facturé sur votre compte Google.",
+    "elevenSteps": "Créez une clé avec l’accès Text to Speech, puis collez-la ici.",
+    "elevenCost": "L’offre gratuite comprend un quota mensuel de caractères. Certaines voix nécessitent une offre payante ; si une voix n’est pas disponible, nous utilisons une voix standard, ou la voix de votre navigateur si vous laissez ce champ vide.",
+    "privacy": "Vos clés sont conservées dans un cookie chiffré dans ce navigateur et envoyées à notre serveur uniquement pour traiter vos requêtes. Nous ne les stockons ni ne les enregistrons jamais. Vous pouvez les supprimer à tout moment dans les Paramètres.",
+    "save": "Enregistrer et démarrer",
+    "saving": "Vérification…",
+    "cancel": "Annuler",
+    "needGemini": "Saisissez votre clé Gemini.",
+    "geminiInvalid": "Google n’a pas accepté cette clé Gemini. Vérifiez-la et réessayez.",
+    "format": "Cela ne ressemble pas à une clé API. Collez la clé entière, sans espaces.",
+    "formatEleven": "Cette clé ElevenLabs semble incorrecte. Collez la clé entière ou laissez le champ vide.",
+    "tooMany": "Trop de tentatives. Patientez 15 minutes.",
+    "failed": "Impossible de vérifier votre clé pour le moment. Réessayez dans un instant.",
+    "needKeys": "Pour continuer la narration, ajoutez vos propres clés.",
+    "quota": "Votre clé Gemini a atteint sa limite d’utilisation. Nouvel essai dans une minute…",
+    "badKey": "Google a refusé votre clé Gemini. Vérifiez-la ou collez-en une nouvelle.",
+    "removed": "Vos clés ont été supprimées. Ajoutez des clés pour continuer la narration."
+  },
+  "owner": {
+    "title": "ACCÈS PROPRIÉTAIRE",
+    "titleClean": "Accès propriétaire",
+    "label": "Mot de passe propriétaire",
+    "submit": "Déverrouiller",
+    "wrong": "Cela n’a pas fonctionné.",
+    "tooMany": "Trop de tentatives. Patientez 15 minutes.",
+    "done": "Accès propriétaire déverrouillé."
+  },
+  "access": {
+    "legend": "Accès",
+    "current": "Accès actuel :",
+    "owner": "Propriétaire",
+    "byok": "Vos propres clés",
+    "none": "Aucune clé",
+    "change": "Changer de clés",
+    "add": "Utiliser vos propres clés",
+    "remove": "Supprimer mes clés",
+    "lock": "Verrouiller l’accès propriétaire"
+  },
+  "camError": "Caméra indisponible. Vérifiez l’autorisation d’accès à la caméra et que la page est bien en HTTPS.",
+  "fallback": {
+    "documentary": [
+      "Nous observons ici un rassemblement de l’espèce, chaque individu plus distingué que le précédent. La nature dans toute sa splendeur.",
+      "Un spécimen remarquable se penche en avant, les yeux rivés sur l’écran lumineux, avec la patience d’une créature qui sait que les grandes choses prennent du temps.",
+      "Remarquez l’assurance tranquille de ce troupeau. Aucun ne panique, malgré l’éloignement de leur réserve naturelle de biscuits apéritifs.",
+      "La colonie s’est réunie autour de la source lumineuse, comme ses ancêtres avant elle. Certaines choses, semble-t-il, sont éternelles.",
+      "Un spécimen ajuste sa posture avec une dignité immense. Les autres en prennent note. Un chef est né.",
+      "À l’état sauvage, rares sont les créatures capables de supporter une démo avec autant de grâce. Et pourtant, les voici. Magnifiques."
+    ],
+    "documentaryStill": [
+      "Le troupeau n’a pas bougé. Pas un frémissement. Le narrateur, lui, garde espoir.",
+      "Toujours rien. Les spécimens semblent économiser leur énergie, peut-être pour les applaudissements.",
+      "Cela fait un moment. On commence à soupçonner que le troupeau attend que le narrateur soit drôle. Il fait de son mieux.",
+      "Immobilité totale. Les scientifiques ont un mot pour ce comportement. Ce mot est « juger ».",
+      "Le narrateur a déjà observé des plantes vertes plus ambitieuses. Par pitié, quelqu’un, n’importe qui, bougez un doigt.",
+      "Soyez rassurés, le troupeau va très bien. Il choisit simplement, avec une grande dignité, de ne pas bouger."
+    ],
+    "funny": [
+      "Dans un monde… où une salle a osé regarder un ordinateur portable… une légende est née. Déconseillé aux moins de rien du tout.",
+      "Cet automne… un groupe d’inconnus brillants… et une webcam qui en a trop vu. LE PUBLIC. Actuellement en salles.",
+      "Par le studio qui vous a offert « s’asseoir »… voici sa suite la plus audacieuse. ASSIS 2 : TOUJOURS ASSIS.",
+      "La critique est unanime : « le public le mieux habillé jamais filmé par un ordinateur portable ». Prochainement dans cette salle précise.",
+      "Une salle. Zéro explosion. Un charisme illimité. LE HACKATHON. Quatre étoiles, voire cinq.",
+      "Ils sont venus pour la démo… ils sont restés pour les petits fours gratuits… LES PARTICIPANTS. Le film de l’année."
+    ],
+    "funnyStill": [
+      "Cet hiver… il ne se passe absolument rien. Et c’est à couper le souffle. NATURE MORTE : LE FILM.",
+      "Douze héros. Une salle. Zéro mouvement. LES STATUES. Interdit aux moins de zéro mouvement.",
+      "Par le réalisateur de L’ATTENTE… voici L’ATTENTE 2 : ON ATTEND ENCORE. La critique : « un film qui vous cloue sur place ».",
+      "Dans un monde où personne ne bouge… un narrateur… supplie. Pitié. Quelqu’un. Faites coucou.",
+      "Prochainement : LA PLUS LONGUE PAUSE. Quatre-vingt-dix minutes. Une salle. Pas un seul clignement d’yeux.",
+      "Cet été… le public affronte son plus grand défi… lever une main. LE GESTE. Actuellement à l’affiche."
+    ],
+    "descriptive": [
+      "La caméra est allumée. Je décrirai de nouveau la scène dans un instant.",
+      "Je n’ai pas pu obtenir de description pour l’instant. Tenez la caméra immobile et je réessaierai.",
+      "Je regarde toujours. Une nouvelle description arrive bientôt."
+    ],
+    "pumpkin": [
+      "Hé hé hé… bienvenue, courageux visiteur ! Quel costume. Vraiment citrouillesque.",
+      "Bouh ! Ha, je t’ai fait peur ? Ton costume m’a fait peur aussi, dans le bon sens.",
+      "Oh oh, approche, approche… J’adore les invités qui ont du style. Tu illumines tout mon visage.",
+      "Hé hé… un beau costume pour une belle nuit. Je suis littéralement brûlant de jalousie.",
+      "Bienvenue, bienvenue ! Je te ferais bien un câlin, mais je suis plutôt creux à l’intérieur. Superbe costume, en tout cas.",
+      "Hé hé hé… j’ai vu beaucoup de costumes ce soir, mais le tien ? Épouvantablement réussi."
+    ]
+  },
+  "noChange": "Aucun changement."
+}

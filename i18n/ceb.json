@@ -1,0 +1,217 @@
+{
+  "callNow": "TAWAG NA KARON! NAGHULAT ANG MGA OPERATOR!",
+  "tagline": "Ang imong kalibotan, gisaysay.",
+  "order": "ORDER NA KARON",
+  "burst1": "SAMA SA NAKITA SA TV!",
+  "burst2": "$0.00 RA!",
+  "finePrint": "*Dili kini tinuod nga numero sa telepono. Palihug ayaw tawag. Ang NarrateBot 3000 walay tulubagon sa mga saysay nga sakto kaayo. Mahimong lahi ang resulta. Walay apil nga baterya.",
+  "ticker": [
+    "'Perpekto niyang gihulagway ang akong iring!' – Kontento nga Kustomer",
+    "'Wala pa gyud ko gibati nga nakita ingon niini.' – Kustomer Pud",
+    "'Wala pa gyud nahimong ingon ka harianon ang akong tanom sa balay.' – Kustomer, Siguro",
+    "'Nikatawa ko. Nihilak ko. Naglingkod ko nga hilom kaayo.' – Ang Panon"
+  ],
+  "cleanSub": "Live nga pagsaysay sa talan-awon gikan sa imong camera",
+  "cleanExplain": "Itutok ang imong camera sa kalibotan ug ang NarrateBot 3000 mohulagway og kusog sa iyang makita, sa imong pinulongan.",
+  "start": "Sugdi",
+  "butWait": "PERO HULAT... NAA PAY DUGANG!",
+  "nowWith": "KARON ADUNAY {mode} MODE!",
+  "mode": {
+    "documentary": "DOKUMENTARYO",
+    "funny": "KATAWANAN",
+    "descriptive": "PAGHULAGWAY",
+    "pumpkin": "KALABASA"
+  },
+  "modeClean": {
+    "documentary": "Estilo sa dokumentaryo",
+    "funny": "Estilo sa trailer sa salida",
+    "descriptive": "Mode sa paghulagway",
+    "pumpkin": "Estilo sa kalabasa"
+  },
+  "countdown": {
+    "in": "Mosaysay sulod sa {n}…",
+    "late": "Nagsaysay…",
+    "visitor": "Naghulat og bisita…",
+    "sr": "Mosaysay na hapit"
+  },
+  "live": "LIVE",
+  "specimen": "ESPESIMEN",
+  "observation": "OBSERBASYON",
+  "herdNone": "KALIHOKAN SA PANON: WALAY NAMATIKDAN",
+  "unchanged": "Walay kausaban sa talan-awon",
+  "paused": "GIHUNONG",
+  "nowShowing": "GIPASALIDA KARON",
+  "btn": {
+    "describe": "Ihulagway karon",
+    "pause": "Hunong",
+    "play": "Padagan",
+    "flip": "Balihon ang camera",
+    "settings": "Mga Setting",
+    "themeDark": "Ngitngit nga tema",
+    "themeLight": "Hayag nga tema",
+    "accessible": "Accessible nga view",
+    "infomercial": "Infomercial nga view",
+    "narrLang": "Pinulongan sa saysay",
+    "close": "Sirado",
+    "siteLang": "Pinulongan sa site"
+  },
+  "set": {
+    "title": "ORDER FORM SA CALL CENTER",
+    "titleClean": "Mga Setting",
+    "sub": "Naghulat ang mga operator",
+    "useEleven": "Gamita ang tingog sa ElevenLabs",
+    "charsSession": "Mga karakter nga gipadala niining sesyon",
+    "charsToday": "Mga karakter karon (tanang user)",
+    "narrToday": "Mga saysay karon",
+    "config": "Kumpigurasyon",
+    "stillness": "Pagkasensitibo sa kahilom",
+    "stillDebug": "Ihap sa kahilom / katapusang kalainan",
+    "textSize": "Gidak-on sa teksto",
+    "smaller": "Mas gamay nga teksto",
+    "larger": "Mas dako nga teksto",
+    "customLang": "Kaugalingong pinulongan sa saysay",
+    "customLangHint": "Idugang sa lista sa mga pinulongan sa saysay (L)",
+    "music": "Kakusog sa musika",
+    "srMute": "Ayaw pagsulti og kusog (ang screen reader ang mobasa sa teksto)",
+    "hideVideo": "Itago ang video, ipakita ra ang teksto sa saysay",
+    "hotkeys": "Mga hotkey",
+    "yes": "naa",
+    "no": "kulang",
+    "dflt": "naandan",
+    "breakLen": "Pahulay tali sa mga linya",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Mga mode"
+    ],
+    [
+      "L",
+      "Pinulongan sa saysay"
+    ],
+    [
+      "N",
+      "Ihulagway karon"
+    ],
+    [
+      "S",
+      "Kahilom on/off"
+    ],
+    [
+      "T",
+      "Tema"
+    ],
+    [
+      "A",
+      "Accessible nga view"
+    ],
+    [
+      "Espasyo",
+      "Hunong / padagan"
+    ],
+    [
+      "K",
+      "Mga Setting"
+    ]
+  ],
+  "keys": {
+    "title": "DALA SA IMONG KAUGALINGONG MGA KEY",
+    "titleClean": "Gamita ang imong kaugalingong mga key",
+    "sub": "Kinahanglan sa mga operator ang imong mga key aron madawat kini nga tawag",
+    "intro": "Ang NarrateBot 3000 modagan sa imong kaugalingong Gemini key para sa saysay ug, kung gusto nimo, usa ka ElevenLabs key para sa mga tingog.",
+    "gemini": "Gemini API key",
+    "eleven": "ElevenLabs API key (opsyonal)",
+    "geminiHelp": "Unsaon pagkuha og Gemini key",
+    "elevenHelp": "Unsaon pagkuha og ElevenLabs key",
+    "getAt": "Pagkuha og key sa",
+    "newTab": " (moabli sa bag-ong tab)",
+    "geminiSteps": "Mag-sign in, pilia ang Create API key, unya i-paste ang key dinhi.",
+    "geminiCost": "Ang Google nagtanyag og libre nga tier nga adunay limitasyon sa paggamit; ang mas bug-at nga paggamit isingil sa imong Google account.",
+    "elevenSteps": "Paghimo og key nga adunay access sa Text to Speech, unya i-paste kini dinhi.",
+    "elevenCost": "Ang libre nga plano naglakip og binulan nga alawans sa karakter. Ang ubang tingog nanginahanglan og bayad nga plano; kung dili magamit ang usa ka tingog mogamit mi og standard nga tingog, o ang tingog sa imong browser kung imong biyaan kini nga blangko.",
+    "privacy": "Ang imong mga key gitipigan sa usa ka encrypted nga cookie niini nga browser ug gipadala sa among server aron lamang buhaton ang imong mga hangyo. Dili gayud namo kini tipigan o i-log. Mahimo nimo kini tangtangon bisan kanus-a sa Mga Setting.",
+    "save": "I-save ug sugdi",
+    "saving": "Gisusi…",
+    "cancel": "Kanselahon",
+    "needGemini": "Isulod ang imong Gemini key.",
+    "geminiInvalid": "Wala gidawat sa Google kana nga Gemini key. Susiha ug sulayi pag-usab.",
+    "format": "Dili kana murag API key. I-paste ang tibuok key, walay mga espasyo.",
+    "formatEleven": "Murag dili husto kana nga ElevenLabs key. I-paste ang tibuok key, o biyai kini nga blangko.",
+    "tooMany": "Daghan kaayo nga pagsulay. Paghulat og 15 minutos.",
+    "failed": "Dili masusi ang imong key karon. Sulayi pag-usab sa makadiyot.",
+    "needKeys": "Aron magpadayon sa pagsaysay, idugang ang imong kaugalingong mga key.",
+    "quota": "Naabot na sa imong Gemini key ang limitasyon sa paggamit. Mosulay pag-usab sulod sa usa ka minuto…",
+    "badKey": "Gisalikway sa Google ang imong Gemini key. Susiha o i-paste ang bag-o.",
+    "removed": "Natangtang na ang imong mga key. Pagdugang og mga key aron magpadayon sa pagsaysay."
+  },
+  "owner": {
+    "title": "ACCESS SA TAG-IYA",
+    "titleClean": "Access sa tag-iya",
+    "label": "Password sa tag-iya",
+    "submit": "Ablihi",
+    "wrong": "Wala kana molihok.",
+    "tooMany": "Daghan kaayo nga pagsulay. Paghulat og 15 minutos.",
+    "done": "Naablihan na ang access sa tag-iya."
+  },
+  "access": {
+    "legend": "Pag-access",
+    "current": "Kasamtangang access:",
+    "owner": "Tag-iya",
+    "byok": "Imong kaugalingong mga key",
+    "none": "Walay key",
+    "change": "Usba ang mga key",
+    "add": "Gamita ang imong kaugalingong mga key",
+    "remove": "Tangtanga ang akong mga key",
+    "lock": "I-lock ang access sa tag-iya"
+  },
+  "camError": "Dili magamit ang camera. Susiha ang permiso sa camera ug nga ang panid naa sa HTTPS.",
+  "fallback": {
+    "documentary": [
+      "Ug dinhi atong makita ang usa ka panagtigom sa maong espisye, ang matag usa mas halangdon kaysa sa nauna. Tinuod gyud, ang kinaiyahan sa labing maayo niini.",
+      "Usa ka talagsaong espesimen ang miduko sa unahan, ang mga mata nakatutok sa nagsiga nga screen, uban sa pailub sa linalang nga nahibalo nga ang dagkong butang molungtad.",
+      "Tan-awa ang hilom nga kumpiyansa niini nga panon. Walay usa nga nataranta, bisan layo kaayo sila sa ilang natural nga tinubdan sa snacks.",
+      "Ang kolonya nagtapok palibot sa kahayag, sama sa gibuhat sa ilang mga katigulangan. Ang ubang butang, morag, walay katapusan.",
+      "Usa ka espesimen ang nag-ayo sa iyang lingkod uban sa dakong dignidad. Namatikdan sa uban. Usa ka lider ang mitumaw.",
+      "Sa ihalas nga kinaiyahan, gamay ra kaayo nga linalang ang makalingkod sa demo nga ingon ka grasya. Apan, ania sila. Kahibulongan."
+    ],
+    "documentaryStill": [
+      "Wala molihok ang panon. Bisan gamay nga kurog. Ang tigsaysay, sa iyang bahin, naglaum gihapon.",
+      "Wala gihapon. Ang mga espesimen morag nagtipig og kusog, basin para sa pagpakpak.",
+      "Dugay na karon. Mosugod na kag duda nga ang panon naghulat nga magpakatawa ang tigsaysay. Naningkamot siya.",
+      "Hingpit nga kahilom. Ang mga siyentipiko adunay pulong alang niini nga batasan. Ang pulong mao ang 'paghukom.'",
+      "Ang tigsaysay nakakita na og mga tanom sa balay nga mas adunay ambisyon. Palihug, bisan kinsa, ilihok ang usa ka tudlo.",
+      "Ayaw kabalaka, luwas kaayo ang panon. Mipili lang sila, uban sa dakong dignidad, nga dili molihok."
+    ],
+    "funny": [
+      "Sa usa ka kalibotan... diin usa ka kwarto ang nangahas pagtan-aw og laptop... usa ka alamat ang natawo. Rated PG: Pagka-Gwapo.",
+      "Karong ting-ani... usa ka grupo sa mga utokan nga estranghero... ug usa ka webcam nga daghan na kaayog nakita. ANG MGA TUMATAN-AW. Karon sa mga sinehan.",
+      "Gikan sa studio nga nagdala kaninyo sa paglingkod... moabot ang labing maisogon niining sequel. PAGLINGKOD 2: NAKALINGKOD GIHAPON.",
+      "Ang mga kritiko nag-ingon 'ang labing nindot og sinina nga panon nga na-film sa usa ka laptop.' Hapit na niining mismong kwarto.",
+      "Usa ka kwarto. Walay buto. Walay kinutuban nga karisma. ANG HACKATHON. Duha ka kumagko taas kaayo.",
+      "Mianhi sila para sa demo... nagpabilin para sa libre nga snacks... ANG MGA MITAMBONG. Sertipikadong presko."
+    ],
+    "funnyStill": [
+      "Karong tingtugnaw... wala gyuy nahitabo. Ug makapahingangha kini. HILOM NGA KINABUHI: ANG SALIDA.",
+      "Dose ka bayani. Usa ka kwarto. Walay lihok. ANG MGA ESTATWA. Rated S: Sus, Wala Molihok.",
+      "Gikan sa direktor sa PAGHULAT... moabot ang PAGHULAT 2: NAGHULAT GIHAPON. Matud sa mga kritiko 'makapalingkod gyud kini nimo.'",
+      "Sa kalibotan diin walay molihok... usa ka tigsaysay... nangamuyo. Palihug. Bisan kinsa. Kaway.",
+      "Hapit na: ANG LABING TAAS NGA PAHULAY. Kasiyaman ka minuto. Usa ka kwarto. Walay bisan usa ka pagpiyong.",
+      "Karong ting-init... giatubang sa mga tumatan-aw ang ilang labing dakong hagit... pagpataas og usa ka kamot. ANG LIHOK. Gipasalida na karon."
+    ],
+    "descriptive": [
+      "Naka-on ang camera. Ihulagway nako pag-usab ang talan-awon sa makadiyot.",
+      "Wala ko makakuha og paghulagway karon. Kupti og lig-on ang camera ug mosulay ko pag-usab.",
+      "Nagtan-aw pa gihapon. Hapit na moabot ang bag-ong paghulagway."
+    ],
+    "pumpkin": [
+      "He he he... maayong pag-abot, maisog nga bisita! Pagkanindot sa costume. Kalabasa-nindot gyud.",
+      "Boo! Ha, nahadlok ba ka? Ang imong sinina mismo ang nakahadlok nako, sa labing maayong paagi.",
+      "Oho, duol, duol... Ganahan ko og bisita nga adunay estilo. Gipasiga nimo ang tibuok nakong nawong.",
+      "He he... nindot nga costume para sa nindot nga gabii. Nagsiga ko sa kasina.",
+      "Maayong pag-abot, maayong pag-abot! Gakson unta tika, pero haw-ang man ko sa sulod. Nindot nga sinina, bitaw.",
+      "He he he... daghan na kog nakitang costume karong gabhiona, pero ang imo? Makalilisang ka-nindot."
+    ]
+  },
+  "noChange": "Walay kausaban."
+}

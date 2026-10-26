@@ -1,0 +1,217 @@
+{
+  "callNow": "ĊEMPEL ISSA! L-OPERATURI QED JISTENNEW!",
+  "tagline": "Id-dinja tiegħek, irrakkontata.",
+  "order": "ORDNA ISSA",
+  "burst1": "KIF RAJT FUQ IT-TV!",
+  "burst2": "$0.00 BISS!",
+  "finePrint": "*Dan mhuwiex numru tat-telefon veru. Jekk jogħġbok tċemplilx. NarrateBot 3000 mhuwiex responsabbli għal narrazzjonijiet li huma eżatti wisq. Ir-riżultati jistgħu jvarjaw. Il-batteriji mhumiex inklużi.",
+  "ticker": [
+    "“Iddeskriva l-qattus tiegħi perfettament!” – Klijent Sodisfatt",
+    "“Qatt ma ħassejtni daqshekk osservat.” – Klijent Ieħor",
+    "“Il-pjanta tad-dar tiegħi qatt ma nstemgħet daqshekk maestuża.” – Klijent, Probabbilment",
+    "“Dħakt. Bkejt. Qgħadt bilqiegħda ferm kwiet.” – Il-Merħla"
+  ],
+  "cleanSub": "Narrazzjoni tax-xena live mill-kamera tiegħek",
+  "cleanExplain": "Ipponta l-kamera lejn id-dinja u NarrateBot 3000 jiddeskrivi b'leħen għoli dak li jara, bil-lingwa tiegħek.",
+  "start": "Ibda",
+  "butWait": "IMMA STENNA... GĦAD HEMM AKTAR!",
+  "nowWith": "ISSA BIL-MODALITÀ: {mode}!",
+  "mode": {
+    "documentary": "DOKUMENTARJU",
+    "funny": "UMORISTIKU",
+    "descriptive": "DESKRITTIV",
+    "pumpkin": "QARGĦA"
+  },
+  "modeClean": {
+    "documentary": "Stil ta' dokumentarju",
+    "funny": "Stil ta' trejler ta' film",
+    "descriptive": "Modalità deskrittiva",
+    "pumpkin": "Stil ta' qargħa"
+  },
+  "countdown": {
+    "in": "Narrazzjoni fi {n}…",
+    "late": "Qed nirrakkonta…",
+    "visitor": "Qed nistenna viżitatur…",
+    "sr": "In-narrazzjoni dalwaqt tibda"
+  },
+  "live": "DIRETT",
+  "specimen": "KAMPJUN",
+  "observation": "OSSERVAZZJONI",
+  "herdNone": "ATTIVITÀ TAL-MERĦLA: XEJN",
+  "unchanged": "Ix-xena ma nbidlitx",
+  "paused": "PAWŻA",
+  "nowShowing": "ISSA FUQ L-ISKRIN",
+  "btn": {
+    "describe": "Iddeskrivi issa",
+    "pause": "Pawża",
+    "play": "Ħaddem",
+    "flip": "Dawwar il-kamera",
+    "settings": "Issettjar",
+    "themeDark": "Tema skura",
+    "themeLight": "Tema ċara",
+    "accessible": "Veduta aċċessibbli",
+    "infomercial": "Veduta tar-reklam",
+    "narrLang": "Lingwa tan-narrazzjoni",
+    "close": "Agħlaq",
+    "siteLang": "Lingwa tas-sit"
+  },
+  "set": {
+    "title": "FORMOLA TAL-ORDNI",
+    "titleClean": "Issettjar",
+    "sub": "L-operaturi qed jistennew",
+    "useEleven": "Uża leħen ElevenLabs",
+    "charsSession": "Karattri mibgħuta f'din is-sessjoni",
+    "charsToday": "Karattri llum (l-utenti kollha)",
+    "narrToday": "Narrazzjonijiet llum",
+    "config": "Konfigurazzjoni",
+    "stillness": "Sensittività għall-kwiet",
+    "stillDebug": "Għadd tal-kwiet / l-aħħar differenza",
+    "textSize": "Daqs tat-test",
+    "smaller": "Test iżgħar",
+    "larger": "Test ikbar",
+    "customLang": "Lingwa tan-narrazzjoni personalizzata",
+    "customLangHint": "Tiżdied mal-lista tal-lingwi tan-narrazzjoni (L)",
+    "music": "Volum tal-mużika",
+    "srMute": "Titkellimx b'leħen għoli (il-qarrej tal-iskrin jaqra t-test)",
+    "hideVideo": "Aħbi l-vidjo, uri biss it-test tan-narrazzjoni",
+    "hotkeys": "Tasti rapidi",
+    "yes": "issettjata",
+    "no": "nieqsa",
+    "dflt": "predefinit",
+    "breakLen": "Waqfa bejn il-linji",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Modalitajiet"
+    ],
+    [
+      "L",
+      "Lingwa tan-narrazzjoni"
+    ],
+    [
+      "N",
+      "Iddeskrivi issa"
+    ],
+    [
+      "S",
+      "Kwiet mixgħul/mitfi"
+    ],
+    [
+      "T",
+      "Tema"
+    ],
+    [
+      "A",
+      "Veduta aċċessibbli"
+    ],
+    [
+      "Spazju",
+      "Pawża / ħaddem"
+    ],
+    [
+      "K",
+      "Issettjar"
+    ]
+  ],
+  "keys": {
+    "title": "ĠIB IĊ-ĊWIEVET TIEGĦEK",
+    "titleClean": "Uża ċ-ċwievet tiegħek",
+    "sub": "L-operaturi jeħtieġu ċ-ċwievet tiegħek biex jieħdu din it-telefonata",
+    "intro": "NarrateBot 3000 jaħdem biċ-ċavetta Gemini tiegħek għan-narrazzjoni u, jekk trid, b'ċavetta ElevenLabs għall-ilħna.",
+    "gemini": "Ċavetta API ta' Gemini",
+    "eleven": "Ċavetta API ta' ElevenLabs (mhux obbligatorja)",
+    "geminiHelp": "Kif tikseb ċavetta Gemini",
+    "elevenHelp": "Kif tikseb ċavetta ElevenLabs",
+    "getAt": "Ikseb ċavetta minn",
+    "newTab": " (tinfetaħ f'tab ġdida)",
+    "geminiSteps": "Idħol, agħżel Create API key, imbagħad waħħal iċ-ċavetta hawn.",
+    "geminiCost": "Google joffri livell b'xejn b'limiti ta' użu; użu akbar jiġi ddebitat fuq il-kont Google tiegħek.",
+    "elevenSteps": "Oħloq ċavetta b'aċċess għal Text to Speech, imbagħad waħħalha hawn.",
+    "elevenCost": "Il-pjan b'xejn jinkludi kwota ta' karattri kull xahar. Xi ilħna jeħtieġu pjan bi ħlas; jekk leħen mhux disponibbli nużaw leħen standard, jew il-leħen tal-browser tiegħek jekk tħalli dan vojt.",
+    "privacy": "Iċ-ċwievet tiegħek jinżammu f'cookie kriptat f'dan il-browser u jintbagħtu lis-server tagħna biss biex isiru t-talbiet tiegħek. Qatt ma naħżnuhom u qatt ma nirreġistrawhom. Tista' tneħħihom meta trid fl-Issettjar.",
+    "save": "Salva u ibda",
+    "saving": "Qed niċċekkja…",
+    "cancel": "Ikkanċella",
+    "needGemini": "Daħħal iċ-ċavetta Gemini tiegħek.",
+    "geminiInvalid": "Google ma aċċettax dik iċ-ċavetta Gemini. Iċċekkjaha u erġa' pprova.",
+    "format": "Dik ma tidhirx ċavetta API. Waħħal iċ-ċavetta kollha, mingħajr spazji.",
+    "formatEleven": "Dik iċ-ċavetta ElevenLabs ma tidhirx korretta. Waħħal iċ-ċavetta kollha, jew ħalliha vojta.",
+    "tooMany": "Wisq tentattivi. Stenna 15-il minuta.",
+    "failed": "Ma stajniex niċċekkjaw iċ-ċavetta tiegħek bħalissa. Erġa' pprova ftit wara.",
+    "needKeys": "Biex tkompli n-narrazzjoni, żid iċ-ċwievet tiegħek.",
+    "quota": "Iċ-ċavetta Gemini tiegħek laħqet il-limitu tal-użu. Nerġgħu nippruvaw f'minuta…",
+    "badKey": "Google irrifjuta ċ-ċavetta Gemini tiegħek. Iċċekkjaha jew waħħal waħda ġdida.",
+    "removed": "Iċ-ċwievet tiegħek tneħħew. Żid iċ-ċwievet biex tkompli n-narrazzjoni."
+  },
+  "owner": {
+    "title": "AĊĊESS TAS-SID",
+    "titleClean": "Aċċess tas-sid",
+    "label": "Password tas-sid",
+    "submit": "Iftaħ",
+    "wrong": "Ma ħadimx.",
+    "tooMany": "Wisq tentattivi. Stenna 15-il minuta.",
+    "done": "Aċċess tas-sid miftuħ."
+  },
+  "access": {
+    "legend": "Aċċess",
+    "current": "Aċċess attwali:",
+    "owner": "Sid",
+    "byok": "Iċ-ċwievet tiegħek",
+    "none": "L-ebda ċavetta",
+    "change": "Ibdel iċ-ċwievet",
+    "add": "Uża ċ-ċwievet tiegħek",
+    "remove": "Neħħi ċ-ċwievet tiegħi",
+    "lock": "Sakkar l-aċċess tas-sid"
+  },
+  "camError": "Il-kamera mhix disponibbli. Iċċekkja l-permess tal-kamera u li l-paġna tkun fuq HTTPS.",
+  "fallback": {
+    "documentary": [
+      "U hawn naraw ġabra tal-ispeċi, kull wieħed aktar distint minn ta' qablu. Tassew, in-natura fl-aqwa tagħha.",
+      "Kampjun notevoli jitbaxxa 'l quddiem, għajnejh iffissati fuq l-iskrin jiddi, bil-paċenzja ta' kreatura li taf li l-affarijiet kbar jieħdu ż-żmien.",
+      "Innota l-kunfidenza kwieta ta' din il-merħla. Ħadd ma ppanikja, minkejja li huma tant 'il bogħod mill-provvista naturali tagħhom ta' snacks.",
+      "Il-kolonja nġabret madwar is-sors tad-dawl, kif għamlu l-antenati tagħhom qabilhom. Xi affarijiet, jidher, huma eterni.",
+      "Kampjun wieħed jirranġa l-qagħda tiegħu b'dinjità enormi. Il-oħrajn jinnutaw. Tfaċċa mexxej.",
+      "Fis-selvaġġ, ftit li xejn kreaturi jistgħu jogħqdu matul demo bi grazzja bħal din. U madankollu, hawn huma. Maestuż."
+    ],
+    "documentaryStill": [
+      "Il-merħla ma ċċaqilqitx. Lanqas ċaqliqa waħda. In-narratur, min-naħa tiegħu, għadu ottimist.",
+      "Għadu xejn. Il-kampjuni jidhru li qed jiffrankaw l-enerġija, forsi għall-applaws.",
+      "Għaddiet ftit ħin issa. Wieħed jibda jissuspetta li l-merħla qed tistenna lin-narratur ikun umoristiku. Qed jipprova.",
+      "Kwiet totali. Ix-xjenzati għandhom kelma għal din l-imġiba. Il-kelma hija “ġudizzju”.",
+      "In-narratur osserva pjanti tad-dar b'aktar ambizzjoni viżibbli. Jekk jogħġbok, xi ħadd, kwalunkwe ħadd, ċaqlaq saba'.",
+      "Tinkwetax, il-merħla hija kompletament sigura. Sempliċement qed jagħżlu, b'dinjità kbira, li ma jiċċaqilqux."
+    ],
+    "funny": [
+      "F'dinja... fejn kamra waħda ażżardat tara laptop... titwieled leġġenda. Klassifikat PG: Pjuttost Ġenjali.",
+      "Dal-ħarifa... grupp ta' barranin brillanti... u webcam li rat wisq. L-UDJENZA. Issa fiċ-ċinemas.",
+      "Mill-istudjo li ġabilek il-qagħda bilqiegħda... jasal l-aktar sequel kuraġġuż tiegħu. BILQIEGĦDA 2: GĦADNA BILQIEGĦDA.",
+      "Il-kritiċi qed isejħulha “l-aktar folla liebsa sew li qatt iffilmja laptop”. Dalwaqt f'din il-kamra eżatta.",
+      "Kamra waħda. Żero splużjonijiet. Kariżma bla limitu. IL-HACKATHON. Żewġ subgħajn il-kbar 'il fuq, għoljin ħafna.",
+      "Ġew għad-demo... baqgħu għas-snacks b'xejn... IL-PARTEĊIPANTI. Iċċertifikat frisk."
+    ],
+    "funnyStill": [
+      "Dax-xitwa... ma jiġri assolutament xejn. U jeħodlok il-nifs. NATURA MEJTA: IL-FILM.",
+      "Tnax-il eroj. Kamra waħda. Żero moviment. L-ISTATWI. Klassifikat S: Suspettużament Statiċi.",
+      "Mid-direttur ta' L-ISTENNIJA... jasal L-ISTENNIJA 2: GĦADNA NISTENNEW. Il-kritiċi jgħidu li “iżommok imwaħħal mas-siġġu”.",
+      "F'dinja fejn ħadd ma jiċċaqlaq... narratur wieħed... jitlob. Jekk jogħġbok. Xi ħadd. Xejjer idek.",
+      "Dalwaqt: L-ITWAL PAWŻA. Disgħin minuta. Kamra waħda. Lanqas teptipa waħda.",
+      "Das-sajf... l-udjenza tiffaċċja l-akbar sfida tagħha s'issa... li terfa' id waħda. IL-ĠEST. Issa fiċ-ċinemas."
+    ],
+    "descriptive": [
+      "Il-kamera mixgħula. Ser niddeskrivi x-xena mill-ġdid fi ftit mumenti.",
+      "Ma stajtx nikseb deskrizzjoni issa. Żomm il-kamera wieqfa u nerġa' nipprova.",
+      "Għadni nħares. Deskrizzjoni ġdida ġejja dalwaqt."
+    ],
+    "pumpkin": [
+      "He he he... merħba, viżitatur kuraġġuż! X'kostum. Sabiħ daqs qargħa ħamra!",
+      "Bu! Ha, beżżajtek? Il-kostum tiegħek żgur beżżagħni lili, bl-aħjar mod.",
+      "Oho, ersaq eqreb, ersaq eqreb... Inħobb mistieden bi stil. Iddawwalli wiċċi kollu.",
+      "He he... kostum sabiħ għal lejl sabiħ. Qed niddi bl-għira.",
+      "Merħba, merħba! Kont inħaddnek, imma ġewwa jien l-aktar vojt. Kostum sabiħ, xorta waħda.",
+      "He he he... rajt ħafna kostumi illejla, imma tiegħek? Spettrakulari."
+    ]
+  },
+  "noChange": "L-ebda bidla."
+}

@@ -1,0 +1,217 @@
+{
+  "callNow": "SOITA HETI! PUHELINPALVELU PÄIVYSTÄÄ!",
+  "tagline": "Maailmasi, kerrottuna.",
+  "order": "TILAA HETI",
+  "burst1": "TUTTU TV:STÄ!",
+  "burst2": "VAIN 0,00 €!",
+  "finePrint": "*Ei oikea puhelinnumero. Älä soita. NarrateBot 3000 ei vastaa liian osuvista kerronnoista. Tulokset voivat vaihdella. Ei sisällä paristoja.",
+  "ticker": [
+    "”Se kuvaili kissani täydellisesti!” – Tyytyväinen asiakas",
+    "”En ole koskaan tuntenut itseäni näin nähdyksi.” – Myös asiakas",
+    "”Huonekasvini ei ole koskaan kuulostanut näin majesteettiselta.” – Asiakas, luultavasti",
+    "”Nauroin. Itkin. Istuin aivan liikkumatta.” – Lauma"
+  ],
+  "cleanSub": "Kameran näkymän kerronta reaaliajassa",
+  "cleanExplain": "Osoita kameralla maailmaa, niin NarrateBot 3000 kertoo ääneen, mitä se näkee, omalla kielelläsi.",
+  "start": "Aloita",
+  "butWait": "MUTTA HETKINEN... TÄSSÄ EI VIELÄ KAIKKI!",
+  "nowWith": "NYT {mode}-TILALLA!",
+  "mode": {
+    "documentary": "DOKUMENTTI",
+    "funny": "HAUSKA",
+    "descriptive": "KUVAILEVA",
+    "pumpkin": "KURPITSA"
+  },
+  "modeClean": {
+    "documentary": "Dokumenttityyli",
+    "funny": "Elokuvatraileri",
+    "descriptive": "Kuvaileva tila",
+    "pumpkin": "Kurpitsatyyli"
+  },
+  "countdown": {
+    "in": "Kerronta alkaa: {n}…",
+    "late": "Kerrotaan…",
+    "visitor": "Odotetaan vierailijaa…",
+    "sr": "Kerronta alkaa pian"
+  },
+  "live": "SUORA",
+  "specimen": "YKSILÖ",
+  "observation": "HAVAINTO",
+  "herdNone": "LAUMAN AKTIIVISUUS: EI HAVAITTU",
+  "unchanged": "Näkymä ennallaan",
+  "paused": "TAUOLLA",
+  "nowShowing": "NYT OHJELMASSA",
+  "btn": {
+    "describe": "Kuvaile nyt",
+    "pause": "Tauko",
+    "play": "Toista",
+    "flip": "Vaihda kamera",
+    "settings": "Asetukset",
+    "themeDark": "Tumma teema",
+    "themeLight": "Vaalea teema",
+    "accessible": "Saavutettava näkymä",
+    "infomercial": "Mainosnäkymä",
+    "narrLang": "Kerronnan kieli",
+    "close": "Sulje",
+    "siteLang": "Sivuston kieli"
+  },
+  "set": {
+    "title": "PUHELINPALVELUN TILAUSLOMAKE",
+    "titleClean": "Asetukset",
+    "sub": "Puhelinpalvelu päivystää",
+    "useEleven": "Käytä ElevenLabs-ääntä",
+    "charsSession": "Merkkejä lähetetty tällä istunnolla",
+    "charsToday": "Merkkejä tänään (kaikki käyttäjät)",
+    "narrToday": "Kerrontoja tänään",
+    "config": "Määritykset",
+    "stillness": "Liikkumattomuuden herkkyys",
+    "stillDebug": "Paikallaanolo / viimeisin ero",
+    "textSize": "Tekstin koko",
+    "smaller": "Pienempi teksti",
+    "larger": "Suurempi teksti",
+    "customLang": "Oma kerronnan kieli",
+    "customLangHint": "Lisätään kerronnan kielten luetteloon (L)",
+    "music": "Musiikin äänenvoimakkuus",
+    "srMute": "Älä puhu ääneen (ruudunlukija lukee tekstin)",
+    "hideVideo": "Piilota video, näytä vain kerronnan teksti",
+    "hotkeys": "Pikanäppäimet",
+    "yes": "asetettu",
+    "no": "puuttuu",
+    "dflt": "oletus",
+    "breakLen": "Tauko lauseiden välillä",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Tilat"
+    ],
+    [
+      "L",
+      "Kerronnan kieli"
+    ],
+    [
+      "N",
+      "Kuvaile nyt"
+    ],
+    [
+      "S",
+      "Liikkumattomuus päälle/pois"
+    ],
+    [
+      "T",
+      "Teema"
+    ],
+    [
+      "A",
+      "Saavutettava näkymä"
+    ],
+    [
+      "Space",
+      "Tauko / toista"
+    ],
+    [
+      "K",
+      "Asetukset"
+    ]
+  ],
+  "keys": {
+    "title": "TUO OMAT AVAIMESI",
+    "titleClean": "Käytä omia avaimia",
+    "sub": "Puhelinpalvelu tarvitsee avaimesi puhelun vastaanottamiseen",
+    "intro": "NarrateBot 3000 toimii omalla Gemini-avaimellasi kerrontaa varten ja halutessasi ElevenLabs-avaimella ääniä varten.",
+    "gemini": "Gemini API -avain",
+    "eleven": "ElevenLabs API -avain (valinnainen)",
+    "geminiHelp": "Näin saat Gemini-avaimen",
+    "elevenHelp": "Näin saat ElevenLabs-avaimen",
+    "getAt": "Hanki avain osoitteesta",
+    "newTab": " (avautuu uuteen välilehteen)",
+    "geminiSteps": "Kirjaudu sisään, valitse Create API key ja liitä avain tähän.",
+    "geminiCost": "Google tarjoaa ilmaistason käyttörajoituksin; runsaampi käyttö laskutetaan Google-tililtäsi.",
+    "elevenSteps": "Luo avain, jolla on Text to Speech -oikeus, ja liitä se tähän.",
+    "elevenCost": "Ilmaispaketti sisältää kuukausittaisen merkkikiintiön. Jotkin äänet vaativat maksullisen paketin; jos ääni ei ole saatavilla, käytämme vakioääntä tai selaimesi ääntä, jos jätät kentän tyhjäksi.",
+    "privacy": "Avaimesi säilytetään salatussa evästeessä tässä selaimessa, ja ne lähetetään palvelimellemme vain pyyntöjesi suorittamiseksi. Emme koskaan tallenna tai kirjaa niitä. Voit poistaa ne milloin tahansa Asetuksista.",
+    "save": "Tallenna ja aloita",
+    "saving": "Tarkistetaan…",
+    "cancel": "Peruuta",
+    "needGemini": "Anna Gemini-avaimesi.",
+    "geminiInvalid": "Google ei hyväksynyt tätä Gemini-avainta. Tarkista se ja yritä uudelleen.",
+    "format": "Tämä ei näytä API-avaimelta. Liitä koko avain ilman välilyöntejä.",
+    "formatEleven": "ElevenLabs-avain ei näytä oikealta. Liitä koko avain tai jätä kenttä tyhjäksi.",
+    "tooMany": "Liian monta yritystä. Odota 15 minuuttia.",
+    "failed": "Avainta ei voitu tarkistaa juuri nyt. Yritä hetken päästä uudelleen.",
+    "needKeys": "Lisää omat avaimesi, jotta kerronta jatkuu.",
+    "quota": "Gemini-avaimesi saavutti käyttörajansa. Yritetään uudelleen minuutin päästä…",
+    "badKey": "Google hylkäsi Gemini-avaimesi. Tarkista se tai liitä uusi.",
+    "removed": "Avaimesi poistettiin. Lisää avaimet, jotta kerronta jatkuu."
+  },
+  "owner": {
+    "title": "OMISTAJAN PÄÄSY",
+    "titleClean": "Omistajan pääsy",
+    "label": "Omistajan salasana",
+    "submit": "Avaa",
+    "wrong": "Se ei toiminut.",
+    "tooMany": "Liian monta yritystä. Odota 15 minuuttia.",
+    "done": "Omistajan pääsy avattu."
+  },
+  "access": {
+    "legend": "Pääsy",
+    "current": "Nykyinen pääsy:",
+    "owner": "Omistaja",
+    "byok": "Omat avaimet",
+    "none": "Ei avaimia",
+    "change": "Vaihda avaimet",
+    "add": "Käytä omia avaimia",
+    "remove": "Poista avaimeni",
+    "lock": "Lukitse omistajan pääsy"
+  },
+  "camError": "Kamera ei ole käytettävissä. Tarkista kameran käyttöoikeus ja että sivu toimii HTTPS-yhteydellä.",
+  "fallback": {
+    "documentary": [
+      "Ja tässä näemme lajin kokoontumisen, jokainen yksilö edellistä arvokkaampi. Luonto parhaimmillaan.",
+      "Huomattava yksilö nojaa eteenpäin katse naulittuna hehkuvaan ruutuun, kärsivällisenä kuin olento, joka tietää suurten asioiden vievän aikaa.",
+      "Pankaa merkille tämän lauman hiljainen itsevarmuus. Kukaan ei ole panikoinut, vaikka luonnolliset välipalavarastot ovat kaukana.",
+      "Yhdyskunta on kokoontunut valonlähteen ympärille, kuten sen esi-isät ennen. Jotkin asiat näyttävät olevan ikuisia.",
+      "Yksi yksilö korjaa ryhtiään valtavan arvokkaasti. Muut panevat merkille. Johtaja on syntynyt.",
+      "Luonnossa harva olento jaksaa istua demon läpi näin sulavasti. Ja silti, tässä he ovat. Upeaa."
+    ],
+    "documentaryStill": [
+      "Lauma ei ole liikahtanut. Ei nytkähdystäkään. Kertoja puolestaan on yhä toiveikas.",
+      "Ei vieläkään mitään. Yksilöt näyttävät säästävän energiaa, ehkä aplodeja varten.",
+      "Aikaa on kulunut jo tovi. Alkaa vaikuttaa siltä, että lauma odottaa kertojan olevan hauska. Hän yrittää.",
+      "Täydellinen liikkumattomuus. Tutkijoilla on tälle käytökselle sana. Se sana on ”arvostelu”.",
+      "Kertoja on nähnyt huonekasveja, joilla on enemmän kunnianhimoa. Olkaa kilttejä, joku, kuka tahansa, liikauttakaa sormea.",
+      "Olkaa huoletta, lauma on täysin turvassa. Se vain päättää, suurella arvokkuudella, olla liikkumatta."
+    ],
+    "funny": [
+      "Maailmassa... jossa yksi huone uskalsi katsoa läppäriä... syntyy legenda. Sallittu kaikille, koska Kelpaa.",
+      "Tänä syksynä... joukko loistavia tuntemattomia... ja webkamera, joka on nähnyt liikaa. YLEISÖ. Nyt elokuvateattereissa.",
+      "Studiolta, joka toi sinulle istumisen... tulee sen rohkein jatko-osa. ISTUMINEN 2: YHÄ ISTUALLAAN.",
+      "Kriitikot kutsuvat sitä ”läppärin koskaan kuvaamaksi tyylikkäimmäksi yleisöksi”. Pian juuri tässä huoneessa.",
+      "Yksi huone. Nolla räjähdystä. Rajaton karisma. HACKATHON. Kaksi peukkua korkealle, tosi korkealle.",
+      "He tulivat demon takia... he jäivät ilmaisten välipalojen takia... OSALLISTUJAT. Sertifioidusti tuore."
+    ],
+    "funnyStill": [
+      "Tänä talvena... ei tapahdu yhtikäs mitään. Ja se on henkeäsalpaavaa. ASETELMA: ELOKUVA.",
+      "Kaksitoista sankaria. Yksi huone. Nolla liikettä. PATSAAT. K-15: Kivettyneille.",
+      "ODOTUKSEN ohjaajalta... tulee ODOTUS 2: YHÄ ODOTETAAN. Kriitikoiden mukaan se ”jää istumaan”.",
+      "Maailmassa, jossa kukaan ei liiku... yksi kertoja... anelee. Pyydän. Kuka tahansa. Vilkuttakaa.",
+      "Tulossa: PISIN TAUKO. Yhdeksänkymmentä minuuttia. Yksi huone. Ei yhtäkään räpäystä.",
+      "Tänä kesänä... yleisö kohtaa suurimman haasteensa... yhden käden nostamisen. ELE. Nyt teattereissa."
+    ],
+    "descriptive": [
+      "Kamera on päällä. Kuvailen näkymän uudelleen hetken kuluttua.",
+      "En saanut kuvausta juuri nyt. Pidä kamera vakaana, niin yritän uudelleen.",
+      "Katson yhä. Uusi kuvaus tulee pian."
+    ],
+    "pumpkin": [
+      "Hehheh heh... tervetuloa, rohkea vieras! Mikä asu. Suorastaan kurpitsamainen.",
+      "Pöö! Hah, säikähditkö? Asusi ainakin säikäytti minut, parhaalla tavalla.",
+      "Ohoo, tule lähemmäs, lähemmäs... Rakastan tyylikkäitä vieraita. Saat koko naamani loistamaan.",
+      "Hehheh... hieno asu hienoon iltaan. Hehkun pelkästä kateudesta.",
+      "Tervetuloa, tervetuloa! Halaisin sinua, mutta olen sisältä enimmäkseen ontto. Ihana asu silti.",
+      "Hehheh heh... olen nähnyt tänä iltana monta asua, mutta sinun? Kummitus-tastinen."
+    ]
+  },
+  "noChange": "Ei muutosta."
+}

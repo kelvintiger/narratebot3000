@@ -1,0 +1,217 @@
+{
+  "callNow": "TUMAWAG NA NGAYON! NAGHIHINTAY ANG AMING MGA OPERATOR!",
+  "tagline": "Ang mundo mo, isinasalaysay.",
+  "order": "UMORDER NA",
+  "burst1": "NAPANOOD SA TV!",
+  "burst2": "$0.00 LANG!",
+  "finePrint": "*Hindi totoong numero ng telepono. Pakiusap, huwag tumawag. Walang pananagutan ang NarrateBot 3000 sa mga salaysay na sobrang tumpak. Maaaring mag-iba ang resulta. Hindi kasama ang baterya.",
+  "ticker": [
+    "“Perpekto niyang inilarawan ang pusa ko!” – Kuntentong Customer",
+    "“Ngayon lang ako naramdamang talagang nakikita.” – Customer Din",
+    "“Hindi pa naging ganito kamaharlika ang tunog ng halaman ko.” – Customer, Siguro",
+    "“Tumawa ako. Umiyak ako. Nakaupo lang ako nang hindi gumagalaw.” – Ang Kawan"
+  ],
+  "cleanSub": "Live na paglalarawan ng eksena mula sa iyong camera",
+  "cleanExplain": "Itutok ang camera mo sa paligid at ilalarawan nang malakas ng NarrateBot 3000 ang nakikita nito, sa wika mo.",
+  "start": "Simulan",
+  "butWait": "PERO TEKA... MAY HIGIT PA!",
+  "nowWith": "NGAYON MAY {mode} MODE NA!",
+  "mode": {
+    "documentary": "DOKUMENTARYO",
+    "funny": "KATATAWANAN",
+    "descriptive": "PAGLALARAWAN",
+    "pumpkin": "KALABASA"
+  },
+  "modeClean": {
+    "documentary": "Istilong dokumentaryo",
+    "funny": "Istilong trailer ng pelikula",
+    "descriptive": "Mode ng paglalarawan",
+    "pumpkin": "Istilong kalabasa"
+  },
+  "countdown": {
+    "in": "Magsasalaysay sa loob ng {n}…",
+    "late": "Nagsasalaysay…",
+    "visitor": "Naghihintay ng bisita…",
+    "sr": "Magsisimula na ang salaysay"
+  },
+  "live": "LIVE",
+  "specimen": "ISPESIMEN",
+  "observation": "OBSERBASYON",
+  "herdNone": "AKTIBIDAD NG KAWAN: WALANG NAKITA",
+  "unchanged": "Walang nagbago sa eksena",
+  "paused": "NAKA-PAUSE",
+  "nowShowing": "NGAYONG PALABAS",
+  "btn": {
+    "describe": "Ilarawan ngayon",
+    "pause": "I-pause",
+    "play": "I-play",
+    "flip": "Palitan ang camera",
+    "settings": "Mga setting",
+    "themeDark": "Madilim na tema",
+    "themeLight": "Maliwanag na tema",
+    "accessible": "Accessible na view",
+    "infomercial": "Infomercial na view",
+    "narrLang": "Wika ng salaysay",
+    "close": "Isara",
+    "siteLang": "Wika ng site"
+  },
+  "set": {
+    "title": "ORDER FORM NG CALL CENTER",
+    "titleClean": "Mga setting",
+    "sub": "Naghihintay ang aming mga operator",
+    "useEleven": "Gamitin ang boses ng ElevenLabs",
+    "charsSession": "Mga karakter na naipadala ngayong session",
+    "charsToday": "Mga karakter ngayong araw (lahat ng user)",
+    "narrToday": "Mga salaysay ngayong araw",
+    "config": "Configuration",
+    "stillness": "Sensitivity sa hindi paggalaw",
+    "stillDebug": "Bilang ng hindi paggalaw / huling pagkakaiba",
+    "textSize": "Laki ng teksto",
+    "smaller": "Mas maliit na teksto",
+    "larger": "Mas malaking teksto",
+    "customLang": "Custom na wika ng salaysay",
+    "customLangHint": "Idinadagdag sa listahan ng mga wika ng salaysay (L)",
+    "music": "Lakas ng musika",
+    "srMute": "Huwag magsalita nang malakas (babasahin ng screen reader ang teksto)",
+    "hideVideo": "Itago ang video, ipakita lang ang teksto ng salaysay",
+    "hotkeys": "Mga hotkey",
+    "yes": "nakatakda",
+    "no": "wala",
+    "dflt": "default",
+    "breakLen": "Pagitan ng bawat linya",
+    "breakValue": "{n} seg"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Mga mode"
+    ],
+    [
+      "L",
+      "Wika ng salaysay"
+    ],
+    [
+      "N",
+      "Ilarawan ngayon"
+    ],
+    [
+      "S",
+      "Hindi paggalaw on/off"
+    ],
+    [
+      "T",
+      "Tema"
+    ],
+    [
+      "A",
+      "Accessible na view"
+    ],
+    [
+      "Space",
+      "I-pause / i-play"
+    ],
+    [
+      "K",
+      "Mga setting"
+    ]
+  ],
+  "keys": {
+    "title": "DALHIN ANG SARILI MONG MGA KEY",
+    "titleClean": "Gamitin ang sarili mong mga key",
+    "sub": "Kailangan ng mga operator ang mga key mo para sagutin ang tawag na ito",
+    "intro": "Gumagana ang NarrateBot 3000 gamit ang sarili mong Gemini key para sa salaysay at, kung gusto mo, isang ElevenLabs key para sa mga boses.",
+    "gemini": "Gemini API key",
+    "eleven": "ElevenLabs API key (opsyonal)",
+    "geminiHelp": "Paano kumuha ng Gemini key",
+    "elevenHelp": "Paano kumuha ng ElevenLabs key",
+    "getAt": "Kumuha ng key sa",
+    "newTab": " (magbubukas sa bagong tab)",
+    "geminiSteps": "Mag-sign in, piliin ang Create API key, at i-paste dito ang key.",
+    "geminiCost": "May libreng tier ang Google na may limitasyon sa paggamit; sinisingil sa Google account mo ang mas mabigat na paggamit.",
+    "elevenSteps": "Gumawa ng key na may access sa Text to Speech, at i-paste ito dito.",
+    "elevenCost": "May buwanang allowance ng karakter ang libreng plan. May ilang boses na nangangailangan ng bayad na plan; kung hindi available ang isang boses, gagamit kami ng karaniwang boses, o ng boses ng browser mo kung iiwan mo itong blangko.",
+    "privacy": "Itinatago ang mga key mo sa isang naka-encrypt na cookie sa browser na ito at ipinapadala lang sa aming server para gawin ang mga request mo. Hindi namin kailanman iniimbak o nilo-log ang mga ito. Maaari mong alisin ang mga ito anumang oras sa Mga setting.",
+    "save": "I-save at simulan",
+    "saving": "Sinusuri…",
+    "cancel": "Kanselahin",
+    "needGemini": "Ilagay ang Gemini key mo.",
+    "geminiInvalid": "Hindi tinanggap ng Google ang Gemini key na iyon. Suriin ito at subukang muli.",
+    "format": "Mukhang hindi iyan API key. I-paste ang buong key, nang walang espasyo.",
+    "formatEleven": "Mukhang mali ang ElevenLabs key na iyan. I-paste ang buong key, o iwan itong blangko.",
+    "tooMany": "Masyadong maraming pagsubok. Maghintay ng 15 minuto.",
+    "failed": "Hindi masuri ang key mo ngayon. Subukang muli maya-maya.",
+    "needKeys": "Para magpatuloy ang salaysay, idagdag ang sarili mong mga key.",
+    "quota": "Naabot na ng Gemini key mo ang limitasyon sa paggamit. Susubukang muli sa loob ng isang minuto…",
+    "badKey": "Tinanggihan ng Google ang Gemini key mo. Suriin ito o mag-paste ng bago.",
+    "removed": "Inalis na ang mga key mo. Magdagdag ng mga key para magpatuloy ang salaysay."
+  },
+  "owner": {
+    "title": "ACCESS NG MAY-ARI",
+    "titleClean": "Access ng may-ari",
+    "label": "Password ng may-ari",
+    "submit": "I-unlock",
+    "wrong": "Hindi gumana iyon.",
+    "tooMany": "Masyadong maraming pagsubok. Maghintay ng 15 minuto.",
+    "done": "Na-unlock ang access ng may-ari."
+  },
+  "access": {
+    "legend": "Access",
+    "current": "Kasalukuyang access:",
+    "owner": "May-ari",
+    "byok": "Sarili mong mga key",
+    "none": "Walang key",
+    "change": "Palitan ang mga key",
+    "add": "Gamitin ang sarili mong mga key",
+    "remove": "Alisin ang mga key ko",
+    "lock": "I-lock ang access ng may-ari"
+  },
+  "camError": "Hindi available ang camera. Suriin ang pahintulot sa camera at tiyaking naka-HTTPS ang page.",
+  "fallback": {
+    "documentary": [
+      "At dito ay pinagmamasdan natin ang isang pagtitipon ng species, bawat isa ay mas marangal kaysa sa nauna. Tunay ngang kalikasan sa pinakamaganda nito.",
+      "Isang kahanga-hangang ispesimen ang yumuyuko pasulong, nakatitig sa nagliliwanag na screen, taglay ang tiyaga ng nilalang na alam na ang magagandang bagay ay pinaghihintay.",
+      "Pansinin ang tahimik na kumpiyansa ng kawang ito. Walang nagpa-panic, kahit malayo sila sa kanilang likas na imbakan ng chichirya.",
+      "Nagtipon ang kolonya sa paligid ng pinagmumulan ng liwanag, gaya ng kanilang mga ninuno. Tila may mga bagay talagang walang hanggan.",
+      "Inayos ng isang ispesimen ang kanyang tindig nang may napakalaking dignidad. Napansin ito ng iba. May bagong lider na.",
+      "Sa ligaw, kakaunti lang ang nilalang na kayang tapusin ang isang demo nang ganito kagalang. Pero heto sila. Kamangha-mangha."
+    ],
+    "documentaryStill": [
+      "Hindi gumalaw ang kawan. Kahit kibot, wala. Ang tagapagsalaysay naman ay umaasa pa rin.",
+      "Wala pa rin. Mukhang nagtitipid ng enerhiya ang mga ispesimen, baka para sa palakpakan.",
+      "Matagal-tagal na rin. Nagsisimula nang maghinala na hinihintay ng kawan na maging nakakatawa ang tagapagsalaysay. Sinusubukan niya.",
+      "Lubos na katahimikan. May salita ang mga siyentipiko para sa ugaling ito. Ang salita ay “panghuhusga.”",
+      "Nakakita na ang tagapagsalaysay ng mga halamang mas ambisyoso pa. Pakiusap, kahit sino, igalaw ang isang daliri.",
+      "Huwag mag-alala, ligtas na ligtas ang kawan. Pinipili lang nila, nang may malaking dignidad, na huwag gumalaw."
+    ],
+    "funny": [
+      "Sa isang mundo... kung saan may isang kuwartong nangahas tumitig sa laptop... isang alamat ang isinilang. Rated G: Grabe, walang aksyon.",
+      "Ngayong taglagas... isang grupo ng matatalinong estranghero... at isang webcam na sobra na ang nakita. ANG MGA MANONOOD. Ngayon sa mga sinehan.",
+      "Mula sa studio na nagdala sa inyo ng “pag-upo”... ang pinakamatapang nitong sequel. NAKAUPO 2: NAKAUPO PA RIN.",
+      "Tinatawag ito ng mga kritiko na “pinaka-porma na audience na nakunan ng laptop.” Malapit nang ipalabas sa mismong kuwartong ito.",
+      "Isang kuwarto. Zero na pagsabog. Walang limitasyong karisma. ANG HACKATHON. Dalawang thumbs up, taas na taas.",
+      "Pumunta sila para sa demo... nanatili para sa libreng merienda... ANG MGA DUMALO. Siguradong blockbuster."
+    ],
+    "funnyStill": [
+      "Ngayong taglamig... wala talagang nangyayari. At nakakamangha ito. STILL LIFE: ANG PELIKULA.",
+      "Labindalawang bayani. Isang kuwarto. Zero na galaw. ANG MGA ESTATWA. Rated S: Sobrang Suspetsosong Nakatigil.",
+      "Mula sa direktor ng PAGHIHINTAY... ang PAGHIHINTAY 2: NAGHIHINTAY PA RIN. Sabi ng kritiko, “talagang mapapaupo ka.”",
+      "Sa isang mundong walang gumagalaw... isang tagapagsalaysay... ang nagmamakaawa. Pakiusap. Kahit sino. Kumaway.",
+      "Malapit na: ANG PINAKAMAHABANG PAUSE. Siyamnapung minuto. Isang kuwarto. Ni isang kurap, wala.",
+      "Ngayong tag-init... haharapin ng audience ang pinakamalaking hamon... ang pagtaas ng isang kamay. ANG KUMPAS. Ngayong palabas."
+    ],
+    "descriptive": [
+      "Naka-on ang camera. Ilalarawan ko ulit ang eksena sa ilang sandali.",
+      "Hindi ako nakakuha ng paglalarawan ngayon. Hawakan nang matatag ang camera at susubukan ko ulit.",
+      "Tumitingin pa rin. Darating na ang bagong paglalarawan."
+    ],
+    "pumpkin": [
+      "He he he... maligayang pagdating, matapang na bisita! Ang ganda ng costume. Kalabasa-hanga talaga.",
+      "Bulaga! Ha, natakot ka ba? Ang suot mo ang tumakot sa akin, sa magandang paraan.",
+      "Oho, lapit pa, lapit pa... Gustung-gusto ko ang bisitang may estilo. Pinapailaw mo ang buong mukha ko.",
+      "He he... magandang costume para sa magandang gabi. Nagliliyab talaga ako sa inggit.",
+      "Maligayang pagdating, maligayang pagdating! Yayakapin sana kita, pero halos hungkag ang loob ko. Ang ganda ng suot mo, ha.",
+      "He he he... marami na akong nakitang costume ngayong gabi, pero ang sa iyo? Nakakakilabot sa ganda."
+    ]
+  },
+  "noChange": "Walang pagbabago."
+}

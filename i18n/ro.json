@@ -1,0 +1,217 @@
+{
+  "callNow": "SUNAȚI ACUM! OPERATORII VĂ AȘTEAPTĂ!",
+  "tagline": "Lumea ta, povestită.",
+  "order": "COMANDAȚI ACUM",
+  "burst1": "VĂZUT LA TV!",
+  "burst2": "DOAR 0 LEI!",
+  "finePrint": "*Nu este un număr de telefon real. Vă rugăm să nu sunați. NarrateBot 3000 nu răspunde pentru narațiuni prea exacte. Rezultatele pot varia. Bateriile nu sunt incluse.",
+  "ticker": [
+    "„Mi-a descris pisica perfect!” – Clientă mulțumită",
+    "„Nu m-am simțit niciodată atât de văzut.” – Tot client",
+    "„Planta mea n-a sunat niciodată atât de maiestuos.” – Client, probabil",
+    "„Am râs. Am plâns. Am stat absolut nemișcat.” – Turma"
+  ],
+  "cleanSub": "Narațiune live a scenei de la camera ta",
+  "cleanExplain": "Îndreaptă camera spre lume, iar NarrateBot 3000 descrie cu voce tare ce vede, în limba ta.",
+  "start": "Pornește",
+  "butWait": "DAR STAȚI... MAI E CEVA!",
+  "nowWith": "ACUM CU MODUL {mode}!",
+  "mode": {
+    "documentary": "DOCUMENTAR",
+    "funny": "AMUZANT",
+    "descriptive": "DESCRIPTIV",
+    "pumpkin": "DOVLEAC"
+  },
+  "modeClean": {
+    "documentary": "Stil documentar",
+    "funny": "Stil trailer de film",
+    "descriptive": "Mod descriptiv",
+    "pumpkin": "Stil dovleac"
+  },
+  "countdown": {
+    "in": "Narațiune în {n}…",
+    "late": "Narez…",
+    "visitor": "Aștept un vizitator…",
+    "sr": "Narațiunea începe în curând"
+  },
+  "live": "LIVE",
+  "specimen": "EXEMPLAR",
+  "observation": "OBSERVAȚIE",
+  "herdNone": "ACTIVITATEA TURMEI: NICIUNA",
+  "unchanged": "Scena e neschimbată",
+  "paused": "PAUZĂ",
+  "nowShowing": "ACUM PE ECRANE",
+  "btn": {
+    "describe": "Descrie acum",
+    "pause": "Pauză",
+    "play": "Redă",
+    "flip": "Schimbă camera",
+    "settings": "Setări",
+    "themeDark": "Temă întunecată",
+    "themeLight": "Temă luminoasă",
+    "accessible": "Vizualizare accesibilă",
+    "infomercial": "Teleshopping",
+    "narrLang": "Limba narațiunii",
+    "close": "Închide",
+    "siteLang": "Limba site-ului"
+  },
+  "set": {
+    "title": "FORMULAR DE COMANDĂ CALL CENTER",
+    "titleClean": "Setări",
+    "sub": "Operatorii vă așteaptă",
+    "useEleven": "Folosește vocea ElevenLabs",
+    "charsSession": "Caractere trimise în această sesiune",
+    "charsToday": "Caractere azi (toți utilizatorii)",
+    "narrToday": "Narațiuni azi",
+    "config": "Configurare",
+    "stillness": "Sensibilitate la nemișcare",
+    "stillDebug": "Contor nemișcare / ultima diferență",
+    "textSize": "Mărimea textului",
+    "smaller": "Text mai mic",
+    "larger": "Text mai mare",
+    "customLang": "Limbă de narațiune personalizată",
+    "customLangHint": "Adăugată la lista limbilor de narațiune (L)",
+    "music": "Volumul muzicii",
+    "srMute": "Nu vorbi cu voce tare (cititorul de ecran citește textul)",
+    "hideVideo": "Ascunde videoclipul, arată doar textul narațiunii",
+    "hotkeys": "Comenzi rapide",
+    "yes": "setată",
+    "no": "lipsește",
+    "dflt": "implicit",
+    "breakLen": "Pauză între fraze",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Moduri"
+    ],
+    [
+      "L",
+      "Limba narațiunii"
+    ],
+    [
+      "N",
+      "Descrie acum"
+    ],
+    [
+      "S",
+      "Nemișcare pornit/oprit"
+    ],
+    [
+      "T",
+      "Temă"
+    ],
+    [
+      "A",
+      "Vizualizare accesibilă"
+    ],
+    [
+      "Space",
+      "Pauză / redare"
+    ],
+    [
+      "K",
+      "Setări"
+    ]
+  ],
+  "keys": {
+    "title": "VENIȚI CU PROPRIILE CHEI",
+    "titleClean": "Folosește propriile chei",
+    "sub": "Operatorii au nevoie de cheile dvs. ca să preia apelul",
+    "intro": "NarrateBot 3000 funcționează cu propria ta cheie Gemini pentru narațiune și, dacă vrei, cu o cheie ElevenLabs pentru voci.",
+    "gemini": "Cheie API Gemini",
+    "eleven": "Cheie API ElevenLabs (opțională)",
+    "geminiHelp": "Cum obții o cheie Gemini",
+    "elevenHelp": "Cum obții o cheie ElevenLabs",
+    "getAt": "Obține o cheie la",
+    "newTab": " (se deschide într-o filă nouă)",
+    "geminiSteps": "Conectează-te, alege Create API key, apoi lipește cheia aici.",
+    "geminiCost": "Google oferă un nivel gratuit cu limite de utilizare; utilizarea mai intensă se facturează în contul tău Google.",
+    "elevenSteps": "Creează o cheie cu acces Text to Speech, apoi lipește-o aici.",
+    "elevenCost": "Planul gratuit include o cotă lunară de caractere. Unele voci necesită un plan plătit; dacă o voce nu e disponibilă, folosim o voce standard sau vocea browserului, dacă lași câmpul gol.",
+    "privacy": "Cheile tale sunt păstrate într-un cookie criptat în acest browser și trimise serverului nostru doar pentru a-ți executa cererile. Nu le stocăm și nu le înregistrăm niciodată. Le poți elimina oricând din Setări.",
+    "save": "Salvează și pornește",
+    "saving": "Se verifică…",
+    "cancel": "Anulează",
+    "needGemini": "Introdu cheia ta Gemini.",
+    "geminiInvalid": "Google nu a acceptat această cheie Gemini. Verific-o și încearcă din nou.",
+    "format": "Nu pare a fi o cheie API. Lipește cheia întreagă, fără spații.",
+    "formatEleven": "Cheia ElevenLabs nu pare corectă. Lipește cheia întreagă sau lasă câmpul gol.",
+    "tooMany": "Prea multe încercări. Așteaptă 15 minute.",
+    "failed": "Nu am putut verifica cheia acum. Încearcă din nou peste puțin timp.",
+    "needKeys": "Ca narațiunea să continue, adaugă propriile chei.",
+    "quota": "Cheia ta Gemini a atins limita de utilizare. Reîncerc peste un minut…",
+    "badKey": "Google a respins cheia ta Gemini. Verific-o sau lipește una nouă.",
+    "removed": "Cheile tale au fost eliminate. Adaugă chei ca narațiunea să continue."
+  },
+  "owner": {
+    "title": "ACCES PROPRIETAR",
+    "titleClean": "Acces proprietar",
+    "label": "Parola proprietarului",
+    "submit": "Deblochează",
+    "wrong": "N-a mers.",
+    "tooMany": "Prea multe încercări. Așteaptă 15 minute.",
+    "done": "Acces proprietar deblocat."
+  },
+  "access": {
+    "legend": "Acces",
+    "current": "Acces curent:",
+    "owner": "Proprietar",
+    "byok": "Cheile tale",
+    "none": "Fără chei",
+    "change": "Schimbă cheile",
+    "add": "Folosește propriile chei",
+    "remove": "Elimină cheile mele",
+    "lock": "Blochează accesul proprietar"
+  },
+  "camError": "Camera nu e disponibilă. Verifică permisiunea camerei și că pagina rulează pe HTTPS.",
+  "fallback": {
+    "documentary": [
+      "Și aici observăm o adunare a speciei, fiecare exemplar mai distins decât precedentul. Natura în toată splendoarea ei.",
+      "Un exemplar remarcabil se apleacă în față, cu ochii ațintiți asupra ecranului luminos, cu răbdarea unei creaturi care știe că lucrurile mari cer timp.",
+      "Observați încrederea liniștită a acestei turme. Niciunul nu a intrat în panică, deși sunt atât de departe de rezerva lor naturală de gustări.",
+      "Colonia s-a adunat în jurul sursei de lumină, așa cum au făcut strămoșii lor. Unele lucruri, se pare, sunt eterne.",
+      "Un exemplar își ajustează postura cu o demnitate enormă. Ceilalți iau aminte. S-a ivit un lider.",
+      "În sălbăticie, foarte puține creaturi pot sta la o prezentare demo cu atâta grație. Și totuși, iată-le. Magnific."
+    ],
+    "documentaryStill": [
+      "Turma nu s-a mișcat. Nicio tresărire. Naratorul, în ce-l privește, rămâne plin de speranță.",
+      "Tot nimic. Exemplarele par să-și conserve energia, poate pentru aplauze.",
+      "A trecut ceva vreme. Începi să bănuiești că turma așteaptă ca naratorul să fie amuzant. Se străduiește.",
+      "Nemișcare totală. Oamenii de știință au un cuvânt pentru acest comportament. Cuvântul este „judecată”.",
+      "Naratorul a văzut plante de apartament cu mai multă ambiție. Vă rog, cineva, oricine, mișcați un deget.",
+      "Fiți liniștiți, turma e în perfectă siguranță. Doar alege, cu mare demnitate, să nu se miște."
+    ],
+    "funny": [
+      "Într-o lume... în care o cameră a îndrăznit să privească un laptop... se naște o legendă. AG: Absolut Grozav.",
+      "În această toamnă... un grup de străini geniali... și o cameră web care a văzut prea multe. PUBLICUL. Acum în cinematografe.",
+      "De la studioul care v-a adus statul jos... vine cea mai îndrăzneață continuare. STATUL JOS 2: ÎNCĂ AȘEZAȚI.",
+      "Criticii îl numesc „cea mai bine îmbrăcată mulțime filmată vreodată de un laptop”. În curând chiar în această sală.",
+      "O sală. Zero explozii. Carismă nelimitată. HACKATHONUL. Două degete mari foarte, foarte sus.",
+      "Au venit pentru demo... au rămas pentru gustările gratuite... PARTICIPANȚII. Certificat proaspăt."
+    ],
+    "funnyStill": [
+      "În această iarnă... nu se întâmplă absolut nimic. Și e uluitor. NATURĂ STATICĂ: FILMUL.",
+      "Doisprezece eroi. O sală. Zero mișcare. STATUILE. N-15: Nemișcați Suspect.",
+      "De la regizorul filmului AȘTEPTAREA... vine AȘTEPTAREA 2: ÎNCĂ AȘTEPTĂM. Criticii spun că „te ține lipit de scaun”.",
+      "Într-o lume în care nimeni nu se mișcă... un narator... imploră. Vă rog. Oricine. Faceți cu mâna.",
+      "În curând: CEA MAI LUNGĂ PAUZĂ. Nouăzeci de minute. O sală. Nicio clipire.",
+      "Vara aceasta... publicul înfruntă cea mai mare provocare de până acum... să ridice o mână. GESTUL. Acum în cinematografe."
+    ],
+    "descriptive": [
+      "Camera este pornită. Voi descrie din nou scena în câteva momente.",
+      "Nu am putut obține o descriere acum. Ține camera nemișcată și voi încerca din nou.",
+      "Încă mă uit. O nouă descriere urmează în curând."
+    ],
+    "pumpkin": [
+      "He he he... bine ai venit, vizitator curajos! Ce costum. Pur și simplu dovle-frumos.",
+      "Bau! Ha, te-am speriat? Costumul tău m-a speriat pe mine, în cel mai bun sens.",
+      "Oho, vino mai aproape, mai aproape... Ador oaspeții cu stil. Îmi luminezi toată fața.",
+      "He he... un costum grozav pentru o noapte grozavă. Strălucesc de invidie.",
+      "Bine ai venit, bine ai venit! Te-aș îmbrățișa, dar sunt mai mult gol pe dinăuntru. Costum minunat, totuși.",
+      "He he he... am văzut multe costume în seara asta, dar al tău? Înfiorător de bun."
+    ]
+  },
+  "noChange": "Nicio schimbare."
+}

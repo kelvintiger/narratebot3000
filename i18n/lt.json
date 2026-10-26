@@ -1,0 +1,217 @@
+{
+  "callNow": "SKAMBINKITE DABAR! OPERATORIAI LAUKIA!",
+  "tagline": "Jūsų pasaulis, papasakotas.",
+  "order": "UŽSAKYKITE DABAR",
+  "burst1": "MATYTA PER TV!",
+  "burst2": "TIK 0,00 $!",
+  "finePrint": "*Tai ne tikras telefono numeris. Prašome neskambinti. NarrateBot 3000 neatsako už per daug tikslius pasakojimus. Rezultatai gali skirtis. Baterijos neįskaičiuotos.",
+  "ticker": [
+    "„Jis puikiai apibūdino mano katę!“ – Patenkintas klientas",
+    "„Niekada nesijaučiau toks pastebėtas.“ – Irgi klientas",
+    "„Mano kambarinis augalas niekada neskambėjo taip didingai.“ – Klientas, tikriausiai",
+    "„Juokiausi. Verkiau. Sėdėjau labai ramiai.“ – Banda"
+  ],
+  "cleanSub": "Scenos pasakojimas tiesiogiai iš jūsų kameros",
+  "cleanExplain": "Nukreipkite kamerą į pasaulį, ir NarrateBot 3000 garsiai apibūdins, ką mato, jūsų kalba.",
+  "start": "Pradėti",
+  "butWait": "BET PALAUKITE... TAI DAR NE VISKAS!",
+  "nowWith": "DABAR IR REŽIMAS: {mode}!",
+  "mode": {
+    "documentary": "DOKUMENTINIS",
+    "funny": "JUOKINGAS",
+    "descriptive": "APRAŠOMASIS",
+    "pumpkin": "MOLIŪGAS"
+  },
+  "modeClean": {
+    "documentary": "Dokumentinio filmo stilius",
+    "funny": "Filmo anonso stilius",
+    "descriptive": "Aprašomasis režimas",
+    "pumpkin": "Moliūgo stilius"
+  },
+  "countdown": {
+    "in": "Pasakojimas po {n}…",
+    "late": "Pasakoju…",
+    "visitor": "Laukiu lankytojo…",
+    "sr": "Pasakojimas netrukus prasidės"
+  },
+  "live": "TIESIOGIAI",
+  "specimen": "EGZEMPLIORIUS",
+  "observation": "STEBĖJIMAS",
+  "herdNone": "BANDOS AKTYVUMAS: NEAPTIKTA",
+  "unchanged": "Scena nepasikeitė",
+  "paused": "PRISTABDYTA",
+  "nowShowing": "DABAR RODOME",
+  "btn": {
+    "describe": "Apibūdinti dabar",
+    "pause": "Pristabdyti",
+    "play": "Leisti",
+    "flip": "Apversti kamerą",
+    "settings": "Nustatymai",
+    "themeDark": "Tamsi tema",
+    "themeLight": "Šviesi tema",
+    "accessible": "Prieinamas rodinys",
+    "infomercial": "Reklamos rodinys",
+    "narrLang": "Pasakojimo kalba",
+    "close": "Uždaryti",
+    "siteLang": "Svetainės kalba"
+  },
+  "set": {
+    "title": "SKAMBUČIŲ CENTRO UŽSAKYMO FORMA",
+    "titleClean": "Nustatymai",
+    "sub": "Operatoriai laukia",
+    "useEleven": "Naudoti ElevenLabs balsą",
+    "charsSession": "Šioje sesijoje išsiųsta simbolių",
+    "charsToday": "Simbolių šiandien (visi naudotojai)",
+    "narrToday": "Pasakojimų šiandien",
+    "config": "Konfigūracija",
+    "stillness": "Nejudrumo jautrumas",
+    "stillDebug": "Nejudrumo skaičius / paskutinis skirtumas",
+    "textSize": "Teksto dydis",
+    "smaller": "Mažesnis tekstas",
+    "larger": "Didesnis tekstas",
+    "customLang": "Pasirinktinė pasakojimo kalba",
+    "customLangHint": "Pridedama prie pasakojimo kalbų sąrašo (L)",
+    "music": "Muzikos garsumas",
+    "srMute": "Nekalbėti garsiai (ekrano skaitytuvas skaito tekstą)",
+    "hideVideo": "Slėpti vaizdo įrašą, rodyti tik pasakojimo tekstą",
+    "hotkeys": "Spartieji klavišai",
+    "yes": "nustatytas",
+    "no": "trūksta",
+    "dflt": "numatytasis",
+    "breakLen": "Pauzė tarp sakinių",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Režimai"
+    ],
+    [
+      "L",
+      "Pasakojimo kalba"
+    ],
+    [
+      "N",
+      "Apibūdinti dabar"
+    ],
+    [
+      "S",
+      "Nejudrumas įj./išj."
+    ],
+    [
+      "T",
+      "Tema"
+    ],
+    [
+      "A",
+      "Prieinamas rodinys"
+    ],
+    [
+      "Tarpas",
+      "Pristabdyti / leisti"
+    ],
+    [
+      "K",
+      "Nustatymai"
+    ]
+  ],
+  "keys": {
+    "title": "ATSINEŠKITE SAVO RAKTUS",
+    "titleClean": "Naudokite savo raktus",
+    "sub": "Operatoriams šiam skambučiui reikia jūsų raktų",
+    "intro": "NarrateBot 3000 veikia su jūsų pačių Gemini raktu pasakojimui ir, jei norite, ElevenLabs raktu balsams.",
+    "gemini": "Gemini API raktas",
+    "eleven": "ElevenLabs API raktas (neprivaloma)",
+    "geminiHelp": "Kaip gauti Gemini raktą",
+    "elevenHelp": "Kaip gauti ElevenLabs raktą",
+    "getAt": "Raktą gausite",
+    "newTab": " (atsidaro naujame skirtuke)",
+    "geminiSteps": "Prisijunkite, pasirinkite Create API key, tada įklijuokite raktą čia.",
+    "geminiCost": "Google siūlo nemokamą planą su naudojimo apribojimais; didesnis naudojimas apmokestinamas jūsų Google paskyroje.",
+    "elevenSteps": "Sukurkite raktą su Text to Speech prieiga, tada įklijuokite jį čia.",
+    "elevenCost": "Nemokamas planas apima mėnesinį simbolių kiekį. Kai kuriems balsams reikia mokamo plano; jei balsas nepasiekiamas, naudojame standartinį balsą arba jūsų naršyklės balsą, jei šį lauką paliksite tuščią.",
+    "privacy": "Jūsų raktai laikomi užšifruotame slapuke šioje naršyklėje ir siunčiami į mūsų serverį tik jūsų užklausoms atlikti. Mes niekada jų nesaugome ir neregistruojame žurnaluose. Juos bet kada galite pašalinti nustatymuose.",
+    "save": "Išsaugoti ir pradėti",
+    "saving": "Tikrinama…",
+    "cancel": "Atšaukti",
+    "needGemini": "Įveskite savo Gemini raktą.",
+    "geminiInvalid": "Google nepriėmė šio Gemini rakto. Patikrinkite jį ir bandykite dar kartą.",
+    "format": "Tai neatrodo kaip API raktas. Įklijuokite visą raktą be tarpų.",
+    "formatEleven": "Šis ElevenLabs raktas neatrodo teisingas. Įklijuokite visą raktą arba palikite lauką tuščią.",
+    "tooMany": "Per daug bandymų. Palaukite 15 minučių.",
+    "failed": "Šiuo metu nepavyko patikrinti jūsų rakto. Bandykite dar kartą po akimirkos.",
+    "needKeys": "Norėdami tęsti pasakojimą, pridėkite savo raktus.",
+    "quota": "Jūsų Gemini raktas pasiekė naudojimo limitą. Bandysime dar kartą po minutės…",
+    "badKey": "Google atmetė jūsų Gemini raktą. Patikrinkite jį arba įklijuokite naują.",
+    "removed": "Jūsų raktai pašalinti. Pridėkite raktus, kad tęstumėte pasakojimą."
+  },
+  "owner": {
+    "title": "SAVININKO PRIEIGA",
+    "titleClean": "Savininko prieiga",
+    "label": "Savininko slaptažodis",
+    "submit": "Atrakinti",
+    "wrong": "Nepavyko.",
+    "tooMany": "Per daug bandymų. Palaukite 15 minučių.",
+    "done": "Savininko prieiga atrakinta."
+  },
+  "access": {
+    "legend": "Prieiga",
+    "current": "Dabartinė prieiga:",
+    "owner": "Savininkas",
+    "byok": "Jūsų raktai",
+    "none": "Raktų nėra",
+    "change": "Keisti raktus",
+    "add": "Naudoti savo raktus",
+    "remove": "Pašalinti mano raktus",
+    "lock": "Užrakinti savininko prieigą"
+  },
+  "camError": "Kamera nepasiekiama. Patikrinkite kameros leidimą ir ar puslapis naudoja HTTPS.",
+  "fallback": {
+    "documentary": [
+      "Ir čia stebime šios rūšies susibūrimą, kiekvienas egzempliorius garbingesnis už ankstesnį. Iš tiesų, gamta geriausiu pavidalu.",
+      "Nuostabus egzempliorius pasilenkia į priekį, akys įsmeigtos į švytintį ekraną, su kantrybe būtybės, kuri žino, kad dideliems dalykams reikia laiko.",
+      "Atkreipkite dėmesį į tylų šios bandos pasitikėjimą savimi. Nė vienas nepanikavo, nors jie taip toli nuo savo natūralaus užkandžių šaltinio.",
+      "Kolonija susibūrė aplink šviesos šaltinį, kaip darė jų protėviai. Kai kurie dalykai, regis, amžini.",
+      "Vienas egzempliorius su didžiuliu orumu pataiso savo laikyseną. Kiti tai pastebi. Atsirado lyderis.",
+      "Laukinėje gamtoje labai nedaug būtybių gali išsėdėti demonstraciją su tokiu grakštumu. Ir vis dėlto, štai jie. Didinga."
+    ],
+    "documentaryStill": [
+      "Banda nepajudėjo. Nė krustelėjimo. Pasakotojas, savo ruožtu, tebėra kupinas vilties.",
+      "Vis dar nieko. Egzemplioriai, regis, taupo energiją, galbūt plojimams.",
+      "Praėjo jau nemažai laiko. Imama įtarti, kad banda laukia, kol pasakotojas bus juokingas. Jis stengiasi.",
+      "Visiškas nejudrumas. Mokslininkai turi žodį šiam elgesiui. Tas žodis – „teisimas“.",
+      "Pasakotojas yra matęs kambarinių augalų su labiau matomomis ambicijomis. Prašau, kas nors, bet kas, pajudinkite pirštą.",
+      "Būkite ramūs, banda visiškai saugi. Jie tiesiog su dideliu orumu pasirenka nejudėti."
+    ],
+    "funny": [
+      "Pasaulyje... kur vienas kambarys išdrįso žiūrėti į nešiojamąjį kompiuterį... gimsta legenda. Įvertinta PG: Puikiai Genialu.",
+      "Šį rudenį... būrys genialių nepažįstamųjų... ir internetinė kamera, mačiusi per daug. PUBLIKA. Jau kino teatruose.",
+      "Iš studijos, padovanojusios jums sėdėjimą... ateina drąsiausias jos tęsinys. SĖDĖJIMAS 2: VIS DAR SĖDIM.",
+      "Kritikai jį vadina „geriausiai apsirengusia minia, kokią kada nors nufilmavo nešiojamasis kompiuteris“. Netrukus būtent šiame kambaryje.",
+      "Vienas kambarys. Nulis sprogimų. Neribota charizma. HAKATONAS. Du nykščiai aukštai, aukštai iškelti.",
+      "Jie atėjo dėl demonstracijos... liko dėl nemokamų užkandžių... DALYVIAI. Garantuotai švieži."
+    ],
+    "funnyStill": [
+      "Šią žiemą... neįvyksta visiškai nieko. Ir tai užgniaužia kvapą. NATIURMORTAS: FILMAS.",
+      "Dvylika herojų. Vienas kambarys. Nulis judesio. STATULOS. Įvertinta S: Siaubingai Statiški.",
+      "Iš filmo LAUKIMAS režisieriaus... ateina LAUKIMAS 2: VIS DAR LAUKIAM. Kritikai sako, kad jis „prikausto prie kėdės“.",
+      "Pasaulyje, kur niekas nejuda... vienas pasakotojas... maldauja. Prašau. Bet kas. Pamojuokite.",
+      "Netrukus: ILGIAUSIA PAUZĖ. Devyniasdešimt minučių. Vienas kambarys. Nė vieno mirktelėjimo.",
+      "Šią vasarą... publika susiduria su didžiausiu savo iššūkiu... vienos rankos pakėlimu. GESTAS. Jau ekranuose."
+    ],
+    "descriptive": [
+      "Kamera įjungta. Po akimirkos vėl apibūdinsiu sceną.",
+      "Šiuo metu nepavyko gauti aprašymo. Laikykite kamerą ramiai, ir bandysiu dar kartą.",
+      "Vis dar žiūriu. Naujas aprašymas netrukus."
+    ],
+    "pumpkin": [
+      "Che che che... sveiki atvykę, drąsusis lankytojau! Koks kostiumas. Tikrai moliūgiškai gražus.",
+      "Bū! Cha, ar išgąsdinau jus? Jūsų apranga tikrai išgąsdino mane, geriausia prasme.",
+      "Oho, prieikite arčiau, prieikite arčiau... Man patinka svečiai su stiliumi. Jūs nušviečiate visą mano veidą.",
+      "Che che... puikus kostiumas puikiai nakčiai. Aš tiesiog švytiu iš pavydo.",
+      "Sveiki, sveiki! Apkabinčiau jus, bet viduje esu beveik tuščias. Vis dėlto, nuostabi apranga.",
+      "Che che che... šįvakar mačiau daug kostiumų, bet jūsų? Šiurpiai puikus."
+    ]
+  },
+  "noChange": "Jokių pokyčių."
+}

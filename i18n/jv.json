@@ -1,0 +1,217 @@
+{
+  "callNow": "TELPON SAIKI! OPERATOR WIS SIAP!",
+  "tagline": "Donya panjenengan, dicritakake.",
+  "order": "PESEN SAIKI",
+  "burst1": "KAYA ING TV!",
+  "burst2": "MUNG $0.00!",
+  "finePrint": "*Dudu nomer telpon asli. Mangga aja ditelpon. NarrateBot 3000 ora tanggung jawab marang narasi sing kebangeten pas. Asil bisa beda-beda. Baterei ora kalebu.",
+  "ticker": [
+    "'Kucingku digambarake sampurna!' – Pelanggan sing Marem",
+    "'Aku durung tau rumangsa diweruhi kaya ngene.' – Uga Pelanggan",
+    "'Tanduran omahku durung tau keprungu agung kaya ngene.' – Pelanggan, Mbokmenawa",
+    "'Aku ngguyu. Aku nangis. Aku lungguh meneng banget.' – Gerombolan"
+  ],
+  "cleanSub": "Narasi adegan langsung saka kamera panjenengan",
+  "cleanExplain": "Arahna kamera panjenengan menyang donya lan NarrateBot 3000 bakal nggambarake kanthi swara apa sing dideleng, nganggo basa panjenengan.",
+  "start": "Wiwiti",
+  "butWait": "NANGING ENTENI... ISIH ANA MANEH!",
+  "nowWith": "SAIKI NGANGGO MODE {mode}!",
+  "mode": {
+    "documentary": "DOKUMENTER",
+    "funny": "LUCU",
+    "descriptive": "DESKRIPTIF",
+    "pumpkin": "WALUH"
+  },
+  "modeClean": {
+    "documentary": "Gaya dokumenter",
+    "funny": "Gaya trailer film",
+    "descriptive": "Mode deskriptif",
+    "pumpkin": "Gaya waluh"
+  },
+  "countdown": {
+    "in": "Narasi ing {n}…",
+    "late": "Lagi nyritakake…",
+    "visitor": "Ngenteni tamu…",
+    "sr": "Narasi sedhela maneh"
+  },
+  "live": "LANGSUNG",
+  "specimen": "SPESIMEN",
+  "observation": "PENGAMATAN",
+  "herdNone": "AKTIVITAS GEROMBOLAN: ORA KADETEKSI",
+  "unchanged": "Adegan ora owah",
+  "paused": "MANDHEG",
+  "nowShowing": "SAIKI DIPUTER",
+  "btn": {
+    "describe": "Gambarake saiki",
+    "pause": "Mandheg",
+    "play": "Puter",
+    "flip": "Walik kamera",
+    "settings": "Setelan",
+    "themeDark": "Tema peteng",
+    "themeLight": "Tema padhang",
+    "accessible": "Tampilan aksesibel",
+    "infomercial": "Tampilan infomersial",
+    "narrLang": "Basa narasi",
+    "close": "Tutup",
+    "siteLang": "Basa situs"
+  },
+  "set": {
+    "title": "FORMULIR PESENAN CALL CENTER",
+    "titleClean": "Setelan",
+    "sub": "Operator wis siap",
+    "useEleven": "Gunakake swara ElevenLabs",
+    "charsSession": "Karakter sing dikirim sesi iki",
+    "charsToday": "Karakter dina iki (kabeh pangguna)",
+    "narrToday": "Narasi dina iki",
+    "config": "Konfigurasi",
+    "stillness": "Sensitivitas meneng",
+    "stillDebug": "Itungan meneng / bedane pungkasan",
+    "textSize": "Ukuran teks",
+    "smaller": "Teks luwih cilik",
+    "larger": "Teks luwih gedhe",
+    "customLang": "Basa narasi khusus",
+    "customLangHint": "Ditambahake menyang dhaptar basa narasi (L)",
+    "music": "Volume musik",
+    "srMute": "Aja ngomong banter (pamaca layar maca teks)",
+    "hideVideo": "Delikake video, tampilake teks narasi wae",
+    "hotkeys": "Tombol pintas",
+    "yes": "wis disetel",
+    "no": "ora ana",
+    "dflt": "standar",
+    "breakLen": "Jeda antarane ukara",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Mode"
+    ],
+    [
+      "L",
+      "Basa narasi"
+    ],
+    [
+      "N",
+      "Gambarake saiki"
+    ],
+    [
+      "S",
+      "Meneng urip/mati"
+    ],
+    [
+      "T",
+      "Tema"
+    ],
+    [
+      "A",
+      "Tampilan aksesibel"
+    ],
+    [
+      "Spasi",
+      "Mandheg / puter"
+    ],
+    [
+      "K",
+      "Setelan"
+    ]
+  ],
+  "keys": {
+    "title": "GOWA KUNCI PANJENENGAN DHEWE",
+    "titleClean": "Gunakake kunci panjenengan dhewe",
+    "sub": "Operator butuh kunci panjenengan kanggo nampa telpon iki",
+    "intro": "NarrateBot 3000 mlaku nganggo kunci Gemini panjenengan dhewe kanggo narasi lan, yen kersa, kunci ElevenLabs kanggo swara.",
+    "gemini": "Kunci API Gemini",
+    "eleven": "Kunci API ElevenLabs (opsional)",
+    "geminiHelp": "Carane entuk kunci Gemini",
+    "elevenHelp": "Carane entuk kunci ElevenLabs",
+    "getAt": "Entuk kunci ing",
+    "newTab": " (dibukak ing tab anyar)",
+    "geminiSteps": "Mlebu, pilih Create API key, banjur tempelake kuncine ing kene.",
+    "geminiCost": "Google menehi tingkat gratis kanthi watesan panggunaan; panggunaan sing luwih abot ditagihake menyang akun Google panjenengan.",
+    "elevenSteps": "Gawe kunci kanthi akses Text to Speech, banjur tempelake ing kene.",
+    "elevenCost": "Paket gratis kalebu jatah karakter saben sasi. Sawetara swara butuh paket mbayar; yen swara ora kasedhiya, kita nganggo swara standar, utawa swara browser panjenengan yen iki dikosongake.",
+    "privacy": "Kunci panjenengan disimpen ing cookie sing dienkripsi ing browser iki lan dikirim menyang server kita mung kanggo nindakake panjaluk panjenengan. Kita ora tau nyimpen utawa nyathet kunci kasebut. Panjenengan bisa mbusak kapan wae ing Setelan.",
+    "save": "Simpen lan wiwiti",
+    "saving": "Mriksa…",
+    "cancel": "Batal",
+    "needGemini": "Lebokake kunci Gemini panjenengan.",
+    "geminiInvalid": "Google ora nampa kunci Gemini kuwi. Priksa lan coba maneh.",
+    "format": "Kuwi ora kaya kunci API. Tempelake kunci sakabehe, tanpa spasi.",
+    "formatEleven": "Kunci ElevenLabs kuwi kayane ora bener. Tempelake kunci sakabehe, utawa kosongake.",
+    "tooMany": "Kakehan nyoba. Enteni 15 menit.",
+    "failed": "Ora bisa mriksa kunci panjenengan saiki. Coba maneh sedhela engkas.",
+    "needKeys": "Supaya narasi terus, tambahake kunci panjenengan dhewe.",
+    "quota": "Kunci Gemini panjenengan wis tekan watesan panggunaan. Nyoba maneh sajrone semenit…",
+    "badKey": "Google nolak kunci Gemini panjenengan. Priksa utawa tempelake sing anyar.",
+    "removed": "Kunci panjenengan wis dibusak. Tambahake kunci supaya narasi terus."
+  },
+  "owner": {
+    "title": "AKSES PEMILIK",
+    "titleClean": "Akses pemilik",
+    "label": "Sandhi pemilik",
+    "submit": "Bukak",
+    "wrong": "Ora kasil.",
+    "tooMany": "Kakehan nyoba. Enteni 15 menit.",
+    "done": "Akses pemilik wis kabukak."
+  },
+  "access": {
+    "legend": "Akses",
+    "current": "Akses saiki:",
+    "owner": "Pemilik",
+    "byok": "Kunci panjenengan dhewe",
+    "none": "Ora ana kunci",
+    "change": "Ganti kunci",
+    "add": "Gunakake kunci panjenengan dhewe",
+    "remove": "Busak kunci kula",
+    "lock": "Kunci akses pemilik"
+  },
+  "camError": "Kamera ora kasedhiya. Priksa idin kamera lan priksa yen kaca iki nganggo HTTPS.",
+  "fallback": {
+    "documentary": [
+      "Lan ing kene kita nyumurupi kumpulan spesies iki, saben siji luwih pinunjul tinimbang sing sadurunge. Satemene, alam ing wujud sing paling apik.",
+      "Spesimen sing nggumunake ndhingkluk maju, mripate mantheng layar sing sumorot, kanthi sabar kaya makhluk sing ngerti yen prekara gedhe butuh wektu.",
+      "Gatekna kapercayan sing tenang saka gerombolan iki. Ora ana siji wae sing gugup, senajan adoh banget saka sumber cemilan alamiahe.",
+      "Koloni wis ngumpul ngubengi sumber cahya, kaya sing ditindakake para leluhure. Sawetara prekara, kayane, langgeng.",
+      "Siji spesimen mbenakake lungguhe kanthi kawibawan sing luar biasa. Liyane nggatekake. Pamimpin wis muncul.",
+      "Ing alam liar, sithik banget makhluk sing bisa lungguh ngrampungake demo kanthi anggun kaya ngene. Nanging, iki dheweke. Endah."
+    ],
+    "documentaryStill": [
+      "Gerombolan durung obah. Ora ana kedhut babar pisan. Narator, dhewe, isih ngarep-arep.",
+      "Isih durung ana apa-apa. Spesimen kayane lagi ngirit tenaga, mbokmenawa kanggo keplok.",
+      "Wis suwe saiki. Wiwit katon yen gerombolan ngenteni narator dadi lucu. Dheweke lagi nyoba.",
+      "Meneng total. Para ilmuwan duwe tembung kanggo tumindak iki. Tembunge yaiku 'ngadili.'",
+      "Narator wis tau ndeleng tanduran omah sing luwih katon ambisius. Mangga, sapa wae, obahna driji siji.",
+      "Tenang wae, gerombolan aman babar pisan. Dheweke mung milih, kanthi kawibawan, ora obah."
+    ],
+    "funny": [
+      "Ing sawijining donya... ing ngendi siji ruangan wani nonton laptop... legenda lair. Kanggo kabeh umur, utamane sing bagus-bagus.",
+      "Mangsa iki... sakelompok wong asing sing pinter... lan webcam sing wis ndeleng kakehan. PENONTON. Saiki ing bioskop.",
+      "Saka studio sing nggawa panjenengan lungguh... teka sekuel sing paling wani. LUNGGUH 2: ISIH LUNGGUH.",
+      "Para kritikus nyebut 'wong akeh sing paling apik busanane sing tau direkam laptop.' Enggal teka ing ruangan iki.",
+      "Siji ruangan. Nol bledosan. Karisma tanpa wates. HACKATHON. Jempol loro munggah dhuwur banget.",
+      "Padha teka kanggo demo... padha kari kanggo cemilan gratis... PESERTA. Seger kasertifikasi."
+    ],
+    "funnyStill": [
+      "Mangsa adhem iki... babar blas ora ana kedadeyan. Lan nggumunake. URIP MENENG: FILM.",
+      "Rolas pahlawan. Siji ruangan. Nol obah. PATUNG. Rating M: Meneng Mencurigakake.",
+      "Saka sutradara NGENTENI... teka NGENTENI 2: ISIH NGENTENI. Kritikus kandha 'pancen nglungguhake.'",
+      "Ing donya sing ora ana sing obah... siji narator... nyuwun. Mangga. Sapa wae. Dadah.",
+      "Enggal teka: JEDA PALING SUWE. Sangang puluh menit. Siji ruangan. Ora ana kedhip babar pisan.",
+      "Mangsa panas iki... penonton ngadhepi tantangan paling gedhe... ngangkat tangan siji. GERAKAN. Saiki diputer."
+    ],
+    "descriptive": [
+      "Kamera urip. Adegan bakal tak gambarake maneh sedhela engkas.",
+      "Durung bisa entuk gambaran saiki. Cekel kamera supaya anteng, aku bakal nyoba maneh.",
+      "Isih ndeleng. Gambaran anyar enggal teka."
+    ],
+    "pumpkin": [
+      "He he he... sugeng rawuh, tamu sing wani! Kostume apik tenan. Apik ngluwihi waluh.",
+      "Bu! Ha, kaget ta? Kostummu sing malah gawe aku kaget, kanthi cara sing paling apik.",
+      "Oho, mrene, mrene... Aku seneng tamu sing gaya. Raiku dadi padhang kabeh.",
+      "He he... kostum apik kanggo wengi sing apik. Aku sumorot merga meri.",
+      "Sugeng rawuh, sugeng rawuh! Pengin tak rangkul, nanging njeroku meh kothong. Kostume apik, ta.",
+      "He he he... aku wis weruh akeh kostum bengi iki, nanging kostummu? Medeni nanging nggumunake."
+    ]
+  },
+  "noChange": "Ora ana owah-owahan."
+}

@@ -1,0 +1,217 @@
+{
+  "callNow": "PIGA SIMU SASA! WAHUDUMU WANASUBIRI!",
+  "tagline": "Ulimwengu wako, ukisimuliwa.",
+  "order": "AGIZA SASA",
+  "burst1": "KAMA ULIVYOONA KWENYE TV!",
+  "burst2": "$0.00 TU!",
+  "finePrint": "*Si nambari halisi ya simu. Tafadhali usipige. NarrateBot 3000 haiwajibiki kwa masimulizi yaliyo sahihi kupita kiasi. Matokeo yanaweza kutofautiana. Betri hazijajumuishwa.",
+  "ticker": [
+    "'Ilimweleza paka wangu kikamilifu!' – Mteja Aliyeridhika",
+    "'Sijawahi kuhisi nimeonekana hivi.' – Pia Mteja",
+    "'Mmea wangu wa nyumbani haujawahi kusikika wa kifahari hivi.' – Mteja, Pengine",
+    "'Nilicheka. Nililia. Nilikaa tuli kabisa.' – Kundi"
+  ],
+  "cleanSub": "Masimulizi ya moja kwa moja ya mandhari kutoka kwenye kamera yako",
+  "cleanExplain": "Elekeza kamera yako kwa ulimwengu na NarrateBot 3000 itaeleza kwa sauti kile inachokiona, kwa lugha yako.",
+  "start": "Anza",
+  "butWait": "LAKINI SUBIRI... KUNA ZAIDI!",
+  "nowWith": "SASA NA HALI YA {mode}!",
+  "mode": {
+    "documentary": "MAKALA",
+    "funny": "VICHEKESHO",
+    "descriptive": "MAELEZO",
+    "pumpkin": "MALENGE"
+  },
+  "modeClean": {
+    "documentary": "Mtindo wa makala",
+    "funny": "Mtindo wa kionjo cha filamu",
+    "descriptive": "Hali ya maelezo",
+    "pumpkin": "Mtindo wa malenge"
+  },
+  "countdown": {
+    "in": "Kusimulia baada ya {n}…",
+    "late": "Inasimulia…",
+    "visitor": "Inasubiri mgeni…",
+    "sr": "Masimulizi yanakuja hivi punde"
+  },
+  "live": "MUBASHARA",
+  "specimen": "SAMPULI",
+  "observation": "UCHUNGUZI",
+  "herdNone": "SHUGHULI ZA KUNDI: HAKUNA ILIYOGUNDULIWA",
+  "unchanged": "Mandhari haijabadilika",
+  "paused": "IMESITISHWA",
+  "nowShowing": "SASA INAONYESHWA",
+  "btn": {
+    "describe": "Eleza sasa",
+    "pause": "Sitisha",
+    "play": "Cheza",
+    "flip": "Geuza kamera",
+    "settings": "Mipangilio",
+    "themeDark": "Mandhari meusi",
+    "themeLight": "Mandhari meupe",
+    "accessible": "Mwonekano unaofikika",
+    "infomercial": "Mwonekano wa tangazo",
+    "narrLang": "Lugha ya masimulizi",
+    "close": "Funga",
+    "siteLang": "Lugha ya tovuti"
+  },
+  "set": {
+    "title": "FOMU YA ODA YA KITUO CHA SIMU",
+    "titleClean": "Mipangilio",
+    "sub": "Wahudumu wanasubiri",
+    "useEleven": "Tumia sauti ya ElevenLabs",
+    "charsSession": "Herufi zilizotumwa kipindi hiki",
+    "charsToday": "Herufi leo (watumiaji wote)",
+    "narrToday": "Masimulizi leo",
+    "config": "Usanidi",
+    "stillness": "Unyeti wa utulivu",
+    "stillDebug": "Hesabu ya utulivu / tofauti ya mwisho",
+    "textSize": "Ukubwa wa maandishi",
+    "smaller": "Maandishi madogo zaidi",
+    "larger": "Maandishi makubwa zaidi",
+    "customLang": "Lugha maalum ya masimulizi",
+    "customLangHint": "Inaongezwa kwenye orodha ya lugha za masimulizi (L)",
+    "music": "Sauti ya muziki",
+    "srMute": "Usiongee kwa sauti (kisoma skrini kinasoma maandishi)",
+    "hideVideo": "Ficha video, onyesha maandishi ya masimulizi tu",
+    "hotkeys": "Vitufe vya mkato",
+    "yes": "imewekwa",
+    "no": "haipo",
+    "dflt": "chaguo-msingi",
+    "breakLen": "Pumziko kati ya mistari",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Hali"
+    ],
+    [
+      "L",
+      "Lugha ya masimulizi"
+    ],
+    [
+      "N",
+      "Eleza sasa"
+    ],
+    [
+      "S",
+      "Utulivu washa/zima"
+    ],
+    [
+      "T",
+      "Mandhari"
+    ],
+    [
+      "A",
+      "Mwonekano unaofikika"
+    ],
+    [
+      "Nafasi",
+      "Sitisha / cheza"
+    ],
+    [
+      "K",
+      "Mipangilio"
+    ]
+  ],
+  "keys": {
+    "title": "LETA FUNGUO ZAKO",
+    "titleClean": "Tumia funguo zako mwenyewe",
+    "sub": "Wahudumu wanahitaji funguo zako ili kupokea simu hii",
+    "intro": "NarrateBot 3000 inatumia ufunguo wako wa Gemini kwa masimulizi na, ukipenda, ufunguo wa ElevenLabs kwa sauti.",
+    "gemini": "Ufunguo wa API wa Gemini",
+    "eleven": "Ufunguo wa API wa ElevenLabs (si lazima)",
+    "geminiHelp": "Jinsi ya kupata ufunguo wa Gemini",
+    "elevenHelp": "Jinsi ya kupata ufunguo wa ElevenLabs",
+    "getAt": "Pata ufunguo kwenye",
+    "newTab": " (inafunguka kwenye kichupo kipya)",
+    "geminiSteps": "Ingia, chagua Create API key, kisha bandika ufunguo hapa.",
+    "geminiCost": "Google inatoa kiwango cha bure chenye vikomo vya matumizi; matumizi makubwa zaidi yanatozwa kwenye akaunti yako ya Google.",
+    "elevenSteps": "Unda ufunguo wenye ruhusa ya Text to Speech, kisha uubandike hapa.",
+    "elevenCost": "Mpango wa bure unajumuisha kiasi cha herufi kila mwezi. Baadhi ya sauti zinahitaji mpango wa kulipia; sauti isipopatikana tunatumia sauti ya kawaida, au sauti ya kivinjari chako ukiacha hapa wazi.",
+    "privacy": "Funguo zako zinahifadhiwa kwenye kuki iliyosimbwa kwa njia fiche katika kivinjari hiki na zinatumwa kwenye seva yetu tu ili kutekeleza maombi yako. Kamwe hatuzihifadhi wala kuziandika kwenye kumbukumbu. Unaweza kuziondoa wakati wowote kwenye Mipangilio.",
+    "save": "Hifadhi na uanze",
+    "saving": "Inakagua…",
+    "cancel": "Ghairi",
+    "needGemini": "Weka ufunguo wako wa Gemini.",
+    "geminiInvalid": "Google haikukubali ufunguo huo wa Gemini. Uangalie kisha ujaribu tena.",
+    "format": "Hiyo haionekani kama ufunguo wa API. Bandika ufunguo wote, bila nafasi.",
+    "formatEleven": "Ufunguo huo wa ElevenLabs hauonekani sahihi. Bandika ufunguo wote, au uache wazi.",
+    "tooMany": "Majaribio mengi mno. Subiri dakika 15.",
+    "failed": "Imeshindikana kukagua ufunguo wako sasa. Jaribu tena baada ya muda mfupi.",
+    "needKeys": "Ili kuendelea kusimulia, ongeza funguo zako mwenyewe.",
+    "quota": "Ufunguo wako wa Gemini umefikia kikomo cha matumizi. Inajaribu tena baada ya dakika moja…",
+    "badKey": "Google imekataa ufunguo wako wa Gemini. Uangalie au bandika mpya.",
+    "removed": "Funguo zako zimeondolewa. Ongeza funguo ili kuendelea kusimulia."
+  },
+  "owner": {
+    "title": "UFIKIAJI WA MMILIKI",
+    "titleClean": "Ufikiaji wa mmiliki",
+    "label": "Nenosiri la mmiliki",
+    "submit": "Fungua",
+    "wrong": "Hilo halikufanya kazi.",
+    "tooMany": "Majaribio mengi mno. Subiri dakika 15.",
+    "done": "Ufikiaji wa mmiliki umefunguliwa."
+  },
+  "access": {
+    "legend": "Ufikiaji",
+    "current": "Ufikiaji wa sasa:",
+    "owner": "Mmiliki",
+    "byok": "Funguo zako mwenyewe",
+    "none": "Hakuna funguo",
+    "change": "Badilisha funguo",
+    "add": "Tumia funguo zako mwenyewe",
+    "remove": "Ondoa funguo zangu",
+    "lock": "Funga ufikiaji wa mmiliki"
+  },
+  "camError": "Kamera haipatikani. Angalia ruhusa ya kamera na kwamba ukurasa uko kwenye HTTPS.",
+  "fallback": {
+    "documentary": [
+      "Na hapa tunaona mkusanyiko wa spishi hii, kila mmoja akiwa na hadhi kuliko aliyetangulia. Kwa kweli, maumbile katika ubora wake.",
+      "Sampuli ya ajabu inainama mbele, macho yamekazwa kwenye skrini inayong'aa, kwa subira ya kiumbe kinachojua mambo makubwa huchukua muda.",
+      "Angalia kujiamini kwa utulivu kwa kundi hili. Hakuna hata mmoja aliyeingiwa na hofu, licha ya kuwa mbali hivi na chanzo chao asilia cha vitafunio.",
+      "Koloni limekusanyika kuzunguka chanzo cha mwanga, kama walivyofanya mababu zao. Inaonekana mambo mengine ni ya milele.",
+      "Sampuli moja inarekebisha mkao wake kwa heshima kubwa. Wengine wanatambua. Kiongozi amejitokeza.",
+      "Porini, viumbe wachache sana wanaweza kukaa kwenye onyesho kwa madaha kiasi hiki. Hata hivyo, hawa hapa. Wa kupendeza."
+    ],
+    "documentaryStill": [
+      "Kundi halijasogea. Hata kutikisika kidogo. Msimulizi, kwa upande wake, bado ana matumaini.",
+      "Bado hakuna kitu. Sampuli zinaonekana kuhifadhi nguvu, labda kwa ajili ya makofi.",
+      "Muda umepita sasa. Mtu anaanza kushuku kwamba kundi linasubiri msimulizi achekeshe. Anajitahidi.",
+      "Utulivu kamili. Wanasayansi wana neno kwa tabia hii. Neno hilo ni 'kuhukumu.'",
+      "Msimulizi ameshaona mimea ya nyumbani yenye tamaa inayoonekana zaidi. Tafadhali, mtu yeyote, sogeza kidole.",
+      "Msiwe na wasiwasi, kundi liko salama kabisa. Wanachagua tu, kwa heshima kubwa, kutosogea."
+    ],
+    "funny": [
+      "Katika ulimwengu... ambapo chumba kimoja kilithubutu kutazama kompyuta ndogo... gwiji anazaliwa. Daraja Z kwa Zuri Sana.",
+      "Msimu huu wa vuli... kundi la wageni werevu... na kamera ya wavuti iliyoona mengi mno. HADHIRA. Sasa kwenye kumbi za sinema.",
+      "Kutoka studio iliyokuletea kukaa chini... inakuja sehemu yake ya pili yenye ujasiri zaidi. KUKAA CHINI 2: BADO TUMEKETI.",
+      "Wakosoaji wanaiita 'umati uliovaa vizuri zaidi kuwahi kurekodiwa na kompyuta ndogo.' Inakuja hivi karibuni katika chumba hiki hiki.",
+      "Chumba kimoja. Milipuko sifuri. Haiba isiyo na kikomo. HACKATHON. Vidole gumba viwili juu kabisa.",
+      "Walikuja kwa ajili ya onyesho... wakabaki kwa vitafunio vya bure... WAHUDHURIAJI. Imethibitishwa kuwa mbichi."
+    ],
+    "funnyStill": [
+      "Msimu huu wa baridi... hakuna kabisa kinachotokea. Na inavutia mno. MAISHA TULIVU: FILAMU.",
+      "Mashujaa kumi na wawili. Chumba kimoja. Hakuna mwendo. SANAMU. Daraja T kwa Tulivu Kutiliwa Shaka.",
+      "Kutoka kwa mwongozaji wa KUSUBIRI... inakuja KUSUBIRI 2: BADO TUNASUBIRI. Wakosoaji wanasema 'inakukalisha kweli.'",
+      "Katika ulimwengu ambapo hakuna anayesogea... msimulizi mmoja... anaomba. Tafadhali. Yeyote. Punga mkono.",
+      "Inakuja hivi karibuni: KISIMAMO KIREFU ZAIDI. Dakika tisini. Chumba kimoja. Hakuna hata kupepesa jicho.",
+      "Kiangazi hiki... hadhira inakabili changamoto yake kubwa zaidi... kuinua mkono mmoja. ISHARA. Sasa inaonyeshwa."
+    ],
+    "descriptive": [
+      "Kamera imewashwa. Nitaeleza mandhari tena baada ya muda mfupi.",
+      "Sikuweza kupata maelezo sasa hivi. Shikilia kamera kwa utulivu nami nitajaribu tena.",
+      "Bado ninatazama. Maelezo mapya yanakuja hivi punde."
+    ],
+    "pumpkin": [
+      "He he he... karibu, mgeni jasiri! Vazi gani hili! Zuri kupita malenge yote.",
+      "Buu! Ha, nimekushtua? Vazi lako hakika limenishtua mimi, kwa njia nzuri kabisa.",
+      "Oho, sogea karibu, sogea karibu... Napenda mgeni mwenye mtindo. Unaniangaza uso mzima.",
+      "He he... vazi zuri kwa usiku mzuri. Ninang'aa kwa wivu kabisa.",
+      "Karibu, karibu! Ningekukumbatia, lakini ndani mimi ni mtupu. Vazi zuri, hata hivyo.",
+      "He he he... nimeona mavazi mengi usiku huu, lakini lako? La kutisha kwa uzuri."
+    ]
+  },
+  "noChange": "Hakuna mabadiliko."
+}

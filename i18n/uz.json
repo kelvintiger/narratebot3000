@@ -1,0 +1,217 @@
+{
+  "callNow": "HOZIROQ QOʻNGʻIROQ QILING! OPERATORLAR KUTIB TURIBDI!",
+  "tagline": "Sizning dunyongiz — ovozli hikoyada.",
+  "order": "HOZIROQ BUYURTMA BERING",
+  "burst1": "TELEVIZORDA KOʻRSATILGAN!",
+  "burst2": "ATIGI $0.00!",
+  "finePrint": "*Bu haqiqiy telefon raqami emas. Iltimos, qoʻngʻiroq qilmang. NarrateBot 3000 haddan tashqari aniq tavsiflar uchun javobgar emas. Natijalar farq qilishi mumkin. Batareyalar toʻplamga kirmaydi.",
+  "ticker": [
+    "“Mushugimni mukammal tasvirlab berdi!” – Mamnun mijoz",
+    "“Meni hech qachon bunchalik koʻrishmagan.” – Yana bir mijoz",
+    "“Gultuvagim hech qachon bunchalik ulugʻvor eshitilmagan.” – Mijoz, ehtimol",
+    "“Kuldim. Yigʻladim. Qimirlamay oʻtirdim.” – Poda"
+  ],
+  "cleanSub": "Kamerangizdan jonli sahna tavsifi",
+  "cleanExplain": "Kamerani dunyoga qarating — NarrateBot 3000 koʻrganini sizning tilingizda ovoz chiqarib tasvirlaydi.",
+  "start": "Boshlash",
+  "butWait": "LEKIN SHOSHMANG... YANA BOR!",
+  "nowWith": "ENDI {mode} REJIMI BILAN!",
+  "mode": {
+    "documentary": "HUJJATLI",
+    "funny": "KULGILI",
+    "descriptive": "TAVSIFIY",
+    "pumpkin": "QOVOQ"
+  },
+  "modeClean": {
+    "documentary": "Hujjatli film uslubi",
+    "funny": "Film treyleri uslubi",
+    "descriptive": "Tavsif rejimi",
+    "pumpkin": "Qovoq uslubi"
+  },
+  "countdown": {
+    "in": "Hikoya {n} soniyadan keyin…",
+    "late": "Hikoya qilinmoqda…",
+    "visitor": "Mehmon kutilmoqda…",
+    "sr": "Hikoya tez orada boshlanadi"
+  },
+  "live": "JONLI",
+  "specimen": "NAMUNA",
+  "observation": "KUZATUV",
+  "herdNone": "PODA FAOLLIGI: ANIQLANMADI",
+  "unchanged": "Sahna oʻzgarmadi",
+  "paused": "PAUZA",
+  "nowShowing": "HOZIR EKRANDA",
+  "btn": {
+    "describe": "Hozir tasvirlash",
+    "pause": "Pauza",
+    "play": "Davom ettirish",
+    "flip": "Kamerani almashtirish",
+    "settings": "Sozlamalar",
+    "themeDark": "Qorongʻi mavzu",
+    "themeLight": "Yorugʻ mavzu",
+    "accessible": "Qulay koʻrinish",
+    "infomercial": "Telemagazin koʻrinishi",
+    "narrLang": "Hikoya tili",
+    "close": "Yopish",
+    "siteLang": "Sayt tili"
+  },
+  "set": {
+    "title": "QOʻNGʻIROQ MARKAZI BUYURTMA BLANKASI",
+    "titleClean": "Sozlamalar",
+    "sub": "Operatorlar kutib turibdi",
+    "useEleven": "ElevenLabs ovozidan foydalanish",
+    "charsSession": "Bu seansda yuborilgan belgilar",
+    "charsToday": "Bugungi belgilar (barcha foydalanuvchilar)",
+    "narrToday": "Bugungi hikoyalar",
+    "config": "Konfiguratsiya",
+    "stillness": "Harakatsizlikka sezgirlik",
+    "stillDebug": "Harakatsizlik soni / oxirgi farq",
+    "textSize": "Matn oʻlchami",
+    "smaller": "Kichikroq matn",
+    "larger": "Kattaroq matn",
+    "customLang": "Oʻz hikoya tilingiz",
+    "customLangHint": "Hikoya tillari roʻyxatiga qoʻshiladi (L)",
+    "music": "Musiqa balandligi",
+    "srMute": "Ovoz chiqarib aytmaslik (matnni ekran oʻquvchi oʻqiydi)",
+    "hideVideo": "Videoni yashirish, faqat hikoya matnini koʻrsatish",
+    "hotkeys": "Tezkor tugmalar",
+    "yes": "oʻrnatilgan",
+    "no": "yoʻq",
+    "dflt": "standart",
+    "breakLen": "Satrlar orasidagi tanaffus",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Rejimlar"
+    ],
+    [
+      "L",
+      "Hikoya tili"
+    ],
+    [
+      "N",
+      "Hozir tasvirlash"
+    ],
+    [
+      "S",
+      "Harakatsizlik yoq./oʻch."
+    ],
+    [
+      "T",
+      "Mavzu"
+    ],
+    [
+      "A",
+      "Qulay koʻrinish"
+    ],
+    [
+      "Probel",
+      "Pauza / davom ettirish"
+    ],
+    [
+      "K",
+      "Sozlamalar"
+    ]
+  ],
+  "keys": {
+    "title": "OʻZ KALITLARINGIZNI OLIB KELING",
+    "titleClean": "Oʻz kalitlaringizdan foydalaning",
+    "sub": "Bu qoʻngʻiroqni qabul qilish uchun operatorlarga kalitlaringiz kerak",
+    "intro": "NarrateBot 3000 hikoya uchun sizning shaxsiy Gemini kalitingiz va, xohlasangiz, ovozlar uchun ElevenLabs kaliti bilan ishlaydi.",
+    "gemini": "Gemini API kaliti",
+    "eleven": "ElevenLabs API kaliti (ixtiyoriy)",
+    "geminiHelp": "Gemini kalitini qanday olish mumkin",
+    "elevenHelp": "ElevenLabs kalitini qanday olish mumkin",
+    "getAt": "Kalitni bu yerdan oling:",
+    "newTab": " (yangi varaqda ochiladi)",
+    "geminiSteps": "Tizimga kiring, Create API key ni tanlang, soʻng kalitni shu yerga qoʻying.",
+    "geminiCost": "Google foydalanish cheklovlari bilan bepul tarif taklif qiladi; koʻproq foydalanish Google hisobingizdan toʻlanadi.",
+    "elevenSteps": "Text to Speech ruxsatiga ega kalit yarating, soʻng uni shu yerga qoʻying.",
+    "elevenCost": "Bepul tarifga oylik belgilar limiti kiradi. Baʼzi ovozlar pullik tarifni talab qiladi; ovoz mavjud boʻlmasa, standart ovozdan, maydonni boʻsh qoldirsangiz esa brauzeringiz ovozidan foydalanamiz.",
+    "privacy": "Kalitlaringiz shu brauzerdagi shifrlangan cookie faylida saqlanadi va faqat soʻrovlaringizni bajarish uchun serverimizga yuboriladi. Biz ularni hech qachon saqlamaymiz va jurnalga yozmaymiz. Ularni istalgan vaqtda Sozlamalarda oʻchirishingiz mumkin.",
+    "save": "Saqlash va boshlash",
+    "saving": "Tekshirilmoqda…",
+    "cancel": "Bekor qilish",
+    "needGemini": "Gemini kalitingizni kiriting.",
+    "geminiInvalid": "Google bu Gemini kalitini qabul qilmadi. Tekshirib, qayta urinib koʻring.",
+    "format": "Bu API kalitiga oʻxshamaydi. Kalitni toʻliq, boʻshliqlarsiz qoʻying.",
+    "formatEleven": "Bu ElevenLabs kaliti notoʻgʻri koʻrinadi. Kalitni toʻliq qoʻying yoki boʻsh qoldiring.",
+    "tooMany": "Urinishlar juda koʻp. 15 daqiqa kuting.",
+    "failed": "Hozir kalitni tekshirib boʻlmadi. Birozdan keyin qayta urinib koʻring.",
+    "needKeys": "Hikoyani davom ettirish uchun oʻz kalitlaringizni qoʻshing.",
+    "quota": "Gemini kalitingiz foydalanish limitiga yetdi. Bir daqiqadan keyin qayta urinamiz…",
+    "badKey": "Google Gemini kalitingizni rad etdi. Tekshiring yoki yangisini qoʻying.",
+    "removed": "Kalitlaringiz oʻchirildi. Hikoyani davom ettirish uchun kalit qoʻshing."
+  },
+  "owner": {
+    "title": "EGASI KIRISHI",
+    "titleClean": "Egasi kirishi",
+    "label": "Egasi paroli",
+    "submit": "Ochish",
+    "wrong": "Boʻlmadi.",
+    "tooMany": "Urinishlar juda koʻp. 15 daqiqa kuting.",
+    "done": "Egasi kirishi ochildi."
+  },
+  "access": {
+    "legend": "Kirish",
+    "current": "Joriy kirish:",
+    "owner": "Egasi",
+    "byok": "Oʻz kalitlaringiz",
+    "none": "Kalit yoʻq",
+    "change": "Kalitlarni oʻzgartirish",
+    "add": "Oʻz kalitlaringizdan foydalaning",
+    "remove": "Kalitlarimni oʻchirish",
+    "lock": "Egasi kirishini qulflash"
+  },
+  "camError": "Kamera mavjud emas. Kamera ruxsatini va sahifa HTTPS orqali ochilganini tekshiring.",
+  "fallback": {
+    "documentary": [
+      "Mana, biz bu turning yigʻilishini kuzatyapmiz, har biri oldingisidan ham ulugʻvorroq. Haqiqatan ham, tabiat eng goʻzal holatida.",
+      "Ajoyib bir namuna oldinga egilib, nurli ekrandan koʻz uzmay turibdi — buyuk ishlar vaqt talab qilishini biladigan jonzot sabri bilan.",
+      "Bu podaning xotirjam ishonchiga eʼtibor bering. Tabiiy gazak zaxirasidan shunchalik uzoqda boʻlsa ham, hech biri vahimaga tushmadi.",
+      "Koloniya ajdodlari singari yorugʻlik manbai atrofida yigʻildi. Baʼzi narsalar, aftidan, abadiy.",
+      "Bir namuna ulkan viqor bilan holatini toʻgʻrilaydi. Qolganlar buni payqaydi. Yetakchi paydo boʻldi.",
+      "Yovvoyi tabiatda namoyishni bunchalik nafosat bilan oʻtirib chiqa oladigan jonzotlar juda kam. Ammo ular shu yerda. Ajoyib."
+    ],
+    "documentaryStill": [
+      "Poda qimirlamadi. Hatto pinak ham. Hikoyachi esa hamon umid qilmoqda.",
+      "Hamon hech narsa. Namunalar energiyani tejayotganga oʻxshaydi, balki qarsaklar uchun.",
+      "Ancha vaqt oʻtdi. Poda hikoyachining kulgili boʻlishini kutyaptimi, degan shubha paydo boʻladi. U harakat qilyapti.",
+      "Toʻliq harakatsizlik. Olimlarda bu xatti-harakat uchun soʻz bor. Bu soʻz — “baholash”.",
+      "Hikoyachi bundan ham shijoatliroq gultuvaklarni koʻrgan. Iltimos, kimdir, kim boʻlsa ham, barmogʻingizni qimirlating.",
+      "Xotirjam boʻling, poda mutlaqo xavfsiz. Ular shunchaki katta viqor bilan qimirlamaslikni tanladi."
+    ],
+    "funny": [
+      "Bir dunyoda... bir xona noutbukka qarashga jurʼat etgan... afsona tugʻiladi. PG reytingi: Pretty Good, yaʼni Juda Yaxshi.",
+      "Bu kuzda... ajoyib notanishlar guruhi... va juda koʻp narsani koʻrgan veb-kamera. TOMOSHABINLAR. Kinoteatrlarda.",
+      "Sizga oʻtirishni taqdim etgan studiyadan... uning eng dadil davomi. OʻTIRISH 2: HAMON OʻTIRIBMIZ.",
+      "Tanqidchilar uni “noutbuk suratga olgan eng chiroyli kiyingan olomon” deb atashmoqda. Tez kunda aynan shu xonada.",
+      "Bir xona. Nol portlash. Cheksiz xarizma. XAKATON. Ikki bosh barmoq yuqoriga.",
+      "Ular demo uchun kelishdi... bepul gazak uchun qolishdi... ISHTIROKCHILAR. Yangiligi tasdiqlangan."
+    ],
+    "funnyStill": [
+      "Bu qishda... mutlaqo hech narsa sodir boʻlmaydi. Va bu hayratlanarli. NATYURMORT: FILM.",
+      "Oʻn ikki qahramon. Bir xona. Nol harakat. HAYKALLAR. Reyting S: Shubhali Statsionar.",
+      "KUTISH filmi rejissyoridan... KUTISH 2: HAMON KUTYAPMIZ. Tanqidchilar uni “uzoq oʻtirib qoladi” deyishmoqda.",
+      "Hech kim qimirlamaydigan dunyoda... bir hikoyachi... yolvoradi. Iltimos. Kimdir. Qoʻl silkiting.",
+      "Tez kunda: ENG UZUN PAUZA. Toʻqson daqiqa. Bir xona. Birorta ham koʻz qirpish yoʻq.",
+      "Bu yozda... tomoshabinlar eng katta sinovga duch keladi... bitta qoʻlni koʻtarish. ISHORA. Hozir ekranda."
+    ],
+    "descriptive": [
+      "Kamera yoniq. Sahnani birozdan keyin yana tasvirlayman.",
+      "Hozir tavsif olib boʻlmadi. Kamerani qimirlatmay ushlang, men qayta urinaman.",
+      "Hamon qarayapman. Yangi tavsif tez orada."
+    ],
+    "pumpkin": [
+      "He-he-he... xush kelibsan, jasur mehmon! Qanday kostyum! Chinakam qovoqdek goʻzal.",
+      "Bu! Ha, qoʻrqib ketdingmi? Sening libosing meni rostdan qoʻrqitdi — eng yaxshi maʼnoda.",
+      "Oho, yaqinroq kel, yaqinroq... Uslubi bor mehmonlarni yaxshi koʻraman. Sen butun yuzimni yoritib yubording.",
+      "He-he... ajoyib tunga ajoyib kostyum. Hasaddan yonib-porlab turibman.",
+      "Xush kelibsan, xush kelibsan! Quchoqlardim-u, ichim deyarli boʻm-boʻsh. Lekin libosing zoʻr.",
+      "He-he-he... bu tun koʻp kostyum koʻrdim, lekin seniki-chi? Dahshatli-ajoyib."
+    ]
+  },
+  "noChange": "Oʻzgarish yoʻq."
+}

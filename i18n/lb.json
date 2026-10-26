@@ -1,0 +1,217 @@
+{
+  "callNow": "RUFFT ELO UN! D'OPERATEURE WAARDEN!",
+  "tagline": "Är Welt, erzielt.",
+  "order": "ELO BESTELLEN",
+  "burst1": "BEKANNT VUN DER TÉLÉ!",
+  "burst2": "NËMMEN 0,00 $!",
+  "finePrint": "*Keng richteg Telefonsnummer. Rufft w.e.g. net un. NarrateBot 3000 ass net responsabel fir Narratiounen, déi ze genee sinn. Resultater kënnen ofwäichen. Batterien net abegraff.",
+  "ticker": [
+    "„Et huet meng Kaz perfekt beschriwwen!“ – Zefridde Client",
+    "„Ech hu mech nach ni sou gesi gefillt.“ – Och e Client",
+    "„Meng Zëmmerplanz huet nach ni sou majestéitesch geklongen.“ – Client, wahrscheinlech",
+    "„Ech hu gelaacht. Ech hu gekrasch. Ech souz ganz roueg.“ – D'Häerd"
+  ],
+  "cleanSub": "Live-Beschreiwung vun der Zeen vun Ärer Kamera",
+  "cleanExplain": "Riicht Är Kamera op d'Welt, an NarrateBot 3000 beschreift haart, wat en gesäit, an Ärer Sprooch.",
+  "start": "Starten",
+  "butWait": "MEE WAART... ET GËTT NACH MÉI!",
+  "nowWith": "ELO MAM MODUS: {mode}!",
+  "mode": {
+    "documentary": "DOKU",
+    "funny": "LUSTEG",
+    "descriptive": "BESCHREIWEND",
+    "pumpkin": "KÜRBIS"
+  },
+  "modeClean": {
+    "documentary": "Dokumentarfilm-Stil",
+    "funny": "Filmtrailer-Stil",
+    "descriptive": "Beschreiwende Modus",
+    "pumpkin": "Kürbis-Stil"
+  },
+  "countdown": {
+    "in": "Erzielung an {n}…",
+    "late": "Erzielen…",
+    "visitor": "Waarden op e Visiteur…",
+    "sr": "Erzielung geschwënn"
+  },
+  "live": "LIVE",
+  "specimen": "EXEMPLAR",
+  "observation": "OBSERVATIOUN",
+  "herdNone": "HÄERDAKTIVITÉIT: KENG",
+  "unchanged": "Zeen onverännert",
+  "paused": "PAUS",
+  "nowShowing": "ELO OP DER LEINWAND",
+  "btn": {
+    "describe": "Elo beschreiwen",
+    "pause": "Paus",
+    "play": "Ofspillen",
+    "flip": "Kamera wiesselen",
+    "settings": "Astellungen",
+    "themeDark": "Donkelt Theema",
+    "themeLight": "Hellt Theema",
+    "accessible": "Accessibel Usiicht",
+    "infomercial": "Reklamm-Usiicht",
+    "narrLang": "Narratiounssprooch",
+    "close": "Zoumaachen",
+    "siteLang": "Sprooch vum Site"
+  },
+  "set": {
+    "title": "BESTELLFORMULAIRE VUM CALLCENTER",
+    "titleClean": "Astellungen",
+    "sub": "D'Operateure waarden",
+    "useEleven": "ElevenLabs-Stëmm benotzen",
+    "charsSession": "Zeechen an dëser Sessioun geschéckt",
+    "charsToday": "Zeechen haut (all Benotzer)",
+    "narrToday": "Narratiounen haut",
+    "config": "Konfiguratioun",
+    "stillness": "Empfindlechkeet fir Stëllstand",
+    "stillDebug": "Stëllstand-Zuel / lescht Differenz",
+    "textSize": "Textgréisst",
+    "smaller": "Méi klengen Text",
+    "larger": "Méi groussen Text",
+    "customLang": "Eege Narratiounssprooch",
+    "customLangHint": "Gëtt an d'Lëscht vun den Narratiounssproochen derbäigesat (L)",
+    "music": "Musekslautstäerkt",
+    "srMute": "Net haart schwätzen (de Screenreader liest den Text)",
+    "hideVideo": "Video verstoppen, nëmmen den Narratiounstext weisen",
+    "hotkeys": "Tastekombinatiounen",
+    "yes": "gesat",
+    "no": "feelt",
+    "dflt": "Standard",
+    "breakLen": "Paus tëscht Sätz",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Modi"
+    ],
+    [
+      "L",
+      "Narratiounssprooch"
+    ],
+    [
+      "N",
+      "Elo beschreiwen"
+    ],
+    [
+      "S",
+      "Stëllstand un/aus"
+    ],
+    [
+      "T",
+      "Theema"
+    ],
+    [
+      "A",
+      "Accessibel Usiicht"
+    ],
+    [
+      "Espace",
+      "Paus / ofspillen"
+    ],
+    [
+      "K",
+      "Astellungen"
+    ]
+  ],
+  "keys": {
+    "title": "BRÉNGT ÄR EEGE SCHLËSSELEN",
+    "titleClean": "Benotzt Är eege Schlësselen",
+    "sub": "D'Operateure brauchen Är Schlësselen fir dësen Uruff",
+    "intro": "NarrateBot 3000 leeft mat Ärem eegene Gemini-Schlëssel fir d'Narratioun an, wann Dir wëllt, engem ElevenLabs-Schlëssel fir d'Stëmmen.",
+    "gemini": "Gemini-API-Schlëssel",
+    "eleven": "ElevenLabs-API-Schlëssel (optional)",
+    "geminiHelp": "Wéi kritt een e Gemini-Schlëssel",
+    "elevenHelp": "Wéi kritt een en ElevenLabs-Schlëssel",
+    "getAt": "E Schlëssel kritt Dir op",
+    "newTab": " (neien Tab)",
+    "geminiSteps": "Mellt Iech un, wielt Create API key a fügt de Schlëssel dann hei an.",
+    "geminiCost": "Google bitt e gratis Niveau mat Notzungslimitten; méi intensiv Notzung gëtt Ärem Google-Kont verrechent.",
+    "elevenSteps": "Erstellt e Schlëssel mat Text to Speech-Accès a fügt en dann hei an.",
+    "elevenCost": "De gratis Plang enthält e monatlecht Zeechekontingent. Verschidde Stëmme brauchen e bezuelte Plang; wann eng Stëmm net verfügbar ass, benotze mir eng Standardstëmm, oder d'Stëmm vun Ärem Browser, wann Dir dëst eidel loosst.",
+    "privacy": "Är Schlësselen ginn an engem verschlësselte Cookie an dësem Browser gehal an nëmmen un eise Server geschéckt, fir Är Ufroen auszeféieren. Mir späicheren a protokolléieren se ni. Dir kënnt se all Moment an den Astellungen ewechhuelen.",
+    "save": "Späicheren a starten",
+    "saving": "Iwwerpréiwen…",
+    "cancel": "Ofbriechen",
+    "needGemini": "Gitt Äre Gemini-Schlëssel an.",
+    "geminiInvalid": "Google huet dëse Gemini-Schlëssel net akzeptéiert. Iwwerpréift en a probéiert nach eng Kéier.",
+    "format": "Dat gesäit net aus wéi en API-Schlëssel. Fügt de ganze Schlëssel an, ouni Espacen.",
+    "formatEleven": "Dësen ElevenLabs-Schlëssel gesäit net richteg aus. Fügt de ganze Schlëssel an oder loosst d'Feld eidel.",
+    "tooMany": "Ze vill Versich. Waart 15 Minutten.",
+    "failed": "Äre Schlëssel konnt grad net iwwerpréift ginn. Probéiert et gläich nach eng Kéier.",
+    "needKeys": "Fir weider ze erzielen, setzt Är eege Schlësselen derbäi.",
+    "quota": "Äre Gemini-Schlëssel huet seng Notzungslimitt erreecht. Neie Versuch an enger Minutt…",
+    "badKey": "Google huet Äre Gemini-Schlëssel refuséiert. Iwwerpréift en oder fügt en neien an.",
+    "removed": "Är Schlësselen goufen ewechgeholl. Setzt Schlësselen derbäi, fir weider ze erzielen."
+  },
+  "owner": {
+    "title": "PROPRIETÄR-ACCÈS",
+    "titleClean": "Proprietär-Accès",
+    "label": "Proprietär-Passwuert",
+    "submit": "Entspären",
+    "wrong": "Dat huet net geklappt.",
+    "tooMany": "Ze vill Versich. Waart 15 Minutten.",
+    "done": "Proprietär-Accès entspaart."
+  },
+  "access": {
+    "legend": "Accès",
+    "current": "Aktuellen Accès:",
+    "owner": "Proprietär",
+    "byok": "Är eege Schlësselen",
+    "none": "Keng Schlësselen",
+    "change": "Schlësselen änneren",
+    "add": "Är eege Schlësselen benotzen",
+    "remove": "Schlësselen ewechhuelen",
+    "lock": "Proprietär-Accès spären"
+  },
+  "camError": "Kamera net verfügbar. Iwwerpréift d'Kameraautorisatioun an ob d'Säit op HTTPS ass.",
+  "fallback": {
+    "documentary": [
+      "An hei observéiere mir e Rassemblement vun der Spezies, all Exemplar méi distinguéiert wéi dee virdrun. Wierklech, d'Natur vun hirer beschter Säit.",
+      "E bemierkenswäert Exemplar leent sech no vir, d'A fest op den hellen Ecran geriicht, mat der Gedold vun engem Wiesen, dat weess, datt grouss Saachen Zäit brauchen.",
+      "Kuckt Iech dat rouegt Selbstvertrauen vun dëser Häerd un. Keen ass a Panik geroden, obwuel se sou wäit vun hirem natierleche Snackvirrot ewech sinn.",
+      "D'Kolonie huet sech ronderëm d'Liichtquell versammelt, sou wéi hir Virfahren et virun hinne gemaach hunn. Verschidde Saache sinn, wéi et schéngt, éiweg.",
+      "Een Exemplar korrigéiert seng Haltung mat enormer Dignitéit. Déi aner huelen et zur Kenntnis. E Leader ass entstanen.",
+      "An der Wëllnes kënne ganz wéineg Wiesen eng Demo mat esou vill Grâce duerchsëtzen. An awer, hei sinn se. Majestéitesch."
+    ],
+    "documentaryStill": [
+      "D'Häerd huet sech net beweegt. Keen Zockel. Den Erzieler bleift, fir säin Deel, voller Hoffnung.",
+      "Ëmmer nach näischt. D'Exemplare schéngen Energie ze spueren, vläicht fir den Applaus.",
+      "Et ass elo eng Zäit hier. Et kënnt een op de Verdacht, datt d'Häerd drop waart, datt den Erzieler witzeg gëtt. Hie probéiert et.",
+      "Total Stëllstand. D'Wëssenschaftler hunn e Wuert fir dëst Verhalen. D'Wuert ass „Uerteelen“.",
+      "Den Erzieler huet scho Zëmmerplanze mat méi sichtbarer Ambitioun observéiert. W.e.g., iergendeen, egal wien, beweegt e Fanger.",
+      "Keng Suerg, d'Häerd ass komplett sécher. Si entscheede sech einfach, mat grousser Dignitéit, sech net ze beweegen."
+    ],
+    "funny": [
+      "An enger Welt... an där ee Raum sech getraut huet, op e Laptop ze kucken... gëtt eng Legend gebuer. Klasséiert GG: Ganz Gutt.",
+      "Dësen Hierscht... eng Grupp brillant Friemer... an eng Webcam, déi ze vill gesinn huet. DAT PUBLIKUM. Elo am Kino.",
+      "Vum Studio, deen Iech d'Sëtzen bruecht huet... kënnt säin däerfste Nofolger. SËTZEN 2: MIR SËTZEN NACH ËMMER.",
+      "D'Kritiker nennen et „dat bescht gekleedte Publikum, dat jee vun engem Laptop gefilmt gouf“. Geschwënn a genee dësem Raum.",
+      "Ee Raum. Null Explosiounen. Onlimitéiert Charisma. DEN HACKATHON. Zwee Daumen héich, héich an d'Luucht.",
+      "Si koumen fir d'Demo... si bloufe fir déi gratis Snacks... D'PARTICIPANTEN. Zertifizéiert frësch."
+    ],
+    "funnyStill": [
+      "Dëse Wanter... geschitt absolut näischt. An et ass atemberaubend. STILLLIEWEN: DE FILM.",
+      "Zwielef Helden. Ee Raum. Null Beweegung. D'STATUEN. Klasséiert S: Suspekt Statesch.",
+      "Vum Regisseur vu WAARDEN... kënnt WAARDEN 2: MIR WAARDEN NACH ËMMER. D'Kritiker soen, et „hält Iech um Sëtz“.",
+      "An enger Welt, wou kee sech beweegt... ee Erzieler... bettelt. W.e.g. Iergendeen. Winkt.",
+      "Geschwënn: DÉI LÄNGSTE PAUS. Nonzeg Minutten. Ee Raum. Keen eenzegt Blénzelen.",
+      "Dëse Summer... steet d'Publikum virun senger gréisster Erausfuerderung... eng Hand ze hiewen. D'GEST. Elo am Kino."
+    ],
+    "descriptive": [
+      "D'Kamera ass un. Ech beschreiwen d'Zeen gläich nach eng Kéier.",
+      "Ech konnt grad keng Beschreiwung kréien. Haalt d'Kamera roueg, da probéieren ech et nach eng Kéier.",
+      "Ech kucken nach. Eng nei Beschreiwung kënnt geschwënn."
+    ],
+    "pumpkin": [
+      "Hä hä hä... wëllkomm, couragéierte Visiteur! Wat fir e Kostüm. Wierklech kürbis-tastesch.",
+      "Buh! Ha, hunn ech Iech erschreckt? Äre Kostüm huet mech op jidde Fall erschreckt, am beschte Sënn.",
+      "Oho, kommt méi no, kommt méi no... Ech hu Gäscht mat Stil gär. Dir bréngt mäi ganzt Gesiicht zum Liichten.",
+      "Hä hä... e feine Kostüm fir eng fein Nuecht. Ech liichte richteg vun Näid.",
+      "Wëllkomm, wëllkomm! Ech géif Iech gär drécken, mee ech sinn bannen meeschtens huel. Awer e flotte Kostüm.",
+      "Hä hä hä... ech hu vill Kostümer den Owend gesinn, mee Ären? Spuk-takulär."
+    ]
+  },
+  "noChange": "Keng Ännerung."
+}

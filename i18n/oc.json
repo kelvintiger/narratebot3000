@@ -1,0 +1,217 @@
+{
+  "callNow": "SONATZ ARA! LOS OPERATORS VOS ESPÈRAN!",
+  "tagline": "Vòstre mond, narrat.",
+  "order": "COMANDATZ ARA",
+  "burst1": "VIST A LA TELE!",
+  "burst2": "SONQUE 0,00 $!",
+  "finePrint": "*Es pas un vertadièr numèro de telefòn. Sonatz pas, se vos plai. NarrateBot 3000 es pas responsable de las narracions tròp precisas. Los resultats pòdon variar. Pilas pas inclusas.",
+  "ticker": [
+    "'A descrich mon cat a la perfeccion!' – Client satisfach",
+    "'Me soi jamai sentit tan vist.' – Tanben un client",
+    "'Ma planta a jamai sonat tan majestuosa.' – Client, probablament",
+    "'Ai rigut. Ai plorat. Soi demorat plan quiet.' – La Tropèla"
+  ],
+  "cleanSub": "Narracion en dirècte de la scèna dempuèi vòstra camèra",
+  "cleanExplain": "Viratz vòstra camèra cap al mond e NarrateBot 3000 descriu a votz nauta çò que vei, dins vòstra lenga.",
+  "start": "Començar",
+  "butWait": "MAS ESPERATZ... I A MAI!",
+  "nowWith": "ARA AMB LO MÒDE {mode}!",
+  "mode": {
+    "documentary": "DOCUMENTARI",
+    "funny": "COMIC",
+    "descriptive": "DESCRIPTIU",
+    "pumpkin": "COJA"
+  },
+  "modeClean": {
+    "documentary": "Estil documentari",
+    "funny": "Estil anóncia de filme",
+    "descriptive": "Mòde descriptiu",
+    "pumpkin": "Estil coja"
+  },
+  "countdown": {
+    "in": "Narracion dins {n}…",
+    "late": "Narracion…",
+    "visitor": "En espèra d'un visitaire…",
+    "sr": "Narracion d'aquí un moment"
+  },
+  "live": "EN DIRÈCTE",
+  "specimen": "ESPECIMEN",
+  "observation": "OBSERVACION",
+  "herdNone": "ACTIVITAT DE LA TROPÈLA: CAP DETECTADA",
+  "unchanged": "Scèna sens cambiament",
+  "paused": "EN PAUSA",
+  "nowShowing": "A L'AFICHA",
+  "btn": {
+    "describe": "Descriure ara",
+    "pause": "Pausa",
+    "play": "Lectura",
+    "flip": "Virar la camèra",
+    "settings": "Paramètres",
+    "themeDark": "Tèma escur",
+    "themeLight": "Tèma clar",
+    "accessible": "Vista accessibla",
+    "infomercial": "Vista telecròmpa",
+    "narrLang": "Lenga de narracion",
+    "close": "Tampar",
+    "siteLang": "Lenga del site"
+  },
+  "set": {
+    "title": "BON DE COMANDA DEL CENTRE D'APÈLS",
+    "titleClean": "Paramètres",
+    "sub": "Los operators vos espèran",
+    "useEleven": "Utilizar la votz ElevenLabs",
+    "charsSession": "Caractèrs mandats aquesta session",
+    "charsToday": "Caractèrs uèi (totes los utilizaires)",
+    "narrToday": "Narracions uèi",
+    "config": "Configuracion",
+    "stillness": "Sensibilitat a l'immobilitat",
+    "stillDebug": "Comptador d'immobilitat / darrièra diferéncia",
+    "textSize": "Talha del tèxte",
+    "smaller": "Tèxte mai pichon",
+    "larger": "Tèxte mai grand",
+    "customLang": "Lenga de narracion personalizada",
+    "customLangHint": "Apondut a la lista de lengas de narracion (L)",
+    "music": "Volum de la musica",
+    "srMute": "Parlar pas a votz nauta (lo lector d'ecran legís lo tèxte)",
+    "hideVideo": "Amagar la vidèo, mostrar sonque lo tèxte de narracion",
+    "hotkeys": "Acorchis de clavièr",
+    "yes": "definida",
+    "no": "mancanta",
+    "dflt": "per defaut",
+    "breakLen": "Pausa entre las frasas",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Mòdes"
+    ],
+    [
+      "L",
+      "Lenga de narracion"
+    ],
+    [
+      "N",
+      "Descriure ara"
+    ],
+    [
+      "S",
+      "Immobilitat activa/inactiva"
+    ],
+    [
+      "T",
+      "Tèma"
+    ],
+    [
+      "A",
+      "Vista accessibla"
+    ],
+    [
+      "Espaci",
+      "Pausa / lectura"
+    ],
+    [
+      "K",
+      "Paramètres"
+    ]
+  ],
+  "keys": {
+    "title": "PORTATZ VÒSTRAS CLAUS",
+    "titleClean": "Utilizatz vòstras pròprias claus",
+    "sub": "Los operators an besonh de vòstras claus per prene aquesta sonada",
+    "intro": "NarrateBot 3000 fonciona amb vòstra pròpria clau Gemini per la narracion e, se volètz, una clau ElevenLabs per las votz.",
+    "gemini": "Clau d'API Gemini",
+    "eleven": "Clau d'API ElevenLabs (opcionala)",
+    "geminiHelp": "Cossí obténer una clau Gemini",
+    "elevenHelp": "Cossí obténer una clau ElevenLabs",
+    "getAt": "Obtenètz una clau sus",
+    "newTab": " (s'obrís dins un onglet novèl)",
+    "geminiSteps": "Connectatz-vos, causissètz Create API key, puèi pegatz la clau aquí.",
+    "geminiCost": "Google prepausa un nivèl gratuit amb de limits d'utilizacion; un usatge mai intens es facturat sus vòstre compte Google.",
+    "elevenSteps": "Creatz una clau amb accès a Text to Speech, puèi pegatz-la aquí.",
+    "elevenCost": "Lo plan gratuit inclutz una quòta mesadièra de caractèrs. Qualques votz demandan un plan pagant; se una votz es pas disponibla, utilizam una votz estandard, o la votz de vòstre navigador se daissatz aquò void.",
+    "privacy": "Vòstras claus son gardadas dins un cookie chifrat dins aqueste navigador e mandadas a nòstre servidor sonque per far vòstras requèstas. Las gardam pas e las enregistram pas jamai. Las podètz suprimir quand volètz dins los Paramètres.",
+    "save": "Enregistrar e començar",
+    "saving": "Verificacion…",
+    "cancel": "Anullar",
+    "needGemini": "Picatz vòstra clau Gemini.",
+    "geminiInvalid": "Google a pas acceptat aquesta clau Gemini. Verificatz-la e tornatz ensajar.",
+    "format": "Sembla pas una clau d'API. Pegatz la clau entièra, sens espacis.",
+    "formatEleven": "Aquesta clau ElevenLabs sembla pas corrècta. Pegatz la clau entièra, o daissatz-la voida.",
+    "tooMany": "Tròp d'ensages. Esperatz 15 minutas.",
+    "failed": "Impossible de verificar vòstra clau ara. Tornatz ensajar d'aquí un moment.",
+    "needKeys": "Per contunhar la narracion, apondètz vòstras pròprias claus.",
+    "quota": "Vòstra clau Gemini a atench son limit d'utilizacion. Nòu ensag d'aquí una minuta…",
+    "badKey": "Google a refusat vòstra clau Gemini. Verificatz-la o pegatz-ne una novèla.",
+    "removed": "Vòstras claus son estadas suprimidas. Apondètz de claus per contunhar la narracion."
+  },
+  "owner": {
+    "title": "ACCÈS PROPRIETARI",
+    "titleClean": "Accès proprietari",
+    "label": "Senhal del proprietari",
+    "submit": "Desblocar",
+    "wrong": "Aquò a pas foncionat.",
+    "tooMany": "Tròp d'ensages. Esperatz 15 minutas.",
+    "done": "Accès proprietari desblocat."
+  },
+  "access": {
+    "legend": "Accès",
+    "current": "Accès actual :",
+    "owner": "Proprietari",
+    "byok": "Vòstras pròprias claus",
+    "none": "Cap de clau",
+    "change": "Cambiar las claus",
+    "add": "Utilizar vòstras pròprias claus",
+    "remove": "Suprimir mas claus",
+    "lock": "Verrolhar l'accès proprietari"
+  },
+  "camError": "Camèra indisponibla. Verificatz l'autorizacion de la camèra e que la pagina es en HTTPS.",
+  "fallback": {
+    "documentary": [
+      "E aquí observam un recampament de l'espècia, cadun mai distinguit que lo precedent. Vertadièrament, la natura al melhor d'ela.",
+      "Un especimen remirable se clina cap endavant, los uèlhs fixats sus l'ecran lusent, amb la paciéncia d'una creatura que sap que las grandas causas prenon de temps.",
+      "Remarcatz la fisança tranquilla d'aquesta tropèla. Pas un a panicat, malgrat que siá tan luènh de sa font naturala de lecariás.",
+      "La colonia s'es acampada a l'entorn de la font de lutz, coma o fasián sos aujòls. Qualques causas, sembla, son eternas.",
+      "Un especimen ajusta sa postura amb una dignitat tremenda. Los autres o nòtan. Un cap es aparegut.",
+      "Dins la natura, gaire de creaturas pòdon suportar una demo amb tant de gràcia. E pr'aquò, son aquí. Magnifics."
+    ],
+    "documentaryStill": [
+      "La tropèla a pas bolegat. Pas un tremolum. Lo narrator, el, demòra esperançós.",
+      "Totjorn res. Los especimens semblan estalviar lor energia, benlèu pels aplaudiments.",
+      "Fa un moment ara. Òm comença de suspectar que la tropèla espèra que lo narrator siá risolièr. Ensaja.",
+      "Immobilitat totala. Los scientifics an un mot per aqueste comportament. Lo mot es 'jutjar'.",
+      "Lo narrator a vist de plantas amb mai d'ambicion visibla. Se vos plai, qualqu'un, qual que siá, bolegatz un det.",
+      "Siatz tranquils, la tropèla es en seguretat. Causís simplament, amb granda dignitat, de pas bolegar."
+    ],
+    "funny": [
+      "Dins un mond... ont una sala gausèt agachar un portable... nais una legenda. Per totes los publics, sustot los polits.",
+      "Aquesta tardor... un grop d'estrangièrs brilhants... e una webcam qu'a tròp vist. LO PUBLIC. Ara als cinèmas.",
+      "De l'estudi que vos portèt èstre assetats... ven sa seguida mai ardida. ASSETATS 2: TOTJORN SUS LA CADIÈRA.",
+      "La critica ditz: 'lo public melhor vestit jamai filmat per un portable'. Lèu dins aquesta meteissa sala.",
+      "Una sala. Zèro explosion. Carisma sens limit. LO HACKATHON. Dos poces plan, plan amont.",
+      "Venguèron per la demo... demorèron per las lecariás gratuitas... LOS PARTICIPANTS. Frescor certificada."
+    ],
+    "funnyStill": [
+      "Aqueste ivèrn... se passa pas res de res. E es esbleugissent. NATURA MÒRTA: LO FILME.",
+      "Dotze èròis. Una sala. Zèro movement. LAS ESTATUAS. Per publics suspèctament immobils.",
+      "Del realizator d'ESPERAR... ven ESPERAR 2: TOTJORN EN ESPÈRA. Segon la critica, 'vos daissa assetat'.",
+      "Dins un mond ont degun bolega pas... un narrator... suplica. Se vos plai. Qual que siá. Fasètz signe.",
+      "Lèu: LA PAUSA MAI LONGA. Nonanta minutas. Una sala. Pas un sol cluc d'uèlh.",
+      "Aqueste estiu... lo public fa fàcia a son desfís mai grand... levar una man. LO GÈST. Ara a l'aficha."
+    ],
+    "descriptive": [
+      "La camèra es activa. Descriurai la scèna tornarmai d'aquí un moment.",
+      "Ai pas pogut obténer una descripcion ara. Tenètz la camèra immobila e tornarai ensajar.",
+      "Agachi encara. Una descripcion novèla arriba lèu."
+    ],
+    "pumpkin": [
+      "Èh èh èh... benvengut, visitaire valent! Quin costum. Una meravilha de coja!",
+      "Bò! Ha, vos ai fach paur? Vòstre costum m'a fach paur a ieu, dins lo bon sens.",
+      "Òh, sarratz-vos, sarratz-vos... M'agradan los convidats amb d'estil. M'alucatz tota la cara.",
+      "Èh èh... un polit costum per una polida nuèch. Lusissi d'enveja.",
+      "Benvengut, benvengut! Vos abraçariái, mas soi gaireben void dedins. Polit costum, pasmens.",
+      "Èh èh èh... ai vist fòrça costums aqueste ser, mas lo vòstre? Espaventablament polit."
+    ]
+  },
+  "noChange": "Pas cap de cambiament."
+}

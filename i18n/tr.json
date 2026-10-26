@@ -1,0 +1,217 @@
+{
+  "callNow": "HEMEN ARAYIN! OPERATÖRLERİMİZ SİZİ BEKLİYOR!",
+  "tagline": "Dünyanız, anlatılıyor.",
+  "order": "HEMEN SİPARİŞ VERİN",
+  "burst1": "TELEVİZYONDA GÖRDÜĞÜNÜZ GİBİ!",
+  "burst2": "SADECE 0,00 $!",
+  "finePrint": "*Gerçek bir telefon numarası değildir. Lütfen aramayın. NarrateBot 3000, fazla isabetli anlatımlardan sorumlu değildir. Sonuçlar değişiklik gösterebilir. Pil dahil değildir.",
+  "ticker": [
+    "“Kedimi kusursuz anlattı!” – Memnun Müşteri",
+    "“Hiç bu kadar görüldüğümü hissetmemiştim.” – O da Müşteri",
+    "“Saksı çiçeğim hiç bu kadar görkemli duyulmamıştı.” – Müşteri, Galiba",
+    "“Güldüm. Ağladım. Kıpırdamadan oturdum.” – Sürü"
+  ],
+  "cleanSub": "Kameranızdan canlı sahne anlatımı",
+  "cleanExplain": "Kameranızı dünyaya doğrultun; NarrateBot 3000 gördüklerini sizin dilinizde sesli olarak anlatsın.",
+  "start": "Başlat",
+  "butWait": "DAHASI VAR... BEKLEYİN!",
+  "nowWith": "ŞİMDİ {mode} MODUYLA!",
+  "mode": {
+    "documentary": "BELGESEL",
+    "funny": "KOMİK",
+    "descriptive": "BETİMLEYİCİ",
+    "pumpkin": "BAL KABAĞI"
+  },
+  "modeClean": {
+    "documentary": "Belgesel tarzı",
+    "funny": "Film fragmanı tarzı",
+    "descriptive": "Betimleme modu",
+    "pumpkin": "Bal kabağı tarzı"
+  },
+  "countdown": {
+    "in": "{n} içinde anlatım…",
+    "late": "Anlatılıyor…",
+    "visitor": "Bir ziyaretçi bekleniyor…",
+    "sr": "Anlatım birazdan başlıyor"
+  },
+  "live": "CANLI",
+  "specimen": "ÖRNEK",
+  "observation": "GÖZLEM",
+  "herdNone": "SÜRÜ HAREKETİ: TESPİT EDİLMEDİ",
+  "unchanged": "Sahne değişmedi",
+  "paused": "DURAKLATILDI",
+  "nowShowing": "ŞİMDİ GÖSTERİMDE",
+  "btn": {
+    "describe": "Şimdi anlat",
+    "pause": "Duraklat",
+    "play": "Oynat",
+    "flip": "Kamerayı değiştir",
+    "settings": "Ayarlar",
+    "themeDark": "Koyu tema",
+    "themeLight": "Açık tema",
+    "accessible": "Erişilebilir görünüm",
+    "infomercial": "Reklam kuşağı görünümü",
+    "narrLang": "Anlatım dili",
+    "close": "Kapat",
+    "siteLang": "Site dili"
+  },
+  "set": {
+    "title": "ÇAĞRI MERKEZİ SİPARİŞ FORMU",
+    "titleClean": "Ayarlar",
+    "sub": "Operatörlerimiz sizi bekliyor",
+    "useEleven": "ElevenLabs sesini kullan",
+    "charsSession": "Bu oturumda gönderilen karakter",
+    "charsToday": "Bugünkü karakter (tüm kullanıcılar)",
+    "narrToday": "Bugünkü anlatımlar",
+    "config": "Yapılandırma",
+    "stillness": "Hareketsizlik hassasiyeti",
+    "stillDebug": "Hareketsizlik sayacı / son fark",
+    "textSize": "Yazı boyutu",
+    "smaller": "Daha küçük yazı",
+    "larger": "Daha büyük yazı",
+    "customLang": "Özel anlatım dili",
+    "customLangHint": "Anlatım dili listesine eklenir (L)",
+    "music": "Müzik sesi",
+    "srMute": "Sesli okuma yapma (metni ekran okuyucu okur)",
+    "hideVideo": "Videoyu gizle, yalnızca anlatım metnini göster",
+    "hotkeys": "Kısayol tuşları",
+    "yes": "ayarlı",
+    "no": "eksik",
+    "dflt": "varsayılan",
+    "breakLen": "Cümleler arası ara",
+    "breakValue": "{n} sn"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Modlar"
+    ],
+    [
+      "L",
+      "Anlatım dili"
+    ],
+    [
+      "N",
+      "Şimdi anlat"
+    ],
+    [
+      "S",
+      "Hareketsizlik açık/kapalı"
+    ],
+    [
+      "T",
+      "Tema"
+    ],
+    [
+      "A",
+      "Erişilebilir görünüm"
+    ],
+    [
+      "Boşluk",
+      "Duraklat / oynat"
+    ],
+    [
+      "K",
+      "Ayarlar"
+    ]
+  ],
+  "keys": {
+    "title": "KENDİ ANAHTARINIZI GETİRİN",
+    "titleClean": "Kendi anahtarlarınızı kullanın",
+    "sub": "Operatörlerin bu çağrıyı alabilmesi için anahtarlarınız gerekiyor",
+    "intro": "NarrateBot 3000, anlatım için kendi Gemini anahtarınızla ve isterseniz sesler için bir ElevenLabs anahtarıyla çalışır.",
+    "gemini": "Gemini API anahtarı",
+    "eleven": "ElevenLabs API anahtarı (isteğe bağlı)",
+    "geminiHelp": "Gemini anahtarı nasıl alınır",
+    "elevenHelp": "ElevenLabs anahtarı nasıl alınır",
+    "getAt": "Anahtar almak için:",
+    "newTab": " (yeni sekmede açılır)",
+    "geminiSteps": "Oturum açın, Create API key seçeneğini seçin ve anahtarı buraya yapıştırın.",
+    "geminiCost": "Google, kullanım sınırları olan ücretsiz bir katman sunar; daha yoğun kullanım Google hesabınıza faturalandırılır.",
+    "elevenSteps": "Text to Speech erişimi olan bir anahtar oluşturun ve buraya yapıştırın.",
+    "elevenCost": "Ücretsiz plan aylık bir karakter kotası içerir. Bazı sesler ücretli plan gerektirir; bir ses kullanılamıyorsa standart bir ses, bu alanı boş bırakırsanız tarayıcınızın sesini kullanırız.",
+    "privacy": "Anahtarlarınız bu tarayıcıda şifrelenmiş bir çerezde tutulur ve yalnızca isteklerinizi gerçekleştirmek için sunucumuza gönderilir. Onları asla saklamayız veya kayda geçirmeyiz. Dilediğiniz zaman Ayarlar’dan kaldırabilirsiniz.",
+    "save": "Kaydet ve başlat",
+    "saving": "Kontrol ediliyor…",
+    "cancel": "İptal",
+    "needGemini": "Gemini anahtarınızı girin.",
+    "geminiInvalid": "Google bu Gemini anahtarını kabul etmedi. Kontrol edip tekrar deneyin.",
+    "format": "Bu bir API anahtarına benzemiyor. Anahtarın tamamını boşluksuz yapıştırın.",
+    "formatEleven": "Bu ElevenLabs anahtarı doğru görünmüyor. Anahtarın tamamını yapıştırın veya alanı boş bırakın.",
+    "tooMany": "Çok fazla deneme. 15 dakika bekleyin.",
+    "failed": "Anahtarınız şu anda kontrol edilemedi. Biraz sonra tekrar deneyin.",
+    "needKeys": "Anlatıma devam etmek için kendi anahtarlarınızı ekleyin.",
+    "quota": "Gemini anahtarınız kullanım sınırına ulaştı. Bir dakika içinde tekrar deneniyor…",
+    "badKey": "Google, Gemini anahtarınızı reddetti. Kontrol edin veya yeni bir anahtar yapıştırın.",
+    "removed": "Anahtarlarınız kaldırıldı. Anlatıma devam etmek için anahtar ekleyin."
+  },
+  "owner": {
+    "title": "SAHİP ERİŞİMİ",
+    "titleClean": "Sahip erişimi",
+    "label": "Sahip parolası",
+    "submit": "Kilidi aç",
+    "wrong": "Olmadı.",
+    "tooMany": "Çok fazla deneme. 15 dakika bekleyin.",
+    "done": "Sahip erişiminin kilidi açıldı."
+  },
+  "access": {
+    "legend": "Erişim",
+    "current": "Geçerli erişim:",
+    "owner": "Sahip",
+    "byok": "Kendi anahtarlarınız",
+    "none": "Anahtar yok",
+    "change": "Anahtarları değiştir",
+    "add": "Kendi anahtarlarınızı kullanın",
+    "remove": "Anahtarlarımı kaldır",
+    "lock": "Sahip erişimini kilitle"
+  },
+  "camError": "Kamera kullanılamıyor. Kamera iznini ve sayfanın HTTPS üzerinden açıldığını kontrol edin.",
+  "fallback": {
+    "documentary": [
+      "Ve burada türün bir araya gelişini gözlemliyoruz; her biri bir öncekinden daha seçkin. Gerçekten de doğanın en güzel hâli.",
+      "Dikkat çekici bir örnek öne eğiliyor, gözleri parlayan ekrana kilitlenmiş; büyük işlerin zaman aldığını bilen bir canlının sabrıyla.",
+      "Bu sürünün sakin özgüvenine dikkat edin. Doğal çerez stoklarından bu kadar uzakta olmalarına rağmen hiçbiri panik yapmıyor.",
+      "Koloni, ataları gibi ışık kaynağının etrafında toplanmış. Bazı şeyler, görünüşe göre, ebedidir.",
+      "Bir örnek muazzam bir vakarla duruşunu düzeltiyor. Diğerleri bunu not ediyor. Bir lider doğdu.",
+      "Vahşi doğada çok az canlı bir demoyu böylesine zarafetle sonuna kadar izleyebilir. Ama işte buradalar. Muhteşem."
+    ],
+    "documentaryStill": [
+      "Sürü kıpırdamadı. En ufak bir seğirme bile yok. Anlatıcı ise umudunu koruyor.",
+      "Hâlâ bir şey yok. Örnekler enerjilerini saklıyor gibi; belki de alkış için.",
+      "Epey zaman geçti. Sürünün, anlatıcının komik olmasını beklediğinden şüphelenmeye başlıyoruz. Deniyor.",
+      "Tam bir hareketsizlik. Bilim insanlarının bu davranış için bir kelimesi var. O kelime: “yargılamak.”",
+      "Anlatıcı bundan daha hırslı saksı çiçekleri gördü. Lütfen, biri, herhangi biri, bir parmağını oynatsın.",
+      "İçiniz rahat olsun, sürü gayet iyi. Sadece büyük bir vakarla kıpırdamamayı seçiyorlar."
+    ],
+    "funny": [
+      "Bir dünyada... bir odanın bir dizüstü bilgisayara bakmaya cesaret ettiği... bir efsane doğuyor. Genel izleyici: aksiyon yok.",
+      "Bu sonbahar... bir grup parlak yabancı... ve fazlasını görmüş bir web kamerası. SEYİRCİLER. Şimdi sinemalarda.",
+      "Size “oturmak”ı getiren stüdyodan... en cesur devam filmi geliyor. OTURMAK 2: HÂLÂ OTURUYORUZ.",
+      "Eleştirmenler, “bir dizüstü bilgisayarın çektiği en şık seyirci” diyor. Çok yakında tam da bu odada.",
+      "Tek oda. Sıfır patlama. Sınırsız karizma. HACKATHON. İki baş parmak çok, çok yukarıda.",
+      "Demo için geldiler... bedava atıştırmalıklar için kaldılar... KATILIMCILAR. Gişe rekoru garanti."
+    ],
+    "funnyStill": [
+      "Bu kış... kesinlikle hiçbir şey olmuyor. Ve nefes kesici. NATÜRMORT: FİLM.",
+      "On iki kahraman. Tek oda. Sıfır hareket. HEYKELLER. Kıpırdayanlar giremez.",
+      "BEKLEYİŞ’in yönetmeninden... BEKLEYİŞ 2: HÂLÂ BEKLİYORUZ. Eleştirmenler: “insanı koltuğa çiviliyor.”",
+      "Kimsenin kıpırdamadığı bir dünyada... bir anlatıcı... yalvarıyor. Lütfen. Biri. El sallasın.",
+      "Çok yakında: EN UZUN DURAKLAMA. Doksan dakika. Tek oda. Tek bir göz kırpma bile yok.",
+      "Bu yaz... seyirciler en büyük sınavlarıyla yüzleşiyor... bir el kaldırmak. JEST. Şimdi gösterimde."
+    ],
+    "descriptive": [
+      "Kamera açık. Sahneyi birazdan yeniden anlatacağım.",
+      "Şu anda bir betimleme alamadım. Kamerayı sabit tutun, tekrar deneyeceğim.",
+      "Hâlâ bakıyorum. Yeni bir betimleme birazdan geliyor."
+    ],
+    "pumpkin": [
+      "Hı hı hı... hoş geldin, cesur ziyaretçi! Ne kostüm ama. Tam bir kabak-ulade.",
+      "Böö! Ha, korktun mu? Senin kıyafetin de beni korkuttu, en güzel anlamda.",
+      "Oho, yaklaş, yaklaş... Tarzı olan misafirlere bayılırım. Bütün yüzümü aydınlatıyorsun.",
+      "Hı hı... güzel bir gece için güzel bir kostüm. Kıskançlıktan resmen parlıyorum.",
+      "Hoş geldin, hoş geldin! Sana sarılırdım ama içim neredeyse bomboş. Kıyafetin harika ama.",
+      "Hı hı hı... bu gece çok kostüm gördüm, ama seninki? Tüyler ürpertici güzellikte."
+    ]
+  },
+  "noChange": "Değişiklik yok."
+}

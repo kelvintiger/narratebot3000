@@ -1,0 +1,217 @@
+{
+  "callNow": "KIRA YANZU! MA'AIKATA SUNA JIRA!",
+  "tagline": "Duniyarka, cikin labari.",
+  "order": "YI ODA YANZU",
+  "burst1": "AN GANI A TALABIJIN!",
+  "burst2": "$0.00 KAWAI!",
+  "finePrint": "*Ba lambar waya ta gaskiya ba ce. Don Allah kada ka kira. NarrateBot 3000 ba ta da alhakin labaran da suka yi daidai fiye da kima. Sakamako na iya bambanta. Ba a haɗa batir ba.",
+  "ticker": [
+    "'Ya bayyana kyanwata daidai!' – Abokin Ciniki Mai Gamsuwa",
+    "'Ban taɓa jin an gan ni haka ba.' – Shi ma Abokin Ciniki",
+    "'Shukar gidana ba ta taɓa jin ƙasaita haka ba.' – Abokin Ciniki, Wataƙila",
+    "'Na yi dariya. Na yi kuka. Na zauna shiru sosai.' – Garken"
+  ],
+  "cleanSub": "Bayanin wuri kai tsaye daga kyamararka",
+  "cleanExplain": "Nuna kyamararka ga duniya, NarrateBot 3000 za ta faɗi da babbar murya abin da take gani, a harshenka.",
+  "start": "Fara",
+  "butWait": "AMMA JIRA... AKWAI ƘARI!",
+  "nowWith": "YANZU DA YANAYIN {mode}!",
+  "mode": {
+    "documentary": "SHIRIN GASKIYA",
+    "funny": "BA'A",
+    "descriptive": "BAYANI",
+    "pumpkin": "KABEWA"
+  },
+  "modeClean": {
+    "documentary": "Salon shirin gaskiya",
+    "funny": "Salon tallan fim",
+    "descriptive": "Yanayin bayani",
+    "pumpkin": "Salon kabewa"
+  },
+  "countdown": {
+    "in": "Labari cikin {n}…",
+    "late": "Ana ba da labari…",
+    "visitor": "Ana jiran baƙo…",
+    "sr": "Labari na nan tafe"
+  },
+  "live": "KAI TSAYE",
+  "specimen": "SAMFURI",
+  "observation": "LURA",
+  "herdNone": "AIKIN GARKE: BA A GANO KOMAI BA",
+  "unchanged": "Wurin bai canza ba",
+  "paused": "AN DAKATA",
+  "nowShowing": "ANA NUNAWA YANZU",
+  "btn": {
+    "describe": "Bayyana yanzu",
+    "pause": "Dakata",
+    "play": "Kunna",
+    "flip": "Juya kyamara",
+    "settings": "Saituna",
+    "themeDark": "Jigo mai duhu",
+    "themeLight": "Jigo mai haske",
+    "accessible": "Kallo mai sauƙin amfani",
+    "infomercial": "Kallon talla",
+    "narrLang": "Harshen labari",
+    "close": "Rufe",
+    "siteLang": "Harshen shafi"
+  },
+  "set": {
+    "title": "FOM ƊIN ODA NA CIBIYAR KIRA",
+    "titleClean": "Saituna",
+    "sub": "Ma'aikata suna jira",
+    "useEleven": "Yi amfani da muryar ElevenLabs",
+    "charsSession": "Haruffan da aka aika a wannan zama",
+    "charsToday": "Haruffa yau (dukkan masu amfani)",
+    "narrToday": "Labarai yau",
+    "config": "Tsari",
+    "stillness": "Ƙwarin gano rashin motsi",
+    "stillDebug": "Ƙidayar rashin motsi / bambanci na ƙarshe",
+    "textSize": "Girman rubutu",
+    "smaller": "Ƙaramin rubutu",
+    "larger": "Babban rubutu",
+    "customLang": "Harshen labari na musamman",
+    "customLangHint": "An ƙara shi cikin jerin harsunan labari (L)",
+    "music": "Ƙarar kiɗa",
+    "srMute": "Kada a faɗa da murya (mai karanta allo zai karanta rubutun)",
+    "hideVideo": "Ɓoye bidiyon, nuna rubutun labari kawai",
+    "hotkeys": "Gajerun maɓallai",
+    "yes": "an saita",
+    "no": "babu",
+    "dflt": "na asali",
+    "breakLen": "Hutu tsakanin layuka",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Yanayi"
+    ],
+    [
+      "L",
+      "Harshen labari"
+    ],
+    [
+      "N",
+      "Bayyana yanzu"
+    ],
+    [
+      "S",
+      "Rashin motsi kunna/kashe"
+    ],
+    [
+      "T",
+      "Jigo"
+    ],
+    [
+      "A",
+      "Kallo mai sauƙin amfani"
+    ],
+    [
+      "Sarari",
+      "Dakata / kunna"
+    ],
+    [
+      "K",
+      "Saituna"
+    ]
+  ],
+  "keys": {
+    "title": "KAWO MAƁALLANKA",
+    "titleClean": "Yi amfani da maɓallanka",
+    "sub": "Ma'aikata suna buƙatar maɓallanka don karɓar wannan kira",
+    "intro": "NarrateBot 3000 tana aiki da maɓallin Gemini naka don labari, kuma idan kana so, maɓallin ElevenLabs don muryoyi.",
+    "gemini": "Maɓallin API na Gemini",
+    "eleven": "Maɓallin API na ElevenLabs (na zaɓi)",
+    "geminiHelp": "Yadda ake samun maɓallin Gemini",
+    "elevenHelp": "Yadda ake samun maɓallin ElevenLabs",
+    "getAt": "Samu maɓalli a",
+    "newTab": " (yana buɗewa a sabon shafi)",
+    "geminiSteps": "Shiga, zaɓi Create API key, sannan ka liƙa maɓallin a nan.",
+    "geminiCost": "Google tana ba da matakin kyauta mai iyakar amfani; amfani mai yawa ana cajinsa a asusunka na Google.",
+    "elevenSteps": "Ƙirƙiri maɓalli mai izinin Text to Speech, sannan ka liƙa shi a nan.",
+    "elevenCost": "Tsarin kyauta ya ƙunshi adadin haruffa na kowane wata. Wasu muryoyi suna buƙatar tsarin biya; idan murya ba ta samuwa muna amfani da murya ta yau da kullum, ko muryar burauzarka idan ka bar wannan babu komai.",
+    "privacy": "Ana ajiye maɓallanka a cikin kuki mai ɓoyayyen sirri a wannan burauza, kuma ana aika su zuwa sabarmu kawai don aiwatar da buƙatunka. Ba ma taɓa adana su ko rubuta su a rajista ba. Kana iya cire su a kowane lokaci a Saituna.",
+    "save": "Ajiye ka fara",
+    "saving": "Ana dubawa…",
+    "cancel": "Soke",
+    "needGemini": "Shigar da maɓallin Gemini naka.",
+    "geminiInvalid": "Google ba ta karɓi wannan maɓallin Gemini ba. Duba shi ka sake gwadawa.",
+    "format": "Wannan bai yi kama da maɓallin API ba. Liƙa maɓallin gaba ɗaya, ba tare da sarari ba.",
+    "formatEleven": "Wannan maɓallin ElevenLabs bai yi daidai ba. Liƙa maɓallin gaba ɗaya, ko ka bar shi babu komai.",
+    "tooMany": "Ƙoƙari ya yi yawa. Jira minti 15.",
+    "failed": "Ba a iya duba maɓallinka yanzu ba. Sake gwadawa nan da ɗan lokaci.",
+    "needKeys": "Don ci gaba da labari, ƙara maɓallanka.",
+    "quota": "Maɓallin Gemini naka ya kai iyakar amfani. Za a sake gwadawa nan da minti ɗaya…",
+    "badKey": "Google ta ƙi maɓallin Gemini naka. Duba shi ko ka liƙa sabo.",
+    "removed": "An cire maɓallanka. Ƙara maɓallai don ci gaba da labari."
+  },
+  "owner": {
+    "title": "SHIGA NA MAI SHI",
+    "titleClean": "Shiga na mai shi",
+    "label": "Kalmar sirri ta mai shi",
+    "submit": "Buɗe",
+    "wrong": "Hakan bai yi aiki ba.",
+    "tooMany": "Ƙoƙari ya yi yawa. Jira minti 15.",
+    "done": "An buɗe shiga na mai shi."
+  },
+  "access": {
+    "legend": "Shiga",
+    "current": "Shiga na yanzu:",
+    "owner": "Mai shi",
+    "byok": "Maɓallanka",
+    "none": "Babu maɓallai",
+    "change": "Canza maɓallai",
+    "add": "Yi amfani da maɓallanka",
+    "remove": "Cire maɓallaina",
+    "lock": "Kulle shiga na mai shi"
+  },
+  "camError": "Kyamara ba ta samuwa. Duba izinin kyamara kuma ka tabbata shafin yana kan HTTPS.",
+  "fallback": {
+    "documentary": [
+      "Kuma a nan muna ganin taron wannan nau'in halitta, kowanne ya fi na baya kwarjini. Lallai, halitta a mafi kyawunta.",
+      "Wani samfuri mai ban mamaki ya karkata gaba, idanunsa a kafe kan allon mai haske, da haƙurin halittar da ta san manyan abubuwa suna ɗaukar lokaci.",
+      "Ku lura da natsuwar wannan garke. Babu ko ɗaya da ya firgita, duk da nisansu da tushen kayan ciye-ciyensu na asali.",
+      "Jama'ar sun taru kewaye da hasken, kamar yadda kakanninsu suka yi kafin su. Wasu abubuwa, ga alama, na har abada ne.",
+      "Wani samfuri ya gyara zamansa da martaba mai girma. Sauran sun lura. Shugaba ya bayyana.",
+      "A daji, halittu kaɗan ne ke iya zama har ƙarshen nuni da irin wannan natsuwa. Amma ga su nan. Abin sha'awa."
+    ],
+    "documentaryStill": [
+      "Garken bai motsa ba. Ko ɗan girgiza. Mai ba da labari, a nasa ɓangaren, yana nan da fata.",
+      "Har yanzu babu komai. Samfuran kamar suna tanadin ƙarfi, wataƙila don tafi.",
+      "Lokaci ya ɗan wuce yanzu. Mutum ya fara zargin cewa garken yana jiran mai ba da labari ya ba da dariya. Yana ƙoƙari.",
+      "Cikakken rashin motsi. Masana kimiyya suna da kalma ga wannan ɗabi'a. Kalmar ita ce 'yanke hukunci.'",
+      "Mai ba da labari ya ga shukoki na gida masu buri fiye da haka. Don Allah, wani, kowa, ya motsa yatsa.",
+      "Ku kwantar da hankali, garken yana cikin aminci sosai. Kawai sun zaɓa, cikin martaba, kada su motsa."
+    ],
+    "funny": [
+      "A cikin duniya... inda ɗaki ɗaya ya kuskura ya kalli kwamfutar tafi-da-gidanka... an haifi gwarzo. Darajar K don Kyakkyawa.",
+      "Wannan kaka... ƙungiyar baƙi masu hazaƙa... da kyamarar yanar gizo da ta ga abubuwa da yawa. 'YAN KALLO. Yanzu a sinima.",
+      "Daga situdiyon da ya kawo muku zama... ga ci gabansa mafi ƙarfin hali. ZAMA 2: HAR YANZU A ZAUNE.",
+      "Masu sharhi suna kiransa 'taron da ya fi kyawun sutura da kwamfuta ta taɓa ɗauka.' Na zuwa ba da daɗewa ba a wannan ɗakin.",
+      "Ɗaki ɗaya. Babu fashewa. Kwarjini mara iyaka. HACKATHON. Manyan yatsu biyu sama sosai.",
+      "Sun zo don nuni... sun zauna don kayan ciye-ciye kyauta... MAHALARTA. Tabbataccen sabo."
+    ],
+    "funnyStill": [
+      "Wannan hunturu... babu abin da ke faruwa ko kaɗan. Kuma abin mamaki ne. RAYUWAR SHIRU: FIM ƊIN.",
+      "Jarumai goma sha biyu. Ɗaki ɗaya. Babu motsi. MUTUM-MUTUMI. Darajar S don Shiru Mai Shakku.",
+      "Daga darektan JIRA... ga JIRA 2: HAR YANZU MUNA JIRA. Masu sharhi sun ce 'yana zaunar da kai.'",
+      "A duniyar da babu mai motsi... mai ba da labari ɗaya... yana roƙo. Don Allah. Kowa. Ɗaga hannu.",
+      "Na zuwa: DAKATAWA MAFI TSAWO. Minti casa'in. Ɗaki ɗaya. Babu ko ƙyafta ido ɗaya.",
+      "Wannan bazara... 'yan kallo sun fuskanci babban ƙalubalensu... ɗaga hannu ɗaya. ISHARA. Ana nunawa yanzu."
+    ],
+    "descriptive": [
+      "Kyamara tana kunne. Zan sake bayyana wurin nan da ɗan lokaci.",
+      "Ban sami bayani yanzu ba. Riƙe kyamara a tsaye, zan sake gwadawa.",
+      "Har yanzu ina dubawa. Sabon bayani na nan tafe."
+    ],
+    "pumpkin": [
+      "He he he... barka da zuwa, baƙo jarumi! Wannan kaya! Lallai abin ban sha'awa.",
+      "Bu! Ha, na tsorata ka? Kayanka sun tsorata ni kuwa, ta hanya mafi kyau.",
+      "Oho, matso kusa, matso kusa... Ina son baƙo mai salo. Ka haskaka fuskata gaba ɗaya.",
+      "He he... kaya masu kyau don dare mai kyau. Ina ta haske saboda kishi.",
+      "Barka da zuwa, barka! Da na rungume ka, amma cikina kusan fanko ne. Kaya masu kyau, ko da yake.",
+      "He he he... na ga kaya da yawa a daren nan, amma naka? Abin tsoro da ban sha'awa."
+    ]
+  },
+  "noChange": "Babu canji."
+}

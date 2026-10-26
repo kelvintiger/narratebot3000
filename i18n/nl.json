@@ -1,0 +1,217 @@
+{
+  "callNow": "BEL NU! ONZE MEDEWERKERS STAAN VOOR U KLAAR!",
+  "tagline": "Jouw wereld, verteld.",
+  "order": "BESTEL NU",
+  "burst1": "BEKEND VAN TV!",
+  "burst2": "SLECHTS $ 0,00!",
+  "finePrint": "*Geen echt telefoonnummer. Bel alstublieft niet. NarrateBot 3000 is niet aansprakelijk voor vertellingen die te treffend zijn. Resultaten kunnen variëren. Batterijen niet inbegrepen.",
+  "ticker": [
+    "‘Hij beschreef mijn kat perfect!’ – Tevreden klant",
+    "‘Ik heb me nog nooit zo gezien gevoeld.’ – Ook een klant",
+    "‘Mijn kamerplant klonk nog nooit zo majestueus.’ – Klant, waarschijnlijk",
+    "‘Ik lachte. Ik huilde. Ik zat heel stil.’ – De kudde"
+  ],
+  "cleanSub": "Live vertelling van wat je camera ziet",
+  "cleanExplain": "Richt je camera op de wereld en NarrateBot 3000 beschrijft hardop wat hij ziet, in jouw taal.",
+  "start": "Starten",
+  "butWait": "MAAR WACHT... ER IS MEER!",
+  "nowWith": "NU MET {mode}-MODUS!",
+  "mode": {
+    "documentary": "DOCUMENTAIRE",
+    "funny": "GRAPPIG",
+    "descriptive": "BESCHRIJVEND",
+    "pumpkin": "POMPOEN"
+  },
+  "modeClean": {
+    "documentary": "Documentairestijl",
+    "funny": "Filmtrailerstijl",
+    "descriptive": "Beschrijvende modus",
+    "pumpkin": "Pompoenstijl"
+  },
+  "countdown": {
+    "in": "Vertelling over {n}…",
+    "late": "Bezig met vertellen…",
+    "visitor": "Wachten op een bezoeker…",
+    "sr": "Vertelling begint zo"
+  },
+  "live": "LIVE",
+  "specimen": "EXEMPLAAR",
+  "observation": "WAARNEMING",
+  "herdNone": "KUDDEACTIVITEIT: GEEN GEDETECTEERD",
+  "unchanged": "Scène ongewijzigd",
+  "paused": "GEPAUZEERD",
+  "nowShowing": "NU IN DE BIOSCOOP",
+  "btn": {
+    "describe": "Nu beschrijven",
+    "pause": "Pauzeren",
+    "play": "Afspelen",
+    "flip": "Camera wisselen",
+    "settings": "Instellingen",
+    "themeDark": "Donker thema",
+    "themeLight": "Licht thema",
+    "accessible": "Toegankelijke weergave",
+    "infomercial": "Telewinkelweergave",
+    "narrLang": "Verteltaal",
+    "close": "Sluiten",
+    "siteLang": "Taal van de site"
+  },
+  "set": {
+    "title": "BESTELFORMULIER CALLCENTER",
+    "titleClean": "Instellingen",
+    "sub": "Onze medewerkers staan voor u klaar",
+    "useEleven": "ElevenLabs-stem gebruiken",
+    "charsSession": "Tekens verzonden deze sessie",
+    "charsToday": "Tekens vandaag (alle gebruikers)",
+    "narrToday": "Vertellingen vandaag",
+    "config": "Configuratie",
+    "stillness": "Gevoeligheid voor stilstand",
+    "stillDebug": "Stilstandteller / laatste verschil",
+    "textSize": "Tekstgrootte",
+    "smaller": "Kleinere tekst",
+    "larger": "Grotere tekst",
+    "customLang": "Eigen verteltaal",
+    "customLangHint": "Toegevoegd aan de lijst met verteltalen (L)",
+    "music": "Muziekvolume",
+    "srMute": "Niet hardop spreken (de schermlezer leest de tekst voor)",
+    "hideVideo": "Video verbergen, alleen de verteltekst tonen",
+    "hotkeys": "Sneltoetsen",
+    "yes": "ingesteld",
+    "no": "ontbreekt",
+    "dflt": "standaard",
+    "breakLen": "Pauze tussen zinnen",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Modi"
+    ],
+    [
+      "L",
+      "Verteltaal"
+    ],
+    [
+      "N",
+      "Nu beschrijven"
+    ],
+    [
+      "S",
+      "Stilstand aan/uit"
+    ],
+    [
+      "T",
+      "Thema"
+    ],
+    [
+      "A",
+      "Toegankelijke weergave"
+    ],
+    [
+      "Spatie",
+      "Pauzeren / afspelen"
+    ],
+    [
+      "K",
+      "Instellingen"
+    ]
+  ],
+  "keys": {
+    "title": "BRENG UW EIGEN SLEUTELS MEE",
+    "titleClean": "Je eigen sleutels gebruiken",
+    "sub": "Onze medewerkers hebben uw sleutels nodig om dit gesprek aan te nemen",
+    "intro": "NarrateBot 3000 werkt met je eigen Gemini-sleutel voor de vertelling en, als je wilt, een ElevenLabs-sleutel voor de stemmen.",
+    "gemini": "Gemini-API-sleutel",
+    "eleven": "ElevenLabs-API-sleutel (optioneel)",
+    "geminiHelp": "Zo krijg je een Gemini-sleutel",
+    "elevenHelp": "Zo krijg je een ElevenLabs-sleutel",
+    "getAt": "Vraag een sleutel aan op",
+    "newTab": " (opent in een nieuw tabblad)",
+    "geminiSteps": "Log in, kies Create API key en plak de sleutel hier.",
+    "geminiCost": "Google biedt een gratis niveau met gebruikslimieten; intensiever gebruik wordt aan je Google-account gefactureerd.",
+    "elevenSteps": "Maak een sleutel met toegang tot Text to Speech en plak hem hier.",
+    "elevenCost": "Het gratis abonnement bevat een maandelijks tegoed aan tekens. Sommige stemmen vereisen een betaald abonnement; als een stem niet beschikbaar is, gebruiken we een standaardstem, of de stem van je browser als je dit veld leeg laat.",
+    "privacy": "Je sleutels worden bewaard in een versleutelde cookie in deze browser en alleen naar onze server gestuurd om je verzoeken uit te voeren. We slaan ze nooit op en loggen ze nooit. Je kunt ze op elk moment verwijderen via Instellingen.",
+    "save": "Opslaan en starten",
+    "saving": "Controleren…",
+    "cancel": "Annuleren",
+    "needGemini": "Voer je Gemini-sleutel in.",
+    "geminiInvalid": "Google heeft deze Gemini-sleutel niet geaccepteerd. Controleer hem en probeer het opnieuw.",
+    "format": "Dat lijkt geen API-sleutel. Plak de hele sleutel, zonder spaties.",
+    "formatEleven": "Die ElevenLabs-sleutel lijkt niet te kloppen. Plak de hele sleutel of laat het veld leeg.",
+    "tooMany": "Te veel pogingen. Wacht 15 minuten.",
+    "failed": "Je sleutel kan nu niet worden gecontroleerd. Probeer het zo opnieuw.",
+    "needKeys": "Voeg je eigen sleutels toe om te blijven vertellen.",
+    "quota": "Je Gemini-sleutel heeft de gebruikslimiet bereikt. Over een minuut opnieuw proberen…",
+    "badKey": "Google heeft je Gemini-sleutel geweigerd. Controleer hem of plak een nieuwe.",
+    "removed": "Je sleutels zijn verwijderd. Voeg sleutels toe om te blijven vertellen."
+  },
+  "owner": {
+    "title": "EIGENAARSTOEGANG",
+    "titleClean": "Eigenaarstoegang",
+    "label": "Eigenaarswachtwoord",
+    "submit": "Ontgrendelen",
+    "wrong": "Dat werkte niet.",
+    "tooMany": "Te veel pogingen. Wacht 15 minuten.",
+    "done": "Eigenaarstoegang ontgrendeld."
+  },
+  "access": {
+    "legend": "Toegang",
+    "current": "Huidige toegang:",
+    "owner": "Eigenaar",
+    "byok": "Je eigen sleutels",
+    "none": "Geen sleutels",
+    "change": "Sleutels wijzigen",
+    "add": "Je eigen sleutels gebruiken",
+    "remove": "Mijn sleutels verwijderen",
+    "lock": "Eigenaarstoegang vergrendelen"
+  },
+  "camError": "Camera niet beschikbaar. Controleer de cameratoestemming en of de pagina via HTTPS wordt geladen.",
+  "fallback": {
+    "documentary": [
+      "En hier zien we een samenkomst van de soort, het ene exemplaar nog voornamer dan het andere. De natuur op haar best.",
+      "Een opmerkelijk exemplaar buigt zich voorover, de ogen gericht op het gloeiende scherm, met het geduld van een wezen dat weet dat goede dingen tijd kosten.",
+      "Let op het rustige zelfvertrouwen van deze kudde. Niemand raakt in paniek, ook al zijn ze zo ver van hun natuurlijke voorraad borrelnootjes.",
+      "De kolonie heeft zich rond de lichtbron verzameld, zoals hun voorouders vóór hen. Sommige dingen zijn blijkbaar eeuwig.",
+      "Een exemplaar past met enorme waardigheid zijn houding aan. De anderen nemen het waar. Er is een leider opgestaan.",
+      "In het wild kunnen maar weinig wezens met zoveel gratie een demo uitzitten. En toch, hier zijn ze. Prachtig."
+    ],
+    "documentaryStill": [
+      "De kudde heeft zich niet bewogen. Geen trilling. De verteller blijft, van zijn kant, hoopvol.",
+      "Nog steeds niets. De exemplaren lijken energie te sparen, misschien voor het applaus.",
+      "Het duurt nu al een tijdje. Je begint te vermoeden dat de kudde wacht tot de verteller grappig wordt. Hij doet zijn best.",
+      "Volledige stilstand. Wetenschappers hebben een woord voor dit gedrag. Dat woord is ‘oordelen’.",
+      "De verteller heeft kamerplanten gezien met meer zichtbare ambitie. Alsjeblieft, iemand, wie dan ook, beweeg een vinger.",
+      "Wees gerust, de kudde maakt het prima. Ze kiezen er simpelweg, met grote waardigheid, voor om niet te bewegen."
+    ],
+    "funny": [
+      "In een wereld... waar één zaal naar een laptop durfde te kijken... wordt een legende geboren. Kijkwijzer: AL, voor Absoluut Lui.",
+      "Dit najaar... een groep briljante vreemden... en een webcam die te veel heeft gezien. HET PUBLIEK. Nu in de bioscoop.",
+      "Van de studio die u ‘zitten’ bracht... komt het gedurfdste vervolg tot nu toe. ZITTEN 2: NOG STEEDS ZITTEN.",
+      "Critici noemen het ‘het best geklede publiek ooit gefilmd door een laptop’. Binnenkort in precies deze zaal.",
+      "Eén zaal. Nul explosies. Onbeperkt charisma. DE HACKATHON. Twee duimen héél ver omhoog.",
+      "Ze kwamen voor de demo... ze bleven voor de gratis hapjes... DE DEELNEMERS. Vers van de pers."
+    ],
+    "funnyStill": [
+      "Deze winter... gebeurt er helemaal niets. En het is adembenemend. STILLEVEN: DE FILM.",
+      "Twaalf helden. Eén zaal. Nul beweging. DE STANDBEELDEN. Kijkwijzer: S, voor Stokstijf.",
+      "Van de regisseur van WACHTEN... komt WACHTEN 2: NOG STEEDS WACHTEN. Critici: ‘hij blijft echt zitten’.",
+      "In een wereld waar niemand beweegt... smeekt één verteller... Alsjeblieft. Iemand. Zwaai.",
+      "Binnenkort: DE LANGSTE PAUZE. Negentig minuten. Eén zaal. Geen enkele knipoog.",
+      "Deze zomer... staat het publiek voor zijn grootste uitdaging ooit... één hand opsteken. HET GEBAAR. Nu te zien."
+    ],
+    "descriptive": [
+      "De camera staat aan. Ik beschrijf de scène zo meteen opnieuw.",
+      "Ik kon net geen beschrijving krijgen. Houd de camera stil, dan probeer ik het opnieuw.",
+      "Ik kijk nog. Er komt zo een nieuwe beschrijving."
+    ],
+    "pumpkin": [
+      "Hehehe... welkom, dappere bezoeker! Wat een kostuum. Echt pompoen-tastisch.",
+      "Boe! Ha, heb ik je laten schrikken? Jouw outfit liet mij in elk geval schrikken, op de beste manier.",
+      "Oho, kom dichterbij, kom dichterbij... Ik hou van een gast met stijl. Je laat mijn hele gezicht stralen.",
+      "Hehe... een mooi kostuum voor een mooie nacht. Ik gloei gewoon van jaloezie.",
+      "Welkom, welkom! Ik zou je een knuffel geven, maar ik ben vanbinnen nogal hol. Prachtige outfit, trouwens.",
+      "Hehehe... ik heb vannacht veel kostuums gezien, maar dat van jou? Griezelig goed."
+    ]
+  },
+  "noChange": "Geen verandering."
+}

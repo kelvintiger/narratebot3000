@@ -1,0 +1,217 @@
+{
+  "callNow": "RING NU! VORES OPERATØRER VENTER!",
+  "tagline": "Din verden, fortalt.",
+  "order": "BESTIL NU",
+  "burst1": "KENDT FRA TV!",
+  "burst2": "KUN 0 KR.!",
+  "finePrint": "*Ikke et rigtigt telefonnummer. Ring venligst ikke. NarrateBot 3000 er ikke ansvarlig for fortællinger, der er for præcise. Resultater kan variere. Batterier medfølger ikke.",
+  "ticker": [
+    "»Den beskrev min kat perfekt!« – Tilfreds kunde",
+    "»Jeg har aldrig følt mig så set.« – Også kunde",
+    "»Min stueplante har aldrig lydt så majestætisk.« – Kunde, formentlig",
+    "»Jeg grinede. Jeg græd. Jeg sad helt stille.« – Flokken"
+  ],
+  "cleanSub": "Live fortælling af scenen fra dit kamera",
+  "cleanExplain": "Ret kameraet mod verden, så beskriver NarrateBot 3000 højt, hvad den ser, på dit sprog.",
+  "start": "Start",
+  "butWait": "MEN VENT... DER ER MERE!",
+  "nowWith": "NU MED {mode}-TILSTAND!",
+  "mode": {
+    "documentary": "DOKUMENTAR",
+    "funny": "SJOV",
+    "descriptive": "BESKRIVENDE",
+    "pumpkin": "GRÆSKAR"
+  },
+  "modeClean": {
+    "documentary": "Dokumentarstil",
+    "funny": "Filmtrailerstil",
+    "descriptive": "Beskrivende tilstand",
+    "pumpkin": "Græskarstil"
+  },
+  "countdown": {
+    "in": "Fortæller om {n}…",
+    "late": "Fortæller…",
+    "visitor": "Venter på en besøgende…",
+    "sr": "Fortællingen starter snart"
+  },
+  "live": "LIVE",
+  "specimen": "EKSEMPLAR",
+  "observation": "OBSERVATION",
+  "herdNone": "FLOKAKTIVITET: INGEN",
+  "unchanged": "Scenen er uændret",
+  "paused": "PAUSE",
+  "nowShowing": "VISES NU",
+  "btn": {
+    "describe": "Beskriv nu",
+    "pause": "Pause",
+    "play": "Afspil",
+    "flip": "Skift kamera",
+    "settings": "Indstillinger",
+    "themeDark": "Mørkt tema",
+    "themeLight": "Lyst tema",
+    "accessible": "Tilgængelig visning",
+    "infomercial": "Reklamevisning",
+    "narrLang": "Fortællesprog",
+    "close": "Luk",
+    "siteLang": "Sidens sprog"
+  },
+  "set": {
+    "title": "BESTILLINGSFORMULAR TIL KUNDESERVICE",
+    "titleClean": "Indstillinger",
+    "sub": "Vores operatører venter",
+    "useEleven": "Brug ElevenLabs-stemme",
+    "charsSession": "Tegn sendt i denne session",
+    "charsToday": "Tegn i dag (alle brugere)",
+    "narrToday": "Fortællinger i dag",
+    "config": "Konfiguration",
+    "stillness": "Følsomhed for stilhed",
+    "stillDebug": "Stilhedstæller / seneste forskel",
+    "textSize": "Tekststørrelse",
+    "smaller": "Mindre tekst",
+    "larger": "Større tekst",
+    "customLang": "Eget fortællesprog",
+    "customLangHint": "Tilføjes til listen over fortællesprog (L)",
+    "music": "Musiklydstyrke",
+    "srMute": "Tal ikke højt (skærmlæseren læser teksten)",
+    "hideVideo": "Skjul videoen, vis kun fortælleteksten",
+    "hotkeys": "Genvejstaster",
+    "yes": "angivet",
+    "no": "mangler",
+    "dflt": "standard",
+    "breakLen": "Pause mellem sætninger",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Tilstande"
+    ],
+    [
+      "L",
+      "Fortællesprog"
+    ],
+    [
+      "N",
+      "Beskriv nu"
+    ],
+    [
+      "S",
+      "Stilhed til/fra"
+    ],
+    [
+      "T",
+      "Tema"
+    ],
+    [
+      "A",
+      "Tilgængelig visning"
+    ],
+    [
+      "Space",
+      "Pause / afspil"
+    ],
+    [
+      "K",
+      "Indstillinger"
+    ]
+  ],
+  "keys": {
+    "title": "MEDBRING DINE EGNE NØGLER",
+    "titleClean": "Brug dine egne nøgler",
+    "sub": "Operatørerne skal bruge dine nøgler for at tage opkaldet",
+    "intro": "NarrateBot 3000 kører på din egen Gemini-nøgle til fortællingen og, hvis du vil, en ElevenLabs-nøgle til stemmer.",
+    "gemini": "Gemini API-nøgle",
+    "eleven": "ElevenLabs API-nøgle (valgfri)",
+    "geminiHelp": "Sådan får du en Gemini-nøgle",
+    "elevenHelp": "Sådan får du en ElevenLabs-nøgle",
+    "getAt": "Få en nøgle på",
+    "newTab": " (åbner i en ny fane)",
+    "geminiSteps": "Log ind, vælg Create API key, og indsæt så nøglen her.",
+    "geminiCost": "Google tilbyder et gratis niveau med forbrugsgrænser; større forbrug faktureres din Google-konto.",
+    "elevenSteps": "Opret en nøgle med Text to Speech-adgang, og indsæt den så her.",
+    "elevenCost": "Gratisplanen indeholder en månedlig tegnkvote. Nogle stemmer kræver en betalt plan; hvis en stemme ikke er tilgængelig, bruger vi en standardstemme eller browserens stemme, hvis du lader feltet stå tomt.",
+    "privacy": "Dine nøgler opbevares i en krypteret cookie i denne browser og sendes kun til vores server for at udføre dine forespørgsler. Vi gemmer eller logger dem aldrig. Du kan fjerne dem når som helst under Indstillinger.",
+    "save": "Gem & start",
+    "saving": "Tjekker…",
+    "cancel": "Annuller",
+    "needGemini": "Indtast din Gemini-nøgle.",
+    "geminiInvalid": "Google accepterede ikke den Gemini-nøgle. Tjek den, og prøv igen.",
+    "format": "Det ligner ikke en API-nøgle. Indsæt hele nøglen uden mellemrum.",
+    "formatEleven": "ElevenLabs-nøglen ser ikke rigtig ud. Indsæt hele nøglen, eller lad feltet stå tomt.",
+    "tooMany": "For mange forsøg. Vent 15 minutter.",
+    "failed": "Kunne ikke tjekke din nøgle lige nu. Prøv igen om lidt.",
+    "needKeys": "Tilføj dine egne nøgler for at fortsætte fortællingen.",
+    "quota": "Din Gemini-nøgle har nået sin forbrugsgrænse. Prøver igen om et minut…",
+    "badKey": "Google afviste din Gemini-nøgle. Tjek den, eller indsæt en ny.",
+    "removed": "Dine nøgler blev fjernet. Tilføj nøgler for at fortsætte fortællingen."
+  },
+  "owner": {
+    "title": "EJERADGANG",
+    "titleClean": "Ejeradgang",
+    "label": "Ejeradgangskode",
+    "submit": "Lås op",
+    "wrong": "Det virkede ikke.",
+    "tooMany": "For mange forsøg. Vent 15 minutter.",
+    "done": "Ejeradgang låst op."
+  },
+  "access": {
+    "legend": "Adgang",
+    "current": "Nuværende adgang:",
+    "owner": "Ejer",
+    "byok": "Egne nøgler",
+    "none": "Ingen nøgler",
+    "change": "Skift nøgler",
+    "add": "Brug dine egne nøgler",
+    "remove": "Fjern mine nøgler",
+    "lock": "Lås ejeradgang"
+  },
+  "camError": "Kameraet er ikke tilgængeligt. Tjek kameratilladelsen, og at siden kører på HTTPS.",
+  "fallback": {
+    "documentary": [
+      "Og her ser vi en forsamling af arten, den ene mere fornem end den anden. Naturen, når den er bedst.",
+      "Et bemærkelsesværdigt eksemplar læner sig frem med blikket rettet mod den lysende skærm, med tålmodigheden hos et væsen, der ved, at store ting tager tid.",
+      "Læg mærke til flokkens stille selvtillid. Ingen er gået i panik, selvom de er så langt fra deres naturlige snackforsyning.",
+      "Kolonien har samlet sig om lyskilden, sådan som deres forfædre gjorde. Nogle ting er, synes det, evige.",
+      "Et eksemplar retter sin holdning med enorm værdighed. De andre bemærker det. En leder er trådt frem.",
+      "I naturen kan meget få væsner sidde en demo igennem med sådan ynde. Og alligevel, her er de. Storslået."
+    ],
+    "documentaryStill": [
+      "Flokken har ikke rørt sig. Ikke et ryk. Fortælleren er for sin del stadig håbefuld.",
+      "Stadig intet. Eksemplarerne ser ud til at spare på energien, måske til klapsalverne.",
+      "Der er gået et stykke tid nu. Man begynder at mistænke, at flokken venter på, at fortælleren bliver sjov. Han prøver.",
+      "Total stilhed. Forskere har et ord for denne adfærd. Ordet er »dømmende«.",
+      "Fortælleren har set stueplanter med mere synlig ambition. Vær nu sød, nogen, hvem som helst, ryk en finger.",
+      "Bare rolig, flokken er helt i sikkerhed. Den vælger blot, med stor værdighed, ikke at bevæge sig."
+    ],
+    "funny": [
+      "I en verden... hvor ét rum turde se på en laptop... fødes en legende. Tilladt for alle: A for Alletiders.",
+      "Til efteråret... en gruppe geniale fremmede... og et webcam, der har set for meget. PUBLIKUM. Nu i biografen.",
+      "Fra studiet, der gav dig at sidde ned... kommer dets dristigste efterfølger. SID NED 2: STADIG SIDDENDE.",
+      "Kritikerne kalder den »det bedst klædte publikum, en laptop nogensinde har filmet«. Snart i netop dette rum.",
+      "Ét rum. Nul eksplosioner. Ubegrænset karisma. HACKATHONEN. To tommelfingre højt, højt op.",
+      "De kom for demoen... de blev for de gratis snacks... DELTAGERNE. Certificeret frisk."
+    ],
+    "funnyStill": [
+      "Denne vinter... sker der absolut intet. Og det er betagende. STILLEBEN: FILMEN.",
+      "Tolv helte. Ét rum. Nul bevægelse. STATUERNE. Fra 15 år: F for Fastfrosne.",
+      "Fra instruktøren bag VENTETIDEN... kommer VENTETIDEN 2: VI VENTER STADIG. Kritikerne siger, den »bliver siddende i en«.",
+      "I en verden, hvor ingen bevæger sig... tigger én fortæller. Vær sød. Nogen. Vink.",
+      "Snart: DEN LÆNGSTE PAUSE. Halvfems minutter. Ét rum. Ikke et eneste blink.",
+      "Denne sommer... står publikum over for sin største udfordring... at løfte én hånd. GESTUSSEN. Nu i biografen."
+    ],
+    "descriptive": [
+      "Kameraet er tændt. Jeg beskriver scenen igen om et øjeblik.",
+      "Jeg kunne ikke få en beskrivelse lige nu. Hold kameraet stille, så prøver jeg igen.",
+      "Kigger stadig. En ny beskrivelse kommer snart."
+    ],
+    "pumpkin": [
+      "He he he... velkommen, modige gæst! Sikke et kostume. Helt græskar-tastisk.",
+      "Bøh! Ha, blev du bange? Dit kostume skræmte i hvert fald mig, på den gode måde.",
+      "Oho, kom nærmere, kom nærmere... Jeg elsker gæster med stil. Du får hele mit ansigt til at lyse op.",
+      "He he... et fint kostume til en fin aften. Jeg gløder af misundelse.",
+      "Velkommen, velkommen! Jeg ville give dig et kram, men jeg er mest hul indeni. Dejligt kostume, dog.",
+      "He he he... jeg har set mange kostumer i aften, men dit? Spøg-takulært."
+    ]
+  },
+  "noChange": "Ingen ændring."
+}

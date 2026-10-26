@@ -1,0 +1,217 @@
+{
+  "callNow": "JETZT ANRUFEN! UNSERE BERATER WARTEN AUF IHREN ANRUF!",
+  "tagline": "Deine Welt, erzählt.",
+  "order": "JETZT BESTELLEN",
+  "burst1": "BEKANNT AUS DEM TV!",
+  "burst2": "NUR 0,00 $!",
+  "finePrint": "*Keine echte Telefonnummer. Bitte nicht anrufen. NarrateBot 3000 haftet nicht für Erzählungen, die zu zutreffend sind. Ergebnisse können abweichen. Batterien nicht enthalten.",
+  "ticker": [
+    "„Er hat meine Katze perfekt beschrieben!“ – Zufriedene Kundin",
+    "„Ich habe mich noch nie so gesehen gefühlt.“ – Auch ein Kunde",
+    "„Meine Zimmerpflanze klang noch nie so majestätisch.“ – Kunde, vermutlich",
+    "„Ich habe gelacht. Ich habe geweint. Ich saß ganz still.“ – Die Herde"
+  ],
+  "cleanSub": "Live-Beschreibung der Szene vor deiner Kamera",
+  "cleanExplain": "Richte deine Kamera auf die Welt, und NarrateBot 3000 beschreibt laut, was er sieht – in deiner Sprache.",
+  "start": "Starten",
+  "butWait": "ABER MOMENT … DA IST NOCH MEHR!",
+  "nowWith": "JETZT MIT {mode}-MODUS!",
+  "mode": {
+    "documentary": "DOKU",
+    "funny": "LUSTIG",
+    "descriptive": "BESCHREIBEND",
+    "pumpkin": "KÜRBIS"
+  },
+  "modeClean": {
+    "documentary": "Dokumentarfilm-Stil",
+    "funny": "Filmtrailer-Stil",
+    "descriptive": "Beschreibender Modus",
+    "pumpkin": "Kürbis-Stil"
+  },
+  "countdown": {
+    "in": "Erzählung in {n} …",
+    "late": "Erzählung läuft …",
+    "visitor": "Warte auf Besuch …",
+    "sr": "Erzählung beginnt gleich"
+  },
+  "live": "LIVE",
+  "specimen": "EXEMPLAR",
+  "observation": "BEOBACHTUNG",
+  "herdNone": "HERDENAKTIVITÄT: KEINE ERKANNT",
+  "unchanged": "Szene unverändert",
+  "paused": "PAUSIERT",
+  "nowShowing": "JETZT IM KINO",
+  "btn": {
+    "describe": "Jetzt beschreiben",
+    "pause": "Pause",
+    "play": "Abspielen",
+    "flip": "Kamera wechseln",
+    "settings": "Einstellungen",
+    "themeDark": "Dunkles Design",
+    "themeLight": "Helles Design",
+    "accessible": "Barrierefreie Ansicht",
+    "infomercial": "Teleshopping-Ansicht",
+    "narrLang": "Erzählsprache",
+    "close": "Schließen",
+    "siteLang": "Sprache der Website"
+  },
+  "set": {
+    "title": "BESTELLFORMULAR DES CALLCENTERS",
+    "titleClean": "Einstellungen",
+    "sub": "Unsere Berater warten auf Ihren Anruf",
+    "useEleven": "ElevenLabs-Stimme verwenden",
+    "charsSession": "In dieser Sitzung gesendete Zeichen",
+    "charsToday": "Zeichen heute (alle Nutzer)",
+    "narrToday": "Erzählungen heute",
+    "config": "Konfiguration",
+    "stillness": "Empfindlichkeit für Stillstand",
+    "stillDebug": "Stillstandszähler / letzte Differenz",
+    "textSize": "Textgröße",
+    "smaller": "Kleinerer Text",
+    "larger": "Größerer Text",
+    "customLang": "Eigene Erzählsprache",
+    "customLangHint": "Wird der Liste der Erzählsprachen hinzugefügt (L)",
+    "music": "Musiklautstärke",
+    "srMute": "Nicht laut sprechen (der Screenreader liest den Text vor)",
+    "hideVideo": "Video ausblenden, nur den Erzähltext anzeigen",
+    "hotkeys": "Tastenkürzel",
+    "yes": "gesetzt",
+    "no": "fehlt",
+    "dflt": "Standard",
+    "breakLen": "Pause zwischen den Sätzen",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Modi"
+    ],
+    [
+      "L",
+      "Erzählsprache"
+    ],
+    [
+      "N",
+      "Jetzt beschreiben"
+    ],
+    [
+      "S",
+      "Stillstand ein/aus"
+    ],
+    [
+      "T",
+      "Design"
+    ],
+    [
+      "A",
+      "Barrierefreie Ansicht"
+    ],
+    [
+      "Leertaste",
+      "Pause / Abspielen"
+    ],
+    [
+      "K",
+      "Einstellungen"
+    ]
+  ],
+  "keys": {
+    "title": "BRINGEN SIE IHRE EIGENEN SCHLÜSSEL MIT",
+    "titleClean": "Eigene Schlüssel verwenden",
+    "sub": "Unsere Berater brauchen Ihre Schlüssel, um diesen Anruf anzunehmen",
+    "intro": "NarrateBot 3000 läuft mit deinem eigenen Gemini-Schlüssel für die Erzählung und, wenn du möchtest, einem ElevenLabs-Schlüssel für die Stimmen.",
+    "gemini": "Gemini-API-Schlüssel",
+    "eleven": "ElevenLabs-API-Schlüssel (optional)",
+    "geminiHelp": "So bekommst du einen Gemini-Schlüssel",
+    "elevenHelp": "So bekommst du einen ElevenLabs-Schlüssel",
+    "getAt": "Schlüssel erhältst du unter",
+    "newTab": " (öffnet in einem neuen Tab)",
+    "geminiSteps": "Melde dich an, wähle Create API key und füge den Schlüssel dann hier ein.",
+    "geminiCost": "Google bietet ein kostenloses Kontingent mit Nutzungslimits; stärkere Nutzung wird über dein Google-Konto abgerechnet.",
+    "elevenSteps": "Erstelle einen Schlüssel mit Zugriff auf Text to Speech und füge ihn dann hier ein.",
+    "elevenCost": "Der kostenlose Tarif enthält ein monatliches Zeichenkontingent. Manche Stimmen erfordern einen kostenpflichtigen Tarif; ist eine Stimme nicht verfügbar, verwenden wir eine Standardstimme oder die Stimme deines Browsers, wenn du dieses Feld leer lässt.",
+    "privacy": "Deine Schlüssel werden in einem verschlüsselten Cookie in diesem Browser aufbewahrt und nur an unseren Server gesendet, um deine Anfragen auszuführen. Wir speichern oder protokollieren sie niemals. Du kannst sie jederzeit in den Einstellungen entfernen.",
+    "save": "Speichern & starten",
+    "saving": "Wird geprüft …",
+    "cancel": "Abbrechen",
+    "needGemini": "Gib deinen Gemini-Schlüssel ein.",
+    "geminiInvalid": "Google hat diesen Gemini-Schlüssel nicht akzeptiert. Prüfe ihn und versuche es erneut.",
+    "format": "Das sieht nicht wie ein API-Schlüssel aus. Füge den ganzen Schlüssel ohne Leerzeichen ein.",
+    "formatEleven": "Dieser ElevenLabs-Schlüssel sieht nicht richtig aus. Füge den ganzen Schlüssel ein oder lass das Feld leer.",
+    "tooMany": "Zu viele Versuche. Warte 15 Minuten.",
+    "failed": "Dein Schlüssel konnte gerade nicht geprüft werden. Versuche es gleich noch einmal.",
+    "needKeys": "Füge deine eigenen Schlüssel hinzu, um weiter erzählen zu lassen.",
+    "quota": "Dein Gemini-Schlüssel hat sein Nutzungslimit erreicht. Neuer Versuch in einer Minute …",
+    "badKey": "Google hat deinen Gemini-Schlüssel abgelehnt. Prüfe ihn oder füge einen neuen ein.",
+    "removed": "Deine Schlüssel wurden entfernt. Füge Schlüssel hinzu, um weiter erzählen zu lassen."
+  },
+  "owner": {
+    "title": "BESITZERZUGANG",
+    "titleClean": "Besitzerzugang",
+    "label": "Besitzerpasswort",
+    "submit": "Entsperren",
+    "wrong": "Das hat nicht geklappt.",
+    "tooMany": "Zu viele Versuche. Warte 15 Minuten.",
+    "done": "Besitzerzugang entsperrt."
+  },
+  "access": {
+    "legend": "Zugang",
+    "current": "Aktueller Zugang:",
+    "owner": "Besitzer",
+    "byok": "Eigene Schlüssel",
+    "none": "Keine Schlüssel",
+    "change": "Schlüssel ändern",
+    "add": "Eigene Schlüssel verwenden",
+    "remove": "Meine Schlüssel entfernen",
+    "lock": "Besitzerzugang sperren"
+  },
+  "camError": "Kamera nicht verfügbar. Prüfe die Kameraberechtigung und ob die Seite über HTTPS geladen ist.",
+  "fallback": {
+    "documentary": [
+      "Und hier beobachten wir eine Versammlung der Spezies, jedes Exemplar vornehmer als das letzte. Wahrlich, Natur in Bestform.",
+      "Ein bemerkenswertes Exemplar beugt sich vor, den Blick auf den leuchtenden Bildschirm geheftet, mit der Geduld eines Wesens, das weiß: Gut Ding will Weile haben.",
+      "Beachten Sie die stille Gelassenheit dieser Herde. Keines gerät in Panik, obwohl sie so weit von ihrem natürlichen Snackvorrat entfernt sind.",
+      "Die Kolonie hat sich um die Lichtquelle versammelt, wie schon ihre Vorfahren. Manche Dinge, so scheint es, sind ewig.",
+      "Ein Exemplar korrigiert mit ungeheurer Würde seine Haltung. Die anderen nehmen es zur Kenntnis. Ein Anführer ist geboren.",
+      "In freier Wildbahn können nur wenige Geschöpfe eine Demo mit solcher Anmut aussitzen. Und doch sind sie hier. Prachtvoll."
+    ],
+    "documentaryStill": [
+      "Die Herde hat sich nicht bewegt. Kein Zucken. Der Erzähler seinerseits bleibt zuversichtlich.",
+      "Immer noch nichts. Die Exemplare scheinen Energie zu sparen, vielleicht für den Applaus.",
+      "Es ist nun schon eine Weile her. Man beginnt zu vermuten, die Herde wartet darauf, dass der Erzähler witzig wird. Er gibt sich Mühe.",
+      "Völliger Stillstand. Wissenschaftler haben ein Wort für dieses Verhalten. Das Wort lautet „urteilen“.",
+      "Der Erzähler hat schon Zimmerpflanzen mit mehr sichtbarem Ehrgeiz beobachtet. Bitte, irgendjemand, bewegt einen Finger.",
+      "Seien Sie unbesorgt, der Herde geht es bestens. Sie entscheidet sich lediglich, mit großer Würde, sich nicht zu bewegen."
+    ],
+    "funny": [
+      "In einer Welt … in der ein Raum es wagte, auf einen Laptop zu starren … wird eine Legende geboren. FSK 0 – null Action.",
+      "Diesen Herbst … eine Gruppe brillanter Fremder … und eine Webcam, die zu viel gesehen hat. DAS PUBLIKUM. Jetzt im Kino.",
+      "Vom Studio, das Ihnen „Hinsetzen“ brachte … kommt die bisher kühnste Fortsetzung. SITZEN 2: IMMER NOCH SITZEN.",
+      "Kritiker nennen es „das bestgekleidete Publikum, das je ein Laptop gefilmt hat“. Demnächst in genau diesem Raum.",
+      "Ein Raum. Null Explosionen. Grenzenloses Charisma. DER HACKATHON. Zwei Daumen ganz, ganz weit hoch.",
+      "Sie kamen für die Demo … sie blieben für die Gratis-Snacks … DIE TEILNEHMER. Prädikat: besonders wertvoll."
+    ],
+    "funnyStill": [
+      "Diesen Winter … passiert absolut gar nichts. Und es ist atemberaubend. STILLLEBEN: DER FILM.",
+      "Zwölf Helden. Ein Raum. Null Bewegung. DIE STATUEN. Freigegeben ab null Bewegungen.",
+      "Vom Regisseur von WARTEN … kommt WARTEN 2: WIR WARTEN NOCH. Kritiker sagen, er „lässt einen nicht mehr aufstehen“.",
+      "In einer Welt, in der sich niemand bewegt … fleht ein Erzähler … Bitte. Irgendwer. Winkt.",
+      "Demnächst: DIE LÄNGSTE PAUSE. Neunzig Minuten. Ein Raum. Kein einziges Blinzeln.",
+      "Diesen Sommer … steht das Publikum vor seiner größten Herausforderung … eine Hand zu heben. DIE GESTE. Jetzt im Kino."
+    ],
+    "descriptive": [
+      "Die Kamera ist an. Ich beschreibe die Szene gleich noch einmal.",
+      "Ich konnte gerade keine Beschreibung erhalten. Halte die Kamera ruhig, dann versuche ich es erneut.",
+      "Ich schaue noch. Eine neue Beschreibung kommt in Kürze."
+    ],
+    "pumpkin": [
+      "Hehehe … willkommen, tapferer Besucher! Was für ein Kostüm. Wahrhaft kürbiszauberhaft.",
+      "Buh! Ha, hab ich dich erschreckt? Dein Outfit hat mich jedenfalls erschreckt – im besten Sinne.",
+      "Oho, komm näher, komm näher … Ich liebe Gäste mit Stil. Du bringst mein ganzes Gesicht zum Leuchten.",
+      "Hehe … ein feines Kostüm für eine feine Nacht. Ich glühe förmlich vor Neid.",
+      "Willkommen, willkommen! Ich würde dich ja umarmen, aber innen bin ich ziemlich hohl. Tolles Outfit trotzdem.",
+      "Hehehe … ich habe heute Nacht viele Kostüme gesehen, aber deins? Schaurig-schön."
+    ]
+  },
+  "noChange": "Keine Änderung."
+}

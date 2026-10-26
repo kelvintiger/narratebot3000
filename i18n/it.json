@@ -1,0 +1,217 @@
+{
+  "callNow": "CHIAMA ORA! I NOSTRI OPERATORI SONO IN ATTESA!",
+  "tagline": "Il tuo mondo, raccontato.",
+  "order": "ORDINA ORA",
+  "burst1": "VISTO IN TV!",
+  "burst2": "SOLO 0,00 $!",
+  "finePrint": "*Non è un vero numero di telefono. Per favore non chiamare. NarrateBot 3000 non è responsabile di narrazioni troppo precise. I risultati possono variare. Batterie non incluse.",
+  "ticker": [
+    "«Ha descritto il mio gatto alla perfezione!» – Cliente soddisfatta",
+    "«Non mi sono mai sentito così visto.» – Anche lui cliente",
+    "«La mia pianta d’appartamento non è mai sembrata così maestosa.» – Cliente, probabilmente",
+    "«Ho riso. Ho pianto. Sono rimasto immobile.» – Il branco"
+  ],
+  "cleanSub": "Narrazione dal vivo della scena ripresa dalla tua fotocamera",
+  "cleanExplain": "Punta la fotocamera sul mondo e NarrateBot 3000 descrive ad alta voce ciò che vede, nella tua lingua.",
+  "start": "Avvia",
+  "butWait": "MA NON È FINITA QUI!",
+  "nowWith": "ORA CON LA MODALITÀ {mode}!",
+  "mode": {
+    "documentary": "DOCUMENTARIO",
+    "funny": "COMICA",
+    "descriptive": "DESCRITTIVA",
+    "pumpkin": "ZUCCA"
+  },
+  "modeClean": {
+    "documentary": "Stile documentario",
+    "funny": "Stile trailer cinematografico",
+    "descriptive": "Modalità descrittiva",
+    "pumpkin": "Stile zucca"
+  },
+  "countdown": {
+    "in": "Narrazione tra {n}…",
+    "late": "Narrazione in corso…",
+    "visitor": "In attesa di un visitatore…",
+    "sr": "La narrazione inizia a breve"
+  },
+  "live": "IN DIRETTA",
+  "specimen": "ESEMPLARE",
+  "observation": "OSSERVAZIONE",
+  "herdNone": "ATTIVITÀ DEL BRANCO: NESSUNA RILEVATA",
+  "unchanged": "Scena invariata",
+  "paused": "IN PAUSA",
+  "nowShowing": "ORA IN SALA",
+  "btn": {
+    "describe": "Descrivi ora",
+    "pause": "Pausa",
+    "play": "Riproduci",
+    "flip": "Cambia fotocamera",
+    "settings": "Impostazioni",
+    "themeDark": "Tema scuro",
+    "themeLight": "Tema chiaro",
+    "accessible": "Vista accessibile",
+    "infomercial": "Vista televendita",
+    "narrLang": "Lingua della narrazione",
+    "close": "Chiudi",
+    "siteLang": "Lingua del sito"
+  },
+  "set": {
+    "title": "MODULO D’ORDINE DEL CALL CENTER",
+    "titleClean": "Impostazioni",
+    "sub": "I nostri operatori sono in attesa",
+    "useEleven": "Usa la voce ElevenLabs",
+    "charsSession": "Caratteri inviati in questa sessione",
+    "charsToday": "Caratteri oggi (tutti gli utenti)",
+    "narrToday": "Narrazioni oggi",
+    "config": "Configurazione",
+    "stillness": "Sensibilità all’immobilità",
+    "stillDebug": "Conteggio immobilità / ultima differenza",
+    "textSize": "Dimensione del testo",
+    "smaller": "Testo più piccolo",
+    "larger": "Testo più grande",
+    "customLang": "Lingua di narrazione personalizzata",
+    "customLangHint": "Aggiunta all’elenco delle lingue di narrazione (L)",
+    "music": "Volume della musica",
+    "srMute": "Non parlare ad alta voce (lo screen reader legge il testo)",
+    "hideVideo": "Nascondi il video, mostra solo il testo della narrazione",
+    "hotkeys": "Scorciatoie da tastiera",
+    "yes": "impostata",
+    "no": "mancante",
+    "dflt": "predefinito",
+    "breakLen": "Pausa tra le frasi",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Modalità"
+    ],
+    [
+      "L",
+      "Lingua della narrazione"
+    ],
+    [
+      "N",
+      "Descrivi ora"
+    ],
+    [
+      "S",
+      "Immobilità sì/no"
+    ],
+    [
+      "T",
+      "Tema"
+    ],
+    [
+      "A",
+      "Vista accessibile"
+    ],
+    [
+      "Spazio",
+      "Pausa / riproduci"
+    ],
+    [
+      "K",
+      "Impostazioni"
+    ]
+  ],
+  "keys": {
+    "title": "PORTA LE TUE CHIAVI",
+    "titleClean": "Usa le tue chiavi",
+    "sub": "Gli operatori hanno bisogno delle tue chiavi per rispondere a questa chiamata",
+    "intro": "NarrateBot 3000 funziona con la tua chiave Gemini per la narrazione e, se vuoi, con una chiave ElevenLabs per le voci.",
+    "gemini": "Chiave API Gemini",
+    "eleven": "Chiave API ElevenLabs (facoltativa)",
+    "geminiHelp": "Come ottenere una chiave Gemini",
+    "elevenHelp": "Come ottenere una chiave ElevenLabs",
+    "getAt": "Ottieni una chiave su",
+    "newTab": " (si apre in una nuova scheda)",
+    "geminiSteps": "Accedi, scegli Create API key, poi incolla qui la chiave.",
+    "geminiCost": "Google offre un piano gratuito con limiti di utilizzo; un uso più intenso viene addebitato sul tuo account Google.",
+    "elevenSteps": "Crea una chiave con accesso a Text to Speech, poi incollala qui.",
+    "elevenCost": "Il piano gratuito include un numero mensile di caratteri. Alcune voci richiedono un piano a pagamento; se una voce non è disponibile usiamo una voce standard, oppure la voce del tuo browser se lasci vuoto questo campo.",
+    "privacy": "Le tue chiavi sono conservate in un cookie crittografato in questo browser e inviate al nostro server solo per eseguire le tue richieste. Non le memorizziamo né le registriamo mai. Puoi rimuoverle in qualsiasi momento dalle Impostazioni.",
+    "save": "Salva e avvia",
+    "saving": "Verifica in corso…",
+    "cancel": "Annulla",
+    "needGemini": "Inserisci la tua chiave Gemini.",
+    "geminiInvalid": "Google non ha accettato questa chiave Gemini. Controllala e riprova.",
+    "format": "Non sembra una chiave API. Incolla la chiave completa, senza spazi.",
+    "formatEleven": "Questa chiave ElevenLabs non sembra corretta. Incolla la chiave completa o lascia vuoto il campo.",
+    "tooMany": "Troppi tentativi. Attendi 15 minuti.",
+    "failed": "Al momento non è possibile verificare la tua chiave. Riprova tra poco.",
+    "needKeys": "Per continuare la narrazione, aggiungi le tue chiavi.",
+    "quota": "La tua chiave Gemini ha raggiunto il limite di utilizzo. Nuovo tentativo tra un minuto…",
+    "badKey": "Google ha rifiutato la tua chiave Gemini. Controllala o incollane una nuova.",
+    "removed": "Le tue chiavi sono state rimosse. Aggiungi delle chiavi per continuare la narrazione."
+  },
+  "owner": {
+    "title": "ACCESSO PROPRIETARIO",
+    "titleClean": "Accesso proprietario",
+    "label": "Password del proprietario",
+    "submit": "Sblocca",
+    "wrong": "Non ha funzionato.",
+    "tooMany": "Troppi tentativi. Attendi 15 minuti.",
+    "done": "Accesso proprietario sbloccato."
+  },
+  "access": {
+    "legend": "Accesso",
+    "current": "Accesso attuale:",
+    "owner": "Proprietario",
+    "byok": "Le tue chiavi",
+    "none": "Nessuna chiave",
+    "change": "Cambia chiavi",
+    "add": "Usa le tue chiavi",
+    "remove": "Rimuovi le mie chiavi",
+    "lock": "Blocca l’accesso proprietario"
+  },
+  "camError": "Fotocamera non disponibile. Controlla l’autorizzazione della fotocamera e che la pagina sia in HTTPS.",
+  "fallback": {
+    "documentary": [
+      "Ed ecco che osserviamo un raduno della specie, ogni esemplare più distinto del precedente. Davvero, la natura al suo meglio.",
+      "Un esemplare straordinario si sporge in avanti, gli occhi fissi sullo schermo luminoso, con la pazienza di una creatura che sa che le grandi cose richiedono tempo.",
+      "Notate la sicurezza tranquilla di questo branco. Nessuno è in preda al panico, nonostante sia così lontano dalla sua naturale scorta di patatine.",
+      "La colonia si è radunata attorno alla fonte di luce, come fecero i suoi antenati. Certe cose, a quanto pare, sono eterne.",
+      "Un esemplare aggiusta la postura con enorme dignità. Gli altri prendono nota. È emerso un capobranco.",
+      "In natura, pochissime creature riescono a sopportare una demo con tanta grazia. Eppure, eccole qui. Magnifiche."
+    ],
+    "documentaryStill": [
+      "Il branco non si è mosso. Nemmeno un fremito. Il narratore, dal canto suo, resta fiducioso.",
+      "Ancora niente. Gli esemplari sembrano risparmiare energie, forse per l’applauso.",
+      "È passato un po’ di tempo. Si comincia a sospettare che il branco aspetti che il narratore faccia ridere. Ci sta provando.",
+      "Immobilità totale. Gli scienziati hanno una parola per questo comportamento. La parola è «giudicare».",
+      "Il narratore ha osservato piante d’appartamento con più ambizione. Vi prego, qualcuno, chiunque, muova un dito.",
+      "State tranquilli, il branco sta benissimo. Sta semplicemente scegliendo, con grande dignità, di non muoversi."
+    ],
+    "funny": [
+      "In un mondo… dove una stanza osò guardare un portatile… nasce una leggenda. Vietato ai minori di zero anni.",
+      "Quest’autunno… un gruppo di brillanti sconosciuti… e una webcam che ne ha viste troppe. IL PUBBLICO. Ora al cinema.",
+      "Dallo studio che vi ha portato «stare seduti»… arriva il sequel più audace. SEDUTI 2: ANCORA SEDUTI.",
+      "La critica lo definisce «il pubblico più elegante mai ripreso da un portatile». Prossimamente proprio in questa stanza.",
+      "Una stanza. Zero esplosioni. Carisma illimitato. L’HACKATHON. Due pollici in su, anzi altissimi.",
+      "Sono venuti per la demo… sono rimasti per gli snack gratis… I PARTECIPANTI. Un successo annunciato."
+    ],
+    "funnyStill": [
+      "Quest’inverno… non succede assolutamente niente. Ed è mozzafiato. NATURA MORTA: IL FILM.",
+      "Dodici eroi. Una stanza. Zero movimenti. LE STATUE. Vietato a chi si muove.",
+      "Dal regista di L’ATTESA… arriva L’ATTESA 2: ANCORA IN ATTESA. La critica: «ti inchioda alla sedia».",
+      "In un mondo dove nessuno si muove… un narratore… implora. Vi prego. Qualcuno. Salutate.",
+      "Prossimamente: LA PAUSA PIÙ LUNGA. Novanta minuti. Una stanza. Neanche un battito di ciglia.",
+      "Quest’estate… il pubblico affronta la sua sfida più grande… alzare una mano. IL GESTO. Ora al cinema."
+    ],
+    "descriptive": [
+      "La fotocamera è accesa. Descriverò di nuovo la scena tra un momento.",
+      "Non sono riuscito a ottenere una descrizione. Tieni ferma la fotocamera e riproverò.",
+      "Sto ancora guardando. Una nuova descrizione arriverà a breve."
+    ],
+    "pumpkin": [
+      "Eh eh eh… benvenuto, coraggioso visitatore! Che costume. Davvero da zucca-re il fiato.",
+      "Buh! Ah, ti ho spaventato? Il tuo costume ha spaventato me, nel senso migliore.",
+      "Oh oh, avvicinati, avvicinati… Adoro gli ospiti con stile. Mi illumini tutta la faccia.",
+      "Eh eh… un bel costume per una bella notte. Sto letteralmente ardendo d’invidia.",
+      "Benvenuto, benvenuto! Ti abbraccerei, ma dentro sono praticamente vuoto. Costume splendido, però.",
+      "Eh eh eh… stasera ho visto tanti costumi, ma il tuo? Da paura."
+    ]
+  },
+  "noChange": "Nessun cambiamento."
+}

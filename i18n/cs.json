@@ -1,0 +1,217 @@
+{
+  "callNow": "VOLEJTE HNED! OPERÁTOŘI ČEKAJÍ!",
+  "tagline": "Tvůj svět, převyprávěný.",
+  "order": "OBJEDNEJTE HNED",
+  "burst1": "ZNÁMÉ Z TV!",
+  "burst2": "JEN 0 Kč!",
+  "finePrint": "*Není to skutečné telefonní číslo. Prosím, nevolejte. NarrateBot 3000 neodpovídá za příliš přesná vyprávění. Výsledky se mohou lišit. Baterie nejsou součástí balení.",
+  "ticker": [
+    "„Popsal mi kočku dokonale!“ – Spokojená zákaznice",
+    "„Nikdy jsem se necítil tak pochopený.“ – Taky zákazník",
+    "„Moje kytka nikdy nezněla tak majestátně.“ – Zákazník, asi",
+    "„Smál jsem se. Plakal jsem. Seděl jsem úplně bez hnutí.“ – Stádo"
+  ],
+  "cleanSub": "Živé vyprávění scény z tvé kamery",
+  "cleanExplain": "Namiř kameru na svět a NarrateBot 3000 nahlas popíše, co vidí, ve tvém jazyce.",
+  "start": "Spustit",
+  "butWait": "ALE POČKEJTE... TO NENÍ VŠE!",
+  "nowWith": "NYNÍ V REŽIMU {mode}!",
+  "mode": {
+    "documentary": "DOKUMENT",
+    "funny": "VTIPNÝ",
+    "descriptive": "POPISNÝ",
+    "pumpkin": "DÝNĚ"
+  },
+  "modeClean": {
+    "documentary": "Dokumentární styl",
+    "funny": "Styl filmového traileru",
+    "descriptive": "Popisný režim",
+    "pumpkin": "Dýňový styl"
+  },
+  "countdown": {
+    "in": "Vyprávění za {n}…",
+    "late": "Vyprávím…",
+    "visitor": "Čekám na návštěvníka…",
+    "sr": "Vyprávění brzy začne"
+  },
+  "live": "ŽIVĚ",
+  "specimen": "EXEMPLÁŘ",
+  "observation": "POZOROVÁNÍ",
+  "herdNone": "AKTIVITA STÁDA: ŽÁDNÁ",
+  "unchanged": "Scéna beze změny",
+  "paused": "POZASTAVENO",
+  "nowShowing": "PRÁVĚ UVÁDÍME",
+  "btn": {
+    "describe": "Popsat teď",
+    "pause": "Pozastavit",
+    "play": "Přehrát",
+    "flip": "Otočit kameru",
+    "settings": "Nastavení",
+    "themeDark": "Tmavý motiv",
+    "themeLight": "Světlý motiv",
+    "accessible": "Přístupné zobrazení",
+    "infomercial": "Teleshopping",
+    "narrLang": "Jazyk vyprávění",
+    "close": "Zavřít",
+    "siteLang": "Jazyk webu"
+  },
+  "set": {
+    "title": "OBJEDNÁVKOVÝ FORMULÁŘ CALL CENTRA",
+    "titleClean": "Nastavení",
+    "sub": "Operátoři čekají",
+    "useEleven": "Použít hlas ElevenLabs",
+    "charsSession": "Znaky odeslané v této relaci",
+    "charsToday": "Znaky dnes (všichni uživatelé)",
+    "narrToday": "Vyprávění dnes",
+    "config": "Konfigurace",
+    "stillness": "Citlivost na nehybnost",
+    "stillDebug": "Počet klidu / poslední rozdíl",
+    "textSize": "Velikost textu",
+    "smaller": "Menší text",
+    "larger": "Větší text",
+    "customLang": "Vlastní jazyk vyprávění",
+    "customLangHint": "Přidá se do seznamu jazyků vyprávění (L)",
+    "music": "Hlasitost hudby",
+    "srMute": "Nemluvit nahlas (text čte čtečka obrazovky)",
+    "hideVideo": "Skrýt video, zobrazit jen text vyprávění",
+    "hotkeys": "Klávesové zkratky",
+    "yes": "nastaveno",
+    "no": "chybí",
+    "dflt": "výchozí",
+    "breakLen": "Pauza mezi větami",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Režimy"
+    ],
+    [
+      "L",
+      "Jazyk vyprávění"
+    ],
+    [
+      "N",
+      "Popsat teď"
+    ],
+    [
+      "S",
+      "Nehybnost zap/vyp"
+    ],
+    [
+      "T",
+      "Motiv"
+    ],
+    [
+      "A",
+      "Přístupné zobrazení"
+    ],
+    [
+      "Space",
+      "Pozastavit / přehrát"
+    ],
+    [
+      "K",
+      "Nastavení"
+    ]
+  ],
+  "keys": {
+    "title": "PŘINESTE SI VLASTNÍ KLÍČE",
+    "titleClean": "Použít vlastní klíče",
+    "sub": "Operátoři potřebují vaše klíče, aby hovor přijali",
+    "intro": "NarrateBot 3000 běží na tvém vlastním klíči Gemini pro vyprávění a, pokud chceš, na klíči ElevenLabs pro hlasy.",
+    "gemini": "API klíč Gemini",
+    "eleven": "API klíč ElevenLabs (volitelné)",
+    "geminiHelp": "Jak získat klíč Gemini",
+    "elevenHelp": "Jak získat klíč ElevenLabs",
+    "getAt": "Klíč získáš na",
+    "newTab": " (otevře se v nové kartě)",
+    "geminiSteps": "Přihlas se, zvol Create API key a klíč vlož sem.",
+    "geminiCost": "Google nabízí bezplatnou úroveň s limity; větší využití se účtuje na tvůj účet Google.",
+    "elevenSteps": "Vytvoř klíč s přístupem Text to Speech a vlož ho sem.",
+    "elevenCost": "Bezplatný tarif zahrnuje měsíční limit znaků. Některé hlasy vyžadují placený tarif; když hlas není dostupný, použijeme standardní hlas, nebo hlas prohlížeče, pokud pole necháš prázdné.",
+    "privacy": "Tvé klíče jsou uložené v šifrované cookie v tomto prohlížeči a na náš server se posílají jen kvůli vyřízení tvých požadavků. Nikdy je neukládáme ani nezaznamenáváme. Kdykoli je můžeš odebrat v Nastavení.",
+    "save": "Uložit a spustit",
+    "saving": "Ověřuji…",
+    "cancel": "Zrušit",
+    "needGemini": "Zadej svůj klíč Gemini.",
+    "geminiInvalid": "Google tento klíč Gemini nepřijal. Zkontroluj ho a zkus to znovu.",
+    "format": "Tohle nevypadá jako API klíč. Vlož celý klíč bez mezer.",
+    "formatEleven": "Tento klíč ElevenLabs nevypadá správně. Vlož celý klíč, nebo pole nech prázdné.",
+    "tooMany": "Příliš mnoho pokusů. Počkej 15 minut.",
+    "failed": "Klíč teď nejde ověřit. Zkus to za chvíli.",
+    "needKeys": "Pro další vyprávění přidej vlastní klíče.",
+    "quota": "Tvůj klíč Gemini dosáhl limitu. Zkusím to znovu za minutu…",
+    "badKey": "Google odmítl tvůj klíč Gemini. Zkontroluj ho nebo vlož nový.",
+    "removed": "Tvé klíče byly odebrány. Pro další vyprávění přidej klíče."
+  },
+  "owner": {
+    "title": "PŘÍSTUP VLASTNÍKA",
+    "titleClean": "Přístup vlastníka",
+    "label": "Heslo vlastníka",
+    "submit": "Odemknout",
+    "wrong": "Nepovedlo se.",
+    "tooMany": "Příliš mnoho pokusů. Počkej 15 minut.",
+    "done": "Přístup vlastníka odemčen."
+  },
+  "access": {
+    "legend": "Přístup",
+    "current": "Aktuální přístup:",
+    "owner": "Vlastník",
+    "byok": "Vlastní klíče",
+    "none": "Bez klíčů",
+    "change": "Změnit klíče",
+    "add": "Použít vlastní klíče",
+    "remove": "Odebrat mé klíče",
+    "lock": "Zamknout přístup vlastníka"
+  },
+  "camError": "Kamera není dostupná. Zkontroluj oprávnění kamery a že stránka běží na HTTPS.",
+  "fallback": {
+    "documentary": [
+      "A zde pozorujeme shromáždění tohoto druhu, každý jedinec vznešenější než ten předchozí. Příroda v celé své kráse.",
+      "Pozoruhodný exemplář se naklání kupředu, oči upřené na zářící obrazovku, s trpělivostí tvora, který ví, že velké věci chtějí čas.",
+      "Všimněte si tiché sebejistoty tohoto stáda. Nikdo nepropadl panice, přestože jsou tak daleko od svých přirozených zásob svačin.",
+      "Kolonie se shromáždila kolem zdroje světla, stejně jako kdysi jejich předkové. Některé věci jsou zřejmě věčné.",
+      "Jeden exemplář si s nesmírnou důstojností upravuje postoj. Ostatní si toho všímají. Vzešel vůdce.",
+      "Ve volné přírodě jen málokterý tvor vydrží prezentaci s takovou grácií. A přesto, tady jsou. Úchvatné."
+    ],
+    "documentaryStill": [
+      "Stádo se nepohnulo. Ani záškub. Vypravěč však stále doufá.",
+      "Pořád nic. Exempláře zřejmě šetří energii, možná na potlesk.",
+      "Už nějakou dobu se nic neděje. Člověk začíná tušit, že stádo čeká, až bude vypravěč vtipný. Snaží se.",
+      "Naprostá nehybnost. Vědci mají pro toto chování slovo. To slovo je „hodnocení“.",
+      "Vypravěč už viděl pokojové rostliny s větší ambicí. Prosím, někdo, kdokoli, pohněte prstem.",
+      "Buďte bez obav, stádo je v naprostém bezpečí. Jen se s velkou důstojností rozhodlo nehýbat."
+    ],
+    "funny": [
+      "Ve světě... kde se jedna místnost odvážila sledovat notebook... se rodí legenda. Přístupné, protože Přijatelné.",
+      "Letos na podzim... skupina skvělých cizinců... a webkamera, která viděla až příliš. PUBLIKUM. Nyní v kinech.",
+      "Od studia, které vám přineslo sezení... přichází jeho nejodvážnější pokračování. SEZENÍ 2: STÁLE SEDÍME.",
+      "Kritici tomu říkají „nejlépe oblečený dav, jaký kdy notebook natočil“. Brzy právě v této místnosti.",
+      "Jedna místnost. Nula výbuchů. Neomezené charisma. HACKATHON. Dva palce hodně, hodně nahoru.",
+      "Přišli kvůli demu... zůstali kvůli svačinám zdarma... ÚČASTNÍCI. Certifikovaně čerstvé."
+    ],
+    "funnyStill": [
+      "Tuto zimu... se nestane vůbec nic. A je to dechberoucí. ZÁTIŠÍ: FILM.",
+      "Dvanáct hrdinů. Jedna místnost. Nula pohybu. SOCHY. Nevhodné pro Nikoho, kdo se Hýbe.",
+      "Od režiséra filmu ČEKÁNÍ... přichází ČEKÁNÍ 2: POŘÁD ČEKÁME. Kritici říkají, že „vás to přikove k sedadlu“.",
+      "Ve světě, kde se nikdo nehýbe... jeden vypravěč... prosí. Prosím. Kdokoli. Zamávejte.",
+      "Již brzy: NEJDELŠÍ PAUZA. Devadesát minut. Jedna místnost. Ani jedno mrknutí.",
+      "Toto léto... čelí publikum své největší výzvě... zvednout jednu ruku. GESTO. Nyní v kinech."
+    ],
+    "descriptive": [
+      "Kamera je zapnutá. Za chvíli scénu popíšu znovu.",
+      "Popis se teď nepodařilo získat. Drž kameru v klidu a zkusím to znovu.",
+      "Pořád se dívám. Nový popis přijde za chvíli."
+    ],
+    "pumpkin": [
+      "Che che che... vítej, statečný návštěvníku! To je ale kostým. Opravdu dýňo-krásný.",
+      "Bú! Cha, vylekal jsem tě? Tvůj kostým vylekal mě, v tom nejlepším smyslu.",
+      "Ohó, pojď blíž, ještě blíž... Miluju hosty se stylem. Rozzáříš mi celý obličej.",
+      "Che che... skvělý kostým na skvělou noc. Celý žhnu závistí.",
+      "Vítej, vítej! Objal bych tě, ale uvnitř jsem skoro dutý. Krásný kostým, každopádně.",
+      "Che che che... dnes jsem viděl spoustu kostýmů, ale ten tvůj? Strašidelně skvělý."
+    ]
+  },
+  "noChange": "Beze změny."
+}

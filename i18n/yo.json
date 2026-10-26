@@ -1,0 +1,217 @@
+{
+  "callNow": "Ẹ PÈ WÁ BÁYÌÍ! ÀWỌN ÒṢÌṢẸ́ Ń DÚRÓ!",
+  "tagline": "Ayé rẹ, ní ìtàn sísọ.",
+  "order": "RA BÁYÌÍ",
+  "burst1": "A RÍ I LÓRÍ TẸLIFÍṢỌ̀N!",
+  "burst2": "$0.00 PÉRÉ!",
+  "finePrint": "*Kì í ṣe nọ́ńbà fóònù gidi. Jọ̀wọ́ má ṣe pè é. NarrateBot 3000 kò ní ẹ̀bi fún ìtàn tí ó péye jù. Èsì lè yàtọ̀. A kò fi bátìrì kún un.",
+  "ticker": [
+    "'Ó ṣàpèjúwe ológbò mi dáadáa!' – Oníbàárà Tí Inú Rẹ̀ Dùn",
+    "'Mi ò tíì rí i rí pé a rí mi báyìí.' – Oníbàárà Mìíràn",
+    "'Ewéko ilé mi kò tíì dún bí ọba báyìí rí.' – Oníbàárà, Bóyá",
+    "'Mo rẹ́rìn-ín. Mo sunkún. Mo jókòó jẹ́ẹ́.' – Agbo Náà"
+  ],
+  "cleanSub": "Àpèjúwe ìran láàyè láti inú kámẹ́rà rẹ",
+  "cleanExplain": "Darí kámẹ́rà rẹ sí ayé, NarrateBot 3000 yóò sì ṣàpèjúwe ohun tí ó rí sókè, ní èdè rẹ.",
+  "start": "Bẹ̀rẹ̀",
+  "butWait": "ṢÙGBỌ́N DÚRÓ... Ó ṢÌ KÙ!",
+  "nowWith": "NÍ BÁYÌÍ PẸ̀LÚ IPÒ {mode}!",
+  "mode": {
+    "documentary": "ÀKỌSÍLẸ̀",
+    "funny": "Ẹ̀RÍN",
+    "descriptive": "ÀPÈJÚWE",
+    "pumpkin": "ELÉGÉDÉ"
+  },
+  "modeClean": {
+    "documentary": "Ọ̀nà fíìmù àkọsílẹ̀",
+    "funny": "Ọ̀nà ìpolówó fíìmù",
+    "descriptive": "Ipò àpèjúwe",
+    "pumpkin": "Ọ̀nà elégédé"
+  },
+  "countdown": {
+    "in": "Ìtàn ń bọ̀ ní {n}…",
+    "late": "Ó ń sọ ìtàn…",
+    "visitor": "Ó ń dúró de àlejò…",
+    "sr": "Ìtàn ń bọ̀ láìpẹ́"
+  },
+  "live": "LÁÀYÈ",
+  "specimen": "ÀPẸẸRẸ",
+  "observation": "ÀKÍYÈSÍ",
+  "herdNone": "ÌṢE AGBO: A KÒ RÍ NǸKAN KAN",
+  "unchanged": "Ìran kò yí padà",
+  "paused": "Ó DÚRÓ",
+  "nowShowing": "Ń LỌ LỌ́WỌ́",
+  "btn": {
+    "describe": "Ṣàpèjúwe báyìí",
+    "pause": "Dúró",
+    "play": "Tẹ̀síwájú",
+    "flip": "Yí kámẹ́rà padà",
+    "settings": "Ètò",
+    "themeDark": "Àwọ̀ dúdú",
+    "themeLight": "Àwọ̀ funfun",
+    "accessible": "Ìwò tó rọrùn láti lò",
+    "infomercial": "Ìwò ìpolówó",
+    "narrLang": "Èdè ìtàn",
+    "close": "Pa á dé",
+    "siteLang": "Èdè ojú-òpó"
+  },
+  "set": {
+    "title": "FỌ́Ọ̀MÙ ÌBÉÈRÈ ỌJÀ ÌBÙDÓ ÌPÈ",
+    "titleClean": "Ètò",
+    "sub": "Àwọn òṣìṣẹ́ ń dúró",
+    "useEleven": "Lo ohùn ElevenLabs",
+    "charsSession": "Lẹ́tà tí a fi ránṣẹ́ ní ìgbà yìí",
+    "charsToday": "Lẹ́tà lónìí (gbogbo olùlò)",
+    "narrToday": "Ìtàn lónìí",
+    "config": "Ìṣètò",
+    "stillness": "Ìfura sí àìmira",
+    "stillDebug": "Ìkà àìmira / ìyàtọ̀ tó kẹ́yìn",
+    "textSize": "Ìtóbi ọ̀rọ̀",
+    "smaller": "Ọ̀rọ̀ kékeré sí i",
+    "larger": "Ọ̀rọ̀ ńlá sí i",
+    "customLang": "Èdè ìtàn àdáni",
+    "customLangHint": "A fi kún àkójọ èdè ìtàn (L)",
+    "music": "Ìpariwo orin",
+    "srMute": "Má ṣe sọ̀rọ̀ sókè (olùka ojú-ìbòjú ń ka ọ̀rọ̀ náà)",
+    "hideVideo": "Fi fídíò pamọ́, fi ọ̀rọ̀ ìtàn nìkan hàn",
+    "hotkeys": "Bọ́tìnnì ọ̀nà-àbùjá",
+    "yes": "ti ṣètò",
+    "no": "kò sí",
+    "dflt": "àìyípadà",
+    "breakLen": "Ìsinmi láàárín àwọn ìlà",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Àwọn ipò"
+    ],
+    [
+      "L",
+      "Èdè ìtàn"
+    ],
+    [
+      "N",
+      "Ṣàpèjúwe báyìí"
+    ],
+    [
+      "S",
+      "Àìmira tàn/pa"
+    ],
+    [
+      "T",
+      "Àwọ̀"
+    ],
+    [
+      "A",
+      "Ìwò tó rọrùn"
+    ],
+    [
+      "Àlàfo",
+      "Dúró / tẹ̀síwájú"
+    ],
+    [
+      "K",
+      "Ètò"
+    ]
+  ],
+  "keys": {
+    "title": "MÚ ÀWỌN KỌ́KỌ́RỌ́ RẸ WÁ",
+    "titleClean": "Lo àwọn kọ́kọ́rọ́ tìrẹ",
+    "sub": "Àwọn òṣìṣẹ́ nílò kọ́kọ́rọ́ rẹ láti gba ìpè yìí",
+    "intro": "NarrateBot 3000 ń ṣiṣẹ́ pẹ̀lú kọ́kọ́rọ́ Gemini tìrẹ fún ìtàn, àti bí o bá fẹ́, kọ́kọ́rọ́ ElevenLabs fún àwọn ohùn.",
+    "gemini": "Kọ́kọ́rọ́ API Gemini",
+    "eleven": "Kọ́kọ́rọ́ API ElevenLabs (àṣàyàn)",
+    "geminiHelp": "Bí a ṣe ń gba kọ́kọ́rọ́ Gemini",
+    "elevenHelp": "Bí a ṣe ń gba kọ́kọ́rọ́ ElevenLabs",
+    "getAt": "Gba kọ́kọ́rọ́ ní",
+    "newTab": " (ó ń ṣí ní táàbù tuntun)",
+    "geminiSteps": "Wọlé, yan Create API key, lẹ́yìn náà lẹ kọ́kọ́rọ́ náà síbí.",
+    "geminiCost": "Google ń pèsè ìpele ọ̀fẹ́ pẹ̀lú ààlà ìlò; ìlò tó pọ̀ jù ni a ó gba owó rẹ̀ lórí àkáǹtì Google rẹ.",
+    "elevenSteps": "Ṣẹ̀dá kọ́kọ́rọ́ kan pẹ̀lú ààyè Text to Speech, lẹ́yìn náà lẹ̀ ẹ́ síbí.",
+    "elevenCost": "Ètò ọ̀fẹ́ ní iye lẹ́tà oṣooṣù. Àwọn ohùn kan nílò ètò tí a ń sanwó fún; bí ohùn kan kò bá sí, a ó lo ohùn àṣà, tàbí ohùn aṣàwákiri rẹ bí o bá fi èyí sílẹ̀ ní òfo.",
+    "privacy": "A ń pa àwọn kọ́kọ́rọ́ rẹ mọ́ sínú kúkì tí a ti fi àṣírí dì nínú aṣàwákiri yìí, a sì ń fi wọ́n ránṣẹ́ sí sáfà wa nìkan láti ṣe àwọn ìbéèrè rẹ. A kì í tọ́jú wọn tàbí kọ wọ́n sílẹ̀ láé. O lè yọ wọ́n kúrò nígbàkúgbà nínú Ètò.",
+    "save": "Fipamọ́ kí o bẹ̀rẹ̀",
+    "saving": "Ó ń ṣàyẹ̀wò…",
+    "cancel": "Fagilé",
+    "needGemini": "Tẹ kọ́kọ́rọ́ Gemini rẹ sí i.",
+    "geminiInvalid": "Google kò gba kọ́kọ́rọ́ Gemini yẹn. Ṣàyẹ̀wò rẹ̀ kí o tún gbìyànjú.",
+    "format": "Ìyẹn kò jọ kọ́kọ́rọ́ API. Lẹ gbogbo kọ́kọ́rọ́ náà, láìsí àlàfo.",
+    "formatEleven": "Kọ́kọ́rọ́ ElevenLabs yẹn kò dà bí ẹni pé ó tọ̀nà. Lẹ gbogbo kọ́kọ́rọ́ náà, tàbí fi sílẹ̀ ní òfo.",
+    "tooMany": "Ìgbìyànjú ti pọ̀ jù. Dúró fún ìṣẹ́jú 15.",
+    "failed": "A kò lè ṣàyẹ̀wò kọ́kọ́rọ́ rẹ báyìí. Tún gbìyànjú láìpẹ́.",
+    "needKeys": "Láti máa bá ìtàn lọ, fi àwọn kọ́kọ́rọ́ tìrẹ kún un.",
+    "quota": "Kọ́kọ́rọ́ Gemini rẹ ti dé ààlà ìlò rẹ̀. A ó tún gbìyànjú ní ìṣẹ́jú kan…",
+    "badKey": "Google kọ kọ́kọ́rọ́ Gemini rẹ. Ṣàyẹ̀wò rẹ̀ tàbí lẹ tuntun.",
+    "removed": "A ti yọ àwọn kọ́kọ́rọ́ rẹ kúrò. Fi kọ́kọ́rọ́ kún un láti máa bá ìtàn lọ."
+  },
+  "owner": {
+    "title": "ÌWỌLÉ OLÙNÍ",
+    "titleClean": "Ìwọlé olùní",
+    "label": "Ọ̀rọ̀ aṣínà olùní",
+    "submit": "Ṣí i",
+    "wrong": "Ìyẹn kò ṣiṣẹ́.",
+    "tooMany": "Ìgbìyànjú ti pọ̀ jù. Dúró fún ìṣẹ́jú 15.",
+    "done": "A ti ṣí ìwọlé olùní."
+  },
+  "access": {
+    "legend": "Ìwọlé",
+    "current": "Ìwọlé lọ́wọ́lọ́wọ́:",
+    "owner": "Olùní",
+    "byok": "Àwọn kọ́kọ́rọ́ tìrẹ",
+    "none": "Kò sí kọ́kọ́rọ́",
+    "change": "Yí kọ́kọ́rọ́ padà",
+    "add": "Lo àwọn kọ́kọ́rọ́ tìrẹ",
+    "remove": "Yọ àwọn kọ́kọ́rọ́ mi kúrò",
+    "lock": "Ti ìwọlé olùní pa"
+  },
+  "camError": "Kámẹ́rà kò sí. Ṣàyẹ̀wò àṣẹ kámẹ́rà àti pé ojú-ìwé náà wà lórí HTTPS.",
+  "fallback": {
+    "documentary": [
+      "Níbí a rí àpéjọ ẹ̀yà yìí, ọ̀kọ̀ọ̀kan ní iyì ju èyí tó ṣáájú lọ. Lóòótọ́, ìṣẹ̀dá ní ipò rẹ̀ tó dára jù.",
+      "Àpẹẹrẹ ìyanu kan tẹ̀ síwájú, ojú rẹ̀ tẹjú mọ́ ojú-ìbòjú tí ń tàn, pẹ̀lú sùúrù ẹ̀dá tí ó mọ̀ pé ohun ńlá máa ń gba àkókò.",
+      "Ẹ wo ìgboyà jẹ́jẹ́ agbo yìí. Ẹ̀rù kò ba ẹnìkankan, bí ó tilẹ̀ jẹ́ pé wọ́n jìnnà sí orísun ìpanu wọn àdánidá.",
+      "Ìletò náà ti péjọ yí orísun ìmọ́lẹ̀ ká, bí àwọn baba ńlá wọn ti ṣe ṣáájú wọn. Ó dà bí pé àwọn nǹkan kan wà títí ayé.",
+      "Àpẹẹrẹ kan ṣàtúnṣe ìjókòó rẹ̀ pẹ̀lú iyì ńlá. Àwọn yòókù kíyè sí i. Aṣáájú kan ti yọjú.",
+      "Nínú igbó, ẹ̀dá díẹ̀ ló lè jókòó parí àfihàn pẹ̀lú ẹwà báyìí. Síbẹ̀, àwọn rèé. Ó yanilẹ́nu."
+    ],
+    "documentaryStill": [
+      "Agbo náà kò mira. Kò tilẹ̀ gbọ̀n rárá. Ní tirẹ̀, onítàn náà ṣì ní ìrètí.",
+      "Kò sí nǹkan kan síbẹ̀. Ó dà bí pé àwọn àpẹẹrẹ ń tọ́jú agbára, bóyá fún ìpàtẹ́wọ́.",
+      "Ó ti pẹ́ díẹ̀ báyìí. Ènìyàn bẹ̀rẹ̀ sí í fura pé agbo ń dúró kí onítàn pa wọ́n lẹ́rìn-ín. Ó ń gbìyànjú.",
+      "Àìmira pátápátá. Àwọn onímọ̀ sáyẹ́ǹsì ní ọ̀rọ̀ kan fún ìwà yìí. Ọ̀rọ̀ náà ni 'ìdájọ́.'",
+      "Onítàn ti rí ewéko ilé tí ó ní ìfẹ́ọkàn ju èyí lọ. Jọ̀wọ́, ẹnìkan, ẹnikẹ́ni, mi ìka kan.",
+      "Ẹ fọkàn balẹ̀, agbo náà wà láìléwu pátápátá. Wọ́n kàn yàn, pẹ̀lú iyì ńlá, láti má mira."
+    ],
+    "funny": [
+      "Nínú ayé kan... níbi tí yàrá kan ti gbójúgbóyà wo kọ̀ǹpútà alágbèéká... akọni kan dé. Ó dára fún gbogbo ojú, pàápàá àwọn arẹwà.",
+      "Ní ìgbà yìí... àwùjọ àjèjì olóye... àti kámẹ́rà wẹ́ẹ̀bù tí ó ti rí púpọ̀ jù. ÀWỌN OLÙWÒ. Ní sinimá báyìí.",
+      "Láti ilé-iṣẹ́ tí ó mú ìjókòó wá fún yín... ni apá kejì rẹ̀ tó gbóyà jù dé. ÌJÓKÒÓ 2: ṢÌ JÓKÒÓ.",
+      "Àwọn aṣelámèyítọ́ pè é ní 'èrò tó wọṣọ dáadáa jù tí kọ̀ǹpútà kan ti yà rí.' Ń bọ̀ láìpẹ́ sí yàrá yìí gan-an.",
+      "Yàrá kan. Kò sí ìbúgbàù. Ẹwà ìwà láìlópin. HACKATHON NÁÀ. Àtàǹpàkò méjèèjì sókè gan-an.",
+      "Wọ́n wá fún àfihàn... wọ́n dúró fún ìpanu ọ̀fẹ́... ÀWỌN OLÙKÓPA. A fọwọ́sí i pé ó tutù."
+    ],
+    "funnyStill": [
+      "Ní ìgbà òtútù yìí... kò sí ohunkóhun tó ṣẹlẹ̀. Ó sì yanilẹ́nu. ÌGBÉSÍ AYÉ JẸ́JẸ́: FÍÌMÙ NÁÀ.",
+      "Akọni méjìlá. Yàrá kan. Kò sí ìmira. ÀWỌN ÈRE. Wọ́n dúró jẹ́ẹ́ lọ́nà tó ń múni fura.",
+      "Láti ọ̀dọ̀ olùdarí ÌDÚRÓ... ni ÌDÚRÓ 2: ṢÌ Ń DÚRÓ dé. Àwọn aṣelámèyítọ́ sọ pé 'ó ń jẹ́ kí o jókòó gan-an.'",
+      "Nínú ayé tí ẹnikẹ́ni kò ti mira... onítàn kan... ń bẹ̀bẹ̀. Jọ̀wọ́. Ẹnikẹ́ni. Ẹ juwọ́.",
+      "Ń bọ̀ láìpẹ́: ÌDÁDÚRÓ TÓ GÙN JÙ. Ìṣẹ́jú àádọ́rùn-ún. Yàrá kan. Kò sí ẹni tó ṣẹ́jú.",
+      "Ní ìgbà ẹ̀ẹ̀rùn yìí... àwọn olùwò dojú kọ ìpèníjà wọn tó tóbi jù... gbígbé ọwọ́ kan sókè. ÀMÌ ỌWỌ́. Ń lọ lọ́wọ́."
+    ],
+    "descriptive": [
+      "Kámẹ́rà ti tàn. Màá tún ṣàpèjúwe ìran náà láìpẹ́.",
+      "N kò rí àpèjúwe gbà báyìí. Di kámẹ́rà mú dáadáa, màá sì tún gbìyànjú.",
+      "Mo ṣì ń wò. Àpèjúwe tuntun ń bọ̀ láìpẹ́."
+    ],
+    "pumpkin": [
+      "Hẹ hẹ hẹ... káàbọ̀, àlejò onígboyà! Aṣọ wo nìyí! Ó rẹwà gidigidi.",
+      "Bú! Há, ṣé mo dẹ́rù bà ọ́? Aṣọ rẹ ló dẹ́rù bà mí, lọ́nà tó dára jù.",
+      "Òhó, súnmọ́ mi, súnmọ́ mi... Mo fẹ́ràn àlejò tó ní àṣà. O tan ìmọ́lẹ̀ sí gbogbo ojú mi.",
+      "Hẹ hẹ... aṣọ dáadáa fún alẹ́ dáadáa. Mo ń tàn fún owú.",
+      "Káàbọ̀, káàbọ̀! Ǹ bá gbá ọ mọ́ra, ṣùgbọ́n inú mi ṣófo. Aṣọ rẹ dára, sá.",
+      "Hẹ hẹ hẹ... mo ti rí ọ̀pọ̀ aṣọ lálẹ́ yìí, ṣùgbọ́n tìrẹ? Ó ń bani lẹ́rù lọ́nà ìyanu."
+    ]
+  },
+  "noChange": "Kò sí àyípadà."
+}

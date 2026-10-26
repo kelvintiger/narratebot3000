@@ -1,0 +1,217 @@
+{
+  "callNow": "BENGA SIKOYO! BASALI BAZALI KOZELA!",
+  "tagline": "Mokili na yo, na masolo.",
+  "order": "SOMBA SIKOYO",
+  "burst1": "OYO EMONANAKI NA TV!",
+  "burst2": "KAKA $0.00!",
+  "finePrint": "*Oyo ezali nimero ya telefone ya solo te. Svp kobenga te. NarrateBot 3000 ezali na mokumba te mpo na masolo oyo ezali sikisiki koleka. Mbano ekoki kokesana. Mabatri ezali na kati te.",
+  "ticker": [
+    "'Elobelaki nyau na ngai malamu mpenza!' – Mosombi Asepeli",
+    "'Nayokaki naino te ete bamoni ngai boye.' – Mosombi Mosusu",
+    "'Nzete na ngai ya ndako eyokanaki naino na lokumu boye te.' – Mosombi, Tango Mosusu",
+    "'Naseki. Naleli. Nafandi kimya mpenza.' – Etonga"
+  ],
+  "cleanSub": "Masolo ya esika na mbala moko uta na kamera na yo",
+  "cleanExplain": "Tiya kamera na yo epai ya mokili, mpe NarrateBot 3000 ekolobela na mongongo makasi oyo ezali komona, na monoko na yo.",
+  "start": "Banda",
+  "butWait": "KASI ZELA... EZALI NA MOSUSU!",
+  "nowWith": "SIKOYO NA LOLENGE {mode}!",
+  "mode": {
+    "documentary": "DOKUMANTERE",
+    "funny": "KOSEKISA",
+    "descriptive": "KOLIMBOLA",
+    "pumpkin": "MALENGE"
+  },
+  "modeClean": {
+    "documentary": "Lolenge ya dokumantere",
+    "funny": "Lolenge ya ebandeli ya filime",
+    "descriptive": "Lolenge ya kolimbola",
+    "pumpkin": "Lolenge ya malenge"
+  },
+  "countdown": {
+    "in": "Masolo na {n}…",
+    "late": "Ezali kosolola…",
+    "visitor": "Ezali kozela mopaya…",
+    "sr": "Masolo ekobanda noki"
+  },
+  "live": "NA LIVE",
+  "specimen": "NDAKISA",
+  "observation": "BOTALI",
+  "herdNone": "MOSALA YA ETONGA: EMONANI TE",
+  "unchanged": "Esika ebongwani te",
+  "paused": "ETELEMI",
+  "nowShowing": "SIKOYO NA ETANDO",
+  "btn": {
+    "describe": "Limbola sikoyo",
+    "pause": "Telemisa",
+    "play": "Tambusa",
+    "flip": "Balola kamera",
+    "settings": "Mibeko",
+    "themeDark": "Langi ya molili",
+    "themeLight": "Langi ya mwinda",
+    "accessible": "Emoneli ya pete",
+    "infomercial": "Emoneli ya piblisite",
+    "narrLang": "Monoko ya masolo",
+    "close": "Kanga",
+    "siteLang": "Monoko ya site"
+  },
+  "set": {
+    "title": "MOKANDA YA KOSOMBA NA TELEFONE",
+    "titleClean": "Mibeko",
+    "sub": "Basali bazali kozela",
+    "useEleven": "Salela mongongo ya ElevenLabs",
+    "charsSession": "Bilembo etindami na session oyo",
+    "charsToday": "Bilembo lelo (basaleli nyonso)",
+    "narrToday": "Masolo lelo",
+    "config": "Bobongisi",
+    "stillness": "Bokasi ya komona kimya",
+    "stillDebug": "Motango ya kimya / bokeseni ya suka",
+    "textSize": "Bonene ya makomi",
+    "smaller": "Makomi ya mike",
+    "larger": "Makomi ya minene",
+    "customLang": "Monoko ya masolo ya yo moko",
+    "customLangHint": "Ebakisami na liste ya minoko ya masolo (L)",
+    "music": "Makasi ya miziki",
+    "srMute": "Koloba na mongongo te (motángi ya ekran atángi makomi)",
+    "hideVideo": "Bomba video, lakisa kaka makomi ya masolo",
+    "hotkeys": "Bafungola ya noki",
+    "yes": "etiami",
+    "no": "ezali te",
+    "dflt": "ya ebandeli",
+    "breakLen": "Bopemi kati na milongo",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Malolenge"
+    ],
+    [
+      "L",
+      "Monoko ya masolo"
+    ],
+    [
+      "N",
+      "Limbola sikoyo"
+    ],
+    [
+      "S",
+      "Kimya fungola/kanga"
+    ],
+    [
+      "T",
+      "Langi"
+    ],
+    [
+      "A",
+      "Emoneli ya pete"
+    ],
+    [
+      "Esika mpamba",
+      "Telemisa / tambusa"
+    ],
+    [
+      "K",
+      "Mibeko"
+    ]
+  ],
+  "keys": {
+    "title": "YAKA NA BAFUNGOLA NA YO",
+    "titleClean": "Salela bafungola na yo moko",
+    "sub": "Basali basengeli bafungola na yo mpo na kozwa telefone oyo",
+    "intro": "NarrateBot 3000 esalaka na fungola na yo moko ya Gemini mpo na masolo mpe, soki olingi, fungola ya ElevenLabs mpo na mingongo.",
+    "gemini": "Fungola ya API ya Gemini",
+    "eleven": "Fungola ya API ya ElevenLabs (soki olingi)",
+    "geminiHelp": "Ndenge ya kozwa fungola ya Gemini",
+    "elevenHelp": "Ndenge ya kozwa fungola ya ElevenLabs",
+    "getAt": "Zwa fungola na",
+    "newTab": " (efungwamaka na onglet ya sika)",
+    "geminiSteps": "Kota, pona Create API key, sima tiya fungola awa.",
+    "geminiCost": "Google epesaka eteni ya ofele na bandelo ya kosalela; kosalela mingi efutisamaka na compte na yo ya Google.",
+    "elevenSteps": "Sala fungola na nzela ya Text to Speech, sima tiya yango awa.",
+    "elevenCost": "Plan ya ofele ezali na motango ya bilembo na sanza. Mingongo mosusu esengaka plan ya kofuta; soki mongongo ezali te tosalelaka mongongo ya momesano, to mongongo ya navigateur na yo soki otiki esika oyo mpamba.",
+    "privacy": "Bafungola na yo ebombami na cookie oyo ekangami na sekele (chiffré) na navigateur oyo, mpe etindamaka na serveur na biso kaka mpo na kosala masengi na yo. Tobombaka yango te mpe tokomaka yango na buku te, ata mokolo moko. Okoki kolongola yango ntango nyonso na Mibeko.",
+    "save": "Bomba mpe banda",
+    "saving": "Ezali kotala…",
+    "cancel": "Tika",
+    "needGemini": "Kotisa fungola na yo ya Gemini.",
+    "geminiInvalid": "Google endimi fungola wana ya Gemini te. Tala yango mpe meka lisusu.",
+    "format": "Yango ekokani na fungola ya API te. Tiya fungola mobimba, kozanga esika mpamba.",
+    "formatEleven": "Fungola wana ya ElevenLabs emonani malamu te. Tiya fungola mobimba, to tika yango mpamba.",
+    "tooMany": "Bomeki mingi koleka. Zela miniti 15.",
+    "failed": "Tokoki kotala fungola na yo sikoyo te. Meka lisusu mwa moke.",
+    "needKeys": "Mpo na kokoba masolo, bakisa bafungola na yo moko.",
+    "quota": "Fungola na yo ya Gemini ekoki na ndelo na yango ya kosalela. Tokomeka lisusu na miniti moko…",
+    "badKey": "Google eboyi fungola na yo ya Gemini. Tala yango to tiya ya sika.",
+    "removed": "Bafungola na yo elongolami. Bakisa bafungola mpo na kokoba masolo."
+  },
+  "owner": {
+    "title": "BOKOTI YA NKOLO",
+    "titleClean": "Bokoti ya nkolo",
+    "label": "Liloba ya sekele ya nkolo",
+    "submit": "Fungola",
+    "wrong": "Yango esali te.",
+    "tooMany": "Bomeki mingi koleka. Zela miniti 15.",
+    "done": "Bokoti ya nkolo efungwami."
+  },
+  "access": {
+    "legend": "Bokoti",
+    "current": "Bokoti ya sikoyo:",
+    "owner": "Nkolo",
+    "byok": "Bafungola na yo moko",
+    "none": "Fungola ezali te",
+    "change": "Bongola bafungola",
+    "add": "Salela bafungola na yo moko",
+    "remove": "Longola bafungola na ngai",
+    "lock": "Kanga bokoti ya nkolo"
+  },
+  "camError": "Kamera ezali te. Tala ndingisa ya kamera mpe ete lokasa ezali na HTTPS.",
+  "fallback": {
+    "documentary": [
+      "Mpe awa tozali komona likita ya libota oyo, moko na moko na lokumu koleka oyo ya liboso. Solo, bozalisi na kitoko na yango ya likolo.",
+      "Ndakisa moko ya kokamwa egumbami liboso, miso etalaka ekran oyo ezali kongenga, na motema molai ya ekelamu oyo eyebi ete makambo minene esengaka ntango.",
+      "Tala elikya ya kimya ya etonga oyo. Ata moko abangi te, atako bazali mosika boye na esika na bango ya bilei ya mike.",
+      "Libota esangani zingazinga ya mwinda, ndenge bankoko na bango basalaki liboso. Makambo mosusu, emonani, ezali ya libela.",
+      "Ndakisa moko ebongisi lolenge ya kofanda na lokumu monene. Basusu bamoni yango. Mokambi abimi.",
+      "Na zamba, bikelamu moke mpenza nde bakoki kofanda na demo na kitoko boye. Kasi, bango oyo. Kitoko mpenza."
+    ],
+    "documentaryStill": [
+      "Etonga eningani te. Ata moke te. Moto ya masolo, ye, azali kaka na elikya.",
+      "Naino eloko te. Bandakisa emonani kobomba makasi, tango mosusu mpo na kobeta maboko.",
+      "Ntango eleki sikoyo. Moto abandi kokanisa ete etonga ezali kozela moto ya masolo asekisa. Azali komeka.",
+      "Kimya mobimba. Bato ya siansi bazali na liloba mpo na bizaleli oyo. Liloba yango ezali 'kosambisa.'",
+      "Moto ya masolo amoni banzete ya ndako na mposa koleka. Svp, moto moko, ata nani, ningisa mosapi.",
+      "Bobanga te, etonga ezali malamu mpenza. Bazali kaka kopona, na lokumu monene, koningana te."
+    ],
+    "funny": [
+      "Na mokili moko... epai shambre moko emekaki kotala ordinatere... mokonzi ya lisolo abotami. Mpo na bato nyonso, mingi mingi ba-beau.",
+      "Eleko oyo... etuluku ya bapaya ya mayele... mpe webcam oyo emoni makambo mingi koleka. BATALI. Sikoyo na bacinema.",
+      "Uta na studio oyo ememeli bino kofanda... eyei sequelle na yango ya mpiko koleka. KOFANDA 2: NAINO TOFANDI.",
+      "Bakritiki babengi yango 'ebele ya bato balati kitoko koleka oyo ordinatere ekangaki.' Ekoya noki na shambre oyo kaka.",
+      "Shambre moko. Kopanzana ata moko te. Kitoko ya bomoto kozanga ndelo. HACKATHON. Misapi minene mibale likolo mpenza.",
+      "Bayaki mpo na demo... batikalaki mpo na bilei ya ofele... BAYEI. Ya sika ndenge endimami."
+    ],
+    "funnyStill": [
+      "Eleko ya malili oyo... eloko moko te esalemi. Mpe ezali kokamwisa. BOMOI YA KIMYA: FILIME.",
+      "Bilombe zomi na mibale. Shambre moko. Koningana te. BAEKEMA. Kimya na ndenge ya kobanga.",
+      "Uta na mosali ya KOZELA... eyei KOZELA 2: NAINO TOZALI KOZELA. Bakritiki balobi 'ekofandisa yo mpenza.'",
+      "Na mokili epai moto moko te aningani... moto moko ya masolo... azali kobondela. Svp. Ata nani. Pepa loboko.",
+      "Ekoya noki: BOTELEMI YA MOLAI KOLEKA. Miniti tuku libwa. Shambre moko. Ata kokanga liso moko te.",
+      "Eleko ya moi oyo... batali bakutani na mokakatano na bango monene... kotombola loboko moko. ELEMBO. Sikoyo na etando."
+    ],
+    "descriptive": [
+      "Kamera efungwami. Nakolimbola esika lisusu na mwa ntango.",
+      "Nakokaki kozwa bolimboli sikoyo te. Simba kamera kimya mpe nakomeka lisusu.",
+      "Nazali kaka kotala. Bolimboli ya sika ekoya noki."
+    ],
+    "pumpkin": [
+      "He he he... boyei malamu, mopaya ya mpiko! Elamba nini oyo! Kitoko ya malenge mpenza.",
+      "Bou! Ha, nabangisi yo? Elamba na yo nde ebangisi ngai, na ndenge ya malamu.",
+      "Oho, pusana, pusana... Nalingaka mopaya na lolenge. Ozali kongengisa elongi na ngai mobimba.",
+      "He he... elamba kitoko mpo na butu ya kitoko. Nazali kongenga na zuwa.",
+      "Boyei malamu, boyei malamu! Nalingaki koyamba yo na maboko, kasi na kati nazali mpamba. Elamba kitoko, kasi.",
+      "He he he... namoni bilamba mingi butu oyo, kasi oyo na yo? Ya kobangisa mpe kitoko."
+    ]
+  },
+  "noChange": "Mbongwana ezali te."
+}

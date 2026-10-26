@@ -1,0 +1,217 @@
+{
+  "callNow": "TRUCA ARA! ELS OPERADORS T'ESPEREN!",
+  "tagline": "El teu món, narrat.",
+  "order": "DEMANA'L ARA",
+  "burst1": "VIST A LA TELE!",
+  "burst2": "NOMÉS 0,00 $!",
+  "finePrint": "*No és un número de telèfon real. Si us plau, no truquis. NarrateBot 3000 no es fa responsable de narracions massa precises. Els resultats poden variar. Piles no incloses.",
+  "ticker": [
+    "«Ha descrit el meu gat perfectament!» – Client satisfet",
+    "«Mai no m'havia sentit tan vist.» – També client",
+    "«La meva planta mai no havia sonat tan majestuosa.» – Client, probablement",
+    "«Vaig riure. Vaig plorar. Vaig seure molt quiet.» – El ramat"
+  ],
+  "cleanSub": "Narració en directe de l'escena des de la càmera",
+  "cleanExplain": "Apunta la càmera al món i NarrateBot 3000 descriurà en veu alta el que veu, en la teva llengua.",
+  "start": "Comença",
+  "butWait": "PERÒ ESPERA... ENCARA N'HI HA MÉS!",
+  "nowWith": "ARA AMB MODE {mode}!",
+  "mode": {
+    "documentary": "DOCUMENTAL",
+    "funny": "DIVERTIT",
+    "descriptive": "DESCRIPTIU",
+    "pumpkin": "CARBASSA"
+  },
+  "modeClean": {
+    "documentary": "Estil documental",
+    "funny": "Estil tràiler de cinema",
+    "descriptive": "Mode descriptiu",
+    "pumpkin": "Estil carbassa"
+  },
+  "countdown": {
+    "in": "Narració d'aquí a {n}…",
+    "late": "Narrant…",
+    "visitor": "Esperant un visitant…",
+    "sr": "La narració comença aviat"
+  },
+  "live": "EN DIRECTE",
+  "specimen": "ESPÈCIMEN",
+  "observation": "OBSERVACIÓ",
+  "herdNone": "ACTIVITAT DEL RAMAT: CAP",
+  "unchanged": "Escena sense canvis",
+  "paused": "EN PAUSA",
+  "nowShowing": "ARA EN PANTALLA",
+  "btn": {
+    "describe": "Descriu ara",
+    "pause": "Pausa",
+    "play": "Reprodueix",
+    "flip": "Gira la càmera",
+    "settings": "Configuració",
+    "themeDark": "Tema fosc",
+    "themeLight": "Tema clar",
+    "accessible": "Vista accessible",
+    "infomercial": "Vista teletenda",
+    "narrLang": "Llengua de narració",
+    "close": "Tanca",
+    "siteLang": "Llengua del lloc"
+  },
+  "set": {
+    "title": "FORMULARI DE COMANDA",
+    "titleClean": "Configuració",
+    "sub": "Els operadors t'esperen",
+    "useEleven": "Fes servir la veu d'ElevenLabs",
+    "charsSession": "Caràcters enviats en aquesta sessió",
+    "charsToday": "Caràcters avui (tots els usuaris)",
+    "narrToday": "Narracions avui",
+    "config": "Paràmetres",
+    "stillness": "Sensibilitat a la quietud",
+    "stillDebug": "Recompte de quietud / última diferència",
+    "textSize": "Mida del text",
+    "smaller": "Text més petit",
+    "larger": "Text més gran",
+    "customLang": "Llengua de narració personalitzada",
+    "customLangHint": "S'afegeix a la llista de llengües de narració (L)",
+    "music": "Volum de la música",
+    "srMute": "No parlis en veu alta (el lector de pantalla llegeix el text)",
+    "hideVideo": "Amaga el vídeo i mostra només el text de la narració",
+    "hotkeys": "Dreceres de teclat",
+    "yes": "definida",
+    "no": "falta",
+    "dflt": "per defecte",
+    "breakLen": "Pausa entre frases",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Modes"
+    ],
+    [
+      "L",
+      "Llengua de narració"
+    ],
+    [
+      "N",
+      "Descriu ara"
+    ],
+    [
+      "S",
+      "Quietud activada/desactivada"
+    ],
+    [
+      "T",
+      "Tema"
+    ],
+    [
+      "A",
+      "Vista accessible"
+    ],
+    [
+      "Espai",
+      "Pausa / reprodueix"
+    ],
+    [
+      "K",
+      "Configuració"
+    ]
+  ],
+  "keys": {
+    "title": "PORTA LES TEVES CLAUS",
+    "titleClean": "Fes servir les teves claus",
+    "sub": "Els operadors necessiten les teves claus per atendre aquesta trucada",
+    "intro": "NarrateBot 3000 funciona amb la teva pròpia clau de Gemini per a la narració i, si vols, una clau d'ElevenLabs per a les veus.",
+    "gemini": "Clau API de Gemini",
+    "eleven": "Clau API d'ElevenLabs (opcional)",
+    "geminiHelp": "Com obtenir una clau de Gemini",
+    "elevenHelp": "Com obtenir una clau d'ElevenLabs",
+    "getAt": "Aconsegueix una clau a",
+    "newTab": " (s'obre en una pestanya nova)",
+    "geminiSteps": "Inicia la sessió, tria Create API key i enganxa la clau aquí.",
+    "geminiCost": "Google ofereix un nivell gratuït amb límits d'ús; un ús més intens es factura al teu compte de Google.",
+    "elevenSteps": "Crea una clau amb accés a Text to Speech i enganxa-la aquí.",
+    "elevenCost": "El pla gratuït inclou una quota mensual de caràcters. Algunes veus requereixen un pla de pagament; si una veu no està disponible, fem servir una veu estàndard, o la veu del teu navegador si deixes això en blanc.",
+    "privacy": "Les teves claus es guarden en una galeta xifrada en aquest navegador i s'envien al nostre servidor només per fer les teves sol·licituds. Mai no les emmagatzemem ni les registrem. Les pots eliminar en qualsevol moment a Configuració.",
+    "save": "Desa i comença",
+    "saving": "S'està comprovant…",
+    "cancel": "Cancel·la",
+    "needGemini": "Introdueix la teva clau de Gemini.",
+    "geminiInvalid": "Google no ha acceptat aquesta clau de Gemini. Comprova-la i torna-ho a provar.",
+    "format": "No sembla una clau API. Enganxa la clau sencera, sense espais.",
+    "formatEleven": "Aquesta clau d'ElevenLabs no sembla correcta. Enganxa la clau sencera o deixa-la en blanc.",
+    "tooMany": "Massa intents. Espera 15 minuts.",
+    "failed": "Ara mateix no s'ha pogut comprovar la teva clau. Torna-ho a provar d'aquí a un moment.",
+    "needKeys": "Per continuar narrant, afegeix les teves claus.",
+    "quota": "La teva clau de Gemini ha arribat al límit d'ús. Ho tornem a provar d'aquí a un minut…",
+    "badKey": "Google ha rebutjat la teva clau de Gemini. Comprova-la o enganxa'n una de nova.",
+    "removed": "S'han eliminat les teves claus. Afegeix claus per continuar narrant."
+  },
+  "owner": {
+    "title": "ACCÉS DE PROPIETARI",
+    "titleClean": "Accés de propietari",
+    "label": "Contrasenya de propietari",
+    "submit": "Desbloqueja",
+    "wrong": "No ha funcionat.",
+    "tooMany": "Massa intents. Espera 15 minuts.",
+    "done": "Accés de propietari desbloquejat."
+  },
+  "access": {
+    "legend": "Accés",
+    "current": "Accés actual:",
+    "owner": "Propietari",
+    "byok": "Les teves claus",
+    "none": "Sense claus",
+    "change": "Canvia les claus",
+    "add": "Fes servir les teves claus",
+    "remove": "Elimina les meves claus",
+    "lock": "Bloqueja l'accés"
+  },
+  "camError": "Càmera no disponible. Comprova el permís de la càmera i que la pàgina sigui en HTTPS.",
+  "fallback": {
+    "documentary": [
+      "I aquí observem una reunió de l'espècie, cada exemplar més distingit que l'anterior. Realment, la natura en el seu millor moment.",
+      "Un exemplar extraordinari s'inclina endavant, amb els ulls clavats a la pantalla lluminosa, amb la paciència d'una criatura que sap que les grans coses requereixen temps.",
+      "Fixa't en la serena confiança d'aquest ramat. Cap no ha entrat en pànic, tot i ser tan lluny de la seva font natural de pica-pica.",
+      "La colònia s'ha reunit al voltant de la font de llum, com ho van fer els seus avantpassats. Algunes coses, pel que sembla, són eternes.",
+      "Un exemplar ajusta la seva postura amb una dignitat immensa. Els altres en prenen nota. Ha sorgit un líder.",
+      "En estat salvatge, molt poques criatures poden aguantar una demo amb tanta elegància. I, tanmateix, aquí els tenim. Magnífic."
+    ],
+    "documentaryStill": [
+      "El ramat no s'ha mogut. Ni una contracció. El narrador, per la seva banda, continua esperançat.",
+      "Encara res. Els exemplars semblen estalviar energia, potser per als aplaudiments.",
+      "Ja fa una estona. Un comença a sospitar que el ramat espera que el narrador faci gràcia. Ho està intentant.",
+      "Quietud total. Els científics tenen una paraula per a aquest comportament. La paraula és «jutjar».",
+      "El narrador ha observat plantes d'interior amb més ambició visible. Si us plau, algú, qui sigui, que mogui un dit.",
+      "Tranquil, el ramat està perfectament segur. Simplement decideixen, amb gran dignitat, no moure's."
+    ],
+    "funny": [
+      "En un món... on una sala va gosar mirar un portàtil... neix una llegenda. Qualificada PG: Prou Genial.",
+      "Aquesta tardor... un grup de desconeguts brillants... i una webcam que ha vist massa. EL PÚBLIC. Ara als cinemes.",
+      "De l'estudi que et va portar seure... arriba la seva seqüela més agosarada. ASSEGUTS 2: ENCARA ASSEGUTS.",
+      "La crítica en diu «el públic més ben vestit mai filmat per un portàtil». Aviat en aquesta mateixa sala.",
+      "Una sala. Zero explosions. Carisma il·limitat. LA HACKATÓ. Dos polzes ben, ben amunt.",
+      "Van venir per la demo... es van quedar pel pica-pica gratis... ELS ASSISTENTS. Frescor certificada."
+    ],
+    "funnyStill": [
+      "Aquest hivern... no passa absolutament res. I és impressionant. NATURA MORTA: LA PEL·LÍCULA.",
+      "Dotze herois. Una sala. Zero moviment. LES ESTÀTUES. Qualificada S: Sospitosament Estàtics.",
+      "Del director d'ESPERANT... arriba ESPERANT 2: ENCARA ESPERANT. La crítica diu que «et deixa clavat al seient».",
+      "En un món on ningú no es mou... un narrador... suplica. Si us plau. Qui sigui. Saludeu.",
+      "Properament: LA PAUSA MÉS LLARGA. Noranta minuts. Una sala. Ni un sol parpelleig.",
+      "Aquest estiu... el públic s'enfronta al seu repte més gran... aixecar una mà. EL GEST. Ara en cartellera."
+    ],
+    "descriptive": [
+      "La càmera està encesa. Tornaré a descriure l'escena d'aquí a un moment.",
+      "Ara mateix no he pogut obtenir una descripció. Mantén la càmera quieta i ho tornaré a provar.",
+      "Encara estic mirant. Aviat arriba una nova descripció."
+    ],
+    "pumpkin": [
+      "Je je je... benvingut, valent visitant! Quina disfressa. Carbassíssima!",
+      "Uuuh! Ha, t'he espantat? La teva disfressa sí que m'ha espantat a mi, en el millor sentit.",
+      "Oho, acosta't, acosta't... M'encanten els convidats amb estil. M'il·lumines tota la cara.",
+      "Je je... una disfressa fina per a una nit fina. Brillo d'enveja, literalment.",
+      "Benvingut, benvingut! T'abraçaria, però per dins sóc gairebé buit. Quina disfressa més bonica, però.",
+      "Je je je... he vist moltes disfresses aquesta nit, però la teva? Espantosament genial."
+    ]
+  },
+  "noChange": "Cap canvi."
+}

@@ -1,0 +1,217 @@
+{
+  "callNow": "RING NU! VÅRA OPERATÖRER VÄNTAR!",
+  "tagline": "Din värld, berättad.",
+  "order": "BESTÄLL NU",
+  "burst1": "KÄND FRÅN TV!",
+  "burst2": "ENDAST 0 KR!",
+  "finePrint": "*Inte ett riktigt telefonnummer. Ring inte. NarrateBot 3000 ansvarar inte för berättelser som är för träffsäkra. Resultaten kan variera. Batterier ingår ej.",
+  "ticker": [
+    "”Den beskrev min katt perfekt!” – Nöjd kund",
+    "”Jag har aldrig känt mig så sedd.” – Också kund",
+    "”Min krukväxt har aldrig låtit så majestätisk.” – Kund, troligen",
+    "”Jag skrattade. Jag grät. Jag satt helt still.” – Flocken"
+  ],
+  "cleanSub": "Liveberättelse av scenen från din kamera",
+  "cleanExplain": "Rikta kameran mot världen så beskriver NarrateBot 3000 högt vad den ser, på ditt språk.",
+  "start": "Starta",
+  "butWait": "MEN VÄNTA... DET FINNS MER!",
+  "nowWith": "NU MED {mode}-LÄGE!",
+  "mode": {
+    "documentary": "DOKUMENTÄR",
+    "funny": "ROLIG",
+    "descriptive": "BESKRIVANDE",
+    "pumpkin": "PUMPA"
+  },
+  "modeClean": {
+    "documentary": "Dokumentärstil",
+    "funny": "Filmtrailerstil",
+    "descriptive": "Beskrivande läge",
+    "pumpkin": "Pumpastil"
+  },
+  "countdown": {
+    "in": "Berättar om {n}…",
+    "late": "Berättar…",
+    "visitor": "Väntar på en besökare…",
+    "sr": "Berättelsen börjar snart"
+  },
+  "live": "LIVE",
+  "specimen": "EXEMPLAR",
+  "observation": "OBSERVATION",
+  "herdNone": "FLOCKAKTIVITET: INGEN",
+  "unchanged": "Scenen oförändrad",
+  "paused": "PAUSAD",
+  "nowShowing": "VISAS NU",
+  "btn": {
+    "describe": "Beskriv nu",
+    "pause": "Pausa",
+    "play": "Spela",
+    "flip": "Byt kamera",
+    "settings": "Inställningar",
+    "themeDark": "Mörkt tema",
+    "themeLight": "Ljust tema",
+    "accessible": "Tillgänglig vy",
+    "infomercial": "Reklamvy",
+    "narrLang": "Berättarspråk",
+    "close": "Stäng",
+    "siteLang": "Webbplatsens språk"
+  },
+  "set": {
+    "title": "BESTÄLLNINGSFORMULÄR FÖR KUNDTJÄNST",
+    "titleClean": "Inställningar",
+    "sub": "Våra operatörer väntar",
+    "useEleven": "Använd ElevenLabs-röst",
+    "charsSession": "Tecken skickade denna session",
+    "charsToday": "Tecken i dag (alla användare)",
+    "narrToday": "Berättelser i dag",
+    "config": "Konfiguration",
+    "stillness": "Känslighet för stillhet",
+    "stillDebug": "Stillhetsräknare / senaste skillnad",
+    "textSize": "Textstorlek",
+    "smaller": "Mindre text",
+    "larger": "Större text",
+    "customLang": "Eget berättarspråk",
+    "customLangHint": "Läggs till i listan över berättarspråk (L)",
+    "music": "Musikvolym",
+    "srMute": "Tala inte högt (skärmläsaren läser texten)",
+    "hideVideo": "Dölj videon, visa bara berättartexten",
+    "hotkeys": "Kortkommandon",
+    "yes": "angiven",
+    "no": "saknas",
+    "dflt": "standard",
+    "breakLen": "Paus mellan meningar",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Lägen"
+    ],
+    [
+      "L",
+      "Berättarspråk"
+    ],
+    [
+      "N",
+      "Beskriv nu"
+    ],
+    [
+      "S",
+      "Stillhet på/av"
+    ],
+    [
+      "T",
+      "Tema"
+    ],
+    [
+      "A",
+      "Tillgänglig vy"
+    ],
+    [
+      "Space",
+      "Paus / spela"
+    ],
+    [
+      "K",
+      "Inställningar"
+    ]
+  ],
+  "keys": {
+    "title": "TA MED DINA EGNA NYCKLAR",
+    "titleClean": "Använd egna nycklar",
+    "sub": "Operatörerna behöver dina nycklar för att ta samtalet",
+    "intro": "NarrateBot 3000 körs med din egen Gemini-nyckel för berättandet och, om du vill, en ElevenLabs-nyckel för röster.",
+    "gemini": "Gemini API-nyckel",
+    "eleven": "ElevenLabs API-nyckel (valfritt)",
+    "geminiHelp": "Så skaffar du en Gemini-nyckel",
+    "elevenHelp": "Så skaffar du en ElevenLabs-nyckel",
+    "getAt": "Skaffa en nyckel på",
+    "newTab": " (öppnas i en ny flik)",
+    "geminiSteps": "Logga in, välj Create API key och klistra sedan in nyckeln här.",
+    "geminiCost": "Google erbjuder en gratisnivå med användningsgränser; mer användning debiteras ditt Google-konto.",
+    "elevenSteps": "Skapa en nyckel med Text to Speech-åtkomst och klistra sedan in den här.",
+    "elevenCost": "Gratisplanen ger ett månatligt teckenutrymme. Vissa röster kräver en betalplan; om en röst inte finns använder vi en standardröst, eller webbläsarens röst om du lämnar fältet tomt.",
+    "privacy": "Dina nycklar sparas i en krypterad cookie i den här webbläsaren och skickas till vår server bara för att utföra dina förfrågningar. Vi lagrar eller loggar dem aldrig. Du kan ta bort dem när som helst under Inställningar.",
+    "save": "Spara & starta",
+    "saving": "Kontrollerar…",
+    "cancel": "Avbryt",
+    "needGemini": "Ange din Gemini-nyckel.",
+    "geminiInvalid": "Google godtog inte den Gemini-nyckeln. Kontrollera den och försök igen.",
+    "format": "Det ser inte ut som en API-nyckel. Klistra in hela nyckeln, utan mellanslag.",
+    "formatEleven": "ElevenLabs-nyckeln ser inte rätt ut. Klistra in hela nyckeln eller lämna fältet tomt.",
+    "tooMany": "För många försök. Vänta 15 minuter.",
+    "failed": "Kunde inte kontrollera nyckeln just nu. Försök igen om en stund.",
+    "needKeys": "Lägg till egna nycklar för att fortsätta berätta.",
+    "quota": "Din Gemini-nyckel har nått sin användningsgräns. Försöker igen om en minut…",
+    "badKey": "Google avvisade din Gemini-nyckel. Kontrollera den eller klistra in en ny.",
+    "removed": "Dina nycklar togs bort. Lägg till nycklar för att fortsätta berätta."
+  },
+  "owner": {
+    "title": "ÄGARÅTKOMST",
+    "titleClean": "Ägaråtkomst",
+    "label": "Ägarlösenord",
+    "submit": "Lås upp",
+    "wrong": "Det fungerade inte.",
+    "tooMany": "För många försök. Vänta 15 minuter.",
+    "done": "Ägaråtkomst upplåst."
+  },
+  "access": {
+    "legend": "Åtkomst",
+    "current": "Nuvarande åtkomst:",
+    "owner": "Ägare",
+    "byok": "Egna nycklar",
+    "none": "Inga nycklar",
+    "change": "Byt nycklar",
+    "add": "Använd egna nycklar",
+    "remove": "Ta bort mina nycklar",
+    "lock": "Lås ägaråtkomst"
+  },
+  "camError": "Kameran är inte tillgänglig. Kontrollera kamerabehörigheten och att sidan körs via HTTPS.",
+  "fallback": {
+    "documentary": [
+      "Och här ser vi en samling av arten, var och en mer förnäm än den förra. Naturen när den är som bäst.",
+      "Ett anmärkningsvärt exemplar lutar sig framåt med blicken fäst vid den lysande skärmen, med tålamodet hos en varelse som vet att stora ting tar tid.",
+      "Lägg märke till flockens stillsamma självförtroende. Ingen har fått panik, trots att de är så långt från sitt naturliga fikaförråd.",
+      "Kolonin har samlats kring ljuskällan, precis som deras förfäder gjorde. Vissa saker är, tycks det, eviga.",
+      "Ett exemplar rättar till hållningen med enorm värdighet. De andra noterar det. En ledare har trätt fram.",
+      "I det vilda kan väldigt få varelser sitta igenom en demo med sådan grace. Och ändå, här är de. Magnifikt."
+    ],
+    "documentaryStill": [
+      "Flocken har inte rört sig. Inte en ryckning. Berättaren, för sin del, hoppas fortfarande.",
+      "Fortfarande ingenting. Exemplaren verkar spara energi, kanske till applåderna.",
+      "Det har gått en stund nu. Man börjar misstänka att flocken väntar på att berättaren ska bli rolig. Han försöker.",
+      "Total stillhet. Forskare har ett ord för detta beteende. Ordet är ”dömande”.",
+      "Berättaren har sett krukväxter med mer synlig ambition. Snälla, någon, vem som helst, rör ett finger.",
+      "Var lugna, flocken är helt säker. Den väljer bara, med stor värdighet, att inte röra sig."
+    ],
+    "funny": [
+      "I en värld... där ett rum vågade titta på en laptop... föds en legend. Barntillåten: B som i Bra.",
+      "I höst... en grupp briljanta främlingar... och en webbkamera som har sett för mycket. PUBLIKEN. Nu på bio.",
+      "Från studion som gav dig att sitta ner... kommer dess djärvaste uppföljare. SITTA NER 2: FORTFARANDE SITTANDE.",
+      "Kritikerna kallar den ”den bäst klädda publiken som någonsin filmats av en laptop”. Snart i just det här rummet.",
+      "Ett rum. Noll explosioner. Obegränsad karisma. HACKATHONET. Två tummar högt, högt upp.",
+      "De kom för demon... de stannade för gratisfikat... DELTAGARNA. Certifierat färsk."
+    ],
+    "funnyStill": [
+      "I vinter... händer absolut ingenting. Och det är hänförande. STILLEBEN: FILMEN.",
+      "Tolv hjältar. Ett rum. Noll rörelse. STATYERNA. Från 15 år: F som i Fastfrusna.",
+      "Från regissören bakom VÄNTAN... kommer VÄNTAN 2: VI VÄNTAR FORTFARANDE. Kritikerna säger att den ”sitter kvar länge”.",
+      "I en värld där ingen rör sig... en berättare... bönar. Snälla. Någon. Vinka.",
+      "Snart: DEN LÄNGSTA PAUSEN. Nittio minuter. Ett rum. Inte en enda blinkning.",
+      "I sommar... står publiken inför sin största utmaning hittills... att räcka upp en hand. GESTEN. Nu på bio."
+    ],
+    "descriptive": [
+      "Kameran är på. Jag beskriver scenen igen om en stund.",
+      "Jag fick ingen beskrivning just nu. Håll kameran stilla så försöker jag igen.",
+      "Tittar fortfarande. En ny beskrivning kommer snart."
+    ],
+    "pumpkin": [
+      "Hehehe... välkommen, modiga besökare! Vilken utklädnad. Helt pumpastisk.",
+      "Bu! Ha, blev du rädd? Din utklädnad skrämde i alla fall mig, på bästa sätt.",
+      "Oho, kom närmare, kom närmare... Jag älskar gäster med stil. Du får hela mitt ansikte att lysa.",
+      "Hehe... en fin utklädnad för en fin kväll. Jag glöder av avund.",
+      "Välkommen, välkommen! Jag skulle krama dig, men jag är mest ihålig inuti. Härlig utklädnad, dock.",
+      "Hehehe... jag har sett många utklädnader i kväll, men din? Spök-takulär."
+    ]
+  },
+  "noChange": "Ingen ändring."
+}

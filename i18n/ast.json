@@ -1,0 +1,217 @@
+{
+  "callNow": "¡LLAMA AGORA! ¡LES OPERADORES TÁN ESPERANDO!",
+  "tagline": "El to mundu, narráu.",
+  "order": "PIDI AGORA",
+  "burst1": "¡VISTO NA TELE!",
+  "burst2": "¡SOLO 0,00 $!",
+  "finePrint": "*Nun ye un númberu de teléfonu real. Por favor, nun llames. NarrateBot 3000 nun se fai responsable de narraciones demasiao precises. Los resultaos puen variar. Piles nun incluyíes.",
+  "ticker": [
+    "'¡Describió al mio gatu perfeutamente!' – Cliente satisfechu",
+    "'Enxamás me sentí tan vistu.' – Tamién cliente",
+    "'La mio planta enxamás sonó tan maxestuosa.' – Cliente, seique",
+    "'Reí. Lloré. Quedé mui quietu.' – La Manada"
+  ],
+  "cleanSub": "Narración en direuto de la escena dende la to cámara",
+  "cleanExplain": "Apunta la cámara al mundu y NarrateBot 3000 describe en voz alta lo que ve, na to llingua.",
+  "start": "Entamar",
+  "butWait": "¡PERO ESPERA... ENTÁ HAI MÁS!",
+  "nowWith": "¡AGORA CON MODU {mode}!",
+  "mode": {
+    "documentary": "DOCUMENTAL",
+    "funny": "DIVERTÍU",
+    "descriptive": "DESCRIPTIVU",
+    "pumpkin": "CALABAZA"
+  },
+  "modeClean": {
+    "documentary": "Estilu documental",
+    "funny": "Estilu tráiler de cine",
+    "descriptive": "Modu descriptivu",
+    "pumpkin": "Estilu calabaza"
+  },
+  "countdown": {
+    "in": "Narrando en {n}…",
+    "late": "Narrando…",
+    "visitor": "Esperando una visita…",
+    "sr": "Narración en bréu"
+  },
+  "live": "EN DIREUTO",
+  "specimen": "EXEMPLAR",
+  "observation": "OBSERVACIÓN",
+  "herdNone": "ACTIVIDÁ DE LA MANADA: NENGUNA DETEUTADA",
+  "unchanged": "Escena ensin cambeos",
+  "paused": "EN PAUSA",
+  "nowShowing": "EN CARTELERA",
+  "btn": {
+    "describe": "Describir agora",
+    "pause": "Pausa",
+    "play": "Reproducir",
+    "flip": "Cambiar cámara",
+    "settings": "Axustes",
+    "themeDark": "Tema escuru",
+    "themeLight": "Tema claru",
+    "accessible": "Vista accesible",
+    "infomercial": "Vista televenta",
+    "narrLang": "Llingua de narración",
+    "close": "Zarrar",
+    "siteLang": "Llingua del sitiu"
+  },
+  "set": {
+    "title": "FORMULARIU DE PEDÍU DEL CENTRU DE LLAMAES",
+    "titleClean": "Axustes",
+    "sub": "Les operadores tán esperando",
+    "useEleven": "Usar la voz d'ElevenLabs",
+    "charsSession": "Caráuteres unviaos nesta sesión",
+    "charsToday": "Caráuteres güei (tolos usuarios)",
+    "narrToday": "Narraciones güei",
+    "config": "Configuración",
+    "stillness": "Sensibilidá a la quietú",
+    "stillDebug": "Cuenta de quietú / última diferencia",
+    "textSize": "Tamañu del testu",
+    "smaller": "Testu más pequeñu",
+    "larger": "Testu más grande",
+    "customLang": "Llingua de narración personalizada",
+    "customLangHint": "Amiéstase a la llista de llingües de narración (L)",
+    "music": "Volume de la música",
+    "srMute": "Nun falar en voz alta (el llector de pantalla llee'l testu)",
+    "hideVideo": "Anubrir el videu, amosar solo'l testu de la narración",
+    "hotkeys": "Atayos de tecláu",
+    "yes": "puesta",
+    "no": "falta",
+    "dflt": "predetermináu",
+    "breakLen": "Pausa ente frases",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Modos"
+    ],
+    [
+      "L",
+      "Llingua de narración"
+    ],
+    [
+      "N",
+      "Describir agora"
+    ],
+    [
+      "S",
+      "Quietú sí/non"
+    ],
+    [
+      "T",
+      "Tema"
+    ],
+    [
+      "A",
+      "Vista accesible"
+    ],
+    [
+      "Espaciu",
+      "Pausa / reproducir"
+    ],
+    [
+      "K",
+      "Axustes"
+    ]
+  ],
+  "keys": {
+    "title": "TRAI LES TOS CLAVES",
+    "titleClean": "Usa les tos propies claves",
+    "sub": "Les operadores precisen les tos claves p'atender esta llamada",
+    "intro": "NarrateBot 3000 funciona cola to propia clave de Gemini pa la narración y, si quies, con una clave d'ElevenLabs pa les voces.",
+    "gemini": "Clave de l'API de Gemini",
+    "eleven": "Clave de l'API d'ElevenLabs (opcional)",
+    "geminiHelp": "Cómo consiguir una clave de Gemini",
+    "elevenHelp": "Cómo consiguir una clave d'ElevenLabs",
+    "getAt": "Consigui una clave en",
+    "newTab": " (ábrese nuna llingüeta nueva)",
+    "geminiSteps": "Anicia sesión, escueyi Create API key y apega equí la clave.",
+    "geminiCost": "Google ufre un nivel de baldre con llímites d'usu; l'usu intensivu cóbrase na to cuenta de Google.",
+    "elevenSteps": "Crea una clave con accesu a Text to Speech y apégala equí.",
+    "elevenCost": "El plan de baldre inclúi una cuota mensual de caráuteres. Delles voces precisen un plan de pagu; si una voz nun ta disponible usamos una voz estándar, o la voz del to navegador si dexes esto en blanco.",
+    "privacy": "Les tos claves guárdense nuna cookie cifrada nesti navegador y solo s'unvien al nuesu sirvidor pa facer les tos solicitúes. Enxamás nun les guardamos nin les rexistramos. Pues desaniciales cuando quieras n'Axustes.",
+    "save": "Guardar y entamar",
+    "saving": "Comprobando…",
+    "cancel": "Encaboxar",
+    "needGemini": "Introduz la to clave de Gemini.",
+    "geminiInvalid": "Google nun aceptó esa clave de Gemini. Revísala y vuelvi tentalo.",
+    "format": "Eso nun paez una clave d'API. Apega la clave entera, ensin espacios.",
+    "formatEleven": "Esa clave d'ElevenLabs nun paez correuta. Apega la clave entera o déxala en blanco.",
+    "tooMany": "Demasiaos intentos. Espera 15 minutos.",
+    "failed": "Nun se pudo comprobar la to clave agora. Vuelvi tentalo nun momentu.",
+    "needKeys": "Pa siguir narrando, amiesta les tos propies claves.",
+    "quota": "La to clave de Gemini llegó al llímite d'usu. Volveráse tentar nun minutu…",
+    "badKey": "Google refugó la to clave de Gemini. Revísala o apega una nueva.",
+    "removed": "Desaniciáronse les tos claves. Amiesta claves pa siguir narrando."
+  },
+  "owner": {
+    "title": "ACCESU DE PROPIETARIU",
+    "titleClean": "Accesu de propietariu",
+    "label": "Contraseña de propietariu",
+    "submit": "Desbloquiar",
+    "wrong": "Eso nun funcionó.",
+    "tooMany": "Demasiaos intentos. Espera 15 minutos.",
+    "done": "Accesu de propietariu desbloquiáu."
+  },
+  "access": {
+    "legend": "Accesu",
+    "current": "Accesu actual:",
+    "owner": "Propietariu",
+    "byok": "Les tos propies claves",
+    "none": "Ensin claves",
+    "change": "Cambiar claves",
+    "add": "Usar les tos propies claves",
+    "remove": "Desaniciar les mios claves",
+    "lock": "Bloquiar l'accesu de propietariu"
+  },
+  "camError": "Cámara non disponible. Comprueba'l permisu de la cámara y que la páxina tea en HTTPS.",
+  "fallback": {
+    "documentary": [
+      "Y equí observamos una xuntanza de la especie, caún más distinguíu que l'anterior. Ensin dulda, la naturaleza nel so meyor momentu.",
+      "Un exemplar notable inclínase p'alantre, colos güeyos fitos na pantalla lluminosa, cola paciencia d'una criatura que sabe que les coses grandes lleven tiempu.",
+      "Fíxense na confianza tranquila d'esta manada. Nengún entró en pánicu, magar tar tan lloñe de la so fonte natural de llambionaes.",
+      "La colonia axuntóse alredor de la fonte de lluz, como ficieron los sos antepasaos. Hai coses, paez, que son eternes.",
+      "Un exemplar axusta la postura con una dignidá tremenda. Los demás tomen nota. Surdió un líder.",
+      "Na naturaleza, mui poques criatures aguanten una demo con tanta gracia. Y sicasí, equí tán. Maxestuosos."
+    ],
+    "documentaryStill": [
+      "La manada nun se movió. Nin un tembláu. El narrador, pela so parte, sigue esperanzáu.",
+      "Entá nada. Los exemplares paecen aforrar enerxía, quiciabes pa los aplausos.",
+      "Yá pasó un tiempu. Unu entama a sospechar que la manada espera que'l narrador tenga gracia. Ta intentándolo.",
+      "Quietú total. Los científicos tienen una pallabra pa esti comportamientu. La pallabra ye 'xulgar'.",
+      "El narrador yá vio plantes con más ambición visible. Por favor, daquién, quien seya, que mueva un deu.",
+      "Tranquilos, la manada ta perfeutamente a salvu. Namás escueyen, con gran dignidá, nun movese."
+    ],
+    "funny": [
+      "Nun mundu... onde un cuartu s'atrevió a mirar un portátil... naz una lleenda. Pa tolos públicos, sobre too los guapos.",
+      "Esta seronda... un grupu d'estraños brillantes... y una webcam que yá vio demasiao. EL PÚBLICU. Agora nos cines.",
+      "Del estudiu que vos traxo tar sentaos... llega la so secuela más atrevida. SENTAOS 2: ENTÁ NA SIELLA.",
+      "La crítica diz: 'el públicu meyor vistíu que filmó enxamás un portátil'. Próximamente nesta mesma sala.",
+      "Una sala. Cero esplosiones. Carisma ensin llímites. EL HACKATHON. Dos deos gordos bien, bien arriba.",
+      "Vinieron pola demo... quedaron poles llambionaes de baldre... LOS ASISTENTES. Frescor garantizáu."
+    ],
+    "funnyStill": [
+      "Esti iviernu... nun pasa nada de nada. Y ye impresionante. NATURALEZA MUERTA: LA PELÍCULA.",
+      "Doce héroes. Una sala. Cero movimientu. LES ESTATUES. Pa públicos sospechosamente quietos.",
+      "Del direutor d'ESPERANDO... llega ESPERANDO 2: ENTÁ ESPERANDO. La crítica diz que 'te dexa sentáu'.",
+      "Nun mundu onde naide se mueve... un narrador... suplica. Por favor. Quien seya. Saluda.",
+      "Próximamente: LA PAUSA MÁS LLARGA. Noventa minutos. Una sala. Nin un parpaguéu.",
+      "Esti branu... el públicu enfrenta'l so mayor retu... xubir una mano. EL XESTU. Yá en cartelera."
+    ],
+    "descriptive": [
+      "La cámara ta encendida. Volveré describir la escena nun momentu.",
+      "Nun pude consiguir una descripción agora. Caltién la cámara quieta y volveré tentalo.",
+      "Sigo mirando. Aína llega una descripción nueva."
+    ],
+    "pumpkin": [
+      "Je je je... ¡bienveníu, visitante valiente! ¡Qué disfraz! De calabaza p'arriba.",
+      "¡Bu! Ja, ¿asustéte? El to traxe sí que m'asustó a mi, nel meyor sentíu.",
+      "Oho, acércate, acércate... Préstame una visita con estilu. Allúmesme la cara entera.",
+      "Je je... un bon disfraz pa una bona nueche. Toi rellumando d'envidia.",
+      "¡Bienveníu, bienveníu! Daríate un abrazu, pero toi casi vacíu per dientro. Guapu traxe, eso sí.",
+      "Je je je... vi munchos disfraces esta nueche, pero ¿el tuyu? Terroríficamente xenial."
+    ]
+  },
+  "noChange": "Ensin cambeos."
+}

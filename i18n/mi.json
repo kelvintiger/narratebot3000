@@ -1,0 +1,217 @@
+{
+  "callNow": "WAEA MAI INĀIANEI! KEI TE TATARI NGĀ KAIWHAKAHAERE!",
+  "tagline": "Tō ao, ka kōrerotia.",
+  "order": "TONO INĀIANEI",
+  "burst1": "I KITEA I TE POUAKA WHAKAATA!",
+  "burst2": "$0.00 ANAKE!",
+  "finePrint": "*Ehara tēnei i te nama waea tūturu. Tēnā, kaua e waea mai. Kāore a NarrateBot 3000 e haepapa mō ngā kōrero tika rawa. Ka rerekē pea ngā hua. Kāore ngā pūhiko i whakauruhia.",
+  "ticker": [
+    "‘I tino tika tana whakaahua i taku ngeru!’ – He Kiritaki Harikoa",
+    "‘Kāore anō au kia tino kitea pēnei.’ – He Kiritaki Anō",
+    "‘Kāore anō taku tipu whare kia rangona kia rangatira pēnei.’ – He Kiritaki, Pea",
+    "‘I kata au. I tangi au. I noho mārie rawa au.’ – Te Kāhui"
+  ],
+  "cleanSub": "He kōrero ora mō te whakaaturanga mai i tō kāmera",
+  "cleanExplain": "Whakatohua tō kāmera ki te ao, ā, ka whakaahua reo a NarrateBot 3000 i tāna e kite ai, i tō reo.",
+  "start": "Tīmata",
+  "butWait": "ENGARI TATARI... HE MEA ANŌ!",
+  "nowWith": "INĀIANEI ME TE ARATAU {mode}!",
+  "mode": {
+    "documentary": "PAKIPŪMEKA",
+    "funny": "HĀTARETARE",
+    "descriptive": "WHAKAAHUA",
+    "pumpkin": "PAMUPIKINI"
+  },
+  "modeClean": {
+    "documentary": "Momo pakipūmeka",
+    "funny": "Momo kiriata whakatairanga",
+    "descriptive": "Aratau whakaahua",
+    "pumpkin": "Momo pamupikini"
+  },
+  "countdown": {
+    "in": "Ka kōrero i roto i te {n}…",
+    "late": "E kōrero ana…",
+    "visitor": "E tatari ana ki tētahi manuhiri…",
+    "sr": "Ka kōrero ākuanei"
+  },
+  "live": "ORA",
+  "specimen": "TAUIRA",
+  "observation": "TIROHANGA",
+  "herdNone": "MAHI A TE KĀHUI: KĀORE I KITEA",
+  "unchanged": "Kāore i rerekē te whakaaturanga",
+  "paused": "KUA TĀRUA",
+  "nowShowing": "E WHAKAATU ANA",
+  "btn": {
+    "describe": "Whakaahua ināianei",
+    "pause": "Tāria",
+    "play": "Purei",
+    "flip": "Hurihia te kāmera",
+    "settings": "Tautuhinga",
+    "themeDark": "Kaupapa pōuri",
+    "themeLight": "Kaupapa mārama",
+    "accessible": "Tirohanga wātea",
+    "infomercial": "Tirohanga hokohoko",
+    "narrLang": "Reo kōrero",
+    "close": "Kati",
+    "siteLang": "Reo o te pae"
+  },
+  "set": {
+    "title": "PUKA TONO O TE POKAPŪ WAEA",
+    "titleClean": "Tautuhinga",
+    "sub": "Kei te tatari ngā kaiwhakahaere",
+    "useEleven": "Whakamahia te reo ElevenLabs",
+    "charsSession": "Ngā pūāhua i tukuna i tēnei wāhanga",
+    "charsToday": "Ngā pūāhua o te rā (ngā kaiwhakamahi katoa)",
+    "narrToday": "Ngā kōrero o te rā",
+    "config": "Whirihoranga",
+    "stillness": "Te tairongo ki te noho mārie",
+    "stillDebug": "Tatau mārie / rerekētanga whakamutunga",
+    "textSize": "Rahi kuputuhi",
+    "smaller": "Kuputuhi iti ake",
+    "larger": "Kuputuhi nui ake",
+    "customLang": "Reo kōrero ritenga",
+    "customLangHint": "Ka tāpiritia ki te rārangi reo kōrero (L)",
+    "music": "Te kaha o te puoro",
+    "srMute": "Kaua e kōrero (mā te kaipānui mata e pānui te kuputuhi)",
+    "hideVideo": "Hunaia te ataata, whakaaturia te kuputuhi kōrero anake",
+    "hotkeys": "Pātuhi poto",
+    "yes": "kua tautuhia",
+    "no": "kua ngaro",
+    "dflt": "taunoa",
+    "breakLen": "Okiokinga i waenga i ngā rārangi",
+    "breakValue": "{n} hēk"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Ngā aratau"
+    ],
+    [
+      "L",
+      "Reo kōrero"
+    ],
+    [
+      "N",
+      "Whakaahua ināianei"
+    ],
+    [
+      "S",
+      "Noho mārie whakakā/whakaweto"
+    ],
+    [
+      "T",
+      "Kaupapa"
+    ],
+    [
+      "A",
+      "Tirohanga wātea"
+    ],
+    [
+      "Mokowā",
+      "Tāria / purei"
+    ],
+    [
+      "K",
+      "Tautuhinga"
+    ]
+  ],
+  "keys": {
+    "title": "MAURIA MAI Ō KĪ",
+    "titleClean": "Whakamahia ō ake kī",
+    "sub": "Me whiwhi ngā kaiwhakahaere i ō kī hei whakautu i tēnei waea",
+    "intro": "Ka whakahaerehia a NarrateBot 3000 e tō ake kī Gemini mō te kōrero, ā, ki te pai koe, he kī ElevenLabs mō ngā reo.",
+    "gemini": "Kī API Gemini",
+    "eleven": "Kī API ElevenLabs (kōwhiringa)",
+    "geminiHelp": "Me pēhea te whiwhi kī Gemini",
+    "elevenHelp": "Me pēhea te whiwhi kī ElevenLabs",
+    "getAt": "Tikina he kī ki",
+    "newTab": " (ka tuwhera ki tētahi ripa hou)",
+    "geminiSteps": "Takiuru, kōwhiria Create API key, kātahi ka whakapiri i te kī ki konei.",
+    "geminiCost": "He taumata kore utu tā Google me ōna rohenga; ko te whakamahinga nui ake ka nama ki tō pūkete Google.",
+    "elevenSteps": "Waihangatia he kī e uru ana ki Text to Speech, kātahi ka whakapiri ki konei.",
+    "elevenCost": "Kei roto i te mahere kore utu he rohenga pūāhua ā-marama. Me utu ētahi reo; ki te kore e wātea tētahi reo, ka whakamahi mātou i tētahi reo paerewa, i te reo rānei o tō pūtirotiro mēnā ka waiho e koe tēnei kia wātea.",
+    "privacy": "Ka penapenahia ō kī ki tētahi pihikete whakamuna i tēnei pūtirotiro, ā, ka tukuna ki tō mātou tūmau anake hei whakahaere i āu tono. Kāore mātou e penapena, e tuhi rānei i aua kī. Ka taea e koe te tango i aua kī i ngā wā katoa i ngā Tautuhinga.",
+    "save": "Tiaki & tīmata",
+    "saving": "E arowhai ana…",
+    "cancel": "Whakakore",
+    "needGemini": "Tāurua tō kī Gemini.",
+    "geminiInvalid": "Kāore a Google i whakaae ki taua kī Gemini. Tirohia, ka ngana anō.",
+    "format": "Kāore tērā i te āhua o te kī API. Whakapiria te kī katoa, kaua he mokowā.",
+    "formatEleven": "Kāore i te tika te āhua o taua kī ElevenLabs. Whakapiria te kī katoa, waiho kia wātea rānei.",
+    "tooMany": "He maha rawa ngā nganatanga. Tatari kia 15 meneti.",
+    "failed": "Kāore i taea te arowhai i tō kī ināianei. Ngana anō ākuanei.",
+    "needKeys": "Kia haere tonu te kōrero, tāpirihia ō ake kī.",
+    "quota": "Kua tae tō kī Gemini ki tōna rohenga whakamahi. Ka ngana anō ā tētahi meneti…",
+    "badKey": "Kua whakakāhoretia e Google tō kī Gemini. Tirohia, whakapiria rānei he kī hou.",
+    "removed": "Kua tangohia ō kī. Tāpirihia he kī kia haere tonu te kōrero."
+  },
+  "owner": {
+    "title": "URUNGA KAIPUPURI",
+    "titleClean": "Urunga kaipupuri",
+    "label": "Kupuhipa kaipupuri",
+    "submit": "Iriti",
+    "wrong": "Kāore tērā i pai.",
+    "tooMany": "He maha rawa ngā nganatanga. Tatari kia 15 meneti.",
+    "done": "Kua iritia te urunga kaipupuri."
+  },
+  "access": {
+    "legend": "Urunga",
+    "current": "Urunga o nāianei:",
+    "owner": "Kaipupuri",
+    "byok": "Ō ake kī",
+    "none": "Kāore he kī",
+    "change": "Hurihia ngā kī",
+    "add": "Whakamahia ō ake kī",
+    "remove": "Tangohia aku kī",
+    "lock": "Rakaina te urunga kaipupuri"
+  },
+  "camError": "Kāore e wātea te kāmera. Tirohia te whakaaetanga kāmera, ā, kei runga te whārangi i te HTTPS.",
+  "fallback": {
+    "documentary": [
+      "Nā, kei te mātakitaki tātou i tētahi huihuinga o te momo nei, he rangatira ake tēnā i tēnā. Koinei te taiao i tōna ātaahua katoa.",
+      "Ka tītaha whakamua tētahi tauira mīharo, ka titiro pū ki te mata kānapanapa, me te manawanui o te kararehe e mōhio ana he roa te wā mō ngā mea nui.",
+      "Tirohia te māia mārie o tēnei kāhui. Kāore tētahi i ohorere, ahakoa te tawhiti i ō rātou pātaka kai paramanawa.",
+      "Kua huihui te kāhui ki te taha o te puna rama, pērā i ō rātou tīpuna. Ko ētahi mea, ā, he mutunga kore.",
+      "Ka whakatika tētahi tauira i tōna tū me te tino mana. Ka kite ētahi atu. Kua puta he rangatira.",
+      "I te ngahere, he tokoiti ngā kararehe ka taea te noho puku i tētahi whakaaturanga me te ngāwari pēnei. Heoi anō, anei rātou. Mīharo."
+    ],
+    "documentaryStill": [
+      "Kāore anō te kāhui kia neke. Kāore he kōrapu. Ko te kaikōrero, ā, e tūmanako tonu ana.",
+      "Kāore tonu he aha. Te āhua nei kei te penapena kaha ngā tauira, mō te pakipaki pea.",
+      "Kua roa nei. Ka tīmata te whakapae kei te tatari te kāhui kia hātaretare te kaikōrero. Kei te whakamātau ia.",
+      "He mārie katoa. He kupu tā ngā kaipūtaiao mō tēnei whanonga. Ko te kupu, ko te ‘whakawā.’",
+      "Kua kite te kaikōrero i ngā tipu whare he nui ake te wawata. Tēnā, ko wai rānei, nekehia tētahi matimati.",
+      "Kia mārie, kei te haumaru katoa te kāhui. Kua kōwhiri noa rātou, me te mana nui, kia kaua e neke."
+    ],
+    "funny": [
+      "I tētahi ao... i māia ai tētahi rūma ki te mātakitaki i tētahi rorohiko pōnaho... ka whānau mai he toa. Rēti PG: Pretty Good, arā, Pai Rawa.",
+      "I tēnei ngahuru... he rōpū tauhou kanapa... me tētahi kāmera ipurangi kua nui rawa tāna i kite ai. TE HUNGA MĀTAKITAKI. Kei ngā whare kiriata ināianei.",
+      "Mai i te taupuni nāna i hōmai te noho... tōna wāhanga tuarua māia rawa. TE NOHO 2: E NOHO TONU ANA.",
+      "E kīia ana e ngā kaiarotake ‘te mano kākahu pai rawa kua hopukina e tētahi rorohiko pōnaho.’ Ākuanei i tēnei tonu rūma.",
+      "Kotahi te rūma. Kore pahūtanga. He ihi mutunga kore. TE HAKATONA. E rua ngā kōnui ki runga rawa.",
+      "I haere mai rātou mō te whakaaturanga... i noho mō ngā paramanawa kore utu... TE HUNGA I TAE MAI. He hou, kua whakamanahia."
+    ],
+    "funnyStill": [
+      "I tēnei takurua... kāore rawa he aha e puta. Ā, he whakamīharo. TE ORANGA MĀRIE: TE KIRIATA.",
+      "Tekau mā rua ngā toa. Kotahi te rūma. Kore nekenekehanga. NGĀ WHAKAPAKOKO. Rēti N: Noho Tīmohu Tonu.",
+      "Mai i te kaiwhakahaere o TE TATARI... ko TE TATARI 2: E TATARI TONU ANA. E ai ki ngā kaiarotake, ‘ka noho roa ki a koe.’",
+      "I tētahi ao kāore tētahi e neke... kotahi te kaikōrero... e inoi ana. Tēnā. Ko wai rānei. Pōwhiri mai.",
+      "Ākuanei: TE TĀRUA ROA RAWA. Iwa tekau meneti. Kotahi te rūma. Kāore he kimo kotahi.",
+      "I tēnei raumati... ka tūtaki te hunga mātakitaki ki tō rātou wero nui rawa... te hiki i tētahi ringa. TE TOHU RINGA. E whakaatu ana ināianei."
+    ],
+    "descriptive": [
+      "Kua kā te kāmera. Ka whakaahua anō ahau i te whakaaturanga ākuanei.",
+      "Kāore i taea e au te tiki whakaahuatanga ināianei. Puritia kia mau te kāmera, ā, ka ngana anō ahau.",
+      "E titiro tonu ana. Ka tae mai he whakaahuatanga hou ākuanei."
+    ],
+    "pumpkin": [
+      "Hē hē hē... nau mai, e te manuhiri māia! Auē te kākahu! He tino pai, he ātaahua rawa.",
+      "Pū! Hā, i wehi koe? I tino whakawehi tō kākahu i ahau, i te āhua pai rawa.",
+      "Oho, haere mai, haere mai... He pai ki ahau te manuhiri whai kāhua. Ka whiti katoa taku kanohi i a koe.",
+      "Hē hē... he kākahu pai mō tētahi pō pai. Kei te kānapanapa ahau i te hae.",
+      "Nau mai, nau mai! Ka awhi ahau i a koe, engari he puare te nuinga o roto i ahau. He kākahu ātaahua, heoi.",
+      "Hē hē hē... he maha ngā kākahu kua kite au i tēnei pō, engari ko tōu? He mīharo-whakawehi."
+    ]
+  },
+  "noChange": "Kāore he rerekētanga."
+}

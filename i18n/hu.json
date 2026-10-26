@@ -1,0 +1,217 @@
+{
+  "callNow": "HÍVJON MOST! KOLLÉGÁINK VÁRJÁK HÍVÁSÁT!",
+  "tagline": "A te világod, elmesélve.",
+  "order": "RENDELJEN MOST",
+  "burst1": "A TV-BŐL ISMERT!",
+  "burst2": "CSAK 0 FT!",
+  "finePrint": "*Nem valódi telefonszám. Kérjük, ne hívja. A NarrateBot 3000 nem vállal felelősséget a túl pontos narrációkért. Az eredmények eltérhetnek. Az elemeket nem tartalmazza.",
+  "ticker": [
+    "„Tökéletesen leírta a macskámat!” – Elégedett vásárló",
+    "„Még sosem éreztem, hogy ennyire látnak.” – Szintén vásárló",
+    "„A szobanövényem még sosem hangzott ilyen fenségesen.” – Vásárló, valószínűleg",
+    "„Nevettem. Sírtam. Mozdulatlanul ültem.” – A Csorda"
+  ],
+  "cleanSub": "Élő jelenetnarráció a kamerádból",
+  "cleanExplain": "Fordítsd a kamerát a világ felé, és a NarrateBot 3000 hangosan elmondja, mit lát, a te nyelveden.",
+  "start": "Indítás",
+  "butWait": "DE VÁRJON... MÉG NINCS VÉGE!",
+  "nowWith": "MOST {mode} MÓDDAL!",
+  "mode": {
+    "documentary": "DOKUMENTUM",
+    "funny": "VICCES",
+    "descriptive": "LEÍRÓ",
+    "pumpkin": "TÖK"
+  },
+  "modeClean": {
+    "documentary": "Dokumentumfilm-stílus",
+    "funny": "Filmelőzetes-stílus",
+    "descriptive": "Leíró mód",
+    "pumpkin": "Tökstílus"
+  },
+  "countdown": {
+    "in": "Narráció indul: {n}…",
+    "late": "Narráció…",
+    "visitor": "Látogatóra vár…",
+    "sr": "A narráció hamarosan indul"
+  },
+  "live": "ÉLŐ",
+  "specimen": "PÉLDÁNY",
+  "observation": "MEGFIGYELÉS",
+  "herdNone": "CSORDAAKTIVITÁS: NINCS",
+  "unchanged": "A jelenet változatlan",
+  "paused": "SZÜNET",
+  "nowShowing": "MOST MŰSORON",
+  "btn": {
+    "describe": "Leírás most",
+    "pause": "Szünet",
+    "play": "Lejátszás",
+    "flip": "Kameraváltás",
+    "settings": "Beállítások",
+    "themeDark": "Sötét téma",
+    "themeLight": "Világos téma",
+    "accessible": "Akadálymentes nézet",
+    "infomercial": "Reklámnézet",
+    "narrLang": "Narráció nyelve",
+    "close": "Bezárás",
+    "siteLang": "Oldal nyelve"
+  },
+  "set": {
+    "title": "ÜGYFÉLSZOLGÁLATI MEGRENDELŐLAP",
+    "titleClean": "Beállítások",
+    "sub": "Kollégáink várják hívását",
+    "useEleven": "ElevenLabs hang használata",
+    "charsSession": "Ebben a munkamenetben küldött karakterek",
+    "charsToday": "Mai karakterek (minden felhasználó)",
+    "narrToday": "Mai narrációk",
+    "config": "Konfiguráció",
+    "stillness": "Mozdulatlanság érzékenysége",
+    "stillDebug": "Nyugalmi számláló / utolsó eltérés",
+    "textSize": "Szövegméret",
+    "smaller": "Kisebb szöveg",
+    "larger": "Nagyobb szöveg",
+    "customLang": "Egyéni narrációs nyelv",
+    "customLangHint": "Hozzáadódik a narrációs nyelvek listájához (L)",
+    "music": "Zene hangereje",
+    "srMute": "Ne beszéljen hangosan (a képernyőolvasó olvassa a szöveget)",
+    "hideVideo": "Videó elrejtése, csak a narráció szövege",
+    "hotkeys": "Gyorsbillentyűk",
+    "yes": "megadva",
+    "no": "hiányzik",
+    "dflt": "alapértelmezett",
+    "breakLen": "Szünet a mondatok között",
+    "breakValue": "{n} mp"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Módok"
+    ],
+    [
+      "L",
+      "Narráció nyelve"
+    ],
+    [
+      "N",
+      "Leírás most"
+    ],
+    [
+      "S",
+      "Mozdulatlanság be/ki"
+    ],
+    [
+      "T",
+      "Téma"
+    ],
+    [
+      "A",
+      "Akadálymentes nézet"
+    ],
+    [
+      "Space",
+      "Szünet / lejátszás"
+    ],
+    [
+      "K",
+      "Beállítások"
+    ]
+  ],
+  "keys": {
+    "title": "HOZZA A SAJÁT KULCSAIT",
+    "titleClean": "Saját kulcsok használata",
+    "sub": "Kollégáinknak szükségük van a kulcsaira a híváshoz",
+    "intro": "A NarrateBot 3000 a saját Gemini-kulcsoddal narrál, és ha szeretnéd, egy ElevenLabs-kulccsal a hangokhoz.",
+    "gemini": "Gemini API-kulcs",
+    "eleven": "ElevenLabs API-kulcs (nem kötelező)",
+    "geminiHelp": "Így szerezhetsz Gemini-kulcsot",
+    "elevenHelp": "Így szerezhetsz ElevenLabs-kulcsot",
+    "getAt": "Kulcsot itt kaphatsz:",
+    "newTab": " (új lapon nyílik meg)",
+    "geminiSteps": "Jelentkezz be, válaszd a Create API key lehetőséget, majd illeszd be ide a kulcsot.",
+    "geminiCost": "A Google ingyenes szintet kínál használati korlátokkal; a nagyobb használatot a Google-fiókodra számlázzák.",
+    "elevenSteps": "Hozz létre egy Text to Speech hozzáférésű kulcsot, majd illeszd be ide.",
+    "elevenCost": "Az ingyenes csomag havi karakterkeretet tartalmaz. Egyes hangokhoz fizetős csomag kell; ha egy hang nem érhető el, szabványos hangot használunk, vagy a böngésződ hangját, ha üresen hagyod.",
+    "privacy": "A kulcsaidat egy titkosított sütiben tároljuk ebben a böngészőben, és csak a kéréseid teljesítéséhez küldjük el a szerverünkre. Soha nem tároljuk és nem naplózzuk őket. Bármikor eltávolíthatod őket a Beállításokban.",
+    "save": "Mentés és indítás",
+    "saving": "Ellenőrzés…",
+    "cancel": "Mégse",
+    "needGemini": "Add meg a Gemini-kulcsodat.",
+    "geminiInvalid": "A Google nem fogadta el ezt a Gemini-kulcsot. Ellenőrizd, és próbáld újra.",
+    "format": "Ez nem tűnik API-kulcsnak. Illeszd be a teljes kulcsot, szóközök nélkül.",
+    "formatEleven": "Ez az ElevenLabs-kulcs nem tűnik helyesnek. Illeszd be a teljes kulcsot, vagy hagyd üresen.",
+    "tooMany": "Túl sok próbálkozás. Várj 15 percet.",
+    "failed": "Most nem sikerült ellenőrizni a kulcsot. Próbáld újra egy kicsit később.",
+    "needKeys": "A narráció folytatásához add meg a saját kulcsaidat.",
+    "quota": "A Gemini-kulcsod elérte a használati korlátot. Újrapróbálás egy perc múlva…",
+    "badKey": "A Google elutasította a Gemini-kulcsodat. Ellenőrizd, vagy illessz be egy újat.",
+    "removed": "A kulcsaidat eltávolítottuk. A narráció folytatásához adj meg kulcsokat."
+  },
+  "owner": {
+    "title": "TULAJDONOSI HOZZÁFÉRÉS",
+    "titleClean": "Tulajdonosi hozzáférés",
+    "label": "Tulajdonosi jelszó",
+    "submit": "Feloldás",
+    "wrong": "Ez nem sikerült.",
+    "tooMany": "Túl sok próbálkozás. Várj 15 percet.",
+    "done": "Tulajdonosi hozzáférés feloldva."
+  },
+  "access": {
+    "legend": "Hozzáférés",
+    "current": "Jelenlegi hozzáférés:",
+    "owner": "Tulajdonos",
+    "byok": "Saját kulcsok",
+    "none": "Nincs kulcs",
+    "change": "Kulcsok cseréje",
+    "add": "Saját kulcsok használata",
+    "remove": "Kulcsaim eltávolítása",
+    "lock": "Tulajdonosi hozzáférés zárolása"
+  },
+  "camError": "A kamera nem érhető el. Ellenőrizd a kameraengedélyt, és hogy az oldal HTTPS-en fut-e.",
+  "fallback": {
+    "documentary": [
+      "És itt a faj egy gyülekezetét figyelhetjük meg, mindegyik egyed előkelőbb az előzőnél. A természet a legjobb formájában.",
+      "Egy figyelemre méltó példány előrehajol, tekintetét a világító képernyőre szegezi, egy olyan lény türelmével, aki tudja, hogy a nagy dolgokhoz idő kell.",
+      "Figyeljék meg ennek a csordának a csendes magabiztosságát. Egyikük sem esett pánikba, pedig messze vannak természetes nasikészletüktől.",
+      "A kolónia a fényforrás köré gyűlt, ahogy őseik is tették. Úgy tűnik, egyes dolgok örökkévalók.",
+      "Az egyik példány hatalmas méltósággal igazít a testtartásán. A többiek felfigyelnek. Megszületett a vezér.",
+      "A vadonban kevés lény képes ilyen kecsesen végigülni egy demót. És mégis, itt vannak. Lenyűgöző."
+    ],
+    "documentaryStill": [
+      "A csorda nem mozdult. Egy rándulás sem. A narrátor mindenesetre még reménykedik.",
+      "Még mindig semmi. A példányok láthatóan energiát spórolnak, talán a tapsra.",
+      "Eltelt már egy kis idő. Az ember kezdi gyanítani, hogy a csorda arra vár, hogy a narrátor vicces legyen. Igyekszik.",
+      "Teljes mozdulatlanság. A tudósoknak van egy szavuk erre a viselkedésre. A szó: „ítélkezés”.",
+      "A narrátor látott már nagyobb ambícióval bíró szobanövényeket. Kérem, valaki, bárki, mozdítson egy ujjat.",
+      "Nyugalom, a csorda teljes biztonságban van. Csupán úgy dönt, nagy méltósággal, hogy nem mozdul."
+    ],
+    "funny": [
+      "Egy világban... ahol egy terem egy laptopot mert nézni... legenda születik. Korhatár nélkül, mert Klassz.",
+      "Ezen az őszön... egy csapat zseniális idegen... és egy webkamera, amely túl sokat látott. A KÖZÖNSÉG. Most a mozikban.",
+      "Attól a stúdiótól, amely elhozta nektek az üldögélést... jön a legmerészebb folytatás. ÜLDÖGÉLÉS 2: MÉG MINDIG ÜLÜNK.",
+      "A kritikusok szerint „a legjobban öltözött tömeg, amit valaha laptop filmezett”. Hamarosan pont ebben a teremben.",
+      "Egy terem. Nulla robbanás. Határtalan karizma. A HACKATHON. Két hüvelykujj nagyon, nagyon fel.",
+      "Jöttek a demóért... maradtak az ingyen nasiért... A RÉSZTVEVŐK. Garantáltan friss."
+    ],
+    "funnyStill": [
+      "Ezen a télen... semmi az égvilágon nem történik. És lélegzetelállító. CSENDÉLET: A FILM.",
+      "Tizenkét hős. Egy terem. Nulla mozgás. A SZOBROK. 18+: Szoborszerűen Mozdulatlanoknak.",
+      "A VÁRAKOZÁS rendezőjétől... érkezik a VÁRAKOZÁS 2: MÉG MINDIG VÁRUNK. A kritikusok szerint „sokáig ül benned”.",
+      "Egy világban, ahol senki sem mozdul... egy narrátor... könyörög. Kérem. Valaki. Integessen.",
+      "Hamarosan: A LEGHOSSZABB SZÜNET. Kilencven perc. Egy terem. Egyetlen pislogás sem.",
+      "Ezen a nyáron... a közönség élete legnagyobb kihívásával néz szembe... felemelni egy kezet. A GESZTUS. Most a mozikban."
+    ],
+    "descriptive": [
+      "A kamera be van kapcsolva. Egy pillanat múlva újra leírom a jelenetet.",
+      "Most nem sikerült leírást kapnom. Tartsd stabilan a kamerát, és újra megpróbálom.",
+      "Még nézem. Hamarosan jön egy új leírás."
+    ],
+    "pumpkin": [
+      "He-he-he... üdvözöllek, bátor látogató! Micsoda jelmez. Tökéletesen tökös.",
+      "Bú! Ha, megijesztettelek? A jelmezed engem biztosan megijesztett, a legjobb értelemben.",
+      "Ohó, gyere közelebb, közelebb... Imádom a stílusos vendégeket. Felragyog tőled az egész arcom.",
+      "He-he... remek jelmez egy remek éjszakára. Szinte izzok az irigységtől.",
+      "Isten hozott, isten hozott! Megölelnélek, de belül többnyire üres vagyok. Gyönyörű jelmez, az biztos.",
+      "He-he-he... sok jelmezt láttam ma éjjel, de a tiéd? Kísértetiesen jó."
+    ]
+  },
+  "noChange": "Nincs változás."
+}

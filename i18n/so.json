@@ -1,0 +1,217 @@
+{
+  "callNow": "HADDA WAC! SHAQAALUHU WAY DIYAAR YIHIIN!",
+  "tagline": "Adduunkaaga, oo laguu sheekeeyay.",
+  "order": "HADDA DALBO",
+  "burst1": "LAGU ARKAY TV-GA!",
+  "burst2": "KALIYA $0.00!",
+  "finePrint": "*Ma aha lambar taleefan oo dhab ah. Fadlan ha wicin. NarrateBot 3000 mas'uul kama aha sharraxaadaha aadka u saxsan. Natiijooyinku way kala duwanaan karaan. Baytariyadu kuma jiraan.",
+  "ticker": [
+    "'Si fiican ayuu bisaddayda u sharaxay!' – Macmiil Ku Qanacsan",
+    "'Weligay sidan looma arag.' – Sidoo Kale Macmiil",
+    "'Geedka gurigaygu weligiis sidan uma sharaf badnayn.' – Macmiil, Malaha",
+    "'Waan qoslay. Waan ooyay. Waan fadhiyey anigoo aan dhaqaaqin.' – Adhiga"
+  ],
+  "cleanSub": "Sharaxaad toos ah oo muuqaalka ah oo ka timid kamaradaada",
+  "cleanExplain": "Kamaradaada u jeedi adduunka, NarrateBot 3000 ayaa si cod dheer u sharxaysa waxa ay aragto, luqaddaada.",
+  "start": "Bilow",
+  "butWait": "LAAKIIN SUG... WAX KALE AYAA JIRA!",
+  "nowWith": "HADDA LEH HABKA {mode}!",
+  "mode": {
+    "documentary": "DOKUMENTARI",
+    "funny": "KAFTAN",
+    "descriptive": "SHARAXAAD",
+    "pumpkin": "BOCOR"
+  },
+  "modeClean": {
+    "documentary": "Qaabka dokumentariga",
+    "funny": "Qaabka xayaysiiska filimka",
+    "descriptive": "Habka sharaxaadda",
+    "pumpkin": "Qaabka bocorka"
+  },
+  "countdown": {
+    "in": "Sheeko {n} kadib…",
+    "late": "Waa la sheekaynayaa…",
+    "visitor": "Waxaa la sugayaa booqde…",
+    "sr": "Sheekadu dhawaan way bilaabanaysaa"
+  },
+  "live": "TOOS",
+  "specimen": "MUUNAD",
+  "observation": "KORMEER",
+  "herdNone": "DHAQDHAQAAQA ADHIGA: LAMA HELIN",
+  "unchanged": "Muuqaalku isma beddelin",
+  "paused": "WAA LA HAKIYAY",
+  "nowShowing": "HADDA LA DAAWANAYO",
+  "btn": {
+    "describe": "Hadda sharax",
+    "pause": "Hakad",
+    "play": "Daar",
+    "flip": "Rog kamarada",
+    "settings": "Dejinta",
+    "themeDark": "Muuqaal mugdi ah",
+    "themeLight": "Muuqaal iftiin ah",
+    "accessible": "Muuqaal la heli karo",
+    "infomercial": "Muuqaalka xayaysiiska",
+    "narrLang": "Luqadda sheekada",
+    "close": "Xir",
+    "siteLang": "Luqadda bogga"
+  },
+  "set": {
+    "title": "FOOMKA DALABKA XARUNTA WICITAANKA",
+    "titleClean": "Dejinta",
+    "sub": "Shaqaaluhu way diyaar yihiin",
+    "useEleven": "Isticmaal codka ElevenLabs",
+    "charsSession": "Xarfaha la diray fadhigan",
+    "charsToday": "Xarfaha maanta (dhammaan isticmaalayaasha)",
+    "narrToday": "Sheekooyinka maanta",
+    "config": "Habaynta",
+    "stillness": "Dareenka xasilloonida",
+    "stillDebug": "Tirada xasilloonida / farqiga ugu dambeeyay",
+    "textSize": "Cabbirka qoraalka",
+    "smaller": "Qoraal ka yar",
+    "larger": "Qoraal ka weyn",
+    "customLang": "Luqad sheeko oo gaar ah",
+    "customLangHint": "Waxaa lagu daray liiska luqadaha sheekada (L)",
+    "music": "Mugga muusikada",
+    "srMute": "Ha ku hadlin cod dheer (akhriyaha shaashaddu wuxuu akhriyaa qoraalka)",
+    "hideVideo": "Qari fiidiyaha, muuji qoraalka sheekada oo keliya",
+    "hotkeys": "Furayaasha gaaban",
+    "yes": "la dejiyay",
+    "no": "ma jiro",
+    "dflt": "caadi",
+    "breakLen": "Nasasho u dhexaysa sadarrada",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Habab"
+    ],
+    [
+      "L",
+      "Luqadda sheekada"
+    ],
+    [
+      "N",
+      "Hadda sharax"
+    ],
+    [
+      "S",
+      "Xasilloonida shid/dami"
+    ],
+    [
+      "T",
+      "Muuqaal"
+    ],
+    [
+      "A",
+      "Muuqaal la heli karo"
+    ],
+    [
+      "Meel bannaan",
+      "Hakad / daar"
+    ],
+    [
+      "K",
+      "Dejinta"
+    ]
+  ],
+  "keys": {
+    "title": "KEEN FURAYAASHAADA",
+    "titleClean": "Isticmaal furayaashaada",
+    "sub": "Shaqaaluhu waxay u baahan yihiin furayaashaada si ay wicitaankan u qabtaan",
+    "intro": "NarrateBot 3000 waxay ku shaqeysaa furahaaga Gemini ee sheekada iyo, haddii aad rabto, fure ElevenLabs ee codadka.",
+    "gemini": "Furaha API-ga Gemini",
+    "eleven": "Furaha API-ga ElevenLabs (ikhtiyaari)",
+    "geminiHelp": "Sida loo helo fure Gemini",
+    "elevenHelp": "Sida loo helo fure ElevenLabs",
+    "getAt": "Ka hel fure",
+    "newTab": " (wuxuu ku furmayaa tab cusub)",
+    "geminiSteps": "Gal, dooro Create API key, kadibna furaha halkan ku dheji.",
+    "geminiCost": "Google waxay bixisaa heer bilaash ah oo leh xadad isticmaal; isticmaalka badan waxaa lagu dallacaa akoonkaaga Google.",
+    "elevenSteps": "Samee fure leh helitaanka Text to Speech, kadibna halkan ku dheji.",
+    "elevenCost": "Qorshaha bilaashka ahi wuxuu leeyahay xaddi xarfo ah bil kasta. Codadka qaar waxay u baahan yihiin qorshe lacag ah; haddii cod aan la heli karin waxaan isticmaalnaa cod caadi ah, ama codka biraawsarkaaga haddii aad tan bannaan ka tagto.",
+    "privacy": "Furayaashaada waxaa lagu hayaa cookie la sireeyay oo ku jira biraawsarkan, waxaana loo diraa server-kayaga oo keliya si loo fuliyo codsiyadaada. Weligeen ma kaydinno mana diiwaangelinno. Waad ka saari kartaa wakhti kasta Dejinta.",
+    "save": "Kaydi oo bilow",
+    "saving": "Waa la hubinayaa…",
+    "cancel": "Jooji",
+    "needGemini": "Geli furahaaga Gemini.",
+    "geminiInvalid": "Google ma aqbalin furahaas Gemini. Hubi oo isku day mar kale.",
+    "format": "Taasi uma eka fure API. Dheji furaha oo dhan, bannaan la'aan.",
+    "formatEleven": "Furahaas ElevenLabs uma eka mid sax ah. Dheji furaha oo dhan, ama bannaan ka tag.",
+    "tooMany": "Isku dayo badan. Sug 15 daqiiqo.",
+    "failed": "Hadda lama hubin karin furahaaga. Isku day mar kale wax yar kadib.",
+    "needKeys": "Si aad sheekada u sii wadato, ku dar furayaashaada.",
+    "quota": "Furahaaga Gemini wuxuu gaaray xadka isticmaalka. Mar kale ayaa la isku dayi doonaa daqiiqad kadib…",
+    "badKey": "Google waxay diiday furahaaga Gemini. Hubi ama dheji mid cusub.",
+    "removed": "Furayaashaada waa la saaray. Ku dar furayaal si sheekadu u sii socoto."
+  },
+  "owner": {
+    "title": "GELITAANKA MULKIILAHA",
+    "titleClean": "Gelitaanka mulkiilaha",
+    "label": "Erayga sirta ee mulkiilaha",
+    "submit": "Fur",
+    "wrong": "Taasi ma shaqayn.",
+    "tooMany": "Isku dayo badan. Sug 15 daqiiqo.",
+    "done": "Gelitaanka mulkiilaha waa la furay."
+  },
+  "access": {
+    "legend": "Gelitaan",
+    "current": "Gelitaanka hadda:",
+    "owner": "Mulkiile",
+    "byok": "Furayaashaada",
+    "none": "Fure ma jiro",
+    "change": "Beddel furayaasha",
+    "add": "Isticmaal furayaashaada",
+    "remove": "Ka saar furayaashayda",
+    "lock": "Xir gelitaanka mulkiilaha"
+  },
+  "camError": "Kamaradu lama heli karo. Hubi ogolaanshaha kamarada iyo in boggu ku jiro HTTPS.",
+  "fallback": {
+    "documentary": [
+      "Halkan waxaan ku aragnaa kulan noolahan ah, mid kastaa wuu ka sharaf badan yahay kii ka horreeyay. Runtii, dabiicadda oo ugu fiican.",
+      "Muunad cajiib ah ayaa hore u foorarsatay, indhaheeda shaashadda dhalaalaysa ku dhegan, iyadoo leh samirka noole og in waxyaabaha waaweyni waqti qaataan.",
+      "U fiirso kalsoonida degan ee adhigan. Midna ma argagixin, inkastoo ay aad uga fog yihiin ilaha cuntadooda fudud ee dabiiciga ah.",
+      "Kooxdu waxay isugu timid hareeraha ilaha iftiinka, sidii awoowayaashood sameeyeen. Waxyaabaha qaar, sida muuqata, waa weligood.",
+      "Muunad ayaa fadhigeeda ku hagaajisay sharaf weyn. Kuwa kale way ogaadeen. Hoggaamiye ayaa soo baxay.",
+      "Duurka, noolayaal aad u yar ayaa bandhig ku dhex fadhiisan kara qurux sidan oo kale ah. Hase yeeshee, waa kuwan. Cajiib."
+    ],
+    "documentaryStill": [
+      "Adhigu ma dhaqaaqin. Xataa gariir ma jiro. Sheekeeyaha, dhankiisa, weli wuu rajo qabaa.",
+      "Weli waxba. Muunadaha waxay u muuqdaan inay tamar kaydinayaan, malaha sacabka darteed.",
+      "Waqti ayaa hadda dhaafay. Qofku wuxuu bilaabayaa inuu shakiyo in adhigu sugayo in sheekeeyuhu qosliyo. Wuu isku dayayaa.",
+      "Xasillooni buuxda. Saynisyahannadu erey bay u leeyihiin dhaqankan. Ereygu waa 'xukumid.'",
+      "Sheekeeyuhu wuxuu arkay geedo guri oo hammi badan muujiya. Fadlan, qof, qof kasta, far dhaqaaji.",
+      "Ha welwelina, adhigu si buuxda ayuu u nabad qabaa. Waxay si fudud u doorteen, sharaf weyn, inaysan dhaqaaqin."
+    ],
+    "funny": [
+      "Adduun... uu qol keliyi ku dhiirraday inuu laptop daawado... halyey ayaa dhashay. Waxaa loo qiimeeyay F: Fiican.",
+      "Dayrtan... koox shisheeyayaal ah oo xariif ah... iyo webcam wax badan aragtay. DAAWADAYAASHA. Hadda shaneemooyinka.",
+      "Istuudiyaha idiin keenay fadhiga... waxaa ka yimid qaybtiisa labaad ee ugu geesisan. FADHIGA 2: WELI FADHIYA.",
+      "Dhaleeceeyayaashu waxay ugu yeeraan 'dadka ugu labbis fiican ee laptop weligiis duubay.' Dhawaan qolkan isla.",
+      "Hal qol. Qarax eber ah. Soo jiidasho aan xad lahayn. HACKATHON-KA. Labo suul oo aad kor ugu jira.",
+      "Waxay u yimaadeen bandhigga... waxay u joogeen cuntada fudud ee bilaashka ah... KA-QAYBGALAYAASHA. La xaqiijiyay inay cusub yihiin."
+    ],
+    "funnyStill": [
+      "Jiilaalkan... waxba ma dhacaan gabi ahaanba. Waana wax neefta qabanaya. NOLOL XASILAN: FILIMKA.",
+      "Laba iyo toban geesi. Hal qol. Dhaqdhaqaaq eber ah. TAALLOOYINKA. Waxaa loo qiimeeyay X: Xasillooni Shaki leh.",
+      "Agaasimaha SUGIDDA... waxaa ka yimid SUGIDDA 2: WELI SUGAYA. Dhaleeceeyayaashu waxay yiraahdeen 'runtii wuu ku fadhiisinayaa.'",
+      "Adduun aan qofna dhaqaaqin... hal sheekeeye... ayaa baryaya. Fadlan. Qof kasta. Gacan ruxo.",
+      "Dhawaan: HAKADKA UGU DHEER. Sagaashan daqiiqo. Hal qol. Xataa hal libiqsi ma jiro.",
+      "Xagaagan... daawadayaashu waxay wajahayaan caqabaddooda ugu weyn... hal gacan oo kor loo qaado. TILMAANTA. Hadda la daawanayo."
+    ],
+    "descriptive": [
+      "Kamaradu way shidan tahay. Muuqaalka mar kale ayaan sharxi doonaa dhawaan.",
+      "Hadda sharaxaad ma helin. Kamarada si xasilan u qabo, mar kale ayaan isku dayi doonaa.",
+      "Weli waan eegayaa. Sharaxaad cusub ayaa dhawaan imaanaysa."
+    ],
+    "pumpkin": [
+      "He he he... soo dhawoow, booqde geesi ah! Waa maxay labbiskan! Runtii bocor-cajiib.",
+      "Buu! Ha, ma ku baqdiyay? Labbiskaagu hubaal wuu i baqdiyay, si wanaagsan.",
+      "Oho, soo dhawoow, soo dhawoow... Waxaan jeclahay marti qaab leh. Wejigayga oo dhan ayaad iftiimisay.",
+      "He he... labbis fiican habeen fiican. Xaasidnimo ayaan la dhalaalayaa.",
+      "Soo dhawoow, soo dhawoow! Waan ku hab siin lahaa, laakiin gudaha inta badan waan madhanahay. Labbis qurux badan, si kastaba.",
+      "He he he... caawa labbisyo badan ayaan arkay, laakiin kaaga? Cabsi iyo cajiib."
+    ]
+  },
+  "noChange": "Isbeddel ma jiro."
+}

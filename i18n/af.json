@@ -1,0 +1,217 @@
+{
+  "callNow": "BEL NOU! OPERATEURS STAAN GEREED!",
+  "tagline": "Jou wêreld, vertel.",
+  "order": "BESTEL NOU",
+  "burst1": "SOOS OP TV GESIEN!",
+  "burst2": "SLEGS $0,00!",
+  "finePrint": "*Nie 'n regte telefoonnommer nie. Moet asseblief nie bel nie. NarrateBot 3000 is nie verantwoordelik vir vertellings wat te akkuraat is nie. Resultate kan verskil. Batterye nie ingesluit nie.",
+  "ticker": [
+    "'Dit het my kat perfek beskryf!' – Tevrede Kliënt",
+    "'Ek het my nog nooit so raakgesien gevoel nie.' – Ook 'n Kliënt",
+    "'My huisplant het nog nooit so majestueus geklink nie.' – Kliënt, Waarskynlik",
+    "'Ek het gelag. Ek het gehuil. Ek het baie stil gesit.' – Die Trop"
+  ],
+  "cleanSub": "Regstreekse toneelvertelling vanaf jou kamera",
+  "cleanExplain": "Rig jou kamera op die wêreld en NarrateBot 3000 beskryf hardop wat dit sien, in jou taal.",
+  "start": "Begin",
+  "butWait": "MAAR WAG... DAAR IS MEER!",
+  "nowWith": "NOU MET {mode}-MODUS!",
+  "mode": {
+    "documentary": "DOKUMENTÊR",
+    "funny": "SNAAKS",
+    "descriptive": "BESKRYWEND",
+    "pumpkin": "PAMPOEN"
+  },
+  "modeClean": {
+    "documentary": "Dokumentêre styl",
+    "funny": "Fliekvoorskou-styl",
+    "descriptive": "Beskrywende modus",
+    "pumpkin": "Pampoenstyl"
+  },
+  "countdown": {
+    "in": "Vertel oor {n}…",
+    "late": "Vertel…",
+    "visitor": "Wag vir 'n besoeker…",
+    "sr": "Vertelling begin binnekort"
+  },
+  "live": "REGSTREEKS",
+  "specimen": "EKSEMPLAAR",
+  "observation": "WAARNEMING",
+  "herdNone": "TROPAKTIWITEIT: GEEN BESPEUR NIE",
+  "unchanged": "Toneel onveranderd",
+  "paused": "GEPOUSEER",
+  "nowShowing": "NOU TE SIEN",
+  "btn": {
+    "describe": "Beskryf nou",
+    "pause": "Pouse",
+    "play": "Speel",
+    "flip": "Draai kamera om",
+    "settings": "Instellings",
+    "themeDark": "Donker tema",
+    "themeLight": "Ligte tema",
+    "accessible": "Toeganklike aansig",
+    "infomercial": "Advertensie-aansig",
+    "narrLang": "Vertellingstaal",
+    "close": "Maak toe",
+    "siteLang": "Werfstaal"
+  },
+  "set": {
+    "title": "INBELSENTRUM-BESTELVORM",
+    "titleClean": "Instellings",
+    "sub": "Operateurs staan gereed",
+    "useEleven": "Gebruik ElevenLabs-stem",
+    "charsSession": "Karakters hierdie sessie gestuur",
+    "charsToday": "Karakters vandag (alle gebruikers)",
+    "narrToday": "Vertellings vandag",
+    "config": "Konfigurasie",
+    "stillness": "Stilstand-sensitiwiteit",
+    "stillDebug": "Stiltelling / laaste verskil",
+    "textSize": "Teksgrootte",
+    "smaller": "Kleiner teks",
+    "larger": "Groter teks",
+    "customLang": "Pasgemaakte vertellingstaal",
+    "customLangHint": "Bygevoeg by die lys vertellingstale (L)",
+    "music": "Musiekvolume",
+    "srMute": "Moenie hardop praat nie (skermleser lees die teks)",
+    "hideVideo": "Versteek die video, wys net die vertellingsteks",
+    "hotkeys": "Snelsleutels",
+    "yes": "gestel",
+    "no": "ontbreek",
+    "dflt": "verstek",
+    "breakLen": "Pouse tussen reëls",
+    "breakValue": "{n} s"
+  },
+  "hotkeys": [
+    [
+      "1 2 3 4",
+      "Modusse"
+    ],
+    [
+      "L",
+      "Vertellingstaal"
+    ],
+    [
+      "N",
+      "Beskryf nou"
+    ],
+    [
+      "S",
+      "Stilstand aan/af"
+    ],
+    [
+      "T",
+      "Tema"
+    ],
+    [
+      "A",
+      "Toeganklike aansig"
+    ],
+    [
+      "Spasie",
+      "Pouse / speel"
+    ],
+    [
+      "K",
+      "Instellings"
+    ]
+  ],
+  "keys": {
+    "title": "BRING JOU EIE SLEUTELS",
+    "titleClean": "Gebruik jou eie sleutels",
+    "sub": "Operateurs het jou sleutels nodig om hierdie oproep te neem",
+    "intro": "NarrateBot 3000 werk met jou eie Gemini-sleutel vir vertelling en, as jy wil, 'n ElevenLabs-sleutel vir stemme.",
+    "gemini": "Gemini API-sleutel",
+    "eleven": "ElevenLabs API-sleutel (opsioneel)",
+    "geminiHelp": "Hoe om 'n Gemini-sleutel te kry",
+    "elevenHelp": "Hoe om 'n ElevenLabs-sleutel te kry",
+    "getAt": "Kry 'n sleutel by",
+    "newTab": " (maak in 'n nuwe oortjie oop)",
+    "geminiSteps": "Meld aan, kies Create API key en plak dan die sleutel hier.",
+    "geminiCost": "Google bied 'n gratis vlak met gebruiksperke; swaarder gebruik word aan jou Google-rekening gefaktureer.",
+    "elevenSteps": "Skep 'n sleutel met Text to Speech-toegang en plak dit dan hier.",
+    "elevenCost": "Die gratis plan sluit 'n maandelikse karaktertoelae in. Sommige stemme vereis 'n betaalde plan; as 'n stem nie beskikbaar is nie, gebruik ons 'n standaardstem, of jou blaaier se stem as jy dit leeg laat.",
+    "privacy": "Jou sleutels word in 'n geënkripteerde koekie in hierdie blaaier gehou en slegs na ons bediener gestuur om jou versoeke uit te voer. Ons stoor of log hulle nooit nie. Jy kan hulle enige tyd in Instellings verwyder.",
+    "save": "Stoor en begin",
+    "saving": "Kontroleer…",
+    "cancel": "Kanselleer",
+    "needGemini": "Voer jou Gemini-sleutel in.",
+    "geminiInvalid": "Google het daardie Gemini-sleutel nie aanvaar nie. Kontroleer dit en probeer weer.",
+    "format": "Dit lyk nie soos 'n API-sleutel nie. Plak die hele sleutel, sonder spasies.",
+    "formatEleven": "Daardie ElevenLabs-sleutel lyk nie reg nie. Plak die hele sleutel, of laat dit leeg.",
+    "tooMany": "Te veel pogings. Wag 15 minute.",
+    "failed": "Kon nie nou jou sleutel kontroleer nie. Probeer binnekort weer.",
+    "needKeys": "Voeg jou eie sleutels by om aan te hou vertel.",
+    "quota": "Jou Gemini-sleutel het sy gebruiksperk bereik. Probeer weer oor 'n minuut…",
+    "badKey": "Google het jou Gemini-sleutel verwerp. Kontroleer dit of plak 'n nuwe een.",
+    "removed": "Jou sleutels is verwyder. Voeg sleutels by om aan te hou vertel."
+  },
+  "owner": {
+    "title": "EIENAARTOEGANG",
+    "titleClean": "Eienaartoegang",
+    "label": "Eienaarwagwoord",
+    "submit": "Ontsluit",
+    "wrong": "Dit het nie gewerk nie.",
+    "tooMany": "Te veel pogings. Wag 15 minute.",
+    "done": "Eienaartoegang ontsluit."
+  },
+  "access": {
+    "legend": "Toegang",
+    "current": "Huidige toegang:",
+    "owner": "Eienaar",
+    "byok": "Jou eie sleutels",
+    "none": "Geen sleutels",
+    "change": "Verander sleutels",
+    "add": "Gebruik jou eie sleutels",
+    "remove": "Verwyder my sleutels",
+    "lock": "Sluit eienaartoegang"
+  },
+  "camError": "Kamera nie beskikbaar nie. Kontroleer kameratoestemming en dat die bladsy op HTTPS is.",
+  "fallback": {
+    "documentary": [
+      "En hier sien ons 'n byeenkoms van die spesie, elkeen meer gedistingeerd as die vorige. Waarlik, die natuur op sy beste.",
+      "'n Merkwaardige eksemplaar leun vorentoe, oë vasgenael op die gloeiende skerm, met die geduld van 'n wese wat weet groot dinge neem tyd.",
+      "Let op die stil selfvertroue van hierdie trop. Nie een het paniekerig geraak nie, al is hulle so ver van hul natuurlike peuselhappie-bron.",
+      "Die kolonie het om die ligbron saamgedrom, soos hul voorouers voor hulle. Party dinge, blyk dit, is ewig.",
+      "Een eksemplaar verstel sy houding met geweldige waardigheid. Die ander neem kennis. 'n Leier het na vore getree.",
+      "In die natuur kan baie min wesens met soveel grasie deur 'n demo sit. En tog, hier is hulle. Manjifiek."
+    ],
+    "documentaryStill": [
+      "Die trop het nie beweeg nie. Nie 'n trilling nie. Die verteller bly, op sy beurt, hoopvol.",
+      "Steeds niks. Die eksemplare spaar blykbaar energie, dalk vir die applous.",
+      "Dit is nou al 'n ruk. 'n Mens begin vermoed die trop wag dat die verteller snaaks moet wees. Hy probeer.",
+      "Totale stilstand. Wetenskaplikes het 'n woord vir hierdie gedrag. Die woord is 'oordeel'.",
+      "Die verteller het al huisplante met meer sigbare ambisie waargeneem. Asseblief, iemand, enigiemand, beweeg 'n vinger.",
+      "Wees gerus, die trop is heeltemal veilig. Hulle kies bloot, met groot waardigheid, om nie te beweeg nie."
+    ],
+    "funny": [
+      "In 'n wêreld... waar een kamer dit gewaag het om na 'n skootrekenaar te kyk... word 'n legende gebore. Gegradeer PG vir Puik Goed.",
+      "Hierdie herfs... 'n groep briljante vreemdelinge... en 'n webkamera wat te veel gesien het. DIE GEHOOR. Nou in teaters.",
+      "Van die ateljee wat vir jou sit gebring het... kom sy dapperste opvolg nog. SIT 2: STEEDS GESETEL.",
+      "Kritici noem dit 'die beste geklede skare wat nog ooit deur 'n skootrekenaar verfilm is.' Binnekort in hierdie einste kamer.",
+      "Een kamer. Nul ontploffings. Onbeperkte charisma. DIE HACKATHON. Twee duime hoog, hoog op.",
+      "Hulle het vir die demo gekom... en vir die gratis peuselhappies gebly... DIE BYWONERS. Gesertifiseer vars."
+    ],
+    "funnyStill": [
+      "Hierdie winter... gebeur absoluut niks. En dit is asemrowend. STILLEWE: DIE FLIEK.",
+      "Twaalf helde. Een kamer. Nul beweging. DIE STANDBEELDE. Gegradeer S vir Suspisieus Stil.",
+      "Van die regisseur van WAG... kom WAG 2: STEEDS AAN DIE WAG. Kritici sê dit 'laat jou stil sit'.",
+      "In 'n wêreld waar niemand beweeg nie... smeek een verteller. Asseblief. Enigiemand. Waai.",
+      "Binnekort: DIE LANGSTE POUSE. Negentig minute. Een kamer. Nie 'n enkele oogknip nie.",
+      "Hierdie somer... staar die gehoor sy grootste uitdaging nog in die gesig... om een hand op te steek. DIE GEBAAR. Nou te sien."
+    ],
+    "descriptive": [
+      "Die kamera is aan. Ek sal die toneel binnekort weer beskryf.",
+      "Ek kon nie nou 'n beskrywing kry nie. Hou die kamera stil, dan probeer ek weer.",
+      "Kyk steeds. 'n Nuwe beskrywing kom binnekort."
+    ],
+    "pumpkin": [
+      "Hê hê hê... welkom, dapper besoeker! Wat 'n kostuum. Werklik pampoen-tasties.",
+      "Boe! Ha, het ek jou laat skrik? Jou uitrusting het my beslis laat skrik, op die beste manier.",
+      "Oho, kom nader, kom nader... Ek hou van 'n gas met styl. Jy laat my hele gesig gloei.",
+      "Hê hê... 'n fyn kostuum vir 'n fyn aand. Ek gloei sommer van jaloesie.",
+      "Welkom, welkom! Ek sou jou 'n drukkie gee, maar ek is meestal hol binne. Pragtige uitrusting, tog.",
+      "Hê hê hê... ek het baie kostuums vanaand gesien, maar joune? Spook-takulêr."
+    ]
+  },
+  "noChange": "Geen verandering nie."
+}
