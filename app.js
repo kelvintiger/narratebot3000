@@ -104,13 +104,17 @@ function render() {
   $$('[data-i18n-aria]').forEach((el) => el.setAttribute('aria-label', t(el.dataset.i18nAria)));
   $$('[data-mode-label]').forEach((el) => (el.textContent = modeName(el.dataset.modeLabel)));
   $$('[data-action=site-lang]').forEach((b) => b.setAttribute('aria-pressed', b.dataset.lang === S.siteLang));
-  $$('[data-action=mode]').forEach((b) => b.setAttribute('aria-pressed', b.dataset.mode === S.mode));
+  $$('[data-action=mode]').forEach((b) => {
+    b.setAttribute('aria-pressed', b.dataset.mode === S.mode);
+    b.setAttribute('aria-label', modeName(b.dataset.mode));
+    b.dataset.tooltip = modeName(b.dataset.mode); // emoji-only in the infomercial view: hover/focus shows the name
+  });
 
-  $('.theme-icon').textContent = dark ? '☀' : '☾';
+  setIcon($('.theme-icon'), dark ? 'sun' : 'moon');
   $('.theme-label').textContent = dark ? t('btn.themeLight') : t('btn.themeDark');
   $('#view-btn').textContent = S.view === 'clean' ? t('btn.infomercial') : t('btn.accessible');
   $('.pause-lbl').textContent = S.paused ? t('btn.play') : t('btn.pause');
-  $('.pause-icon').textContent = S.paused ? '▶' : '❚❚';
+  setIcon($('.pause-icon'), S.paused ? 'play' : 'pause');
   $('#pause-btn').setAttribute('aria-pressed', S.paused);
   const sel = $('#narr-lang'), sig = narrLangs().map((l) => l.code + l.label).join();
   if (sel.dataset.sig !== sig) { // rebuild only when the list changes, so an open picker isn't reset
@@ -133,9 +137,32 @@ function render() {
   $('#text-size').textContent = Math.round(S.settings.textScale * 100) + '%';
   renderStatus();
   updateHud();
+  renderCountdown();
 }
 
 function saveSettings() { store.set('settings', S.settings); }
+
+// ---------- Icons: one inline line-icon set (24-unit grid, 2px round strokes), so every control matches ----------
+const ICONS = {
+  binoculars: '<circle cx="6" cy="16" r="4"/><circle cx="18" cy="16" r="4"/><path d="M10 16a2 2 0 0 1 4 0"/><path d="M2.5 14.5 5 6.4A2 2 0 0 1 6.9 5H8a2 2 0 0 1 2 2v6"/><path d="M21.5 14.5 19 6.4A2 2 0 0 0 17.1 5H16a2 2 0 0 0-2 2v6"/>',
+  film: '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7.5 3v18M16.5 3v18M3 12h18M3 7.5h4.5M3 16.5h4.5M16.5 7.5H21M16.5 16.5H21"/>',
+  eye: '<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+  pumpkin: '<path d="M12 7.2c-1.8-1.1-4.6-1.2-6.6.4C3.3 9.3 2.6 12 3.3 14.8 4.1 17.8 6.4 20 9 20c1.2 0 2.1-.4 3-1 .9.6 1.8 1 3 1 2.6 0 4.9-2.2 5.7-5.2.7-2.8 0-5.5-2.1-7.2-2-1.6-4.8-1.5-6.6-.4z"/><path d="M12 7.2c-1.4 3.2-1.4 8.6 0 11.8M12 7.2c1.4 3.2 1.4 8.6 0 11.8"/><path d="M12 7.2c0-2.2.9-3.6 2.6-4.2"/>',
+  zap: '<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',
+  pause: '<rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/>',
+  play: '<path d="M7 4.6v14.8a1 1 0 0 0 1.5.9l11.9-7.4a1 1 0 0 0 0-1.8L8.5 3.7A1 1 0 0 0 7 4.6z"/>',
+  flip: '<path d="M3 8a2 2 0 0 1 2-2h2.2l1.6-2h6.4l1.6 2H19a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M8.6 12.6a3.5 3.5 0 0 1 6.1-2.4"/><path d="M15 8.4v2.2h-2.2"/><path d="M15.4 13.4a3.5 3.5 0 0 1-6.1 2.4"/><path d="M9 17.6v-2.2h2.2"/>',
+  sliders: '<path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="18" r="2"/>',
+  globe: '<circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/>',
+  chevron: '<path d="m6 9 6 6 6-6"/>',
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+  moon: '<path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/>',
+};
+function setIcon(el, name) {
+  if (!el || (el.dataset.icon === name && el.firstChild)) return;
+  el.dataset.icon = name;
+  el.innerHTML = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false">${ICONS[name]}</svg>`;
+}
 
 // ---------- LCD start-screen number ----------
 function buildLcd() {
@@ -484,14 +511,17 @@ function voiceFailed() {
 
 // Returns the text still unspoken ('' when done or interrupted), for the browser voice to finish.
 // Streams sentence by sentence: the next sentence loads on the other element while this one plays.
-async function speakEleven(line, onLast) {
+async function speakEleven(line, onLast, onStart) {
   const segs = (line.segs ||= sentences(line.text, line.lang.code));
   let el = line.pre || otherVoice(S.voice);
   for (let i = 0; i < segs.length; i++) {
     const next = otherVoice(el), src = segSrc(line, i), last = i === segs.length - 1;
     S.charsSession += segs[i].trim().length;
     renderStatus();
-    const ok = await playVoice(el, el._src === src ? null : src, () => (last ? onLast() : loadVoice(next, segSrc(line, i + 1))));
+    const ok = await playVoice(el, el._src === src ? null : src, () => {
+      if (i === 0) onStart?.();
+      last ? onLast() : loadVoice(next, segSrc(line, i + 1));
+    });
     if (line.gen !== S.gen) return '';
     if (!ok) {
       if (!last) resetVoice(next);
@@ -505,17 +535,20 @@ async function speakEleven(line, onLast) {
 }
 
 // onLast fires once, when the line's final sentence starts: the cue to prepare the next line.
-async function speak(line, onLast) {
-  let cued = false;
+// onStart fires once, when the line actually starts: ElevenLabs' first sentence playing, or browser speech starting.
+async function speak(line, onLast, onStart) {
+  let cued = false, begun = false;
   const cue = () => { if (!cued) (cued = true), onLast?.(); };
+  const begin = () => { if (!begun) (begun = true), onStart?.(); };
   if (line.pre && !streamEleven()) resetVoice(line.pre);
   S.speaking = true;
   setMusic();
   try {
-    if (S.settings.srMute) return cue(), await new Promise((r) => { S.stopVoice = r; setTimeout(r, Math.max(2500, line.text.length * 60)); });
+    if (S.settings.srMute) return begin(), cue(), await new Promise((r) => { S.stopVoice = r; setTimeout(r, Math.max(2500, line.text.length * 60)); });
     let rest = line.text;
-    if (streamEleven()) rest = await speakEleven(line, cue);
-    if (rest && line.gen === S.gen) cue(), await speakBrowser(rest, line.lang);
+    if (streamEleven()) rest = await speakEleven(line, cue, begin);
+    if (rest && line.gen === S.gen) begin(), cue(), await speakBrowser(rest, line.lang);
+    if (line.gen === S.gen) begin(); // never leave a line's subtitle unshown
   } finally {
     S.speaking = false;
     S.lastSpokeAt = Date.now();
@@ -600,7 +633,7 @@ async function fetchLine({ force = false, skipDiff = false, arrival = false, ahe
   S.forceFull = false;
 
   if (mode === 'descriptive' && !full && S.stillCount >= 2) return { gen, unchanged: true };
-  if (!ahead) showUnchanged(false), setStatus(t('waiting.' + mode));
+  if (!ahead) showUnchanged(false), setStatus(''), beginWait();
 
   S.busy = true;
   S.obs++;
@@ -642,15 +675,16 @@ async function fetchLine({ force = false, skipDiff = false, arrival = false, ahe
     } else S.saidNoChange = false;
   }
   text = tidy(text);
-  return text ? { gen, mode, lang, text, english: tidy(english) } : null;
+  return text ? { gen, mode, lang, text, english: tidy(english), fallback: !result } : null;
 }
 
 // Fetch the next line while this one plays. Its first sentence's audio can only start loading once the
 // current line's last sentence is playing (the idle element is busy with this line's next sentence until then).
 function startLookahead(gen) {
   if (gen !== S.gen || S.ahead || S.paused || S.mode === 'pumpkin') return;
-  const ahead = (S.ahead = { gen, done: false, armed: false });
-  ahead.p = sleep(Math.max(0, S.lastCaptureAt + CONFIG.minCaptureGapMs - Date.now()))
+  const delay = Math.max(0, S.lastCaptureAt + CONFIG.minCaptureGapMs - Date.now());
+  const ahead = (S.ahead = { gen, done: false, armed: false, reqAt: Date.now() + delay });
+  ahead.p = sleep(delay)
     .then(() => (gen === S.gen ? fetchLine({ ahead: true }) : null))
     .then((line) => {
       ahead.done = true;
@@ -674,17 +708,28 @@ async function playLine(line) {
   const gen = line.gen;
   while (line && line.gen === S.gen) {
     if (line.unchanged) { showUnchanged(true); break; }
-    showUnchanged(false);
-    S.lines = [...S.lines, line.text].slice(-8);
-    showLine(line.text, line.english, line.lang);
-    if (line.mode === 'funny' && S.stillCount >= 2) nowShowing(line.text);
+    const cur = line;
+    S.lines = [...S.lines, cur.text].slice(-8); // the look-ahead request needs this line as context, even before it shows
+    // A line whose voice isn't loaded yet would show its subtitle ~2s before ElevenLabs starts talking: hold the
+    // subtitle until its first sentence actually plays (the countdown covers any wait). Look-ahead lines whose
+    // first sentence is already buffered show straight away, as do fallback lines.
+    const hold = streamEleven() && !cur.fallback && !(cur.pre?.readyState >= 3 && !cur.pre.error);
+    const show = () => {
+      if (cur.shown || cur.gen !== S.gen) return; // an interrupt cancels a pending show
+      cur.shown = true;
+      showUnchanged(false);
+      showLine(cur.text, cur.english, cur.lang);
+      if (cur.mode === 'funny' && S.stillCount >= 2) nowShowing(cur.text);
+      if (S.wait?.gen === gen) endWait(!cur.fallback);
+    };
+    if (!hold) show();
     // Comedy modes start the next line as this one begins, so it's ready in time; Descriptive waits for the
     // last sentence so a blind user hears the scene as it is now, not as it was a whole line ago.
-    if (line.mode !== 'descriptive') startLookahead(gen);
-    await speak(line, () => armLookahead(gen));
+    if (cur.mode !== 'descriptive') startLookahead(gen);
+    await speak(cur, () => armLookahead(gen), show);
     const ahead = S.ahead;
     if (gen !== S.gen || !ahead) break;
-    if (!ahead.done) setStatus(t('waiting.' + line.mode));
+    if (!ahead.done) beginWait(ahead.reqAt, true, false);
     line = await ahead.p;
     if (S.ahead === ahead) S.ahead = null;
   }
@@ -692,8 +737,10 @@ async function playLine(line) {
 }
 
 async function narrate(opts) {
+  const gen = S.gen;
   const line = await fetchLine(opts);
   if (line) await playLine(line);
+  if (S.wait?.gen === gen) endWait(false); // no line came (unchanged, pumpkin saw nobody, quota): stop counting
 }
 
 function pumpkinTick() {
@@ -714,6 +761,7 @@ function pumpkinTick() {
 let ticks = 0;
 setInterval(() => {
   if (++ticks % 4 === 0) updateHud();
+  renderCountdown();
   if (!S.started || S.paused || S.busy || S.speaking || S.ahead || !video.videoWidth) return;
   if (S.mode === 'pumpkin') { if (ticks % 4 === 0) pumpkinTick(); } // pumpkin's stillness counts assume a 1s tick
   else if (Date.now() >= S.nextAt) narrate();
@@ -721,6 +769,69 @@ setInterval(() => {
 
 // ---------- On-screen output ----------
 function setStatus(s) { $('#status').textContent = s; }
+
+let lastAnnounceAt = 0;
+function announce(s) {
+  const el = $('#announce');
+  el.textContent = s === el.textContent ? s + '\u00a0' : s; // a change, so a repeat is still read
+  lastAnnounceAt = Date.now();
+}
+
+// ---------- "Narrating in N" countdown ----------
+// Counts down from this device's own recent waits (request start -> voice playing, or -> subtitle shown for the
+// browser voice), kept per voice since ElevenLabs is slower than browser speech. Starts from a 4s guess.
+const WAIT_GUESS_MS = 4000, WAIT_SAMPLES = 5;
+const waitHist = { eleven: [], browser: [], ...store.get('waitMs', {}) };
+const voiceKind = () => (streamEleven() ? 'eleven' : 'browser');
+function waitEstimate() {
+  const h = waitHist[voiceKind()];
+  const avg = Array.isArray(h) && h.length ? h.reduce((a, b) => a + b, 0) / h.length : WAIT_GUESS_MS;
+  return Math.max(1, Math.round(avg / 1000)) * 1000; // whole seconds, so the first number shows for a full second
+}
+
+// from: when the request for the awaited line started. measure: whether its arrival is a fair timing sample.
+function beginWait(from = Date.now(), measure = true, speakNote = true) {
+  if (S.wait?.gen === S.gen) return;
+  clearTimeout(S.wait?.t);
+  const w = (S.wait = { gen: S.gen, from, measure });
+  // Screen readers get one polite note instead of numbers: only when narration (re)starts, if the wait lasts,
+  // and not on top of a title card. Waits between lines stay silent so the note doesn't precede every line.
+  if (speakNote) w.t = setTimeout(() => S.wait === w && Date.now() - lastAnnounceAt > 2000 && announce(t('countdown.sr')), 1000);
+  renderCountdown();
+}
+
+function endWait(sample) {
+  const w = S.wait;
+  if (!w) return;
+  clearTimeout(w.t);
+  S.wait = null;
+  const ms = Date.now() - w.from;
+  if (sample && w.measure && ms > 300 && ms < 20000) {
+    const k = voiceKind();
+    waitHist[k] = [...(Array.isArray(waitHist[k]) ? waitHist[k] : []), Math.round(ms)].slice(-WAIT_SAMPLES);
+    store.set('waitMs', waitHist);
+  }
+  renderCountdown();
+}
+
+function renderCountdown() {
+  const el = $('#countdown');
+  let key = '', n = 0;
+  if (S.started && !S.paused) {
+    if (S.wait?.gen === S.gen) {
+      n = Math.ceil((waitEstimate() - (Date.now() - S.wait.from)) / 1000);
+      key = n >= 1 ? 'in' : 'late'; // a late line holds at "Narrating…" rather than counting past 0
+    } else if (S.mode === 'pumpkin' && !S.speaking) key = 'visitor';
+  }
+  const sig = `${key}${key === 'in' ? n : ''}|${S.siteLang}`;
+  if (el.dataset.sig === sig) return;
+  el.dataset.sig = sig;
+  el.className = 'countdown' + (key ? ' cd-' + key : '');
+  if (!key) return el.replaceChildren();
+  const span = (cls, text) => Object.assign(document.createElement('span'), { className: cls, textContent: text });
+  const [pre, post = ''] = t('countdown.' + key).split('{n}');
+  el.replaceChildren(...[span('cd-txt', pre), key === 'in' && span('cd-n', n), post && span('cd-txt', post)].filter((x) => x && x.textContent));
+}
 function showUnchanged(on) { $('#unchanged').hidden = !on; }
 
 function words(text, lang) {
@@ -771,7 +882,7 @@ function titleCard() {
   const card = $('#card');
   cardTimers.forEach(clearTimeout);
   const extra = showLangLabel() ? narrLang().label : '';
-  $('#announce').textContent = modeName(S.mode) + (extra ? ` – ${narrLang().name}` : '');
+  announce(modeName(S.mode) + (extra ? ` – ${narrLang().name}` : ''));
   $('.card-sub').textContent = extra;
   if (calm()) {
     card.className = 'card plain';
@@ -853,6 +964,7 @@ function interrupt() {
   S.ahead = null;
   stopSpeech();
   setStatus('');
+  endWait(false);
 }
 
 function setMode(m) {
@@ -1081,6 +1193,7 @@ motionQuery.addEventListener?.('change', render);
 darkQuery.addEventListener?.('change', render);
 
 // ---------- Boot ----------
+$$('[data-icon]').forEach((el) => setIcon(el, el.dataset.icon));
 buildLcd();
 render();
 S.statusP = refreshStatus();

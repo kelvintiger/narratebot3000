@@ -105,6 +105,9 @@ body:not(.running) .skip { display: none; }
 .switchers [aria-pressed='true'] { background: var(--accent); color: #fff; border-color: var(--btn-border); }
 body[data-view='clean'] .switchers [aria-pressed='true'] { background: var(--fg); color: var(--bg); }
 .icon-btn { font-size: 22px !important; }
+.ic { display: block; flex: none; width: var(--ic, 22px); height: var(--ic, 22px); }
+.ic svg, .chev svg { display: block; width: 100%; height: 100%; }
+.icon-btn .ic { margin: 0 auto; }
 body[data-view='info'] .view-btn { background: var(--red); color: #fff; border-color: #fff; font-family: var(--f-head); letter-spacing: 0.04em; font-weight: 400; }
 
 /* ---------- Start screen (infomercial) ---------- */
@@ -203,7 +206,7 @@ body.running .ticker { display: none; }
 #cam { width: 100%; height: 100%; object-fit: cover; display: block; background: #000; }
 body.mirror #cam { transform: scaleX(-1); }
 body.no-video #cam { visibility: hidden; }
-.vignette, .grain, .letterbox, #pumpkin { display: none; pointer-events: none; }
+.vignette, .grain, #pumpkin { display: none; pointer-events: none; }
 
 body[data-mode='documentary'] #cam { filter: sepia(0.28) saturate(0.78) contrast(1.06) brightness(0.94); }
 body[data-mode='documentary'] .vignette { display: block; position: absolute; inset: 0; background: radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.7) 100%); }
@@ -215,14 +218,12 @@ body[data-mode='documentary'] .grain {
 @keyframes grain { 25% { transform: translate(-5%, 3%); } 50% { transform: translate(4%, -4%); } 75% { transform: translate(-3%, -2%); } }
 
 body[data-mode='funny'] #cam { filter: saturate(1.55) contrast(1.15); }
-body[data-mode='funny'] .letterbox { display: block; position: absolute; left: 0; right: 0; height: 11dvh; background: #000; z-index: 2; }
-.letterbox.top { top: 0; } .letterbox.bottom { bottom: 0; }
 .zoomwrap.punch { animation: punch 0.45s ease-out; }
 @keyframes punch { from { transform: scale(1.09); } to { transform: scale(1); } }
 
 /* Clean view: natural video, no effects in any mode */
 body[data-view='clean'] #cam { filter: none !important; }
-body[data-view='clean'] .vignette, body[data-view='clean'] .grain, body[data-view='clean'] .letterbox { display: none !important; }
+body[data-view='clean'] .vignette, body[data-view='clean'] .grain { display: none !important; }
 body[data-view='clean'] #stage { background: var(--bg); color: var(--fg); }
 
 /* ---------- Pumpkin ---------- */
@@ -277,10 +278,25 @@ body[data-view='clean'] .mode-label, body[data-view='clean'] .lang-label:not(:em
   padding: 0 calc(var(--safe-r) + 16px) 0 calc(var(--safe-l) + 16px);
   transition: bottom 0.3s;
 }
-body[data-mode='funny'] .bottom { bottom: max(calc(var(--bar-h) + 8px), 12dvh); }
 body.no-video .bottom { top: 0; bottom: 0; justify-content: center; }
 .status { margin: 0; font-style: italic; font-size: calc(clamp(14px, 1.6vw, 20px) * var(--text-scale)); color: rgba(255, 255, 255, 0.85); text-shadow: 0 1px 4px #000; }
 .status:empty { display: none; }
+/* "Narrating in 3…": an on-air bug in the headline font with a red LCD digit, where the waiting line used to be */
+.countdown {
+  margin: 0; padding: 5px 14px 4px; border-radius: 8px;
+  background: rgba(0, 0, 0, 0.62); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+  font-family: var(--f-head); font-size: calc(clamp(15px, 1.7vw, 22px) * var(--text-scale)); line-height: 1.2;
+  letter-spacing: 0.06em; text-transform: uppercase; color: #fff; white-space: nowrap;
+}
+.countdown:empty { display: none; }
+.cd-n {
+  display: inline-block; min-width: 1.1ch; margin: 0 0.05em; text-align: center;
+  font-family: var(--f-lcd); font-size: 1.05em; color: var(--red); text-shadow: 0 0 6px var(--red-glow), 0 0 16px rgba(227, 18, 45, 0.6);
+  animation: cd-tick 0.4s ease-out;
+}
+@keyframes cd-tick { from { opacity: 0.15; transform: scale(1.4); } }
+.countdown.cd-late .cd-txt, .countdown.cd-visitor .cd-txt { animation: cd-breathe 2s ease-in-out infinite; }
+@keyframes cd-breathe { 50% { opacity: 0.55; } }
 .unchanged { margin: 0; padding: 6px 14px; border-radius: 999px; background: rgba(0, 0, 0, 0.7); border: 1px solid rgba(255, 255, 255, 0.5); font-size: calc(16px * var(--text-scale)); }
 .subs { max-width: min(1100px, 100%); text-align: center; opacity: 0; transition: opacity 0.4s; }
 .subs.on { opacity: 1; }
@@ -302,55 +318,112 @@ body[data-view='clean'] .sub-main {
   color: var(--fg); background: var(--bg); border: 3px solid var(--fg); border-radius: 10px; text-shadow: none;
 }
 body[data-view='clean'] .sub-trans { font-size: calc(24px * var(--text-scale)); color: var(--fg); background: var(--bg); border: 2px solid var(--fg); }
-body[data-view='clean'] .status, body[data-view='clean'] .unchanged { color: var(--fg); background: var(--bg); border: 2px solid var(--fg); padding: 4px 12px; border-radius: 8px; text-shadow: none; font-size: calc(20px * var(--text-scale)); }
+body[data-view='clean'] .countdown { box-shadow: none; text-transform: none; letter-spacing: 0; font-weight: 700; }
+body[data-view='clean'] .cd-n { font-size: 1em; color: inherit; text-shadow: none; min-width: 0; margin: 0; }
+body[data-view='clean'] .status, body[data-view='clean'] .unchanged, body[data-view='clean'] .countdown { color: var(--fg); background: var(--bg); border: 2px solid var(--fg); padding: 4px 12px; border-radius: 8px; text-shadow: none; font-size: calc(20px * var(--text-scale)); }
 
 /* ---------- Control bar ---------- */
+/* One family of equal tiles: same box, same 22px line icon in the same spot, label in the same slot.
+   Fixed tile size fits the longest label in en/es/zh ("DESCRIBIR AHORA", "GIRAR CÁMARA") on at most 2 lines. */
 .controls {
+  --ctl-w: 108px; --ctl-h: 68px; --ic: 22px;
   position: absolute; left: 0; right: 0; bottom: 0; z-index: 30;
-  display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px;
-  padding: 10px calc(var(--safe-r) + 8px) calc(var(--safe-b) + 10px) calc(var(--safe-l) + 8px);
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 10px 14px;
+  padding: 12px calc(var(--safe-r) + 8px) calc(var(--safe-b) + 10px) calc(var(--safe-l) + 8px);
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.8) 40%);
   transition: opacity 0.3s;
 }
-.ctl-group { display: flex; gap: 6px; }
+.ctl-group { display: flex; gap: 6px; max-width: 100%; }
+/* Infomercial: each group (modes | actions | language) sits in its own tray */
+body[data-view='info'] .ctl-group { padding: 5px; border-radius: 15px; background: rgba(255, 255, 255, 0.1); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16); }
 .controls button {
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
-  min-width: 56px; min-height: 56px; max-width: 110px; padding: 4px 8px;
-  background: var(--navy); color: #fff; border: 2px solid #fff; border-radius: 10px;
-  font-size: 20px; line-height: 1;
+  flex: none; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 5px;
+  width: var(--ctl-w); height: var(--ctl-h); padding: 10px 4px 0;
+  background: var(--navy); color: #fff; border: 2px solid #fff; border-radius: 10px; line-height: 1;
 }
-.controls .lbl { font-size: 11px; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; line-height: 1.1; }
+.controls .lbl { max-width: 100%; font-size: 11px; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; line-height: 1.1; text-align: center; }
 .controls [aria-pressed='true'] { background: var(--red); }
+/* Modes: emoji in a fixed box so all four sit at the same optical size. Infomercial: emoji-only squares with a
+   tooltip (hover + keyboard focus) naming the mode; the label stays for screen readers. */
+.emo {
+  display: block; flex: none; width: 28px; height: 28px; overflow: hidden;
+  font: 24px/28px 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif; text-align: center;
+}
+body[data-view='info'] .modes button { position: relative; width: var(--ctl-h); justify-content: center; padding: 0; }
+body[data-view='info'] .modes .lbl { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+body[data-view='info'] .modes button::after {
+  content: attr(data-tooltip); position: absolute; left: 50%; bottom: calc(100% + 10px); z-index: 40; translate: var(--tx, -50%) 4px;
+  padding: 5px 10px; border-radius: 6px; background: #000; color: #fff; border: 1px solid rgba(255, 255, 255, 0.5);
+  font-family: var(--f-head); font-size: 15px; letter-spacing: 0.05em; line-height: 1.2; white-space: nowrap;
+  opacity: 0; pointer-events: none; transition: opacity 0.15s, translate 0.15s;
+}
+body[data-view='info'] .modes button:focus-visible::after { opacity: 1; translate: var(--tx, -50%) 0; }
+/* the outer two anchor to their own edge, so a tooltip never runs off a phone screen */
+body[data-view='info'] .modes button:first-child::after { left: 0; --tx: 0; }
+body[data-view='info'] .modes button:last-child::after { left: auto; right: 0; --tx: 0; }
+@media (hover: hover) { body[data-view='info'] .modes button:hover::after { opacity: 1; translate: var(--tx, -50%) 0; } }
 [data-theme='light'] body[data-view='info'] .controls button { background: #fff; color: var(--navy); border-color: var(--navy); }
 [data-theme='light'] body[data-view='info'] .controls [aria-pressed='true'] { background: var(--red); color: #fff; }
-body[data-view='clean'] .controls { background: var(--bg); border-top: 3px solid var(--fg); }
-body[data-view='clean'] .controls button { background: var(--bg); color: var(--fg); border: 3px solid var(--fg); max-width: 150px; min-height: 60px; }
-body[data-view='clean'] .controls .lbl { font-size: calc(15px * var(--text-scale)); text-transform: none; letter-spacing: 0; }
-body[data-view='clean'] .controls [aria-pressed='true'] { background: var(--fg); color: var(--bg); }
-/* Narration language: a native select, so phones open their own picker */
-.lang-group { flex-direction: column; justify-content: center; gap: 2px; min-width: 0; }
+
+/* Narration language: a double-width tile of the same height. The native select covers the whole tile
+   (phones open their own picker); the icon + label sit in the tile's top row like a button's. */
 .lang-pick { color: #fff; text-align: center; }
-.controls select {
-  min-height: 48px; max-width: 100%; padding: 0 10px; font: inherit; font-size: 16px; font-weight: 700;
+.chev { display: none; }
+body[data-view='info'] .lang-box {
+  position: relative; width: calc(var(--ctl-w) * 2 + 6px); max-width: 100%; height: var(--ctl-h);
   background: var(--navy); color: #fff; border: 2px solid #fff; border-radius: 10px;
 }
-[data-theme='light'] body[data-view='info'] .controls select { background: #fff; color: var(--navy); border-color: var(--navy); }
-body[data-view='clean'] .lang-pick { color: var(--fg); }
-body[data-view='clean'] .controls select { min-height: 60px; font-size: calc(18px * var(--text-scale)); background: var(--bg); color: var(--fg); border: 3px solid var(--fg); }
+body[data-view='info'] .lang-pick {
+  position: absolute; left: 6px; right: 6px; top: 10px; z-index: 1; pointer-events: none;
+  display: flex; align-items: center; justify-content: center; gap: 6px; color: inherit;
+}
+body[data-view='info'] .lang-pick .lbl { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+body[data-view='info'] .controls select {
+  position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; padding: 32px 28px 0 10px;
+  -webkit-appearance: none; appearance: none; background: transparent; color: inherit; border: 0; border-radius: 8px;
+  font: inherit; font-size: 15px; font-weight: 700; line-height: 1.2; text-align: center; text-align-last: center; cursor: pointer;
+}
+body[data-view='info'] .controls select option { color: #000; background: #fff; }
+body[data-view='info'] .chev { display: block; position: absolute; right: 8px; bottom: 9px; width: 16px; height: 16px; pointer-events: none; }
+[data-theme='light'] body[data-view='info'] .lang-box { background: #fff; color: var(--navy); border-color: var(--navy); }
+
+/* Clean view: black and white, larger text, labels always visible; tiles grow with the text size */
+body[data-view='clean'] .controls { background: var(--bg); border-top: 3px solid var(--fg); gap: 10px 26px; }
+body[data-view='clean'] .controls button {
+  width: auto; height: auto; min-width: 96px; max-width: 150px; min-height: 60px; padding: 8px;
+  justify-content: center; background: var(--bg); color: var(--fg); border: 3px solid var(--fg);
+}
+body[data-view='clean'] .controls .lbl { font-size: calc(15px * var(--text-scale)); text-transform: none; letter-spacing: 0; }
+body[data-view='clean'] .controls [aria-pressed='true'] { background: var(--fg); color: var(--bg); }
+body[data-view='clean'] .lang-group { flex-direction: column; justify-content: center; min-width: 0; }
+body[data-view='clean'] .lang-box { display: flex; flex-direction: column; gap: 4px; max-width: 100%; }
+body[data-view='clean'] .lang-pick { display: flex; align-items: center; justify-content: center; gap: 6px; color: var(--fg); }
+body[data-view='clean'] .controls select {
+  min-height: 60px; max-width: 100%; padding: 0 10px; font: inherit; font-size: calc(18px * var(--text-scale)); font-weight: 700;
+  background: var(--bg); color: var(--fg); border: 3px solid var(--fg); border-radius: 10px;
+}
 
 body.running.idle .controls, body.running.idle .switchers { opacity: 0; pointer-events: none; }
 body.running.idle { cursor: none; }
 body.running.idle .bottom { bottom: calc(var(--safe-b) + 20px); }
-body.running.idle[data-mode='funny'] .bottom { bottom: 12dvh; }
 
 @media (max-width: 700px) {
+  /* Infomercial on phones: icon-only square tiles (labels stay for screen readers) */
+  .controls { --ctl-w: 52px; --ctl-h: 52px; gap: 8px 6px; padding-top: 10px; }
+  .ctl-group { gap: 5px; }
+  body[data-view='info'] .ctl-group { padding: 3px; border-radius: 13px; }
   body[data-view='info'] .controls .lbl { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-  .controls button { min-width: 52px; min-height: 52px; padding: 2px; }
-  .controls { gap: 8px; }
+  body[data-view='info'] .controls button { justify-content: center; padding: 0; }
+  body[data-view='info'] .modes button::after { font-size: 13px; }
+  body[data-view='info'] .lang-group { flex: 1 1 124px; }
+  body[data-view='info'] .lang-box { width: 100%; }
+  body[data-view='info'] .lang-pick { top: 0; bottom: 0; left: 12px; right: auto; }
+  body[data-view='info'] .controls select { padding: 0 10px 0 44px; font-size: 16px; text-align: left; text-align-last: left; }
+  body[data-view='info'] .chev { display: none; }
   body[data-view='clean'] .controls button { flex: 1 1 0; min-width: 0; }
+  body[data-view='clean'] .controls .lbl { max-width: 100%; hyphens: auto; overflow-wrap: anywhere; } /* long words in narrow tiles break instead of spilling out */
   body[data-view='clean'] .ctl-group { flex: 1 1 100%; }
-  body[data-view='clean'] .controls select { width: 100%; }
-  .controls select { min-height: 52px; }
+  body[data-view='clean'] .lang-box, body[data-view='clean'] .controls select { width: 100%; }
   .grain, .embers { display: none !important; }
   .readout > div, .mode-label { font-size: 10px; }
   /* switchers take the top row on phones: stack the HUD below them */
