@@ -11,8 +11,8 @@ const CONFIG = {
   minCaptureGapMs: 3000, // look-ahead never captures sooner than this after the previous capture
   minSegmentChars: 25, // shorter sentences ride along with the next one
   maxSegments: 4, // voice requests per line
-  music: { volume: 0.08, ducked: 0.02, fadeSec: 1, trim: { documentary: 1, funny: 0.85, pumpkin: 0.6 } }, // tracks master near -12 dBFS RMS
-  tracks: { documentary: 'documentary.mp3', funny: 'funny.mp3', pumpkin: 'spooky.mp3' },
+  music: { volume: 0.08, ducked: 0.02, fadeSec: 1, trim: { documentary: 1, funny: 0.85 } }, // tracks master near -12 dBFS RMS
+  tracks: { documentary: 'documentary.mp3', funny: 'funny.mp3' }, // Pumpkin mode has no music
 };
 const MODES = ['documentary', 'funny', 'descriptive', 'pumpkin'];
 // Every language ElevenLabs Eleven v3 speaks (https://elevenlabs.io/docs/models). One table for the site

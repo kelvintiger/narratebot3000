@@ -61,3 +61,9 @@ Gemini (vision), ElevenLabs (voices), vanilla JS/HTML/CSS with no build step, Ve
 ## Credits
 
 Background music (`documentary.mp3`, `funny.mp3`) is from [Pixabay](https://pixabay.com/music/), used under the [Pixabay Content License](https://pixabay.com/service/license-summary/). The tracks aren't covered by this repository's code and can't be redistributed on their own.
+
+## License
+
+Copyright (C) 2026 Kelvin ([@kelvintiger](https://github.com/kelvintiger)).
+
+The code is licensed under the [GNU Affero General Public License v3.0 or later](LICENSE). You can use, change and share it, but any copy or modified version, including one you only run as a website, must keep this copyright notice, credit the original project, and publish its full source code under the same license. The background music isn't covered by this license (see Credits).
