@@ -80,7 +80,7 @@ const S = {
   view: urlView === 'clean' || urlView === 'info' ? urlView : store.get('view', 'info'),
   theme: store.get('theme', null), // null = follow the system
   settings: { useEleven: false, still: 8, textScale: 1, customLang: '', srMute: false, hideVideo: false, music: 100, breakSec: 5, ...store.get('settings', {}) },
-  mode: 'documentary', narrLangCode: store.get('narrLang', null),
+  mode: 'pumpkin', narrLangCode: store.get('narrLang', null),
   started: false, paused: false, busy: false, speaking: false, gen: 0,
   lines: [], obs: 0, stillCount: 0, forcedStill: false, lastDiff: null, prevTiny: null,
   nextAt: 0, forceFull: true, saidNoChange: false, lastCaptureAt: 0, ahead: null,
@@ -92,7 +92,7 @@ const S = {
 };
 if (urlView) store.set('view', S.view);
 try { localStorage.removeItem('nb3k:passcode'); } catch {} // left over from the old demo passcode
-S.mode = S.view === 'clean' ? 'descriptive' : 'documentary';
+S.mode = S.view === 'clean' ? 'descriptive' : 'pumpkin'; // Halloween default
 
 const video = $('#cam');
 const voiceEl = $('#voice');

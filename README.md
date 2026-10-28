@@ -57,3 +57,7 @@ Narration languages: English, Spanish, Chinese, Hindi, Telugu, French, Arabic, K
 ## Tech
 
 Gemini (vision), ElevenLabs (voices), vanilla JS/HTML/CSS with no build step, Vercel serverless functions, and Upstash Redis rate limiting.
+
+## Credits
+
+Background music (`documentary.mp3`, `funny.mp3`) is from [Pixabay](https://pixabay.com/music/), used under the [Pixabay Content License](https://pixabay.com/service/license-summary/). The tracks aren't covered by this repository's code and can't be redistributed on their own.
